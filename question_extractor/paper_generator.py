@@ -300,10 +300,11 @@ class QuestionBankParser:
 class PDFPaperGenerator:
     """Generates PDF exam papers using ReportLab."""
     
-    def __init__(self):
+    def __init__(self, render_figures: bool = True):
         if not REPORTLAB_AVAILABLE:
             raise ImportError("ReportLab is required for PDF generation. Install with: pip install reportlab")
         
+        self.render_figures = render_figures
         self.styles = getSampleStyleSheet()
         self._setup_custom_styles()
         self.figure_parser = FigureParser() if GEOMETRY_AVAILABLE else None
@@ -475,10 +476,18 @@ class PDFPaperGenerator:
         text = text.replace('\n', '<br/>')
         elements.append(Paragraph(text, self.styles['QuestionText']))
         
-        # Render figure if present
-        if question.figure_block and GEOMETRY_AVAILABLE:
-            figure_elements = self._render_figure(question.figure_block)
-            elements.extend(figure_elements)
+        # Render figure if present and rendering is enabled
+        if question.figure_block:
+            if self.render_figures and GEOMETRY_AVAILABLE:
+                figure_elements = self._render_figure(question.figure_block)
+                elements.extend(figure_elements)
+            else:
+                # Add placeholder text for figure
+                elements.append(Spacer(1, 6))
+                elements.append(Paragraph(
+                    "<i>[Diagram: See figure description in question]</i>",
+                    self.styles['QuestionText']
+                ))
         
         elements.append(Spacer(1, 6))
         
@@ -530,10 +539,11 @@ class PDFPaperGenerator:
 class WordPaperGenerator:
     """Generates Word document exam papers using python-docx."""
     
-    def __init__(self):
+    def __init__(self, render_figures: bool = True):
         if not DOCX_AVAILABLE:
             raise ImportError("python-docx is required for Word generation. Install with: pip install python-docx")
         
+        self.render_figures = render_figures
         self.figure_parser = FigureParser() if GEOMETRY_AVAILABLE else None
         self.temp_images: List[str] = []
     
@@ -623,9 +633,14 @@ class WordPaperGenerator:
         # Question text
         doc.add_paragraph(question.text)
         
-        # Render figure if present
-        if question.figure_block and GEOMETRY_AVAILABLE:
-            self._render_figure(doc, question.figure_block)
+        # Render figure if present and rendering is enabled
+        if question.figure_block:
+            if self.render_figures and GEOMETRY_AVAILABLE:
+                self._render_figure(doc, question.figure_block)
+            else:
+                p = doc.add_paragraph()
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                p.add_run("[Diagram: See figure description in question]").italic = True
         
         doc.add_paragraph()
     
@@ -787,25 +802,25 @@ class PaperBuilder:
         
         return sections
     
-    def generate_pdf(self, paper: ExamPaper, output_path: str):
+    def generate_pdf(self, paper: ExamPaper, output_path: str, render_figures: bool = True):
         """Generate a PDF from the exam paper."""
         
-        generator = PDFPaperGenerator()
+        generator = PDFPaperGenerator(render_figures=render_figures)
         generator.generate(paper, output_path)
     
-    def generate_docx(self, paper: ExamPaper, output_path: str):
+    def generate_docx(self, paper: ExamPaper, output_path: str, render_figures: bool = True):
         """Generate a Word document from the exam paper."""
         
-        generator = WordPaperGenerator()
+        generator = WordPaperGenerator(render_figures=render_figures)
         generator.generate(paper, output_path)
     
-    def generate(self, paper: ExamPaper, output_path: str, format: str = "pdf"):
+    def generate(self, paper: ExamPaper, output_path: str, format: str = "pdf", render_figures: bool = True):
         """Generate paper in specified format."""
         
         if format.lower() == "pdf":
-            self.generate_pdf(paper, output_path)
+            self.generate_pdf(paper, output_path, render_figures=render_figures)
         elif format.lower() in ("docx", "word"):
-            self.generate_docx(paper, output_path)
+            self.generate_docx(paper, output_path, render_figures=render_figures)
         else:
             raise ValueError(f"Unsupported format: {format}")
 
@@ -876,6 +891,12 @@ Examples:
         help='Check available dependencies and exit'
     )
     
+    parser.add_argument(
+        '--no-figures',
+        action='store_true',
+        help='Skip figure rendering (questions with [FIGURE] blocks will show placeholder text)'
+    )
+    
     args = parser.parse_args()
     
     # Check dependencies
@@ -915,7 +936,7 @@ Examples:
     elif args.output.endswith('.pdf'):
         format = 'pdf'
     
-    builder.generate(paper, args.output, format)
+    builder.generate(paper, args.output, format, render_figures=not args.no_figures)
 
 
 if __name__ == "__main__":

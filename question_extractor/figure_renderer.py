@@ -185,8 +185,9 @@ class PointLayoutEngine:
             circle = next((c for c in figure.circles if c.center == quad.inscribed_in), None)
             radius = circle.radius if circle and circle.radius else self.config.default_radius
             
-            # Position on circle
-            angles = [120, 60, -30, -120]
+            # Position on circle - use angles that create a nice quadrilateral shape
+            # A at top, B at right, C at bottom, D at left (like a kite/trapezoid)
+            angles = [100, 20, -60, 160]  # A, B, C, D positions around circle
             for i, vertex in enumerate(quad.vertices):
                 if vertex not in self.positions:
                     rad = math.radians(angles[i])
@@ -229,16 +230,71 @@ class PointLayoutEngine:
                 )
     
     def _position_remaining_points(self, figure: GeometryFigure):
-        """Position any remaining undefined points."""
+        """Position any remaining undefined points based on their descriptions."""
         
+        # Get all explicit points with descriptions
+        for point in figure.points:
+            if point.label in self.positions:
+                continue
+            
+            # Try to position based on description
+            if point.description:
+                new_pos = self._parse_point_description(point.description, point.label)
+                if new_pos:
+                    self.positions[point.label] = new_pos
+                    continue
+        
+        # Place any truly undefined points in a grid pattern
         all_labels = figure.get_all_point_labels()
         undefined = [label for label in all_labels if label not in self.positions]
         
-        # Place remaining points in a grid pattern
         for i, label in enumerate(undefined):
             row = i // 3
             col = i % 3
             self.positions[label] = (-4 + col * 2, 4 - row * 2)
+    
+    def _parse_point_description(self, description: str, label: str) -> Optional[Tuple[float, float]]:
+        """
+        Parse point description to determine position.
+        
+        Understands patterns like:
+        - "on AB" - position on line segment AB
+        - "on side AB" - position on line segment AB  
+        - "midpoint of AB" - middle of segment AB
+        """
+        import re
+        
+        desc_lower = description.lower().strip()
+        
+        # Pattern: "on AB", "on side AB", "on segment AB"
+        on_segment_match = re.search(r'on\s+(?:side\s+|segment\s+)?([A-Z])([A-Z])', description, re.IGNORECASE)
+        if on_segment_match:
+            p1_label = on_segment_match.group(1).upper()
+            p2_label = on_segment_match.group(2).upper()
+            
+            if p1_label in self.positions and p2_label in self.positions:
+                p1 = self.positions[p1_label]
+                p2 = self.positions[p2_label]
+                
+                # Position at 1/3 or 2/3 along the segment (not midpoint to look distinct)
+                # Use alphabetical order to determine ratio
+                ratio = 0.35 if label < p2_label else 0.65
+                x = p1[0] + ratio * (p2[0] - p1[0])
+                y = p1[1] + ratio * (p2[1] - p1[1])
+                return (x, y)
+        
+        # Pattern: "midpoint of AB"
+        midpoint_match = re.search(r'midpoint\s+of\s+([A-Z])([A-Z])', description, re.IGNORECASE)
+        if midpoint_match:
+            p1_label = midpoint_match.group(1).upper()
+            p2_label = midpoint_match.group(2).upper()
+            
+            if p1_label in self.positions and p2_label in self.positions:
+                p1 = self.positions[p1_label]
+                p2 = self.positions[p2_label]
+                return ((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2)
+        
+        return None
 
 
 class FigureRenderer:
@@ -427,29 +483,47 @@ class FigureRenderer:
                 p1 = self.positions[angle.ray1_end]
                 p2 = self.positions[angle.ray2_end]
                 
-                # Calculate angles
+                # Calculate angles from vertex to each point
                 angle1 = math.degrees(math.atan2(p1[1] - vertex[1], p1[0] - vertex[0]))
                 angle2 = math.degrees(math.atan2(p2[1] - vertex[1], p2[0] - vertex[0]))
                 
-                # Draw arc
+                # Ensure we draw the minor arc (smaller angle between rays)
+                # Normalize angles to 0-360 range
+                angle1 = angle1 % 360
+                angle2 = angle2 % 360
+                
+                # Calculate the angular difference
+                diff = (angle2 - angle1) % 360
+                
+                # If difference > 180, we need to go the other way
+                if diff > 180:
+                    theta1 = angle2
+                    theta2 = angle1 + 360
+                else:
+                    theta1 = angle1
+                    theta2 = angle2
+                    if theta2 < theta1:
+                        theta2 += 360
+                
+                # Draw arc only if marked
                 if angle.marked:
                     arc = Arc(
                         vertex,
                         self.config.angle_arc_radius * 2,
                         self.config.angle_arc_radius * 2,
                         angle=0,
-                        theta1=min(angle1, angle2),
-                        theta2=max(angle1, angle2),
+                        theta1=theta1,
+                        theta2=theta2,
                         color=self.config.angle_arc_color,
-                        linewidth=1.0,
+                        linewidth=1.2,
                         zorder=4
                     )
                     self.ax.add_patch(arc)
                 
                 # Add angle value label
                 if angle.value:
-                    mid_angle = (angle1 + angle2) / 2
-                    label_radius = self.config.angle_arc_radius * 1.5
+                    mid_angle = (theta1 + theta2) / 2
+                    label_radius = self.config.angle_arc_radius * 1.8
                     label_x = vertex[0] + label_radius * math.cos(math.radians(mid_angle))
                     label_y = vertex[1] + label_radius * math.sin(math.radians(mid_angle))
                     
