@@ -1,0 +1,956 @@
+{
+  "description": "ICSE Class 10 Mathematics Syllabus 2026 - Comprehensive Topic Configuration",
+  "syllabus_info": {
+    "board": "CISCE (ICSE)",
+    "class": 10,
+    "exam_year": 2026,
+    "total_marks": 100,
+    "theory_marks": 80,
+    "internal_assessment": 20,
+    "exam_pattern": {
+      "section_a": "40 marks - All questions compulsory",
+      "section_b": "40 marks - Choose 4 out of 7 questions"
+    },
+    "notes": [
+      "Mathematical tables allowed",
+      "Calculators NOT permitted",
+      "Strong focus on algebraic manipulation, geometric proofs, and trigonometric applications",
+      "Integration across units (e.g., quadratic equations in mensuration problems)"
+    ]
+  },
+  "units": {
+    "1_Commercial_Mathematics": {
+      "enabled": true,
+      "unit_name": "Commercial Mathematics",
+      "weightage": "8-12 marks",
+      "description": "Applies arithmetic to real-world finance, taxation, and investments, bridging pure math with economics/commerce.",
+      "topics": {
+        "GST": {
+          "enabled": true,
+          "full_name": "Goods and Services Tax",
+          "keywords": [
+            "GST",
+            "goods and services tax",
+            "CGST",
+            "SGST",
+            "IGST",
+            "tax invoice",
+            "input tax credit",
+            "intra-state",
+            "inter-state",
+            "marked price",
+            "discount"
+          ],
+          "subtopics": [
+            "Computation of GST (CGST, SGST, IGST)",
+            "Tax Invoice calculations",
+            "Input Tax Credit basics",
+            "Intra-state vs Inter-state supply",
+            "GST with discounts and profit/loss",
+            "Inverse calculations (finding pre-tax price)"
+          ],
+          "key_concepts": [
+            "CGST and SGST for intra-state (same state)",
+            "IGST for inter-state (different states)",
+            "Final Price = Selling Price + GST",
+            "GST Amount = SP × Rate/100"
+          ],
+          "common_question_types": [
+            "Calculate final price after GST with discount",
+            "Multi-item invoices with different GST rates",
+            "Inverse problems: given total with GST, find original price",
+            "Profit/loss calculations with GST"
+          ],
+          "edge_cases": [
+            "Multi-item invoices with different rates",
+            "Inverse problems (consumer pays ₹X including GST, find original price)",
+            "GST on discounted items"
+          ]
+        },
+        "Banking": {
+          "enabled": true,
+          "full_name": "Banking - Recurring Deposits",
+          "keywords": [
+            "recurring deposit",
+            "RD",
+            "maturity value",
+            "maturity amount",
+            "interest",
+            "bank",
+            "monthly deposit",
+            "principal",
+            "rate of interest"
+          ],
+          "subtopics": [
+            "Recurring Deposit account calculations",
+            "Maturity Value formula and computation",
+            "Simple Interest on RD",
+            "Finding monthly installment",
+            "Finding rate or time period"
+          ],
+          "key_concepts": [
+            "Maturity Value = P × n + Interest",
+            "Interest = P × (n(n+1)/2) × (r/100) × (1/12)",
+            "P = monthly deposit, n = number of months, r = annual rate"
+          ],
+          "formulas": [
+            "Maturity Value = P × n + P × (n(n+1)/2) × (r/100) × (1/12)",
+            "Interest = P × (n(n+1)/24) × r/100"
+          ],
+          "common_question_types": [
+            "Find maturity value given P, n, r",
+            "Find monthly deposit given maturity value",
+            "Find rate of interest",
+            "Find time period"
+          ],
+          "edge_cases": [
+            "Simple vs recurring interest distinction",
+            "Quarterly compounding NOT included in ICSE"
+          ]
+        },
+        "Shares_and_Dividends": {
+          "enabled": true,
+          "full_name": "Shares and Dividends",
+          "keywords": [
+            "shares",
+            "dividend",
+            "nominal value",
+            "face value",
+            "market value",
+            "rate of return",
+            "investment",
+            "stock",
+            "premium",
+            "discount",
+            "income"
+          ],
+          "subtopics": [
+            "Face Value vs Market Value",
+            "Dividend calculation",
+            "Rate of Return / Return percentage",
+            "Number of shares calculation",
+            "Investment calculations",
+            "Shares at premium/discount"
+          ],
+          "key_concepts": [
+            "Face Value (FV) = Nominal Value = Par Value",
+            "Market Value (MV) = Current trading price",
+            "Premium = MV > FV; Discount = MV < FV",
+            "Dividend is always on Face Value",
+            "Return is calculated on Investment (Market Value)"
+          ],
+          "formulas": [
+            "Income = No. of shares × Dividend Rate × Face Value / 100",
+            "Return % = (Annual Income / Investment) × 100",
+            "No. of shares = Total Investment / Market Value per share"
+          ],
+          "common_question_types": [
+            "Calculate annual dividend income",
+            "Find rate of return on investment",
+            "Compare two investment options",
+            "Find number of shares that can be bought"
+          ],
+          "edge_cases": [
+            "No brokerage charges in ICSE",
+            "Premium/discount on market value"
+          ]
+        }
+      }
+    },
+    "2_Algebra": {
+      "enabled": true,
+      "unit_name": "Algebra",
+      "weightage": "20-25 marks",
+      "description": "The heaviest unit, emphasizing manipulation, equations, and coordinate applications. High-scoring with practice.",
+      "topics": {
+        "Linear_Inequations": {
+          "enabled": true,
+          "full_name": "Linear Inequations",
+          "keywords": [
+            "inequation",
+            "inequality",
+            "solution set",
+            "number line",
+            "real numbers",
+            "integers",
+            "natural numbers",
+            "whole numbers"
+          ],
+          "subtopics": [
+            "Solving linear inequations in one variable",
+            "Solution set in different number systems (N, W, Z, R)",
+            "Graphical representation on number line",
+            "Set notation for solutions",
+            "Word problems involving inequations"
+          ],
+          "key_concepts": [
+            "Inequality sign reverses when multiplying/dividing by negative",
+            "Solution sets differ based on domain (N, W, Z, R)",
+            "Graphical representation: open circle for strict inequality, closed for ≤ or ≥"
+          ],
+          "common_question_types": [
+            "Solve and represent on number line",
+            "Find solution set in given domain",
+            "Simultaneous inequations"
+          ]
+        },
+        "Quadratic_Equations": {
+          "enabled": true,
+          "full_name": "Quadratic Equations",
+          "keywords": [
+            "quadratic",
+            "roots",
+            "discriminant",
+            "factorization",
+            "quadratic formula",
+            "nature of roots",
+            "sum of roots",
+            "product of roots",
+            "ax² + bx + c"
+          ],
+          "subtopics": [
+            "Solving by factorization",
+            "Solving using quadratic formula",
+            "Nature of roots using discriminant (b² - 4ac)",
+            "Sum and product of roots",
+            "Forming equations from roots",
+            "Word problems leading to quadratic equations"
+          ],
+          "key_concepts": [
+            "Standard form: ax² + bx + c = 0",
+            "Discriminant D = b² - 4ac",
+            "D > 0: Real and distinct roots",
+            "D = 0: Real and equal roots",
+            "D < 0: No real roots",
+            "Sum of roots = -b/a",
+            "Product of roots = c/a"
+          ],
+          "formulas": [
+            "x = (-b ± √(b² - 4ac)) / 2a",
+            "Sum of roots α + β = -b/a",
+            "Product of roots αβ = c/a"
+          ],
+          "common_question_types": [
+            "Solve by factorization",
+            "Solve using formula",
+            "Find nature of roots without solving",
+            "Form equation given roots or relationship between roots",
+            "Word problems: age, speed-distance, area"
+          ],
+          "edge_cases": [
+            "No real roots (D < 0)",
+            "Repeated/equal roots (D = 0)"
+          ]
+        },
+        "Ratio_and_Proportion": {
+          "enabled": true,
+          "full_name": "Ratio and Proportion",
+          "keywords": [
+            "ratio",
+            "proportion",
+            "componendo",
+            "dividendo",
+            "alternendo",
+            "invertendo",
+            "mean proportional",
+            "continued proportion",
+            "k-method",
+            "third proportional"
+          ],
+          "subtopics": [
+            "Continued proportion",
+            "Mean proportional",
+            "Third proportional",
+            "Properties: Componendo, Dividendo, Alternendo, Invertendo",
+            "Componendo-Dividendo combined",
+            "K-method for proving proportions",
+            "Direct applications and word problems"
+          ],
+          "key_concepts": [
+            "a:b = c:d means ad = bc",
+            "Continued proportion: a:b = b:c, so b² = ac",
+            "Mean proportional of a and c is √(ac)",
+            "Componendo: (a+b)/b = (c+d)/d",
+            "Dividendo: (a-b)/b = (c-d)/d"
+          ],
+          "formulas": [
+            "Mean Proportional = √(a × c)",
+            "Third Proportional to a, b = b²/a",
+            "K-method: If a/b = c/d = k, then a = bk, c = dk"
+          ],
+          "common_question_types": [
+            "Prove given proportion using properties",
+            "Find mean/third proportional",
+            "Apply componendo-dividendo",
+            "Divide quantity in given ratio"
+          ]
+        },
+        "Factorization": {
+          "enabled": true,
+          "full_name": "Factorisation of Polynomials",
+          "keywords": [
+            "factor",
+            "remainder theorem",
+            "factor theorem",
+            "polynomial",
+            "HCF",
+            "LCM",
+            "cubic",
+            "zeros",
+            "roots"
+          ],
+          "subtopics": [
+            "Remainder Theorem",
+            "Factor Theorem",
+            "Factorization of polynomials (up to degree 3)",
+            "Finding factors using Factor Theorem",
+            "Complete factorization of cubic polynomials",
+            "Finding zeros/roots of polynomials"
+          ],
+          "key_concepts": [
+            "Remainder Theorem: f(a) is remainder when f(x) divided by (x-a)",
+            "Factor Theorem: (x-a) is factor of f(x) if f(a) = 0",
+            "To factorize cubic: find one root by trial, then factorize remaining quadratic"
+          ],
+          "common_question_types": [
+            "Find remainder using Remainder Theorem",
+            "Show (x-a) is a factor using Factor Theorem",
+            "Completely factorize a cubic polynomial",
+            "Find value of k if (x-a) is a factor"
+          ]
+        },
+        "Matrices": {
+          "enabled": true,
+          "full_name": "Matrices",
+          "keywords": [
+            "matrix",
+            "matrices",
+            "order",
+            "transpose",
+            "identity matrix",
+            "null matrix",
+            "zero matrix",
+            "multiplication",
+            "addition",
+            "scalar",
+            "2x2",
+            "elements"
+          ],
+          "subtopics": [
+            "Order of a matrix",
+            "Types: Row, Column, Square, Null/Zero, Identity",
+            "Addition and subtraction of matrices",
+            "Scalar multiplication",
+            "Matrix multiplication (2x2 only)",
+            "Transpose of a matrix",
+            "Solving matrix equations"
+          ],
+          "key_concepts": [
+            "Order = rows × columns",
+            "Addition/subtraction: same order required",
+            "Multiplication: columns of first = rows of second",
+            "AB ≠ BA in general",
+            "Transpose: rows become columns"
+          ],
+          "formulas": [
+            "For 2x2 matrix multiplication: (AB)ij = sum of (row i of A) × (column j of B)"
+          ],
+          "common_question_types": [
+            "Find unknown elements given matrix equation",
+            "Perform matrix operations",
+            "Verify matrix properties",
+            "Find transpose and verify (AB)' = B'A'"
+          ],
+          "edge_cases": [
+            "Compatibility rules for multiplication",
+            "Order matters in multiplication"
+          ]
+        },
+        "AP": {
+          "enabled": true,
+          "full_name": "Arithmetic Progression",
+          "keywords": [
+            "arithmetic progression",
+            "AP",
+            "common difference",
+            "nth term",
+            "sum of n terms",
+            "first term",
+            "last term",
+            "sequence",
+            "series"
+          ],
+          "subtopics": [
+            "nth term formula (an = a + (n-1)d)",
+            "Sum of n terms (Sn)",
+            "Finding number of terms",
+            "Finding common difference",
+            "Finding specific terms",
+            "Word problems on AP"
+          ],
+          "key_concepts": [
+            "Common difference d = a₂ - a₁ = a₃ - a₂ = ...",
+            "AP is linear sequence",
+            "Middle term in odd-numbered AP"
+          ],
+          "formulas": [
+            "nth term: an = a + (n-1)d",
+            "Sum of n terms: Sn = n/2 [2a + (n-1)d]",
+            "Sum of n terms: Sn = n/2 [a + l] where l is last term"
+          ],
+          "common_question_types": [
+            "Find nth term",
+            "Find sum of n terms",
+            "Find n (number of terms)",
+            "Find d (common difference)",
+            "Word problems: seating arrangement, savings, etc."
+          ]
+        },
+        "GP": {
+          "enabled": true,
+          "full_name": "Geometric Progression",
+          "keywords": [
+            "geometric progression",
+            "GP",
+            "common ratio",
+            "nth term",
+            "sum of n terms",
+            "geometric mean",
+            "sequence",
+            "series"
+          ],
+          "subtopics": [
+            "nth term formula (an = ar^(n-1))",
+            "Sum of n terms (Sn)",
+            "Finding common ratio",
+            "Geometric mean",
+            "Simple applications"
+          ],
+          "key_concepts": [
+            "Common ratio r = a₂/a₁ = a₃/a₂ = ...",
+            "Geometric mean of a and b is √(ab)",
+            "GP is exponential sequence"
+          ],
+          "formulas": [
+            "nth term: an = a × r^(n-1)",
+            "Sum of n terms (r ≠ 1): Sn = a(r^n - 1)/(r-1) or a(1 - r^n)/(1-r)",
+            "Geometric Mean = √(a × b)"
+          ],
+          "common_question_types": [
+            "Find nth term",
+            "Find sum of n terms",
+            "Find common ratio",
+            "Insert geometric means"
+          ]
+        },
+        "Coordinate_Geometry": {
+          "enabled": true,
+          "full_name": "Coordinate Geometry",
+          "keywords": [
+            "coordinate",
+            "section formula",
+            "mid-point",
+            "midpoint",
+            "slope",
+            "equation of line",
+            "intercept",
+            "reflection",
+            "distance formula",
+            "centroid",
+            "collinear"
+          ],
+          "subtopics": [
+            "Reflection in x-axis, y-axis, origin",
+            "Reflection in lines x = a, y = b",
+            "Invariant points under reflection",
+            "Distance formula",
+            "Section formula (internal division)",
+            "Midpoint formula",
+            "Centroid of triangle",
+            "Slope of a line",
+            "Equation of line: slope-intercept form (y = mx + c)",
+            "Equation of line: two-point form",
+            "Equation of line: point-slope form",
+            "Parallel and perpendicular lines",
+            "x-intercept and y-intercept"
+          ],
+          "key_concepts": [
+            "Reflection in x-axis: (x, y) → (x, -y)",
+            "Reflection in y-axis: (x, y) → (-x, y)",
+            "Reflection in origin: (x, y) → (-x, -y)",
+            "Slope m = (y₂-y₁)/(x₂-x₁)",
+            "Parallel lines: m₁ = m₂",
+            "Perpendicular lines: m₁ × m₂ = -1"
+          ],
+          "formulas": [
+            "Distance = √[(x₂-x₁)² + (y₂-y₁)²]",
+            "Section formula: ((mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n))",
+            "Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)",
+            "Centroid: ((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3)",
+            "Slope-intercept form: y = mx + c",
+            "Two-point form: (y-y₁)/(y₂-y₁) = (x-x₁)/(x₂-x₁)"
+          ],
+          "common_question_types": [
+            "Find reflection of point",
+            "Find equation of line through two points",
+            "Find equation given slope and point",
+            "Find point dividing line in given ratio",
+            "Prove collinearity",
+            "Find equation of parallel/perpendicular line"
+          ]
+        }
+      }
+    },
+    "3_Geometry": {
+      "enabled": true,
+      "unit_name": "Geometry",
+      "weightage": "15-20 marks",
+      "description": "Proof-heavy unit focusing on theorems and constructions. Neat diagrams are vital.",
+      "topics": {
+        "Similarity": {
+          "enabled": true,
+          "full_name": "Similarity of Triangles",
+          "keywords": [
+            "similar",
+            "similarity",
+            "AAA",
+            "AA",
+            "SAS",
+            "SSS",
+            "corresponding sides",
+            "corresponding angles",
+            "scale factor",
+            "area ratio",
+            "BPT",
+            "Basic Proportionality Theorem"
+          ],
+          "subtopics": [
+            "Criteria for similarity (AA, SSS, SAS)",
+            "Basic Proportionality Theorem (BPT / Thales Theorem)",
+            "Converse of BPT",
+            "Properties of similar triangles",
+            "Ratio of areas = Ratio of squares of sides",
+            "Applications to maps and models",
+            "Finding unknown sides using similarity"
+          ],
+          "key_concepts": [
+            "Similar triangles have equal angles and proportional sides",
+            "BPT: Line parallel to one side divides other two proportionally",
+            "Area ratio = (side ratio)²"
+          ],
+          "formulas": [
+            "If △ABC ~ △DEF, then AB/DE = BC/EF = CA/FD",
+            "Area(△ABC)/Area(△DEF) = (AB/DE)² = (BC/EF)² = (CA/FD)²"
+          ],
+          "common_question_types": [
+            "Prove triangles are similar",
+            "Find unknown lengths using similarity",
+            "Apply BPT to find segment lengths",
+            "Compare areas of similar triangles"
+          ]
+        },
+        "Loci": {
+          "enabled": true,
+          "full_name": "Loci and Constructions",
+          "keywords": [
+            "locus",
+            "loci",
+            "construction",
+            "perpendicular bisector",
+            "angle bisector",
+            "equidistant",
+            "compass",
+            "ruler"
+          ],
+          "subtopics": [
+            "Definition and understanding of locus",
+            "Locus of points equidistant from two points (perpendicular bisector)",
+            "Locus of points equidistant from two lines (angle bisector)",
+            "Locus of points at fixed distance from a point (circle)",
+            "Locus of points at fixed distance from a line (parallel lines)",
+            "Intersection of loci",
+            "Construction of triangles with given conditions",
+            "Construction of tangents"
+          ],
+          "key_concepts": [
+            "Locus = path of all points satisfying a condition",
+            "Equidistant from 2 points → perpendicular bisector",
+            "Equidistant from 2 lines → angle bisectors",
+            "Proofs not required, understanding essential"
+          ],
+          "common_question_types": [
+            "Construct locus satisfying given conditions",
+            "Find intersection of multiple loci",
+            "Locate point satisfying multiple conditions"
+          ]
+        },
+        "Circles": {
+          "enabled": true,
+          "full_name": "Circles",
+          "keywords": [
+            "circle",
+            "tangent",
+            "chord",
+            "secant",
+            "cyclic quadrilateral",
+            "arc",
+            "inscribed angle",
+            "central angle",
+            "alternate segment",
+            "radius",
+            "diameter"
+          ],
+          "subtopics": [
+            "Angle properties: Central angle = 2 × Inscribed angle",
+            "Angles in same segment are equal",
+            "Angle in semicircle = 90°",
+            "Cyclic quadrilateral properties",
+            "Opposite angles of cyclic quadrilateral are supplementary",
+            "Exterior angle = opposite interior angle",
+            "Tangent properties: Tangent ⊥ radius at point of contact",
+            "Equal tangents from external point",
+            "Alternate Segment Theorem",
+            "Intersecting chords theorem",
+            "Tangent-secant theorem"
+          ],
+          "key_concepts": [
+            "Central angle = 2 × angle at circumference (same arc)",
+            "Angles in same segment are equal",
+            "Angle in semicircle = 90°",
+            "Cyclic quad: opposite angles add to 180°",
+            "Tangent is perpendicular to radius",
+            "Tangents from external point are equal",
+            "Alternate Segment: angle between tangent and chord = angle in alternate segment"
+          ],
+          "formulas": [
+            "Central angle = 2 × Inscribed angle",
+            "Intersecting chords: PA × PB = PC × PD",
+            "Tangent-secant: PT² = PA × PB"
+          ],
+          "common_question_types": [
+            "Find angles using circle theorems",
+            "Prove points are concyclic",
+            "Apply tangent properties",
+            "Use alternate segment theorem",
+            "Prove chord/tangent relationships"
+          ]
+        },
+        "Constructions": {
+          "enabled": true,
+          "full_name": "Geometric Constructions",
+          "keywords": [
+            "construction",
+            "tangent",
+            "circumcircle",
+            "incircle",
+            "inscribed circle",
+            "circumscribed circle",
+            "triangle",
+            "hexagon"
+          ],
+          "subtopics": [
+            "Tangents from external point to circle",
+            "Circumcircle of a triangle",
+            "Incircle of a triangle",
+            "Regular hexagon construction",
+            "Accurate measurement and construction"
+          ],
+          "key_concepts": [
+            "Use only compass and straightedge",
+            "Neat construction is essential for marks",
+            "Show all construction arcs"
+          ],
+          "common_question_types": [
+            "Construct tangents from external point",
+            "Construct circumcircle/incircle",
+            "Construct triangle from given data and draw circles"
+          ]
+        }
+      }
+    },
+    "4_Mensuration": {
+      "enabled": true,
+      "unit_name": "Mensuration",
+      "weightage": "10-15 marks",
+      "description": "Calculation-intensive with real-life cost applications. Often involves combined solids.",
+      "topics": {
+        "Mensuration": {
+          "enabled": true,
+          "full_name": "Mensuration (3D Solids)",
+          "keywords": [
+            "cylinder",
+            "cone",
+            "sphere",
+            "hemisphere",
+            "surface area",
+            "volume",
+            "curved surface",
+            "total surface",
+            "frustum",
+            "CSA",
+            "TSA",
+            "lateral surface"
+          ],
+          "subtopics": [
+            "Cylinder: CSA, TSA, Volume",
+            "Cone: CSA, TSA, Volume, Slant height",
+            "Sphere: Surface area, Volume",
+            "Hemisphere: CSA, TSA, Volume",
+            "Combination of solids",
+            "Conversion/Recasting problems (melting and reshaping)",
+            "Inner and outer volume (hollow objects)",
+            "Cost calculations (painting, material cost)"
+          ],
+          "key_concepts": [
+            "CSA = Curved Surface Area (without bases)",
+            "TSA = Total Surface Area (including bases)",
+            "Slant height of cone: l = √(r² + h²)",
+            "Volume remains constant in melting/recasting"
+          ],
+          "formulas": [
+            "Cylinder: CSA = 2πrh, TSA = 2πr(r+h), V = πr²h",
+            "Cone: CSA = πrl, TSA = πr(r+l), V = (1/3)πr²h, l = √(r²+h²)",
+            "Sphere: SA = 4πr², V = (4/3)πr³",
+            "Hemisphere: CSA = 2πr², TSA = 3πr², V = (2/3)πr³"
+          ],
+          "common_question_types": [
+            "Find CSA/TSA/Volume of single solid",
+            "Combined solids (cone on cylinder, hemisphere on cylinder)",
+            "Cost to paint/cover a solid",
+            "Melting solid and forming new shape",
+            "Water flow problems",
+            "Hollow cylinder/sphere (find material volume)"
+          ],
+          "edge_cases": [
+            "Frustum NOT included in ICSE",
+            "Unit conversions (cm³ to litres, etc.)"
+          ]
+        }
+      }
+    },
+    "5_Trigonometry": {
+      "enabled": true,
+      "unit_name": "Trigonometry",
+      "weightage": "12-18 marks",
+      "description": "High-scoring with identities and applications. Essential for physics and surveying.",
+      "topics": {
+        "Trigonometry": {
+          "enabled": true,
+          "full_name": "Trigonometry",
+          "keywords": [
+            "trigonometric",
+            "sin",
+            "cos",
+            "tan",
+            "cosec",
+            "sec",
+            "cot",
+            "identity",
+            "angle of elevation",
+            "angle of depression",
+            "heights and distances",
+            "complementary angles"
+          ],
+          "subtopics": [
+            "Trigonometric ratios of standard angles (0°, 30°, 45°, 60°, 90°)",
+            "Trigonometric identities",
+            "Proving identities",
+            "Complementary angle relations",
+            "Heights and Distances (single right triangle)",
+            "Angle of elevation",
+            "Angle of depression"
+          ],
+          "key_concepts": [
+            "sin²θ + cos²θ = 1",
+            "1 + tan²θ = sec²θ",
+            "1 + cot²θ = cosec²θ",
+            "sin(90°-θ) = cosθ, cos(90°-θ) = sinθ",
+            "tan(90°-θ) = cotθ",
+            "Angle of elevation: looking UP from horizontal",
+            "Angle of depression: looking DOWN from horizontal"
+          ],
+          "formulas": [
+            "sin²θ + cos²θ = 1",
+            "sec²θ - tan²θ = 1",
+            "cosec²θ - cot²θ = 1",
+            "tanθ = sinθ/cosθ",
+            "cotθ = cosθ/sinθ"
+          ],
+          "standard_values": {
+            "0°": {
+              "sin": 0,
+              "cos": 1,
+              "tan": 0
+            },
+            "30°": {
+              "sin": "1/2",
+              "cos": "√3/2",
+              "tan": "1/√3"
+            },
+            "45°": {
+              "sin": "1/√2",
+              "cos": "1/√2",
+              "tan": 1
+            },
+            "60°": {
+              "sin": "√3/2",
+              "cos": "1/2",
+              "tan": "√3"
+            },
+            "90°": {
+              "sin": 1,
+              "cos": 0,
+              "tan": "undefined"
+            }
+          },
+          "common_question_types": [
+            "Prove trigonometric identities",
+            "Find values using identities",
+            "Heights and distances problems",
+            "Find height of tower/building",
+            "Find distance from base"
+          ],
+          "edge_cases": [
+            "No multi-triangle cases in ICSE",
+            "Memorize standard values",
+            "Use mathematical tables allowed"
+          ]
+        }
+      }
+    },
+    "6_Statistics": {
+      "enabled": true,
+      "unit_name": "Statistics",
+      "weightage": "8-12 marks",
+      "description": "Graphical and interpretive focus. Often paired with Probability.",
+      "topics": {
+        "Statistics": {
+          "enabled": true,
+          "full_name": "Statistics",
+          "keywords": [
+            "mean",
+            "median",
+            "mode",
+            "histogram",
+            "ogive",
+            "frequency",
+            "cumulative frequency",
+            "class interval",
+            "grouped data",
+            "ungrouped",
+            "step deviation",
+            "assumed mean"
+          ],
+          "subtopics": [
+            "Mean for raw/ungrouped data",
+            "Mean for grouped data: Direct Method",
+            "Mean for grouped data: Assumed Mean Method",
+            "Mean for grouped data: Step Deviation Method",
+            "Median for grouped data",
+            "Mode from histogram",
+            "Histogram construction",
+            "Less-than Ogive (Cumulative Frequency Curve)",
+            "Median from Ogive",
+            "Quartiles from Ogive"
+          ],
+          "key_concepts": [
+            "Mean = Sum of observations / Number of observations",
+            "Median = middle value when arranged in order",
+            "Mode = most frequent value",
+            "Ogive: cumulative frequency vs upper class boundary",
+            "Median from Ogive: N/2 on y-axis, read x-value"
+          ],
+          "formulas": [
+            "Direct Method: Mean = Σfx / Σf",
+            "Assumed Mean: Mean = A + Σfd / Σf (d = x - A)",
+            "Step Deviation: Mean = A + (Σfu / Σf) × h (u = (x-A)/h)",
+            "Median = L + ((n/2 - cf) / f) × h"
+          ],
+          "common_question_types": [
+            "Calculate mean using any method",
+            "Draw histogram and find mode",
+            "Draw less-than ogive",
+            "Find median from ogive",
+            "Find inter-quartile range"
+          ],
+          "edge_cases": [
+            "Continuous vs discontinuous data (convert if needed)",
+            "Inter-quartile range"
+          ]
+        }
+      }
+    },
+    "7_Probability": {
+      "enabled": true,
+      "unit_name": "Probability",
+      "weightage": "Combined with Statistics",
+      "description": "Introductory and conceptual. Basic single-event probability only.",
+      "topics": {
+        "Probability": {
+          "enabled": true,
+          "full_name": "Probability",
+          "keywords": [
+            "probability",
+            "event",
+            "outcome",
+            "sample space",
+            "favourable outcomes",
+            "dice",
+            "cards",
+            "coins",
+            "complementary events",
+            "random"
+          ],
+          "subtopics": [
+            "Basic probability concept",
+            "Sample space and events",
+            "Probability of a single event",
+            "Complementary events: P(A) + P(A') = 1",
+            "Dice problems",
+            "Card problems (deck of 52)",
+            "Coin toss problems",
+            "Simple probability calculations"
+          ],
+          "key_concepts": [
+            "P(E) = Number of favorable outcomes / Total number of outcomes",
+            "0 ≤ P(E) ≤ 1",
+            "P(certain event) = 1",
+            "P(impossible event) = 0",
+            "P(A) + P(not A) = 1"
+          ],
+          "formulas": [
+            "P(E) = n(E) / n(S)",
+            "P(E') = 1 - P(E)"
+          ],
+          "common_question_types": [
+            "Probability with dice (sum, product, specific outcomes)",
+            "Probability with cards (suits, face cards, colors)",
+            "Probability with coins (heads, tails)",
+            "Word problems (selecting from a bag, etc.)"
+          ],
+          "edge_cases": [
+            "No compound events (AND, OR) in ICSE basic level",
+            "Cards: 52 cards, 4 suits, 13 each"
+          ],
+          "deck_reference": {
+            "total_cards": 52,
+            "suits": 4,
+            "cards_per_suit": 13,
+            "face_cards_per_suit": 3,
+            "total_face_cards": 12,
+            "red_cards": 26,
+            "black_cards": 26
+          }
+        }
+      }
+    }
+  },
+  "extraction_settings": {
+    "include_marks": true,
+    "include_question_number": true,
+    "include_sub_parts": true,
+    "include_difficulty": true,
+    "include_diagrams_note": true,
+    "output_format": "txt"
+  }
+}

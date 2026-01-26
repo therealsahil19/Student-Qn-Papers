@@ -1,0 +1,82 @@
+# ICSE Class 10 Math Question Extractor
+
+A Python framework for extracting questions from ICSE Class 10 Mathematics papers (2026 syllabus) based on user-specified topics.
+
+## Quick Start
+
+### 1. Install Dependencies
+```bash
+pip install PyMuPDF
+```
+
+### 2. Configure Topics
+Edit `topics_config.json` to enable/disable topics. The config includes all 7 units and 18+ topics with detailed formulas, keywords, and edge cases.
+
+### 3. Use the Framework
+```bash
+# View syllabus info
+python extractor.py --syllabus-info
+
+# List all units
+python extractor.py --list-units
+
+# List all topics (grouped by unit)
+python extractor.py --list-topics
+
+# Check dependencies
+python extractor.py --check
+
+# Enable/disable topics
+python extractor.py --enable-topic "Quadratic_Equations"
+python extractor.py --disable-topic "GST"
+
+# Generate AI extraction prompt
+python extractor.py --generate-prompt
+
+# Prepare PDF images for analysis
+python extractor.py --pdf "../ICSE 2024.pdf" --prepare-images ./images
+```
+
+## Output Format
+
+**Default output is TXT** - Questions are organized by Unit → Topic with:
+- Question number and marks
+- Full question text
+- Subtopic classification
+- Difficulty level
+- Source paper reference
+
+## Syllabus Coverage (ICSE 2026)
+
+| Unit | Topics | Weightage |
+|------|--------|-----------|
+| Commercial Mathematics | GST, Banking, Shares & Dividends | 8-12 marks |
+| Algebra | Inequations, Quadratic Eq, Ratio, Matrices, AP/GP, Coord Geometry | 20-25 marks |
+| Geometry | Similarity, Loci, Circles, Constructions | 15-20 marks |
+| Mensuration | Cylinder, Cone, Sphere, Combined Solids | 10-15 marks |
+| Trigonometry | Identities, Heights & Distances | 12-18 marks |
+| Statistics | Mean, Median, Histogram, Ogive | 8-12 marks |
+| Probability | Basic Probability, Dice, Cards, Coins | Combined |
+
+## Python API
+
+```python
+from extractor import QuestionExtractor
+
+extractor = QuestionExtractor()
+
+# Get enabled topics
+topics = extractor.topic_manager.get_enabled_topics()
+
+# Generate prompt for AI
+prompt = extractor.generate_extraction_prompt()
+
+# After AI extraction, parse results
+extractor.add_questions_from_json(ai_response, source_paper="ICSE 2024")
+
+# Save to TXT (default)
+extractor.save_results("question_bank.txt", format="txt")
+
+# Or save to JSON/Markdown
+extractor.save_results("output.json", format="json")
+```
