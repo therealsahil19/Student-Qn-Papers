@@ -1,6 +1,6 @@
 # 📖 Future Extraction Guide
 
-This guide explains how to continue extracting Commercial Mathematics questions when you add more PDF papers to the project.
+This guide explains how to continue extracting questions across all ICSE Class 10 Mathematics topics (Commercial Math, Algebra, Geometry, etc.) when you add more PDF papers to the project.
 
 ## Directory Overview
 
@@ -8,70 +8,72 @@ This guide explains how to continue extracting Commercial Mathematics questions 
 - `/question_extractor/` : Core workspace for extraction.
     - `/images/` : Subdirectories for each paper containing page images.
     - `extractor.py` : Tool for PDF conversion and prompt generation.
-    - `update_summary.py` : Utility to recount and update the summary.
-    - `Commercial_Math_Questions.txt` : The final question bank.
+    - `update_summary.py` : Utility to recount and update the summary headers/tables.
+    - `Commercial_Math_Questions.txt` : Question bank for GST, Banking, Shares.
+    - `Algebra_Questions.txt` : Question bank for Inequations, Quadratics, Factorisation.
+    - `AP_GP_Matrices_Probability_Questions.txt` : Combined question bank for specific Algebra units.
 
 ---
 
 ## 🚀 Step-by-Step Workflow
 
 ### 1. Prepare New PDFs
-1. Place your new PDF files in the root folder (or wherever you prefer).
+1. Place your new PDF files in the root folder.
 2. Open a terminal in the `question_extractor` directory.
 3. Run the following command to convert the PDF to images for analysis:
    ```powershell
    python extractor.py --pdf "../Path/To/Your/NewPaper.pdf" --prepare-images "./images/PaperName_Folder"
    ```
-   *Note: Replace `Path/To/Your/NewPaper.pdf` and `PaperName_Folder` with actual names.*
 
-### 2. Visual Analysis
-1. Open the folder you created in `./images/PaperName_Folder`.
-2. Look through the images for questions matching:
-   - **GST** (Tax, Invoice, CGST/SGST)
-   - **Banking** (Recurring Deposit, Interest, Maturity)
-   - **Shares & Dividends** (Premium, Discount, Dividend Yield)
-
-### 3. Extract & Add Questions
-1. When you find a question, copy the format used in `Commercial_Math_Questions.txt`.
-2. Open `Commercial_Math_Questions.txt`.
-3. Locate the appropriate section (Banking, GST, or Shares).
-4. Append the new question at the end of that section.
-   - **Tip**: Follow the existing format exactly:
-     ```
-     Q[Num] [[Marks]] (Difficulty) 
-
-         [Exact Question Text]
-         Subtopic: [Specific Type]
-         [Source: Name Of Paper]
-
-         ----------------------------------------
-     ```
-
-### 4. Update Summaries
-Instead of manually updating the "Number of Questions" headers and the bottom Summary table, just run the helper script:
+### 2. Identify Target Topics
+Determine which questions you want to extract. You can enable specific topics in `topics_config.json` or use the command line:
 ```powershell
-python update_summary.py
+# List all topics to see their status
+python extractor.py --list-topics
+```
+
+### 3. Visual Analysis & AI Extraction
+1. Open the folder you created in `./images/PaperName_Folder`.
+2. Use an AI assistant to help extract questions. Generate a tailored prompt:
+   ```powershell
+   python extractor.py --generate-prompt
+   ```
+3. Paste this prompt and the images into your AI tool.
+
+### 4. Append Questions to Bank
+1. Copy the JSON/Text output from the AI.
+2. Open the relevant question bank file (e.g., `Algebra_Questions.txt`).
+3. Append the new questions to the end of the appropriate topic sections.
+4. **Tip**: Ensure you follow the file format exactly:
+   ```
+   Q[Num] [[Marks]] (Difficulty) 
+   
+       [Exact Question Text]
+       Subtopic: [Specific Type]
+       [Source: Name Of Paper]
+       
+       ----------------------------------------
+   ```
+
+### 5. Update Summaries
+Instead of manually updating the "Number of Questions" headers and the bottom Summary table, run the helper script:
+```powershell
+# Update specific files
+python update_summary.py "Algebra_Questions.txt" "AP_GP_Matrices_Probability_Questions.txt"
+
+# Or update all known files
+python update_summary.py *.txt
 ```
 This script will:
-- Scan the entire file.
+- Scan the entire file for "Topic: ..." headers and question markers.
 - Correct the question counts for each category.
-- Update the "Total questions" in the header.
-- Refresh the SUMMARY table at the bottom.
-- Update the "Extracted at" timestamp.
+- Update the "Total questions" and "Last Updated" timestamps.
+- Refresh the SUMMARY/CUMULATIVE SUMMARY table at the bottom.
 
 ---
 
 ## 🛠️ Troubleshooting
 
 - **PDF conversion fails?** Ensure `PyMuPDF` is installed (`pip install PyMuPDF`).
-- **Images are blurry?** You can increase DPI in `pdf_processor.py` (default is 200).
-- **Summary script errors?** make sure you haven't deleted the "Topic: ..." headers or the "SUMMARY" section markers, as the script relies on them.
-
----
-
-## 💡 Pro Tip for AI Analysis
-If you are using an AI to help you extract (like me), you can generate a tailored prompt for it using:
-```powershell
-python extractor.py --generate-prompt
-```
-This will output a detailed instruction block based on your `topics_config.json` that you can paste into your chat with an AI.
+- **Summary script errors?** Keep the headers formatted as `Topic: [Name]` and the question markers as `Q[Num]`. Do not delete the `SUMMARY` or `CUMULATIVE SUMMARY` markers at the bottom.
+- **Wrong counts?** The script counts lines starting with `Q` followed by a digit or letter. Ensure your question numbers follow this pattern.

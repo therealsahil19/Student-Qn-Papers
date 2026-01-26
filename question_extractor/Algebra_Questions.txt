@@ -891,7 +891,7 @@ Q5(ii) [3 marks] (medium)
 
 --------------------------------------------------
 Topic: Quadratic Equations
-Number of Questions: 76
+Number of Questions: 75
 --------------------------------------------------
 
 Q5(a) [3 marks] (medium)
@@ -1519,8 +1519,8 @@ Q9(ii) [4 marks] (medium)
 ======================================================================
 SUMMARY
 ======================================================================
-  Factorisation: 56 questions
+  Factorisation (Remainder & Factor Theorem): 56 questions
   Linear Inequations: 44 questions
-  Quadratic Equations: 76 questions
-  Total questions: 176
+  Quadratic Equations: 75 questions
+  Total questions: 175
 ======================================================================
