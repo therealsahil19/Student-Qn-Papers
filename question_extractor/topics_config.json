@@ -547,6 +547,12 @@
             "Find unknown lengths using similarity",
             "Apply BPT to find segment lengths",
             "Compare areas of similar triangles"
+          ],
+          "figure_types": [
+            "similar_triangles",
+            "bpt_triangle",
+            "congruent_triangles",
+            "triangle_properties"
           ]
         },
         "Loci": {
@@ -582,6 +588,10 @@
             "Construct locus satisfying given conditions",
             "Find intersection of multiple loci",
             "Locate point satisfying multiple conditions"
+          ],
+          "figure_types": [
+            "construction_locus",
+            "coordinate_points"
           ]
         },
         "Circles": {
@@ -633,6 +643,14 @@
             "Apply tangent properties",
             "Use alternate segment theorem",
             "Prove chord/tangent relationships"
+          ],
+          "figure_types": [
+            "circle_inscribed_angle",
+            "circle_tangent",
+            "circle_chord",
+            "circle_secant",
+            "cyclic_quadrilateral",
+            "alternate_segment"
           ]
         },
         "Constructions": {
@@ -664,6 +682,11 @@
             "Construct tangents from external point",
             "Construct circumcircle/incircle",
             "Construct triangle from given data and draw circles"
+          ],
+          "figure_types": [
+            "construction_tangent",
+            "construction_circumcircle",
+            "construction_incircle"
           ]
         }
       }

@@ -77,3 +77,125 @@ This script will:
 - **PDF conversion fails?** Ensure `PyMuPDF` is installed (`pip install PyMuPDF`).
 - **Summary script errors?** Keep the headers formatted as `Topic: [Name]` and the question markers as `Q[Num]`. Do not delete the `SUMMARY` or `CUMULATIVE SUMMARY` markers at the bottom.
 - **Wrong counts?** The script counts lines starting with `Q` followed by a digit or letter. Ensure your question numbers follow this pattern.
+
+---
+
+## 📐 Geometry Question Extraction
+
+Geometry questions require special handling for **figures/diagrams**. Use the `[FIGURE]` block format to capture geometric information.
+
+### Figure Block Format
+
+```
+Q5 [4 marks] (medium)
+
+    In the given figure, O is the center of the circle. PT is a tangent at T.
+    If ∠TAB = 32°, find: (i) ∠TPA (ii) ∠TBA
+    
+    [FIGURE]
+    type: circle_tangent
+    description: |
+        Circle with center O. Points A, T, B on the circle.
+        PT is tangent at T, with P external to circle.
+        Angle TAB = 32° (marked).
+    elements:
+      - circle: {center: O, points: [A, T, B]}
+      - tangent: {circle: O, point: T, external_point: P}
+    given_values:
+      TAB: "32°"
+    find_values: [TPA, TBA]
+    [/FIGURE]
+    
+    Subtopic: Alternate Segment Theorem
+    [Source: ICSE 2024]
+```
+
+### Supported Figure Types
+
+| Type | Description |
+|------|-------------|
+| `bpt_triangle` | Basic Proportionality Theorem triangles |
+| `similar_triangles` | Similarity proofs and calculations |
+| `circle_tangent` | Tangent from external point, tangent properties |
+| `circle_chord` | Intersecting chords, chord properties |
+| `cyclic_quadrilateral` | Cyclic quads with angle properties |
+| `alternate_segment` | Alternate segment theorem |
+| `construction_locus` | Locus constructions |
+| `construction_tangent` | Tangent construction from external point |
+| `construction_circumcircle` | Circumcircle construction |
+| `construction_incircle` | Incircle construction |
+
+### Minimal Format (Description Only)
+
+For simpler extraction, you can use just a description:
+
+```
+[FIGURE]
+type: circle_theorem
+description: |
+    Circle with center O. Triangle ABC inscribed in circle.
+    Angle BAC = 50° marked. Find angle BOC.
+[/FIGURE]
+```
+
+See `Geometry_Questions_Template.txt` for complete examples of all figure types.
+
+---
+
+## 📄 Paper Generation
+
+Generate formatted exam papers (PDF/Word) from your question banks.
+
+### Basic Usage
+
+```powershell
+# Generate PDF from question bank
+python paper_generator.py --input Geometry_Questions.txt --output exam.pdf
+
+# Generate with specific topics
+python paper_generator.py --input Geometry_Questions.txt --topics "Circles,Similarity" --output geo_paper.pdf
+
+# Generate Word document
+python paper_generator.py --input Geometry_Questions.txt --output exam.docx --format docx
+```
+
+### Required Dependencies
+
+```powershell
+pip install matplotlib reportlab python-docx PyYAML
+```
+
+### Features
+- Automatic section distribution (MCQs in Section A, long answers in Section B)
+- Figure rendering from `[FIGURE]` blocks
+- ICSE exam format with instructions
+- Customizable title, marks, and topics
+
+---
+
+## 📁 New Files Reference
+
+| File | Purpose |
+|------|---------|
+| `geometry_schema.py` | Figure type definitions and [FIGURE] block parser |
+| `figure_renderer.py` | Matplotlib-based geometry figure rendering |
+| `paper_generator.py` | PDF/Word exam paper generation |
+| `Geometry_Questions_Template.txt` | Template with geometry figure examples |
+
+---
+
+## 🧪 Testing Figure Rendering
+
+Test the figure rendering system:
+
+```powershell
+# Test geometry schema parsing
+python geometry_schema.py
+
+# Test figure rendering (creates test_figures/ folder)
+python figure_renderer.py --test
+
+# Check paper generator dependencies
+python paper_generator.py --check-deps
+```
+

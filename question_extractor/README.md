@@ -102,3 +102,109 @@ extractor.save_results("output.json", format="json")
 ```bash
 python update_summary.py [file1.txt] [file2.txt] ...
 ```
+
+---
+
+## 📐 Geometry Figure Support
+
+Geometry questions can include `[FIGURE]` blocks to capture diagram information for rendering.
+
+### Figure Block Syntax
+
+```
+[FIGURE]
+type: circle_tangent
+description: |
+    Circle with center O. PT is tangent at T.
+    Angle TAB = 32° marked.
+elements:
+  - circle: {center: O, points: [A, T, B]}
+  - tangent: {circle: O, point: T, external_point: P}
+given_values:
+  TAB: "32°"
+find_values: [TPA, TBA]
+[/FIGURE]
+```
+
+### Supported Figure Types
+
+- `bpt_triangle` - Basic Proportionality Theorem
+- `similar_triangles` - Similarity proofs
+- `circle_tangent` - Tangent problems
+- `circle_chord` - Intersecting chords
+- `cyclic_quadrilateral` - Cyclic quad properties
+- `alternate_segment` - Alternate segment theorem
+- `construction_*` - Various constructions
+
+See `Geometry_Questions_Template.txt` for complete examples.
+
+---
+
+## 📄 Exam Paper Generator
+
+Generate formatted exam papers (PDF/Word) from question banks with automatic figure rendering.
+
+### Installation
+
+```bash
+pip install matplotlib reportlab python-docx PyYAML
+```
+
+### Usage
+
+```bash
+# Generate PDF
+python paper_generator.py --input Geometry_Questions.txt --output exam.pdf
+
+# Generate with specific topics
+python paper_generator.py --input Geometry_Questions.txt --topics "Circles,Similarity" --output geo.pdf
+
+# Generate Word document
+python paper_generator.py --input Geometry_Questions.txt --output exam.docx --format docx
+
+# Check dependencies
+python paper_generator.py --check-deps
+```
+
+### Features
+
+- ✅ Auto-selects questions for Section A (MCQs) and Section B (long answer)
+- ✅ Renders geometry figures from `[FIGURE]` blocks
+- ✅ ICSE exam format with standard instructions
+- ✅ Customizable title, marks, topics, and duration
+- ✅ PDF and Word output formats
+
+---
+
+## 🧪 Testing
+
+```bash
+# Test geometry schema parsing
+python geometry_schema.py
+
+# Test figure rendering
+python figure_renderer.py --test
+
+# Check all dependencies
+python paper_generator.py --check-deps
+```
+
+---
+
+## 📁 File Structure
+
+```
+question_extractor/
+├── extractor.py              # Main extraction framework
+├── topics_config.json        # Topic configuration
+├── update_summary.py         # Question count updater
+├── geometry_schema.py        # Figure type definitions & parser
+├── figure_renderer.py        # Matplotlib figure rendering
+├── paper_generator.py        # PDF/Word paper generation
+├── Algebra_Questions.txt     # Algebra question bank
+├── AP_GP_Matrices_Probability_Questions.txt
+├── Geometry_Questions_Template.txt  # Geometry format examples
+├── FUTURE_EXTRACTION_GUIDE.md
+└── README.md
+```
+
