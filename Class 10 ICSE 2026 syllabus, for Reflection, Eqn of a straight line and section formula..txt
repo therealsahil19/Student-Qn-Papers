@@ -1,0 +1,108 @@
+### ICSE Class 10 Mathematics Syllabus 2026: Coordinate Geometry Topics
+
+The **Council for the Indian School Certificate Examinations (CISCE)** prescribes the syllabus for ICSE Class 10 Mathematics examinations in 2026 (corresponding to the academic session 2025-26). These topics—**Reflection**, **Section Formula** (including Midpoint Formula), and **Equation of a Straight Line**—fall under **Unit 2: Algebra**, specifically subsection (vii) **Coordinate Geometry**.
+
+This unit builds foundational skills in plotting points, transformations, and linear relationships in the Cartesian plane. It emphasizes geometric interpretations, formula applications, and problem-solving (e.g., finding images, dividing segments, or determining line equations). The syllabus focuses on internal division only for section formula, basic forms of line equations, and conditions for parallelism/perpendicularity. Below, each topic is detailed with exact syllabus points, followed by expansions including key concepts, derivations, examples, nuances, edge cases, and implications.
+
+#### 1. Reflection
+**Syllabus Points** (Exact from CISCE Guidelines):
+- Reflection of a point in a line: x=0 (y-axis), y=0 (x-axis), x=a, y=a, and the origin.
+- Invariant points (points unchanged under reflection).
+
+**Expansion and Key Concepts**:
+Reflection is a transformation that maps a point to its mirror image across a line (the mirror line or axis of reflection). The mirror line is the perpendicular bisector of the segment joining a point and its image.
+
+- **Core Rules for Finding Images**:
+  - Reflection in x-axis (y=0): (x, y) → (x, -y) — sign of y-coordinate flips.
+  - Reflection in y-axis (x=0): (x, y) → (-x, y) — sign of x-coordinate flips.
+  - Reflection in origin (0,0): (x, y) → (-x, -y) — both signs flip (equivalent to 180° rotation).
+  - Reflection in line x=a: (x, y) → (2a - x, y) — distance to line preserved symmetrically.
+  - Reflection in line y=a: (x, y) → (x, 2a - y).
+
+- **Invariant Points**: Points lying on the mirror line itself, e.g., all points on x=0 are invariant under reflection in y-axis.
+
+**Examples**:
+- Reflection of (3, 4) in x-axis: (3, -4).
+- Reflection of (2, 5) in x=3: (2*3 - 2, 5) = (4, 5).
+- Invariant point on y=4: e.g., (1, 4) → (1, 4).
+
+**Nuances and Edge Cases**:
+- Multiple reflections (e.g., x-axis followed by y-axis) equivalent to rotation by 180° about origin.
+- Graph plotting often required to visualize symmetry.
+- Edge case: Reflection in origin twice returns original point (identity transformation).
+- Implication: Essential for understanding symmetry in geometry; applies to loci, constructions, and real-world mirrors/optics.
+
+#### 2. Section Formula and Midpoint Formula
+**Syllabus Points**:
+- Coordinates expressed as (x, y).
+- Section formula (internal section only).
+- Midpoint formula.
+- Coordinates of the centroid of a triangle.
+
+**Expansion and Key Concepts**:
+These formulas find points dividing line segments or related positions.
+
+- **Section Formula (Internal Division)**: Point P dividing join of A(x₁, y₁) and B(x₂, y₂) in ratio m:n (m parts to B, n parts to A):
+  \[
+  P = \left( \frac{m x_2 + n x_1}{m + n}, \frac{m y_2 + n y_1}{m + n} \right)
+  \]
+  Derived from weighted average, considering distances proportional to ratio.
+
+- **Midpoint Formula**: Special case of m:n = 1:1:
+  \[
+  M = \left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right)
+  \]
+
+- **Centroid of a Triangle**: Point where medians intersect; coordinates are average of vertices G(x, y) for triangle with vertices (x₁,y₁), (x₂,y₂), (x₃,y₃):
+  \[
+  G = \left( \frac{x_1 + x_2 + x_3}{3}, \frac{y_1 + y_2 + y_3}{3} \right)
+  \]
+  (Derived by applying midpoint formula to medians.)
+
+**Examples**:
+- Point dividing (1, 2) and (5, 8) in 2:3:  
+  x = (2·5 + 3·1)/(2+3) = 13/5; y = (2·8 + 3·2)/5 = 22/5 → (13/5, 22/5).
+- Midpoint of above: ((1+5)/2, (2+8)/2) = (3, 5).
+- Centroid of triangle (0,0), (6,0), (0,8): (2, 8/3).
+
+**Nuances and Edge Cases**:
+- Internal only → ratio m:n where m, n > 0; point lies between endpoints.
+- External division (negative ratio) excluded.
+- If m:n = 0:∞, approaches endpoint (edge case, not tested).
+- Implication: Crucial for proving concurrency of medians, area divisions, and applications in physics (center of mass).
+
+#### 3. Equation of a Straight Line
+**Syllabus Points**:
+- Concept of slope (m).
+- Various forms: Slope-intercept form (y = mx + c), Two-point form.
+- Geometric understanding of m (as tan θ, where θ is angle with positive x-axis) and c (y-intercept).
+- Equations of axes and lines parallel to axes.
+- Conditions for parallelism (same slope) and perpendicularity (m₁ m₂ = -1).
+
+**Expansion and Key Concepts**:
+A straight line's equation relates x and y linearly.
+
+- **Slope (m)**: m = (y₂ - y₁)/(x₂ - x₁) = tan θ.
+
+- **Forms**:
+  - Slope-intercept: y = mx + c (c is y-intercept).
+  - Point-slope: y - y₁ = m(x - x₁).
+  - Two-point: Derived from slope between points.
+  - General: ax + by + c = 0 (intercept forms included implicitly).
+  - Axes: x=0 (y-axis), y=0 (x-axis); parallel: x=k, y=k.
+
+- **Parallel/Perpendicular**: Same m → parallel; m₁ m₂ = -1 → perpendicular (undefined for vertical/horizontal).
+
+**Examples**:
+- Line through (1,2) with m=3: y - 2 = 3(x - 1) → y = 3x -1.
+- Through (0,0) and (4,5): m=5/4; y = (5/4)x.
+- Parallel to y=2x+1 with intercept 3: y=2x+3.
+- Perpendicular to m= -2: m=1/2.
+
+**Nuances and Edge Cases**:
+- Vertical line: x=k (slope undefined).
+- Horizontal: y=k (m=0).
+- Collinearity: Three points on line if slopes equal.
+- Implication: Foundation for graphing, solving simultaneous equations (intersections), distance formulas; extends to conic sections in higher classes.
+
+These topics integrate algebra with geometry, promoting visual and analytical skills. Practice with graph paper is recommended for reflections and lines. Simple applications include finding images, dividing segments in ratios, or determining line properties in triangles/circles. For the full syllabus, refer to official CISCE resources.
