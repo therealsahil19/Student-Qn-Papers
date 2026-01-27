@@ -184,6 +184,7 @@ class QuestionExtractor:
         self.topic_manager = TopicManager(config_path)
         self.pdf_processor = PDFProcessor() if PDFProcessor else None
         self.extracted_questions: List[ExtractedQuestion] = []
+        self._existing_signatures = set()  # Set of (question_number, source_paper) for fast lookup
         self.processed_pages: Dict[str, List[int]] = {}  # Track processed pages per paper
     
     def check_dependencies(self) -> dict:
@@ -439,10 +440,9 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
     def add_question(self, question: ExtractedQuestion):
         """Add an extracted question to the collection."""
         # Check for duplicates based on question number and source
-        existing = [q for q in self.extracted_questions 
-                   if q.question_number == question.question_number 
-                   and q.source_paper == question.source_paper]
-        if not existing:
+        signature = (question.question_number, question.source_paper)
+        if signature not in self._existing_signatures:
+            self._existing_signatures.add(signature)
             self.extracted_questions.append(question)
     
     def add_questions_from_json(
@@ -664,6 +664,7 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
     def clear_questions(self):
         """Clear all extracted questions."""
         self.extracted_questions = []
+        self._existing_signatures = set()
         self.processed_pages = {}
 
 
