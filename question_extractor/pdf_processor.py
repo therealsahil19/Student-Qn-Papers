@@ -5,9 +5,10 @@ Handles PDF to image conversion for visual analysis.
 
 import os
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Any
 import base64
 from dataclasses import dataclass
+import concurrent.futures
 
 
 @dataclass
@@ -18,6 +19,48 @@ class PDFPage:
     image_base64: Optional[str] = None
     width: int = 0
     height: int = 0
+
+
+def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optional[PDFPage]:
+    """
+    Helper function to process a single page in a separate process.
+    Must be at module level to be pickleable.
+    """
+    pdf_path, page_num, dpi, output_format, output_dir = args
+    import fitz
+
+    # Re-open document in this process
+    doc = fitz.open(str(pdf_path))
+
+    if page_num < 1 or page_num > len(doc):
+        doc.close()
+        return None
+
+    page = doc[page_num - 1]  # 0-indexed
+
+    # Calculate zoom for desired DPI (default PDF is 72 DPI)
+    zoom = dpi / 72
+    matrix = fitz.Matrix(zoom, zoom)
+
+    pix = page.get_pixmap(matrix=matrix)
+
+    pdf_page = PDFPage(
+        page_number=page_num,
+        width=pix.width,
+        height=pix.height
+    )
+
+    if output_dir:
+        image_path = output_dir / f"page_{page_num:03d}.{output_format}"
+        pix.save(str(image_path))
+        pdf_page.image_path = str(image_path)
+    else:
+        # Return as base64
+        img_bytes = pix.tobytes(output_format)
+        pdf_page.image_base64 = base64.b64encode(img_bytes).decode('utf-8')
+
+    doc.close()
+    return pdf_page
 
 
 class PDFProcessor:
@@ -126,41 +169,35 @@ Option 2: pdf2image (Requires Poppler)
         """Convert using PyMuPDF."""
         import fitz
         
-        result = []
+        # Get page count first to determine range
         doc = fitz.open(str(pdf_path))
-        
-        page_numbers = pages if pages else range(1, len(doc) + 1)
-        
-        for page_num in page_numbers:
-            if page_num < 1 or page_num > len(doc):
-                continue
-                
-            page = doc[page_num - 1]  # 0-indexed
-            
-            # Calculate zoom for desired DPI (default PDF is 72 DPI)
-            zoom = self.dpi / 72
-            matrix = fitz.Matrix(zoom, zoom)
-            
-            pix = page.get_pixmap(matrix=matrix)
-            
-            pdf_page = PDFPage(
-                page_number=page_num,
-                width=pix.width,
-                height=pix.height
-            )
-            
-            if output_dir:
-                image_path = output_dir / f"page_{page_num:03d}.{self.output_format}"
-                pix.save(str(image_path))
-                pdf_page.image_path = str(image_path)
-            else:
-                # Return as base64
-                img_bytes = pix.tobytes(self.output_format)
-                pdf_page.image_base64 = base64.b64encode(img_bytes).decode('utf-8')
-            
-            result.append(pdf_page)
-        
+        total_pages = len(doc)
         doc.close()
+        
+        page_numbers = list(pages) if pages else range(1, total_pages + 1)
+        valid_page_numbers = [p for p in page_numbers if 1 <= p <= total_pages]
+        
+        # Prepare arguments for each task
+        tasks = []
+        for page_num in valid_page_numbers:
+            tasks.append((
+                str(pdf_path),
+                page_num,
+                self.dpi,
+                self.output_format,
+                output_dir
+            ))
+            
+        result = []
+        # Use ProcessPoolExecutor for parallel processing
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            # Map returns results in order
+            results = executor.map(_process_page_task, tasks)
+            
+            for res in results:
+                if res:
+                    result.append(res)
+
         return result
     
     def _convert_with_pdf2image(
