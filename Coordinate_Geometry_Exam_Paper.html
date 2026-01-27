@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinate Geometry - Practice Exam Paper</title>
+    <style>
+        @media print {
+            @page {
+                margin: 10mm;
+                size: A4;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 11pt;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10mm;
+            line-height: 1.3;
+            background: white;
+            color: #000;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 16pt;
+            margin: 5px 0;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 13pt;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 11pt;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .header-info {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 10pt;
+            border-bottom: 1px double #000;
+            padding-bottom: 5px;
+        }
+
+        /* Compact instructions */
+        .instructions {
+            display: none;
+        }
+
+        .question {
+            margin: 8px 0;
+            padding: 0;
+            page-break-inside: avoid;
+        }
+
+        .marks {
+            float: right;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .options {
+            margin-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .options p {
+            margin: 2px 0;
+        }
+
+        .figure-container {
+            margin: 10px auto;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 5px;
+            break-inside: avoid;
+        }
+
+        svg {
+            background: white;
+            max-height: 250px;
+            /* Limit height to save space */
+            width: auto;
+        }
+
+        .grid-line {
+            stroke: #e0e0e0;
+            stroke-width: 0.5;
+        }
+
+        .axis {
+            stroke: #000;
+            stroke-width: 1.0;
+        }
+
+        .point {
+            fill: #000;
+        }
+
+        .point-label {
+            font-size: 10px;
+            font-weight: bold;
+            fill: #000;
+        }
+
+        .line-segment {
+            stroke: #000;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .dashed-line {
+            stroke: #666;
+            stroke-width: 1;
+            stroke-dasharray: 4, 4;
+        }
+
+        p {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>COORDINATE GEOMETRY</h1>
+    <h1 style="font-size: 16pt; margin-top: 0;">Practice Exam Paper</h1>
+
+    <div class="header-info">
+        <p><strong>Total Marks: 80</strong> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <strong>Time: 2 Hours</strong></p>
+    </div>
+
+
+
+    <h2>SECTION A (10 Marks)</h2>
+    <p><em>(Attempt all questions. Each question carries 1 mark.)</em></p>
+
+    <p><strong>Question 1.</strong> Choose the correct answer from the options given below:</p>
+
+    <div class="question">
+        <p><strong>(i)</strong> ASSERTION (A): Line x = 3 is perpendicular to the x-axis.<br>
+            REASON (R): Any line parallel to the y-axis is perpendicular to the x-axis.</p>
+        <div class="options">
+            <p>(a) Both A and R are true and R is the correct explanation of A.</p>
+            <p>(b) Both A and R are true but R is not the correct explanation of A.</p>
+            <p>(c) A is true but R is false.</p>
+            <p>(d) A is false but R is true.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(ii)</strong> The inclination of line with equation √2x − √6y − 3 = 0 is:</p>
+        <div class="options">
+            <p>(a) 30° &nbsp;&nbsp;&nbsp; (b) 45° &nbsp;&nbsp;&nbsp; (c) 60° &nbsp;&nbsp;&nbsp; (d) 90°</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(iii)</strong> Points A(x, y), B(3, −2) and C(4, −5) are collinear. The value of y in terms of x is:
+        </p>
+        <div class="options">
+            <p>(a) 3x − 11 &nbsp;&nbsp;&nbsp; (b) 11 − 3x &nbsp;&nbsp;&nbsp; (c) 3x − 7 &nbsp;&nbsp;&nbsp; (d) 7 − 3x
+            </p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(iv)</strong> Statement 1: The point which is equidistant from three non-collinear points D, E and F
+            is the circumcentre of the ΔDEF.<br>
+            Statement 2: The incentre of a triangle is the point where the bisector of the angles intersects.</p>
+        <div class="options">
+            <p>(a) Both the statements are true.</p>
+            <p>(b) Both the statements are false.</p>
+            <p>(c) Statement 1 is true, and Statement 2 is false.</p>
+            <p>(d) Statement 1 is false, and Statement 2 is true.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(v)</strong> Assertion: Point A is reflected in y-axis to get point B, which is reflected in origin
+            to get point C and Point C is reflected in y = 0 to get point P.<br>
+            Reason: The point which will coincide with point P will be Point A.</p>
+        <div class="options">
+            <p>(a) Both Assertion and Reason are true and Reason is the correct explanation of Assertion.</p>
+            <p>(b) Both Assertion and Reason are true but Reason is not the correct explanation of Assertion.</p>
+            <p>(c) Assertion is true but Reason is false.</p>
+            <p>(d) Assertion is false but Reason is true.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(vi)</strong> Assertion(A): The point (−2, 8) is invariant under reflection in line x = −2.<br>
+            Reason(R): If a point has its x-coordinate 0, it is invariant under reflection in both axes.</p>
+        <div class="options">
+            <p>(a) Both A and R are correct, and R is the correct explanation for A.</p>
+            <p>(b) Both A and R are correct, and R is not the correct explanation for A.</p>
+            <p>(c) A is true, but R is false.</p>
+            <p>(d) Both A and R are true.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(vii)</strong> Which of the following equation represents a line equally inclined to the axes?</p>
+        <div class="options">
+            <p>(a) 2x − 3y + 7 = 0 &nbsp;&nbsp;&nbsp; (b) x − y = 7 &nbsp;&nbsp;&nbsp; (c) x = 7 &nbsp;&nbsp;&nbsp; (d)
+                y = −7</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(viii)</strong> Assertion: The points A(−1, 0), B(3, 1), C(2, 2) and D(−2, 1) are vertices of a
+            parallelogram.<br>
+            Reason: The co-ordinates of midpoint of both the diagonals AC and BD are (½, 1).</p>
+        <div class="options">
+            <p>(a) Both Assertion and Reason are false.</p>
+            <p>(b) Assertion is true but Reason is false.</p>
+            <p>(c) Both Assertion and Reason are true but Reason is not the correct explanation of Assertion.</p>
+            <p>(d) Both Assertion and Reason are true and Reason is the correct explanation of assertion.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(ix)</strong> Which of the following is the slope of a line perpendicular to AB if A(−3, 2) and B(6,
+            8)?</p>
+        <div class="options">
+            <p>(a) 3/2 &nbsp;&nbsp;&nbsp; (b) −3/2 &nbsp;&nbsp;&nbsp; (c) −2/3 &nbsp;&nbsp;&nbsp; (d) 2/3</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><strong>(x)</strong> The reflection of point (3, −5) in the line x = m is point (−5, −5), the value of m is:
+        </p>
+        <div class="options">
+            <p>(a) 3 &nbsp;&nbsp;&nbsp; (b) −5 &nbsp;&nbsp;&nbsp; (c) −1 &nbsp;&nbsp;&nbsp; (d) 4</p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>SECTION B (30 Marks)</h2>
+    <p><em>(Attempt any twelve questions from this section.)</em></p>
+
+    <h3>2-Mark Questions (6 Questions × 2 Marks = 12 Marks)</h3>
+
+    <div class="question">
+        <p><strong>Question 2.</strong> <span class="marks">[2]</span><br>
+            Find the ratio in which the x-axis divides internally the line joining points A(6, −4) and B(−3, 8).</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 3.</strong> <span class="marks">[2]</span><br>
+            Find the equation of the perpendicular dropped from the point P(−1, 2) onto the line joining A(1, 4) and
+            B(2, 3).</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 4.</strong> <span class="marks">[2]</span><br>
+            If the midpoint of the line segment joining the points A(a/3, 4) and B(−2, 2b) is (−1, 1), then find the
+            values of a and b.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 5.</strong> <span class="marks">[2]</span><br>
+            Point M(2, b) is the mid-point of the line segment joining points P(a, 7) and Q(6, 5). Find the values of
+            'a' and 'b'.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 6.</strong> <span class="marks">[2]</span><br>
+            Reflect the point P(2, −3) in:<br>
+            (a) the x-axis to get the image P'<br>
+            (b) the y-axis to get the image P''<br>
+            Write the coordinates of P' and P''.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 7.</strong> <span class="marks">[2]</span><br>
+            If two lines are perpendicular, find the value of 'a' if the lines are 7y = ax + 4 and 2y = 3 − x.</p>
+    </div>
+
+    <h3>3-Mark Questions (6 Questions × 3 Marks = 18 Marks)</h3>
+
+    <div class="question">
+        <p><strong>Question 8.</strong> <span class="marks">[3]</span><br>
+            M and N are two points on the X-axis and Y-axis respectively. P(3, 2) divides the line segment MN in the
+            ratio 2:3. Find:<br>
+            (i) The coordinates of M and N<br>
+            (ii) Slope of the line MN.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 9.</strong> <span class="marks">[3]</span><br>
+            The vertices of a ΔABC are A(3, 8), B(−1, 2) and C(6, −6). Find:<br>
+            (i) Slope of BC.<br>
+            (ii) Equation of a line perpendicular to BC and passing through A.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 10.</strong> <span class="marks">[3]</span><br>
+            In an isosceles ΔPQR the co-ordinate of the centroid G is (5, −4). PS is the altitude from vertex P and the
+            co-ordinates of S are (3, 2). Find:<br>
+            (a) the co-ordinates of P.<br>
+            (b) the equation of the line QR.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 11.</strong> <span class="marks">[3]</span><br>
+            Find a if A(2a + 2, 3), B(7, 4) and C(2a + 5, 2) are collinear.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 12.</strong> <span class="marks">[3]</span><br>
+            Point P(a, b) is reflected in the x-axis to get P'(5, −2).<br>
+            (i) Write the values of a and b.<br>
+            (ii) P'' is the image of P when reflected in the y-axis. Write the co-ordinates of P''.<br>
+            (iii) Name a single transformation that maps P' to P''.</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 13.</strong> <span class="marks">[3]</span><br>
+            ABCD is a square where B(1, 3), D(3, 2) are the end points of the diagonal BD. Find:<br>
+            (a) the coordinates of point of intersection of the diagonals AC and BD<br>
+            (b) the equation of the diagonal AC</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>SECTION C (40 Marks)</h2>
+    <p><em>(Attempt all questions from this section.)</em></p>
+
+    <div class="question">
+        <p><strong>Question 14.</strong> <span class="marks">[10]</span></p>
+
+        <p><strong>(a)</strong> A line segment joining P(2, −3) and Q(0, −1) is cut by the x-axis at the point R. A line
+            L cuts the y-axis at T(0, 6) and is perpendicular to PQ at S. Find the:<br>
+            (i) equation of line PQ<br>
+            (ii) equation of line L<br>
+            (iii) coordinates of points R and S. <strong>[5]</strong></p>
+
+        <p><strong>(b)</strong> The line segment joining A(2, −3) and B(−3, 2) is intercepted by the x-axis at the point
+            M and the y-axis at the point N. PQ is perpendicular to AB and meets the positive y-axis at a distance of 6
+            units
+            from the origin O at S. Find the:</p>
+
+        <p>(i) coordinates of M and N<br>
+            (ii) coordinates of S<br>
+            (iii) slope of AB.<br>
+            (iv) equation of line PQ. <strong>[5]</strong></p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="question">
+        <p><strong>Question 15.</strong> <span class="marks">[10]</span></p>
+
+        <p><strong>(a)</strong> Points A and B have coordinates (7, −3) and (1, 9), respectively. Find:<br>
+            (i) the slope of AB<br>
+            (ii) the equation of the perpendicular bisector of the line segment AB.<br>
+            (iii) the value of p, if (−2, p) lies on the perpendicular bisector. <strong>[4]</strong></p>
+
+        <p><strong>(b)</strong> In the given diagram, ABC is a triangle, where B(4, −4) and C(−4, −2). D is the point
+            where AC intersects the x-axis.</p>
+
+        <div class="figure-container">
+            <svg width="400" height="350" viewBox="-120 -100 240 220">
+                <!-- Grid -->
+                <defs>
+                    <pattern id="grid2" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" class="grid-line" />
+                    </pattern>
+                </defs>
+                <rect x="-120" y="-100" width="240" height="220" fill="url(#grid2)" />
+
+                <!-- Axes -->
+                <line x1="-120" y1="0" x2="120" y2="0" class="axis" />
+                <line x1="0" y1="100" x2="0" y2="-100" class="axis" />
+                <text x="110" y="15" font-size="12">X</text>
+                <text x="8" y="-85" font-size="12">Y</text>
+
+                <!-- Triangle ABC -->
+                <!-- A(0, 6) → (0, -60) y-inverted -->
+                <!-- B(4, -4) → (40, 40) -->
+                <!-- C(-4, -2) → (-40, 20) -->
+                <polygon points="0,-60 40,40 -40,20" fill="none" class="line-segment" />
+
+                <!-- D on AC - no coordinates shown (students must find) -->
+                <circle cx="-30" cy="0" r="4" style="fill: #f39c12;" />
+                <text x="-35" y="-10" class="point-label">D</text>
+
+                <!-- Points -->
+                <!-- A - no coordinates shown (students must find from graph) -->
+                <circle cx="0" cy="-60" r="4" class="point" />
+                <text x="8" y="-55" class="point-label">A</text>
+
+                <circle cx="40" cy="40" r="4" class="point" />
+                <text x="45" y="45" class="point-label">B(4,−4)</text>
+
+                <circle cx="-40" cy="20" r="4" class="point" />
+                <text x="-70" y="25" class="point-label">C(−4,−2)</text>
+
+                <!-- Line BD -->
+                <line x1="40" y1="40" x2="-30" y2="0" class="dashed-line" style="stroke: #9b59b6;" />
+
+                <!-- Origin -->
+                <circle cx="0" cy="0" r="3" fill="#333" />
+                <text x="5" y="12" font-size="10">O</text>
+            </svg>
+            <p><em>Figure for Q15(b): Triangle ABC with point D on AC</em></p>
+        </div>
+
+        <p>(i) Write down the coordinates of A and D.<br>
+            (ii) Find the coordinates of the centroid of ΔABC.<br>
+            (iii) If D divides AC in the ratio k:1, find the value of k.<br>
+            (iv) Find the equation of the line BD. <strong>[4+2]</strong></p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="question">
+        <p><strong>Question 16.</strong> <span class="marks">[10]</span></p>
+
+        <p><strong>(a)</strong> In the given graph ABCD is a parallelogram.</p>
+
+        <div class="figure-container">
+            <svg width="400" height="350" viewBox="-100 -80 200 180">
+                <!-- Grid -->
+                <defs>
+                    <pattern id="grid3" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" class="grid-line" />
+                    </pattern>
+                </defs>
+                <rect x="-100" y="-80" width="200" height="180" fill="url(#grid3)" />
+
+                <!-- Axes -->
+                <line x1="-100" y1="0" x2="100" y2="0" class="axis" />
+                <line x1="0" y1="80" x2="0" y2="-80" class="axis" />
+                <text x="90" y="15" font-size="12">X</text>
+                <text x="8" y="-65" font-size="12">Y</text>
+
+                <!-- Parallelogram ABCD -->
+                <!-- A(3, 3) → (30, -30), B(1, -2) → (10, 20), C(-4, -2) → (-40, 20), D(-2, 3) → (-20, -30) -->
+                <polygon points="30,-30 10,20 -40,20 -20,-30" fill="rgba(52, 152, 219, 0.1)" class="line-segment" />
+
+                <!-- Diagonals -->
+                <line x1="30" y1="-30" x2="-40" y2="20" class="dashed-line" style="stroke: #e74c3c;" />
+                <line x1="10" y1="20" x2="-20" y2="-30" class="dashed-line" style="stroke: #e74c3c;" />
+
+                <!-- P - intersection point (students must find) -->
+                <circle cx="-5" cy="-5" r="4" style="fill: #f39c12;" />
+                <text x="0" y="-10" class="point-label">P</text>
+
+                <!-- Points - NO coordinates shown (students must read from graph) -->
+                <circle cx="30" cy="-30" r="4" class="point" />
+                <text x="35" y="-25" class="point-label">A</text>
+
+                <circle cx="10" cy="20" r="4" class="point" />
+                <text x="15" y="30" class="point-label">B</text>
+
+                <circle cx="-40" cy="20" r="4" class="point" />
+                <text x="-45" y="30" class="point-label">C</text>
+
+                <circle cx="-20" cy="-30" r="4" class="point" />
+                <text x="-25" y="-35" class="point-label">D</text>
+
+                <!-- Origin -->
+                <circle cx="0" cy="0" r="3" fill="#333" />
+                <text x="5" y="12" font-size="10">O</text>
+
+                <!-- Scale note -->
+                <text x="-90" y="70" font-size="9">Scale: 1 cm = 1 unit</text>
+            </svg>
+            <p><em>Figure for Q16(a): Parallelogram ABCD with diagonals</em></p>
+        </div>
+
+        <p>Using the graph, answer the following:<br>
+            (i) Write down the coordinates of A, B, C and D.<br>
+            (ii) Calculate the coordinates of 'P', the point of intersection of the diagonals AC and BD.<br>
+            (iii) Find the slope of sides CB and DA and verify that they represent parallel lines.<br>
+            (iv) Find the equation of the diagonal AC. <strong>[5]</strong></p>
+
+        <p><strong>(b)</strong> Find the equation of a line parallel to the line 2x + y − 7 = 0 and passing through the
+            intersection of the lines x + y − 4 = 0 and 2x − y = 8. <strong>[5]</strong></p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="question">
+        <p><strong>Question 17.</strong> <span class="marks">[10]</span></p>
+
+        <p><strong>(a)</strong> Use graph paper for this question. Take 2 cm = 1 unit along both the axes. Plot ΔOAB,
+            where O(0, 0), A(3, −2), B(2, −3).</p>
+
+
+
+        <p>(i) Reflect ΔOAB in origin and name it as ΔOCD. Write the co-ordinates of C and D.<br>
+            (ii) Reflect ΔOCD in the y-axis and name it ΔOEF. Write the co-ordinates of E and F.<br>
+            (iii) Reflect ΔOCD in x-axis and name it as ΔOGH. Write the co-ordinates of G and H.<br>
+            (iv) Join points AEFDCGHB and give geometrical name of the closed figure so formed. <strong>[4]</strong></p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="question">
+        <p><strong>(b)</strong> Use a graph paper for this question. Take 2 cm = 1 unit on both axes.</p>
+
+
+
+        <p>(i) Plot A(0, 4), B(−1.5, 3), C(−3, 5), D(−1, 0) and E(−2, −1.5).<br>
+            (ii) Reflect B, C, D & E on x = 0 and name it as B', C', D', & E' respectively.<br>
+            (iii) Write the coordinates of B', C', D' & E'.<br>
+            (iv) Give a geometric name for the closed figure ABCDEE'D'C'B'.<br>
+            (v) Use the above figure and write down an invariant point on y-axis. <strong>[4+2]</strong></p>
+    </div>
+
+
+
+    <hr style="margin-top: 50px; border: 2px solid #333;">
+
+    <h2 style="text-align: center;">END OF PAPER</h2>
+
+
+
+</body>
+
+</html>
