@@ -1,0 +1,68 @@
+{
+  "description": "ICSE Class 8 Mathematics Syllabus 2026 - Comprehensive Topic Configuration",
+  "syllabus_info": {
+    "board": "CISCE (ICSE)",
+    "class": 8,
+    "exam_year": 2026,
+    "total_marks": 80,
+    "theory_marks": 80,
+    "internal_assessment": 20,
+    "exam_pattern": {
+      "section_a": "40 marks - All questions compulsory",
+      "section_b": "40 marks - Choose 4 out of 7 questions"
+    },
+    "notes": [
+      "Mathematical tables allowed",
+      "Calculators NOT permitted"
+    ]
+  },
+  "units": {
+    "1_Number_System": {
+      "enabled": true,
+      "unit_name": "Number System",
+      "weightage": "10-15 marks",
+      "description": "Rational numbers, exponents, squares and cubes.",
+      "topics": {
+        "Rational_Numbers": {
+          "enabled": true,
+          "full_name": "Rational Numbers",
+          "keywords": [
+            "rational number",
+            "number line",
+            "properties",
+            "closure",
+            "associativity",
+            "identity"
+          ],
+          "subtopics": [
+            "Representation on number line",
+            "Properties of rational numbers",
+            "Finding rational numbers between two numbers"
+          ]
+        },
+        "Exponents": {
+          "enabled": true,
+          "full_name": "Exponents and Powers",
+          "keywords": [
+            "exponent",
+            "power",
+            "base",
+            "laws of exponents",
+            "standard form"
+          ],
+          "subtopics": [
+            "Laws of exponents",
+            "Negative exponents",
+            "Standard form of numbers"
+          ]
+        }
+      }
+    }
+  },
+  "extraction_settings": {
+    "include_marks": true,
+    "include_question_number": true,
+    "include_sub_parts": true,
+    "output_format": "txt"
+  }
+}

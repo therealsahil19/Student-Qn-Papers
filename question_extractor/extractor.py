@@ -46,15 +46,16 @@ class ExtractedQuestion:
 class TopicManager:
     """Manages topic configuration and filtering for ICSE syllabus."""
     
-    def __init__(self, config_path: str = None):
+    def __init__(self, profile: str = "class_10", config_path: str = None):
         """
         Initialize with topic configuration.
         
         Args:
-            config_path: Path to topics_config.json
+            profile: Profile name (e.g., "class_10", "class_8")
+            config_path: Explicit path to config file (overrides profile)
         """
         if config_path is None:
-            config_path = Path(__file__).parent / "topics_config.json"
+            config_path = Path(__file__).parent / "configs" / f"{profile}.json"
         
         self.config_path = Path(config_path)
         self.config = self._load_config()
@@ -63,9 +64,15 @@ class TopicManager:
     def _load_config(self) -> dict:
         """Load configuration from JSON file."""
         if not self.config_path.exists():
+            # Fallback for backward compatibility if file exists in root
+            old_path = Path(__file__).parent / "topics_config.json"
+            if old_path.exists():
+                print(f"Warning: Config not found at {self.config_path}, falling back to topics_config.json")
+                return json.load(open(old_path, 'r', encoding='utf-8'))
+                
             raise FileNotFoundError(
                 f"Topic configuration not found: {self.config_path}\n"
-                "Please ensure topics_config.json exists in the question_extractor folder."
+                f"Please ensure configs/{self.config_path.name} exists."
             )
         
         with open(self.config_path, 'r', encoding='utf-8') as f:
@@ -181,14 +188,16 @@ class QuestionExtractor:
     structured prompts for AI-powered question extraction.
     """
     
-    def __init__(self, config_path: str = None):
+    def __init__(self, profile: str = "class_10", config_path: str = None):
         """
         Initialize the question extractor.
         
         Args:
+            profile: Profile name (e.g., "class_10", "class_8")
             config_path: Path to topics_config.json
         """
-        self.topic_manager = TopicManager(config_path)
+        self.profile = profile
+        self.topic_manager = TopicManager(profile, config_path)
         self.pdf_processor = PDFProcessor() if PDFProcessor else None
         self.extracted_questions: List[ExtractedQuestion] = []
         self._existing_signatures = set()  # Set of (question_number, source_paper) for fast lookup
@@ -322,8 +331,11 @@ class QuestionExtractor:
         
         page_context = f" (Page {page_number})" if page_number else ""
         
+        board = self.topic_manager.get_syllabus_info().get('board', 'ICSE')
+        class_num = self.topic_manager.get_syllabus_info().get('class', '10')
+        
         prompt = f"""
-# ICSE Class 10 Mathematics Question Extraction{page_context}
+# {board} Class {class_num} Mathematics Question Extraction{page_context}
 
 ## YOUR TASK
 You MUST extract **EVERY SINGLE QUESTION** from this page that belongs to ANY of the following topics. 
@@ -571,9 +583,12 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
                 json.dump(data, f, indent=2, ensure_ascii=False)
         
         elif format == "txt":
+            board = self.topic_manager.get_syllabus_info().get('board', 'ICSE')
+            class_num = self.topic_manager.get_syllabus_info().get('class', '10')
+            
             lines = [
                 "=" * 70,
-                "ICSE CLASS 10 MATHEMATICS - EXTRACTED QUESTION BANK",
+                f"{board} CLASS {class_num} MATHEMATICS - EXTRACTED QUESTION BANK",
                 "=" * 70,
                 f"Extracted at: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
                 f"Total questions: {len(self.extracted_questions)}",
@@ -741,6 +756,12 @@ Examples:
         help="Source paper name for batch extraction"
     )
     parser.add_argument(
+        "--profile",
+        type=str,
+        default="class_10",
+        help="Profile to use (default: class_10). Available: class_10, class_8"
+    )
+    parser.add_argument(
         "--enable-topic",
         type=str,
         help="Enable a topic in configuration"
@@ -760,7 +781,7 @@ Examples:
     
     # Initialize extractor
     try:
-        extractor = QuestionExtractor()
+        extractor = QuestionExtractor(profile=args.profile)
     except FileNotFoundError as e:
         print(f"Error: {e}")
         return 1
@@ -768,7 +789,9 @@ Examples:
     # Handle commands
     if args.syllabus_info:
         info = extractor.topic_manager.get_syllabus_info()
-        print("\n📚 ICSE Class 10 Mathematics Syllabus 2026\n")
+        board = info.get('board', 'CISCE')
+        class_num = info.get('class', '10')
+        print(f"\n📚 {board} Class {class_num} Mathematics Syllabus 2026\n")
         print("-" * 50)
         print(f"Board: {info.get('board', 'CISCE')}")
         print(f"Total Marks: {info.get('total_marks', 100)}")
@@ -785,7 +808,10 @@ Examples:
         return 0
     
     if args.list_units:
-        print("\n📖 ICSE Class 10 Math Units\n")
+        info = extractor.topic_manager.get_syllabus_info()
+        board = info.get('board', 'ICSE')
+        class_num = info.get('class', '10')
+        print(f"\n📖 {board} Class {class_num} Math Units\n")
         print("-" * 60)
         units = extractor.topic_manager.get_all_units()
         for key, data in units.items():
@@ -798,7 +824,10 @@ Examples:
         return 0
     
     if args.list_topics:
-        print("\n📚 ICSE Class 10 Math Topics\n")
+        info = extractor.topic_manager.get_syllabus_info()
+        board = info.get('board', 'ICSE')
+        class_num = info.get('class', '10')
+        print(f"\n📚 {board} Class {class_num} Math Topics\n")
         print("-" * 70)
         all_topics = extractor.topic_manager.get_all_topics()
         enabled = extractor.topic_manager.get_enabled_topics()
@@ -853,7 +882,11 @@ Examples:
         print("\n" + "=" * 60)
         print("EXTRACTION PROMPT")
         print("=" * 60)
-        print(prompt)
+        # Handle Windows console encoding for special characters
+        try:
+            print(prompt)
+        except UnicodeEncodeError:
+            print(prompt.encode('ascii', 'replace').decode('ascii'))
         print("=" * 60 + "\n")
         return 0
     
