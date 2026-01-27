@@ -253,9 +253,12 @@ class QuestionExtractor:
         
         # Sort by page number (extract number from filename like page_001.png)
         def get_page_num(path):
-            name = path.stem  # e.g., "page_001"
+            # Optimized extraction: avoids path.stem overhead and split() list creation
+            # Assumes files end in .png (guaranteed by glob)
             try:
-                return int(name.split("_")[-1])
+                # rpartition('_')[2] gets the part after the last underscore (or whole string if none)
+                # [:-4] removes the .png extension
+                return int(path.name.rpartition('_')[2][:-4])
             except:
                 return 0
         
