@@ -17,6 +17,7 @@ Usage:
 """
 
 import math
+import re
 from dataclasses import dataclass
 from typing import Optional, List, Dict, Tuple, Any
 from pathlib import Path
@@ -85,6 +86,8 @@ class PointLayoutEngine:
     Uses geometric rules to position points when coordinates are not specified.
     """
     
+    _ON_SEGMENT_PATTERN = re.compile(r'on\s+(?:side\s+|segment\s+)?([A-Z])([A-Z])', re.IGNORECASE)
+
     def __init__(self, config: RenderConfig):
         self.config = config
         self.positions: Dict[str, Tuple[float, float]] = {}
@@ -262,12 +265,11 @@ class PointLayoutEngine:
         - "on side AB" - position on line segment AB  
         - "midpoint of AB" - middle of segment AB
         """
-        import re
         
         desc_lower = description.lower().strip()
         
         # Pattern: "on AB", "on side AB", "on segment AB"
-        on_segment_match = re.search(r'on\s+(?:side\s+|segment\s+)?([A-Z])([A-Z])', description, re.IGNORECASE)
+        on_segment_match = self._ON_SEGMENT_PATTERN.search(description)
         if on_segment_match:
             p1_label = on_segment_match.group(1).upper()
             p2_label = on_segment_match.group(2).upper()
