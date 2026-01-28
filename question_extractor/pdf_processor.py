@@ -206,39 +206,101 @@ Option 2: pdf2image (Requires Poppler)
         output_dir: Optional[Path],
         pages: Optional[List[int]]
     ) -> List[PDFPage]:
-        """Convert using pdf2image."""
-        from pdf2image import convert_from_path
+        """Convert using pdf2image with memory optimization."""
+        from pdf2image import convert_from_path, pdfinfo_from_path
         import io
         
-        # Convert pages to pdf2image format (first_page, last_page)
-        kwargs = {"dpi": self.dpi}
-        if pages:
-            kwargs["first_page"] = min(pages)
-            kwargs["last_page"] = max(pages)
-        
-        images = convert_from_path(str(pdf_path), **kwargs)
+        chunk_size = 10  # Process pages in chunks to reduce memory usage
         result = []
         
-        for i, img in enumerate(images):
-            page_num = (pages[i] if pages else i + 1)
+        # Determine the full range of pages to process
+        if pages:
+            start_page = min(pages)
+            end_page = max(pages)
+            pages_set = set(pages)
+        else:
+            # Get total page count using pdfinfo
+            try:
+                info = pdfinfo_from_path(str(pdf_path))
+                total_pages = int(info["Pages"])
+                start_page = 1
+                end_page = total_pages
+                pages_set = None
+            except Exception:
+                # Fallback: if we can't get page count, try to read reasonable amount or just fallback to load all
+                # Ideally pdfinfo works if convert_from_path works.
+                # If it fails, we fall back to loading everything (legacy behavior)
+                # but we need to know the range.
+                # Without page count, we can't loop effectively without risk.
+                # So we just do what we did before: load all.
+                kwargs = {"dpi": self.dpi}
+                images = convert_from_path(str(pdf_path), **kwargs)
+                for i, img in enumerate(images):
+                    page_num = i + 1
+                    pdf_page = PDFPage(
+                        page_number=page_num,
+                        width=img.width,
+                        height=img.height
+                    )
+                    if output_dir:
+                        image_path = output_dir / f"page_{page_num:03d}.{self.output_format}"
+                        img.save(str(image_path), self.output_format.upper())
+                        pdf_page.image_path = str(image_path)
+                    else:
+                        buffer = io.BytesIO()
+                        img.save(buffer, format=self.output_format.upper())
+                        pdf_page.image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+                    result.append(pdf_page)
+                return result
+
+        # Process in chunks
+        for chunk_start in range(start_page, end_page + 1, chunk_size):
+            chunk_end = min(chunk_start + chunk_size - 1, end_page)
             
-            pdf_page = PDFPage(
-                page_number=page_num,
-                width=img.width,
-                height=img.height
-            )
+            # Optimize: Check if any pages in this chunk are actually needed
+            if pages_set:
+                chunk_pages = set(range(chunk_start, chunk_end + 1))
+                if not chunk_pages.intersection(pages_set):
+                    continue
             
-            if output_dir:
-                image_path = output_dir / f"page_{page_num:03d}.{self.output_format}"
-                img.save(str(image_path), self.output_format.upper())
-                pdf_page.image_path = str(image_path)
-            else:
-                # Return as base64
-                buffer = io.BytesIO()
-                img.save(buffer, format=self.output_format.upper())
-                pdf_page.image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+            try:
+                images = convert_from_path(
+                    str(pdf_path),
+                    dpi=self.dpi,
+                    first_page=chunk_start,
+                    last_page=chunk_end
+                )
+            except Exception:
+                # Stop if we hit an error
+                break
             
-            result.append(pdf_page)
+            for i, img in enumerate(images):
+                page_num = chunk_start + i
+
+                # Filter if specific pages requested
+                if pages_set and page_num not in pages_set:
+                    continue
+
+                pdf_page = PDFPage(
+                    page_number=page_num,
+                    width=img.width,
+                    height=img.height
+                )
+
+                if output_dir:
+                    image_path = output_dir / f"page_{page_num:03d}.{self.output_format}"
+                    img.save(str(image_path), self.output_format.upper())
+                    pdf_page.image_path = str(image_path)
+                else:
+                    # Return as base64
+                    buffer = io.BytesIO()
+                    img.save(buffer, format=self.output_format.upper())
+                    pdf_page.image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+
+                result.append(pdf_page)
+
+            # Free memory
+            del images
         
         return result
     
