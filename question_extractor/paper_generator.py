@@ -148,6 +148,9 @@ class QuestionBankParser:
     # Pattern to match subtopic
     SUBTOPIC_PATTERN = re.compile(r'Subtopic:\s*(.+?)(?:\n|$)', re.IGNORECASE)
     
+    # Pattern to match separator lines
+    SEPARATOR_PATTERN = re.compile(r'-{10,}')
+
     def __init__(self):
         self.questions: List[Question] = []
         self.topics: Dict[str, List[Question]] = {}
@@ -229,7 +232,7 @@ class QuestionBankParser:
             
             # Clean up the question text
             question_text = question_content.strip()
-            question_text = re.sub(r'-{10,}', '', question_text).strip()
+            question_text = self.SEPARATOR_PATTERN.sub('', question_text).strip()
             
             question = Question(
                 number=q_number,
