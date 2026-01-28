@@ -17,52 +17,70 @@
     ]
   },
   "units": {
-    "1_Number_System": {
+    "1_Algebra": {
       "enabled": true,
-      "unit_name": "Number System",
-      "weightage": "10-15 marks",
-      "description": "Rational numbers, exponents, squares and cubes.",
+      "unit_name": "Algebra",
+      "weightage": "30-40 marks",
+      "description": "Algebraic Identities, Division of Algebraic Expressions, and Factorization.",
       "topics": {
-        "Rational_Numbers": {
+        "Algebraic_Identities": {
           "enabled": true,
-          "full_name": "Rational Numbers",
+          "full_name": "Algebraic Identities",
           "keywords": [
-            "rational number",
-            "number line",
-            "properties",
-            "closure",
-            "associativity",
-            "identity"
+            "algebraic identity",
+            "(a+b)^2",
+            "(a-b)^2",
+            "a^2-b^2",
+            "expand",
+            "evaluate"
           ],
           "subtopics": [
-            "Representation on number line",
-            "Properties of rational numbers",
-            "Finding rational numbers between two numbers"
+            "Standard Identities",
+            "Expansion using identities",
+            "Simplification of expressions"
           ]
         },
-        "Exponents": {
+        "Division_of_Algebraic_Expressions": {
           "enabled": true,
-          "full_name": "Exponents and Powers",
+          "full_name": "Division of Algebraic Expressions",
           "keywords": [
-            "exponent",
-            "power",
-            "base",
-            "laws of exponents",
-            "standard form"
+            "division",
+            "divide",
+            "polynomial",
+            "monomial",
+            "quotient",
+            "remainder"
           ],
           "subtopics": [
-            "Laws of exponents",
-            "Negative exponents",
-            "Standard form of numbers"
+            "Division of monomial by monomial",
+            "Division of polynomial by monomial",
+            "Division of polynomial by polynomial"
+          ]
+        },
+        "Factorization": {
+          "enabled": true,
+          "full_name": "Factorization",
+          "keywords": [
+            "factorize",
+            "common factors",
+            "regrouping",
+            "splitting middle term",
+            "difference of two squares"
+          ],
+          "subtopics": [
+            "Common factors method",
+            "Regrouping terms",
+            "Factorization using identities",
+            "Factorization of quadratic trinomials"
           ]
         }
       }
+    },
+    "2_Number_System": {
+      "extraction_settings": {
+        "include_marks": true,
+        "include_question_number": true,
+        "include_sub_parts": true,
+        "output_format": "txt"
+      }
     }
-  },
-  "extraction_settings": {
-    "include_marks": true,
-    "include_question_number": true,
-    "include_sub_parts": true,
-    "output_format": "txt"
-  }
-}

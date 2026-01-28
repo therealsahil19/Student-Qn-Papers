@@ -1,0 +1,490 @@
+======================================================================
+CISCE (ICSE) CLASS 8 MATHEMATICS - ALGEBRA TEST BANK
+======================================================================
+Topics: Algebraic Identities, Division of Algebraic Expressions, Factorization
+Syllabus: Class 8 ICSE / R.D. Sharma Guidelines
+======================================================================
+
+
+======================================================================
+UNIT: 1_ALGEBRA
+======================================================================
+
+--------------------------------------------------
+Topic: Addition and Subtraction of Algebraic Expressions
+Number of Questions: 8
+--------------------------------------------------
+
+Q1 [2 marks] (easy)
+    
+    Identify the terms and their coefficients for the following expressions:
+    (i) 7x²yz - 5xy
+    (ii) a/2 + b/2 - ab
+    (iii) 0.2x - 0.3xy + 0.5y
+    Subtopic: Terms and Coefficients
+    [Source: Textbook Exercise 6.1]
+
+    ----------------------------------------
+
+Q2 [2 marks] (easy)
+    
+    Classify the following polynomials as monomials, binomials, trinomials:
+    (i) x + y
+    (ii) 1000
+    (iii) x + x² + x³ + x⁴
+    (iv) 2b - 3b²
+    Subtopic: Classification of Polynomials
+    [Source: Textbook Exercise 6.1]
+
+    ----------------------------------------
+
+Q3 [3 marks] (medium)
+    
+    Add the following algebraic expressions:
+    (i) 3a²b, -4a²b, 9a²b
+    (ii) 2/3a, 3/5a, -6/5a
+    (iii) 4xy² - 7x²y, 12x²y - 6xy², -3x²y + 5xy²
+    Subtopic: Addition of Algebraic Expressions
+    [Source: Textbook Exercise 6.2]
+
+    ----------------------------------------
+
+Q4 [3 marks] (medium)
+    
+    Subtract:
+    (i) -5xy from 12xy
+    (ii) 2x³ - 4x² + 3x + 5 from 4x³ + x² + x + 6
+    (iii) x²y - 4/5xy² + 4/3xy from 2/3x²y + 3/2xy² - 1/3xy
+    Subtopic: Subtraction of Algebraic Expressions
+    [Source: Textbook Exercise 6.2]
+
+    ----------------------------------------
+
+Q5 [4 marks] (hard)
+    
+    Subtract 3x - 4y - 7z from the sum of x - 3y + 2z and -4x + 9y - 11z.
+    Subtopic: Sum and Difference
+    [Source: Textbook Exercise 6.2]
+
+    ----------------------------------------
+
+Q6 [4 marks] (hard)
+    
+    Subtract the sum of 3l - 4m - 7n² and 2l + 3m - 4n² from the sum of 9l + 2m - 3n² and -3l + m + 4n².
+    Subtopic: Sum and Difference
+    [Source: Textbook Exercise 6.2]
+
+    ----------------------------------------
+
+Q7 [3 marks] (medium)
+    
+    Simplify: x² - 3x + 5 - 1/2(3x² - 5x + 7)
+    Subtopic: Simplification
+    [Source: Textbook Exercise 6.2]
+
+    ----------------------------------------
+
+Q8 [4 marks] (hard)
+    
+    Simplify: [5 - 3x + 2y - (2x - y)] - (3x - 7y + 9)
+    Subtopic: Simplification with Brackets
+    [Source: Textbook Exercise 6.2]
+
+    ----------------------------------------
+
+--------------------------------------------------
+Topic: Algebraic Identities
+Number of Questions: 6
+--------------------------------------------------
+
+Q1 [2 marks] (medium)
+    
+    Evaluate using identities:
+    (i) (2x + 3y)²
+    (ii) (2x - 3y)²
+    (iii) (2x + 3y)(2x - 3y)
+    Subtopic: Standard Identities
+    [Source: Textbook Example 1]
+
+    ----------------------------------------
+
+Q2 [3 marks] (medium)
+    
+    Write down the squares of each of the following binomials:
+    (i) (x + a/2)²
+    (ii) (5b - 1/2)²
+    (iii) (y + y²/2)²
+    Subtopic: Squaring Binomials
+    [Source: Textbook Example 2]
+
+    ----------------------------------------
+
+Q3 [3 marks] (hard)
+    
+    Find the product of the following binomials:
+    (i) (4/3x² + 3)(4/3x² + 3)
+    (ii) (2/3x² + 5y²)(2/3x² + 5y²)
+    Subtopic: Product of Binomials
+    [Source: Textbook Example 3]
+
+    ----------------------------------------
+
+Q4 [3 marks] (medium)
+    
+    Find the product:
+    (i) (3/4x + 5/6y)(3/4x - 5/6y)
+    (ii) (2a + 3/b)(2a - 3/b)
+    Subtopic: (a+b)(a-b) Identity
+    [Source: Textbook Example 5]
+
+    ----------------------------------------
+
+Q5 [4 marks] (hard)
+    
+    If x + 1/x = 4, find the values of:
+    (i) x² + 1/x²
+    (ii) x⁴ + 1/x⁴
+    Subtopic: x + 1/x type problems
+    [Source: Textbook Example 6]
+
+    ----------------------------------------
+
+Q6 [4 marks] (hard)
+    
+    If x - 1/x = 5, find the value of x² + 1/x².
+    Subtopic: x - 1/x type problems
+    [Source: General Class 8 Practice]
+
+    ----------------------------------------
+
+Q7 [4 marks] (hard)
+    
+    Find the continued product:
+    (i) (x + 2)(x - 2)(x² + 4)
+    (ii) (2x + 3y)(2x - 3y)(4x² + 9y²)
+    (iii) (x - 1)(x + 1)(x² + 1)(x⁴ + 1)
+    Subtopic: Continued Product using Identities
+    [Source: Textbook Example 13]
+
+    ----------------------------------------
+
+Q8 [5 marks] (hard)
+    
+    Prove that:
+    2a² + 2b² + 2c² - 2ab - 2bc - 2ca = (a - b)² + (b - c)² + (c - a)²
+    Subtopic: Identity Proofs
+    [Source: Textbook Example 15]
+
+    ----------------------------------------
+
+Q9 [4 marks] (hard)
+    
+    If x² + 1/x² = 27, find the value of:
+    (a) x + 1/x
+    (b) x - 1/x
+    Subtopic: Solving for x ± 1/x given x² + 1/x²
+    [Source: Textbook Example 9]
+
+    ----------------------------------------
+
+Q10 [2 marks] (easy)
+    
+    Simplify using identities: (58² - 42²) / 16
+    Subtopic: evaluating a² - b²
+    [Source: Textbook Exercise 6.6]
+
+    ----------------------------------------
+
+Q11 [3 marks] (medium)
+    
+    If x + y = 4 and xy = 2, find the value of x² + y².
+    Subtopic: Applications of (a+b)²
+    [Source: Textbook Exercise 6.6]
+
+    ----------------------------------------
+
+Q12 [4 marks] (hard)
+    
+    If 3x + 5y = 11 and xy = 2, find the value of 9x² + 25y².
+    Subtopic: Applications of (a+b)² with coefficients
+    [Source: Textbook Exercise 6.6]
+
+    ----------------------------------------
+
+Q13 [4 marks] (hard)
+    
+    What must be added to 9x² - 24x + 10 to make it a perfect square?
+    Subtopic: Completing the Square
+    [Source: Textbook Example 20]
+
+    ----------------------------------------
+
+Q14 [3 marks] (medium)
+    
+    Expand using (x + a)(x + b) = x² + (a + b)x + ab:
+    (i) (x + 3)(x + 7)
+    (ii) (x - 5)(x + 9)
+    (iii) (x - 2)(x - 8)
+    Subtopic: (x+a)(x+b) Identity
+    [Source: General Class 8 Practice]
+
+    ----------------------------------------
+
+Q15 [3 marks] (medium)
+    
+    Evaluate the following products using identities:
+    (i) 103 × 104
+    (ii) 103 × 96
+    (iii) 95 × 97
+    Subtopic: Evaluating Products using (x+a)(x+b)
+    [Source: Textbook Exercise 6.7]
+
+    ----------------------------------------
+
+--------------------------------------------------
+Topic: Division of Algebraic Expressions
+
+Q1 [1 mark] (easy)
+    
+    Write the degree of the following polynomials:
+    (i) 2x² + 5x² - 7
+    (ii) 5x² - 3x + 2
+    (iii) 20x³ + 12x²y² - 10y² + 20
+    Subtopic: Degree of Polynomials
+    [Source: Textbook Exercise 8.1]
+
+    ----------------------------------------
+
+Q2 [1 mark] (easy)
+    
+    Which of the following expressions are not polynomials?
+    (i) x² + 2x⁻²
+    (ii) √ax + x² - x³
+    (iii) 3y³ - √5y + 9
+    (iv) ax¹/² + ax + 9x² + 4
+    Subtopic: Identifying Polynomials
+    [Source: Textbook Exercise 8.1]
+
+    ----------------------------------------
+
+Q3 [2 marks] (easy)
+    
+    Divide:
+    (i) 24a³b³ by -8ab
+    (ii) -72a⁴b⁵c⁸ by -9a²b²c³
+    Subtopic: Division of Monomial by Monomial
+    [Source: Textbook Exercise 8.2]
+
+    ----------------------------------------
+
+Q4 [3 marks] (medium)
+    
+    Simplify:
+    (6x⁴yz - 3xy³z + 8x²yz⁴) / 2xyz
+    Subtopic: Division of Polynomial by Monomial
+    [Source: Textbook Example 2]
+
+    ----------------------------------------
+
+Q5 [4 marks] (medium)
+    
+    Divide x³ - 6x² + 11x - 6 by x² - 4x + 3.
+    Subtopic: Long Division (Polynomial by Polynomial)
+    [Source: Textbook Example 3]
+
+    ----------------------------------------
+
+Q6 [4 marks] (hard)
+    
+    Divide 10x⁴ + 17x³ - 62x² + 30x - 3 by 2x² + 7x - 1.
+    Subtopic: Long Division by Trinomial
+    [Source: Textbook Example 4]
+
+    ----------------------------------------
+
+Q7 [4 marks] (hard)
+    
+    Divide 3y⁵ + 6y⁴ + 6y³ + 7y² + 8y + 9 by 3y³ + 1 and verify the result using the Division Algorithm.
+    Subtopic: Division Algorithm
+    [Source: Textbook Example 6]
+
+    ----------------------------------------
+
+Q8 [5 marks] (hard)
+    
+    What must be subtracted from 8x⁴ + 14x³ - 2x² + 7x - 8 so that the resulting polynomial is exactly divisible by 4x² + 3x - 2?
+    Subtopic: Application of Division
+    [Source: Textbook Example 7]
+
+    ----------------------------------------
+
+Q9 [4 marks] (medium)
+    
+    Divide x² - 5x + 6 by x - 3 using factorization.
+    Subtopic: Division by Factorization
+    [Source: Textbook Exercise 8.6]
+
+    ----------------------------------------
+
+Q10 [5 marks] (hard)
+    
+    Divide a⁴ - b⁴ by a - b using factorization.
+    Subtopic: Division by Factorization
+    [Source: Textbook Example 2]
+
+    ----------------------------------------
+
+--------------------------------------------------
+Topic: Factorization
+Number of Questions: 12
+--------------------------------------------------
+
+Q1 [2 marks] (easy)
+    
+    Find the greatest common factor (GCF/HCF) of the monomials:
+    (i) 21a³b⁷ and 35a⁵b⁵
+    (ii) 14x²y³, 21x²y², 35x⁴y⁵z
+    Subtopic: Common Factors of Monomials
+    [Source: Textbook Illustrative Examples - Page 7.3]
+
+    ----------------------------------------
+
+Q2 [2 marks] (easy)
+    
+    Factorize:
+    (i) 3x - 9
+    (ii) 20a¹²b² - 15a⁸b⁴
+    Subtopic: Common Monomial Factors
+    [Source: Textbook Exercise 7.2]
+
+    ----------------------------------------
+
+Q3 [3 marks] (medium)
+    
+    Factorize the following algebraic expressions:
+    (i) 2x³y² + 10x²y³ + 14xy
+    (ii) 18a³b² + 36ab⁴ - 24a²b³
+    Subtopic: Common Monomial Factors
+    [Source: Textbook Example 2 / Exercise 7.2]
+
+    ----------------------------------------
+
+Q4 [3 marks] (medium)
+    
+    Factorize by grouping the terms:
+    (i) x² + xy + 8x + 8y
+    (ii) 15xy - 6x + 10y - 4
+    Subtopic: Factorization by Grouping
+    [Source: Textbook Illustrative Example 1 - Page 7.9]
+
+    ----------------------------------------
+
+Q5 [4 marks] (hard)
+    
+    Factorize:
+    (i) a² + bc + ab + ac
+    (ii) ax² + by² + bx² + ay²
+    (iii) 6ab - b² + 12ac - 2bc
+    Subtopic: Factorization by Grouping
+    [Source: Textbook Example 2 & 6]
+
+    ----------------------------------------
+
+Q6 [3 marks] (medium)
+    
+    Factorize using the difference of two squares identity:
+    (i) 9a² - 16b²
+    (ii) 80a² - 45b²
+    (iii) 3a⁴ - 48b⁴
+    Subtopic: Difference of Two Squares
+    [Source: Textbook Illustrative Examples - Page 7.13/7.14]
+
+    ----------------------------------------
+
+Q7 [4 marks] (hard)
+    
+    Factorize completely:
+    (i) x⁸ - y⁸
+    (ii) a¹²x⁴ - a⁴x¹²
+    Subtopic: Advanced Difference of Squares
+    [Source: Textbook Example 4 / Page 7.16]
+
+    ----------------------------------------
+
+Q8 [4 marks] (hard)
+    
+    Factorize:
+    (i) 16a² - 25/(4a²)
+    (ii) 100(x + y)² - 81(a + b)²
+    Subtopic: Fractional and Complex Identities
+    [Source: Textbook Example 3 - Page 7.14]
+
+    ----------------------------------------
+
+Q9 [3 marks] (medium)
+    
+    Factorize as a perfect square:
+    (i) x² + 8x + 16
+    (ii) 4a² - 4a + 1
+    (iii) 4x² + 12xy + 9y²
+    Subtopic: Perfect Square Trinomials
+    [Source: Textbook Example 1 & 2 - Page 7.18/7.19]
+
+    ----------------------------------------
+
+Q10 [4 marks] (hard)
+    
+    Factorize the following using identities:
+    (i) x² - 2xy + y² - x + y
+    (ii) 4a² + 12ab + 9b² - 8a - 12b
+    Subtopic: Combined Identities and Grouping
+    [Source: Textbook Example 5 - Page 7.20]
+
+    ----------------------------------------
+
+Q11 [3 marks] (medium)
+    
+    Factorize by splitting the middle term ($x² + px + q$):
+    (i) x² + 8x + 15
+    (ii) x² + 4x - 21
+    (iii) y² + 5y - 36
+    Subtopic: Quadratic Trinomials
+    [Source: Textbook Example 1 / Exercise 7.7]
+
+    ----------------------------------------
+
+Q12 [4 marks] (hard)
+    
+    Factorize the quadratic trinomials ($ax² + bx + c$):
+    (i) 6x² - 13x + 6
+    (ii) 2x² + 5x + 3
+    (iii) (2x + 3y)² - 5(2x + 3y) - 14
+    Subtopic: Advanced Quadratic Trinomials
+    [Source: Textbook Example 1 / Page 7.28/7.29]
+
+    ----------------------------------------
+
+    ----------------------------------------
+
+Q13 [4 marks] (hard)
+    
+    Factorize the following using the method of completing the square:
+    (i) y² + 6y + 8
+    (ii) 4y² - 8y + 3
+    Subtopic: Factorization by Completing the Square
+    [Source: Textbook Example 1 & 3 - Page 7.31]
+
+    ----------------------------------------
+
+======================================================================
+SUMMARY OF QUESTIONS
+======================================================================
+  1. Addition and Subtraction of Algebraic Expressions: 8 questions
+  2. Algebraic Identities: 15 questions
+  3. Division of Algebraic Expressions: 10 questions
+  4. Factorization: 13 questions
+----------------------------------------------------------------------
+  TOTAL QUESTIONS: 46
+======================================================================
+
+
