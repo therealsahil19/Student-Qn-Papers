@@ -12,6 +12,7 @@ Usage:
 
 import json
 import os
+import re
 import argparse
 from pathlib import Path
 from typing import List, Dict, Optional, Any
@@ -25,6 +26,10 @@ try:
 except ImportError:
     PDFProcessor = None
     PDFPage = None
+
+
+# Compiled regex pattern for extracting JSON from Markdown code blocks
+JSON_BLOCK_PATTERN = re.compile(r'```json\s*(.*?)\s*```', re.DOTALL)
 
 
 @dataclass
@@ -485,8 +490,7 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
             data = json.loads(json_data)
         except json.JSONDecodeError:
             # Try to extract JSON from markdown code block
-            import re
-            json_match = re.search(r'```json\s*(.*?)\s*```', json_data, re.DOTALL)
+            json_match = JSON_BLOCK_PATTERN.search(json_data)
             if json_match:
                 data = json.loads(json_match.group(1))
             else:
