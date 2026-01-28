@@ -10,6 +10,8 @@ import base64
 from dataclasses import dataclass
 import concurrent.futures
 
+# Global variable to hold the open document in worker processes
+_worker_doc = None
 
 @dataclass
 class PDFPage:
@@ -21,19 +23,41 @@ class PDFPage:
     height: int = 0
 
 
+def _init_worker(pdf_path: str):
+    """
+    Initializer for worker processes.
+    Opens the PDF file once per worker to avoid repeated open/close overhead.
+    """
+    global _worker_doc
+    import fitz
+    try:
+        _worker_doc = fitz.open(str(pdf_path))
+    except Exception as e:
+        print(f"Failed to initialize worker with PDF {pdf_path}: {e}")
+        _worker_doc = None
+
+
 def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optional[PDFPage]:
     """
     Helper function to process a single page in a separate process.
     Must be at module level to be pickleable.
     """
+    global _worker_doc
     pdf_path, page_num, dpi, output_format, output_dir = args
     import fitz
 
-    # Re-open document in this process
-    doc = fitz.open(str(pdf_path))
+    # Use the pre-opened document from initializer if available
+    doc = _worker_doc
+    should_close = False
+
+    # Fallback: Open document if not initialized (e.g., if function called directly)
+    if doc is None:
+        doc = fitz.open(str(pdf_path))
+        should_close = True
 
     if page_num < 1 or page_num > len(doc):
-        doc.close()
+        if should_close:
+            doc.close()
         return None
 
     page = doc[page_num - 1]  # 0-indexed
@@ -59,7 +83,9 @@ def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optio
         img_bytes = pix.tobytes(output_format)
         pdf_page.image_base64 = base64.b64encode(img_bytes).decode('utf-8')
 
-    doc.close()
+    if should_close:
+        doc.close()
+
     return pdf_page
 
 
@@ -190,7 +216,11 @@ Option 2: pdf2image (Requires Poppler)
             
         result = []
         # Use ProcessPoolExecutor for parallel processing
-        with concurrent.futures.ProcessPoolExecutor() as executor:
+        # Initialize each worker with the PDF file to avoid repeated opens
+        with concurrent.futures.ProcessPoolExecutor(
+            initializer=_init_worker,
+            initargs=(str(pdf_path),)
+        ) as executor:
             # Map returns results in order
             results = executor.map(_process_page_task, tasks)
             
