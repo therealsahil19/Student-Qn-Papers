@@ -12,14 +12,6 @@ def update_file_summary(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Find all topics and their counts
-    # Pattern looks for "Topic: [Topic Name]" and then counts Q\d+ lines until the next topic or SUMMARY
-    topic_sections = re.findall(r'Topic: (.*?)\n', content)
-    
-    if not topic_sections:
-        print(f"Warning: No topic headers found in {file_path}. Topic headers should match 'Topic: [Name]'")
-        return
-
     summary_start = content.find('SUMMARY')
     if summary_start == -1:
         # Check if there is a "BATCH \d SUMMARY" or "CUMULATIVE SUMMARY"
@@ -50,11 +42,12 @@ def update_file_summary(file_path):
     
     # Split by topic to get individual counts
     topic_positions = []
-    for topic in topic_sections:
-        # Find the specific "Topic: [Topic]" header
-        pattern = f'Topic: {re.escape(topic)}'
-        for m in re.finditer(pattern, main_content):
-            topic_positions.append((m.start(), topic))
+    for m in re.finditer(r'Topic: (.*?)\n', main_content):
+        topic_positions.append((m.start(), m.group(1)))
+
+    if not topic_positions:
+        print(f"Warning: No topic headers found in {file_path}. Topic headers should match 'Topic: [Name]'")
+        return
     
     topic_positions.sort()
     
@@ -73,7 +66,7 @@ def update_file_summary(file_path):
 
     # Update individual section headers if they have "Number of Questions: \d+"
     for topic, count in counts.items():
-        pattern = f'(Topic: {re.escape(topic)}\nNumber of Questions: )\d+'
+        pattern = rf'(Topic: {re.escape(topic)}\nNumber of Questions: )\d+'
         content = re.sub(pattern, rf'\g<1>{count}', content)
 
     # Update Global Headers
