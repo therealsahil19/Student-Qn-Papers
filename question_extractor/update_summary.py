@@ -72,9 +72,15 @@ def update_file_summary(file_path):
     total = sum(counts.values())
 
     # Update individual section headers if they have "Number of Questions: \d+"
-    for topic, count in counts.items():
-        pattern = f'(Topic: {re.escape(topic)}\nNumber of Questions: )\d+'
-        content = re.sub(pattern, rf'\g<1>{count}', content)
+    def replace_count(match):
+        prefix = match.group(1)
+        topic_name = match.group(2)
+        if topic_name in counts:
+            return f"{prefix}{counts[topic_name]}"
+        return match.group(0)
+
+    pattern = r'(Topic: (.*?)\nNumber of Questions: )\d+'
+    content = re.sub(pattern, replace_count, content)
 
     # Update Global Headers
     content = re.sub(r'Total questions: \d+', f'Total questions: {total}', content)
