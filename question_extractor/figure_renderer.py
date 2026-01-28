@@ -87,6 +87,7 @@ class PointLayoutEngine:
     """
     
     _ON_SEGMENT_PATTERN = re.compile(r'on\s+(?:side\s+|segment\s+)?([A-Z])([A-Z])', re.IGNORECASE)
+    _MIDPOINT_PATTERN = re.compile(r'midpoint\s+of\s+([A-Z])([A-Z])', re.IGNORECASE)
 
     def __init__(self, config: RenderConfig):
         self.config = config
@@ -286,7 +287,7 @@ class PointLayoutEngine:
                 return (x, y)
         
         # Pattern: "midpoint of AB"
-        midpoint_match = re.search(r'midpoint\s+of\s+([A-Z])([A-Z])', description, re.IGNORECASE)
+        midpoint_match = self._MIDPOINT_PATTERN.search(description)
         if midpoint_match:
             p1_label = midpoint_match.group(1).upper()
             p2_label = midpoint_match.group(2).upper()
