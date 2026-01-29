@@ -25,7 +25,7 @@ from pathlib import Path
 try:
     import matplotlib.pyplot as plt
     import matplotlib.patches as patches
-    from matplotlib.patches import Arc, Circle as MplCircle, FancyArrowPatch
+    from matplotlib.patches import Arc, Circle as MplCircle, FancyArrowPatch, Ellipse
     from matplotlib.lines import Line2D
     MATPLOTLIB_AVAILABLE = True
 except ImportError:
@@ -77,6 +77,10 @@ class RenderConfig:
     
     # Margins
     margin: float = 1.5
+    
+    # Display settings
+    show_points: bool = True
+    show_labels: bool = True
 
 
 class PointLayoutEngine:
@@ -338,8 +342,12 @@ class FigureRenderer:
         self._render_quadrilaterals(figure)
         self._render_tangents(figure)
         self._render_angles(figure)
-        self._render_points(figure)
-        self._render_labels()
+        self._render_arcs(figure)
+        self._render_ellipses(figure)
+        if self.config.show_points:
+            self._render_points(figure)
+        if self.config.show_labels:
+            self._render_labels()
         
         # Set axis limits with margin
         self._set_axis_limits()
@@ -357,11 +365,18 @@ class FigureRenderer:
                 radius = circle.radius if circle.radius else self.config.default_radius
                 
                 # Draw circle
+                # Check for fill in raw_yaml or extended attributes if any
+                fill = False
+                if hasattr(circle, 'fill'):
+                    fill = circle.fill
+                
                 circle_patch = MplCircle(
                     center, radius,
-                    fill=False,
+                    fill=fill,
+                    facecolor=self.config.background_color if fill else 'none',
                     edgecolor=self.config.circle_color,
-                    linewidth=self.config.line_width
+                    linewidth=self.config.line_width,
+                    zorder=2
                 )
                 self.ax.add_patch(circle_patch)
     
@@ -539,6 +554,86 @@ class FigureRenderer:
                         zorder=5
                     )
     
+    def _render_arcs(self, figure: GeometryFigure):
+        """Render circular arcs."""
+        for arc in figure.arcs:
+            if all(p in self.positions for p in [arc.circle_center, arc.start_point, arc.end_point]):
+                center = self.positions[arc.circle_center]
+                start = self.positions[arc.start_point]
+                end = self.positions[arc.end_point]
+                
+                # Calculate radius from center to start point
+                radius = math.sqrt((start[0] - center[0])**2 + (start[1] - center[1])**2)
+                
+                # Calculate angles
+                angle1 = math.degrees(math.atan2(start[1] - center[1], start[0] - center[0]))
+                angle2 = math.degrees(math.atan2(end[1] - center[1], end[0] - center[0]))
+                
+                # Normalize angles
+                angle1 = angle1 % 360
+                angle2 = angle2 % 360
+                
+                # Logic to determine arc direction (borrowed from angle rendering logic)
+                diff = (angle2 - angle1) % 360
+                
+                theta1, theta2 = angle1, angle2
+                
+                if arc.is_major:
+                    # We want the larger arc
+                    if diff <= 180:
+                        theta1 = angle2
+                        theta2 = angle1 + 360
+                    else:
+                        # Direct order is already major
+                        if theta2 < theta1: theta2 += 360
+                else:
+                    # We want the minor arc
+                    if diff > 180:
+                         theta1 = angle2
+                         theta2 = angle1 + 360
+                    else:
+                        if theta2 < theta1: theta2 += 360
+                
+                # Draw Arc
+                arc_patch = Arc(
+                    center,
+                    radius * 2,
+                    radius * 2,
+                    angle=0,
+                    theta1=theta1,
+                    theta2=theta2,
+                    color=self.config.line_color,
+                    linewidth=self.config.line_width,
+                    zorder=2
+                )
+                self.ax.add_patch(arc_patch)
+
+    def _render_ellipses(self, figure: GeometryFigure):
+        """Render ellipses, often used for 3D perspective bases."""
+        if not figure.raw_yaml or 'ellipses' not in figure.raw_yaml:
+            return
+            
+        for ell in figure.raw_yaml['ellipses']:
+            center_label = ell.get('center')
+            if center_label in self.positions:
+                center = self.positions[center_label]
+                width = ell.get('width', 2.0)
+                height = ell.get('height', 1.0)
+                angle = ell.get('angle', 0)
+                
+                fill = ell.get('fill', False)
+                
+                ellipse_patch = Ellipse(
+                    center, width, height, angle=angle,
+                    fill=fill,
+                    facecolor=self.config.background_color if fill else 'none',
+                    edgecolor=self.config.line_color,
+                    linewidth=self.config.line_width,
+                    linestyle=ell.get('style', 'solid'),
+                    zorder=ell.get('zorder', 2)
+                )
+                self.ax.add_patch(ellipse_patch)
+
     def _render_points(self, figure: GeometryFigure):
         """Render point markers."""
         for label, pos in self.positions.items():
