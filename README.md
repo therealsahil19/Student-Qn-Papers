@@ -1,169 +1,175 @@
-# 📚 Student Question Papers & Exam Generator FrameWork
+# Student Question Papers & Exam Generator Framework
 
 A robust, modular framework for managing mathematics question banks, extracting content from PDFs via AI, and generating professional exam papers. This system supports specialized workflows for **ICSE Class 10** and **Class 8**.
 
-## 🚀 System Architecture
+## 🚀 Features
 
-```mermaid
-graph TD
-    PDF[Source PDF Papers] -->|extract_class8_images.py| IMG[Page Images]
-    PDF -->|extractor.py| IMG
-    IMG -->|extractor.py + AI| TXT[Question Bank (.txt)]
-    TXT -->|update_summary.py| STATS[Updated Statistics]
-    
-    subgraph "Exam Generation"
-        TXT -->|paper_generator.py| DOC[Class 10 PDF/DOCX]
-        TXT -->|create_class8_pdf.py| C8DOC[Class 8 Term Paper]
-    end
-    
-    subgraph "Geometry Engine"
-        SCHEMA[geometry_schema.py] --> RENDER[figure_renderer.py]
-        GEN3D[generate_exam_diagrams.py] --> RENDER
-        RENDER --> DOC
-    end
+*   **AI-Ready Extraction**: Convert PDF papers to images and generate optimized prompts for LLM-based question extraction.
+*   **Question Bank Management**: Maintain topic-wise text files with automatic summary updating.
+*   **Professional Paper Generation**: Create PDF or Word (DOCX) exam papers with proper formatting, headers, and instructions.
+*   **Geometry Engine**: Render complex 2D and 3D geometric figures directly from text descriptions using a custom YAML schema.
+*   **Batch Processing**: Tools for handling large sets of chapter PDFs (specifically for Class 8).
+
+---
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+*   Python 3.8 or higher
+*   [Poppler](https://github.com/oschwartz10612/poppler-windows/releases) (Required only if using `pdf2image` backend; `PyMuPDF` is the default and doesn't require this).
+
+### Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd <repository-folder>
+    ```
+
+2.  **Create a virtual environment (Recommended):**
+    ```bash
+    python -m venv venv
+    # Windows
+    venv\Scripts\activate
+    # macOS/Linux
+    source venv/bin/activate
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+---
+
+## 📚 Core Workflows
+
+### 1. ICSE Class 10 (Standard Workflow)
+This workflow is designed for building topic-wise question banks from past papers and generating new exams.
+
+**Step A: Extract Questions**
+1.  **Prepare Images:** Convert a PDF exam paper into images for AI processing.
+    ```bash
+    python question_extractor/extractor.py --pdf "Class 10pdfs/icse/2024.pdf" --prepare-images "./images/2024_paper"
+    ```
+2.  **Generate Prompt:** Create a context-aware prompt to copy-paste into an LLM (like Claude or Gemini) along with the images.
+    ```bash
+    python question_extractor/extractor.py --generate-prompt --topics "GST,Banking"
+    ```
+3.  **Save Output:** Paste the AI's JSON/Text output into your question bank file (e.g., `Commercial_Math_Questions.txt`).
+
+**Step B: Maintain Bank**
+Update the summary counts in your question bank file.
+```bash
+python question_extractor/update_summary.py "Commercial_Math_Questions.txt"
+```
+
+**Step C: Generate Exam Paper**
+Create a formatted PDF paper from your question bank.
+```bash
+python question_extractor/paper_generator.py --input "Commercial_Math_Questions.txt" --output "Mock_Test.pdf" --total-marks 80
+```
+
+### 2. Class 8 (Specialized Workflow)
+A batch-processing workflow for textbook chapters.
+
+**Step A: Batch Image Extraction**
+Extract images from all Class 8 chapter PDFs defined in the script.
+```bash
+python question_extractor/extract_class8_images.py
+```
+
+**Step B: Term Paper Generation**
+Generate a specific format term paper (uses `create_class8_pdf.py`).
+*Note: This script may require modification of input/output paths before running.*
+```bash
+python question_extractor/create_class8_pdf.py
 ```
 
 ---
 
-## 📂 Repository Structure
+## 🔧 Tool Reference
 
-- `question_extractor/`: **Core Framework**
-    - `extractor.py`: The swiss-army knife for PDF processing and prompt generation.
-    - `paper_generator.py`: Generic exam paper builder (PDF/Word).
-    - `figure_renderer.py`: Matplotlib-based engine for 2D/3D geometry figures.
-    - `geometry_schema.py`: Data models for geometric elements (Circles, Tangents, etc.).
-    - `update_summary.py`: Maintenance script to recount questions.
-    - `configs/`: JSON configuration files for syllabus definitions.
-    - `create_class8_pdf.py`: **[Specialized]** Custom parser for Class 8 term papers.
-    - `extract_class8_images.py`: **[Specialized]** Batch image extractor for Class 8 chapters.
-- `generate_exam_diagrams.py`: **[Standalone]** Script to generate complex 3D mensuration diagrams (spheres in cylinders, etc.).
-- `identify_chapters.py`: **[Utility]** Helper to read PDF headers for identification.
-- `Aqsa Class 8 papers/` & `Class 10pdfs/`: Raw source data.
+All scripts should be run from the root directory of the project.
 
----
+### `question_extractor/extractor.py`
+The main CLI tool for PDF processing and prompt generation.
 
-## 🛠️ Workflows
+| Flag | Description |
+|------|-------------|
+| `--list-topics` | Show all configured topics and their status. |
+| `--pdf <path>` | Path to the source PDF file. |
+| `--prepare-images <dir>` | Convert PDF pages to images in the specified folder. |
+| `--generate-prompt` | Generate a prompt for LLM extraction based on enabled topics. |
+| `--topics "T1,T2"` | Override config to extract specific topics (comma-separated). |
+| `--profile <name>` | Switch syllabus profile (`class_10` or `class_8`). |
 
-### Workflow A: Standard ICSE Class 10 (Generic)
+### `question_extractor/paper_generator.py`
+Generates exam papers from text-based question banks.
 
-This is the primary workflow for building topic-wise question banks.
+| Flag | Description |
+|------|-------------|
+| `--input <files>` | One or more `.txt` question bank files. |
+| `--output <file>` | Output filename (ends in `.pdf` or `.docx`). |
+| `--format [pdf/docx]` | Force specific output format. |
+| `--topics "T1,T2"` | Filter questions to include only specific topics. |
+| `--total-marks <N>` | Set total marks (default: 80). |
+| `--no-figures` | Disable geometry figure rendering. |
 
-1.  **Preparation**:
-    ```powershell
-    # Extract images from a specific paper
-    python question_extractor/extractor.py --pdf "Class 10pdfs/icse/2024.pdf" --prepare-images "./images/icse_2024"
-    ```
+### `question_extractor/update_summary.py`
+Updates the "Number of Questions" headers and the summary table in a question bank file.
+```bash
+python question_extractor/update_summary.py <path_to_file>
+```
 
-2.  **AI Extraction**:
-    ```powershell
-    # Generate a prompt tailored to specific topics
-    python question_extractor/extractor.py --generate-prompt --topics "GST,Banking"
-    ```
-    *Copy the prompt and images to your AI assistant to get structured JSON/Text output.*
+### `question_extractor/extract_class8_images.py`
+**Specialized Tool**: Batch processes specific Class 8 chapter PDFs defined in the `CHAPTER_NAMES` dictionary within the script. useful for bulk conversion.
 
-3.  **Bank Management**:
-    Append the extracted questions to files like `Commercial_Math_Questions.txt`. Use the `update_summary.py` script to keep counts in sync.
+### `generate_exam_diagrams.py`
+**Standalone Tool**: Generates high-quality 3D mensuration diagrams (e.g., spheres in cylinders) that are too complex for the standard schema.
+```bash
+python generate_exam_diagrams.py
+```
 
-4.  **Paper Generation**:
-    ```powershell
-    # Generate a test paper from the bank
-    python question_extractor/paper_generator.py --input Commercial_Math_Questions.txt --output test_paper.pdf
-    ```
-
-### Workflow B: Class 8 (Specialized)
-
-A streamlined workflow for processing R.D. Sharma chapters and specific term papers.
-
-1.  **Batch Extraction**:
-    Use `extract_class8_images.py` to automatically process all 27 chapters of the Class 8 textbook.
-    ```powershell
-    python question_extractor/extract_class8_images.py
-    ```
-    *Auto-skips already processed chapters.*
-
-2.  **Term Paper Generation**:
-    Class 8 papers often have a custom "Section A/B/C" format embedded in a single text file.
-    ```powershell
-    # Parses 'Class8_Mathematics_Term_Paper.txt' and generates a PDF
-    python question_extractor/create_class8_pdf.py
-    ```
-
----
-
-## 🔧 Script Reference Manual
-
-### 1. `question_extractor/extractor.py`
-The main entry point for extraction tasks.
-- `--list-topics`: Show all available topics from config.
-- `--pdf [PATH]`: Input PDF file.
-- `--prepare-images [DIR]`: Convert PDF pages to images in the specified folder.
-- `--generate-prompt`: Create a context-aware prompt for LLM extraction.
-- `--profile [NAME]`: Switch between `class_10` (default) and `class_8`.
-
-### 2. `question_extractor/paper_generator.py`
-Generates professional exam papers.
-- `--input [FILE]`: Path to question bank text file.
-- `--output [FILE]`: output filename (ends in .pdf or .docx).
-- `--format [pdf|docx]`: Explicitly set format.
-- `--topics "Topic1,Topic2"`: Filter questions to only these topics.
-- `--render-figures`: Enable/Disable geometry diagram rendering.
-
-### 3. `generate_exam_diagrams.py`
-A standalone utility for creating complex, high-quality 3D geometric figures that are too complex for the standard schema.
-- **Run**: `python generate_exam_diagrams.py`
-- **Output**: Generates images in `images/` folder (e.g., `iron_pole.png`, `spheres_in_cylinder.png`).
-- **Features**: Handles z-ordering, hidden lines, and shading for Mensuration problems.
-
-### 4. `question_extractor/update_summary.py`
-Maintenance tool to ensure the "Number of Questions" headers in your text files match the actual content.
-- **Run**: `python question_extractor/update_summary.py "path/to/questions.txt"`
-- **Features**: Updates individual topic counts, total counts, and the summary table at the bottom of the file.
-
-### 5. `identify_chapters.py`
-Simple utility to peek at the first few lines of a PDF to help identify unmatched files.
-- **Run**: `python identify_chapters.py` (Edit the `files` list inside the script first).
+### `identify_chapters.py`
+**Utility**: Reads the first few lines of PDF files to help identify their content. Useful when files are unnamed.
+*Note: Requires editing the file list inside the script.*
 
 ---
 
 ## 🎨 Geometry & Figure Engine
 
-The project uses a custom schema to describe and render geometry figures.
+The project supports defining geometry figures directly in the question text using `[FIGURE]` blocks.
 
-### The `[FIGURE]` Block
-Embed this block inside any question in your `.txt` files.
-
+### Example Block
+Embed this in your question text file:
 ```yaml
 [FIGURE]
 type: circle_tangent
-description: Circle center O, Tangent PT at T.
+description: Circle with center O, tangent PT from external point P.
 elements:
   - circle: {center: O, radius: 3}
   - tangent: {circle: O, point: T, external_point: P}
-  - angle: {vertex: T, rays: [A, P], value: "30deg", marked: true}
-given_values:
-  radius: "3cm"
+  - line: {points: [O, P], style: dashed}
 [/FIGURE]
 ```
 
-### Supported Types (`geometry_schema.py`)
-- **Circles**: `circle_chord`, `circle_tangent`, `cyclic_quadrilateral`, `alternate_segment`.
-- **Triangles**: `similar_triangles`, `bpt_triangle` (Basic Proportionality).
-- **Constructions**: `construction_circumcircle`, `construction_incircle`, `construction_locus`.
-- **Mensuration**: `mensuration_cylinder`, `mensuration_cone` (See `generate_exam_diagrams.py` for advanced 3D).
+### Supported Types
+Defined in `question_extractor/geometry_schema.py`:
+*   **Circles**: `circle_inscribed_angle`, `circle_tangent`, `cyclic_quadrilateral`, `alternate_segment`.
+*   **Triangles**: `similar_triangles`, `bpt_triangle`.
+*   **Constructions**: `construction_circumcircle`, `construction_incircle`.
+*   **Mensuration**: `mensuration_cylinder`, `mensuration_cone`.
 
-### Rendering Engine (`figure_renderer.py`)
-Uses `matplotlib` to render these schemas into high-DPI images for the PDF generator. It handles:
-- Automatic axis scaling.
-- Point labeling (automatic placement to avoid overlap).
-- Styling (dashed lines for construction/hidden edges).
+### Figure Renderer
+The `figure_renderer.py` module uses `matplotlib` to render these schemas into PNG images which are then embedded into the generated PDF/DOCX.
 
 ---
 
-## ⚙️ Configuration (`question_extractor/configs/`)
+## ⚙️ Configuration
 
-The behavior of the extractor and prompt generator is driven by JSON files.
-
-- **`class_10.json`**: The master syllabus for ICSE 2026.
+Syllabus definitions are stored in `question_extractor/configs/`.
+*   **`class_10.json`**: The master syllabus for ICSE 2026.
     - Defines Units (Commercial Math, Algebra, etc.).
     - Defines Topics within units (GST, Banking).
     - `keywords`: Used by `extractor.py` to prompt the AI on what to look for.
@@ -175,14 +181,16 @@ The behavior of the extractor and prompt generator is driven by JSON files.
 
 ---
 
-## 📦 Dependencies
+## ⚠️ Troubleshooting
 
-Ensure you have the required Python packages:
+1.  **"PDF processing backend not available"**:
+    *   Ensure `PyMuPDF` is installed (`pip install PyMuPDF`). It is the default and recommended backend.
+    *   If using `pdf2image`, you must have [Poppler](https://github.com/oschwartz10612/poppler-windows/releases) installed and added to your system PATH.
 
-```txt
-PyMuPDF       # PDF -> Image conversion
-matplotlib    # Geometry rendering
-reportlab     # PDF generation
-python-docx   # Word doc generation
-PyYAML        # Parsing [FIGURE] blocks
-```
+2.  **Import Errors**:
+    *   Ensure you run scripts from the **root directory** (e.g., `python question_extractor/extractor.py`, NOT `cd question_extractor && python extractor.py`).
+    *   The scripts rely on relative imports based on the project root.
+
+3.  **"File not found" in `create_class8_pdf.py`**:
+    *   This script contains hardcoded paths. Open the file and update the `output_path` and `text_file` variables to match your system.
+
