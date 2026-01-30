@@ -1,0 +1,740 @@
+======================================================================
+CISCE (ICSE) CLASS 8 MATHEMATICS - EXTRACTED QUESTION BANK
+======================================================================
+Extracted at: 2026-01-29 21:25
+Total questions: 75
+======================================================================
+
+======================================================================
+UNIT: ALGEBRA
+======================================================================
+
+--------------------------------------------------
+Topic: Linear Equation in One Variable
+Number of Questions: 25
+--------------------------------------------------
+
+Q1 [3 marks] (easy)
+    
+    Solve: (x/2) - (1/5) = (x/3) + (1/4)
+    
+    Subtopic: Solution of linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q2 [3 marks] (easy)
+    
+    Solve: (2x - 3)/5 + (x + 3)/4 = (4x + 1)/7
+    
+    Subtopic: Solution of linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q3 [4 marks] (medium)
+    
+    Solve for x: 5(7x + 5)/3 - 23/3 = 13 - (4x - 2)/3
+    
+    Subtopic: Solution of linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q4 [4 marks] (medium)
+    
+    Solve: (0.5(x - 0.4))/0.35 - (0.6(x - 2.71))/0.42 = x + 6.1
+    
+    Subtopic: Solution of linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q5 [4 marks] (hard)
+    
+    Solve: [(2x + 3) + (x + 5)]^2 + [(2x + 3) - (x + 5)]^2 = 10x^2 + 92
+    
+    Subtopic: Solution of linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q6 [3 marks] (easy)
+    
+    A number is such that it is as much greater than 84 as it is less than 108. Find it.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q7 [4 marks] (medium)
+    
+    A number is 56 greater than the average of its third, quarter and one-twelfth. Find it.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q8 [4 marks] (medium)
+    
+    Sunita is twice as old as Ashima. If six years is subtracted from Ashima's age and four years added to Sunita's age, then Sunita will be four times Ashima's age. How old were they two years ago?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q9 [4 marks] (medium)
+    
+    The ages of Sonu and Monu are in the ratio 7 : 5. Ten years hence, the ratio of their ages will be 9 : 7. Find their present ages.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q10 [4 marks] (medium)
+    
+    Five years ago a man was seven times as old as his son. Five years hence, the father will be three times as old as his son. Find their present ages.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q11 [4 marks] (medium)
+    
+    I am currently 5 times as old as my son. In 6 years time I will be three times as old as he will be then. What are our ages now?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q12 [4 marks] (medium)
+    
+    I have Rs 1000 in ten and five rupee notes. If the number of ten rupee notes that I have is ten more than the number of five rupee notes, how many notes do I have in each denomination?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q13 [4 marks] (medium)
+    
+    At a party, colas, squash and fruit juice were offered to guests. A fourth of the guests drank colas, a third drank squash, two fifths drank fruit juice and just three did not drink any thing. How many guests were in all?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q14 [4 marks] (hard)
+    
+    There are 180 multiple choice questions in a test. If a candidate gets 4 marks for every correct answer and for every unattempted or wrongly answered question one mark is deducted from the total score of correct answers. If a candidate scored 450 marks in the test, how many questions did he answer correctly?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q15 [4 marks] (hard)
+    
+    A labourer is engaged for 20 days on the condition that he will receive Rs 60 for each day, he works and he will be fined Rs 5 for each day, he is absent. If he receives Rs 745 in all, for how many days he remained absent?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q16 [4 marks] (medium)
+    
+    Ravish has three boxes whose total weight is 60 1/2 kg. Box B weighs 3 1/2 kg more than box A and box C weighs 5 1/3 kg more than box B. Find the weight of box A.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q17 [4 marks] (medium)
+    
+    The numerator of a rational number is 3 less than the denominator. If the denominator is increased by 5 and the numerator by 2, we get the rational number 1/2. Find the rational number.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q18 [4 marks] (medium)
+    
+    In a rational number, twice the numerator is 2 more than the denominator. If 3 is added to each, the numerator and the denominator, the new fraction is 2/3. Find the original number.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q19 [4 marks] (hard)
+    
+    The distance between two stations is 340 km. Two trains start simultaneously from these stations on parallel tracks to cross each other. The speed of one of them is greater than that of the other by 5 km/hr. If the distance between the two trains after 2 hours of their start is 30 km, find the speed of each train.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q20 [4 marks] (hard)
+    
+    A steamer goes downstream from one point to another in 9 hours. It covers the same distance upstream in 10 hours. If the speed of the stream be 1 km/hr, find the speed of the steamer in still water and the distance between the ports.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q21 [4 marks] (hard)
+    
+    Bhagwanti inherited Rs 12000.00. She invested part of it as 10% and the rest at 12%. Her annual income from these investments is Rs 1280.00. How much did she invest at each rate?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q22 [4 marks] (medium)
+    
+    The length of a rectangle exceeds its breadth by 9 cm. If length and breadth are each increased by 3 cm, the area of the new rectangle will be 84 cm^2 more than that of the given rectangle. Find the length and breadth of the given rectangle.
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q23 [4 marks] (hard)
+    
+    50 kg of an alloy of lead and tin contains 60% lead. How much lead must be melted into it to make an alloy containing 75% lead?
+    
+    Subtopic: Word problems on linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q24 [3 marks] (easy)
+    
+    Solve: (3x - 8)(3x + 2) - (4x - 11)(2x + 1) = (x - 3)(x + 7)
+    
+    Subtopic: Solution of linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+Q25 [3 marks] (easy)
+    
+    Verify that x = 8 is a solution of the equation (5x - 4)/8 - (x - 3)/5 = (x + 6)/5
+    
+    Subtopic: Solution of linear equations
+    [Source: Chapter 9]
+    
+    ----------------------------------------
+
+======================================================================
+UNIT: ARITHMETIC
+======================================================================
+
+--------------------------------------------------
+Topic: Direct and Inverse Variations
+Number of Questions: 25
+--------------------------------------------------
+
+Q26 [2 marks] (easy)
+    
+    Explain the concept of direct variation.
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q27 [3 marks] (easy)
+    
+    Which of the following quantities vary directly with each other?
+    (i) Number of articles (x) and their price (y).
+    (ii) Weight of articles (x) and their cost (y).
+    (iii) Distance x and time y, speed remaining the same.
+    (iv) Wages (y) and number of hours (x) of work.
+    (v) Speed (x) and time (y) (distance covered remaining the same).
+    (vi) Area of a land (x) and its cost (y).
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q28 [3 marks] (easy)
+    
+    In which of the following tables x and y vary directly?
+    (i) a: 7, 9, 13, 21, 25; b: 21, 27, 39, 63, 75
+    (ii) a: 10, 20, 30, 40, 46; b: 5, 10, 15, 20, 23
+    (iii) a: 2, 3, 4, 5, 6; b: 6, 9, 12, 17, 20
+    (iv) a: 1^2, 2^2, 3^2, 4^2, 5^2; b: 1^3, 2^3, 3^3, 4^3, 5^3
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q29 [3 marks] (easy)
+    
+    Fill in the blanks in each of the following so as to make the statement true:
+    (i) Two quantities are said to vary ... with each other if they increase (decrease) together in such a way that the ratio of the corresponding values remains same.
+    (ii) x and y are said to vary directly with each other if for some positive number k, ... = k.
+    (iii) If u = 3v, then u and v vary ... with each other.
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q30 [3 marks] (medium)
+    
+    Complete the following tables given that x varies directly as y.
+    x: 2.5, ..., ..., 15
+    y: 5, 8, 12, ...
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q31 [3 marks] (easy)
+    
+    In which of the following tables x and y vary inversely?
+    (i) x: 4, 3, 12, 1; y: 6, 8, 2, 24
+    (ii) x: 5, 20, 10, 4; y: 20, 5, 10, 25
+    (iii) x: 4, 3, 6, 1; y: 9, 12, 8, 36
+    (iv) x: 9, 24, 15, 3; y: 8, 3, 4, 25
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q32 [3 marks] (easy)
+    
+    It x and y vary inversely, fill in the following blanks:
+    (i) x: 12, 16, ..., 8, ...
+        y: ..., 6, 4, ..., 0.25
+    
+    (ii) x: 16, 32, 8, 128
+         y: 4, ..., ..., 0.25
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q33 [3 marks] (easy)
+    
+    If x and y vary inversely as each other and x = 10 when y = 6. Find y when x = 15.
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q34 [4 marks] (medium)
+    
+    A garrison of 1200 men has provisions for 15 days. How long will the provisions last if the number of men is increased by 600?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q35 [4 marks] (medium)
+    
+    A contractor has a workforce of 420 men who can finish a certain piece of work in 9 months. How many extra men should he employ to finish the same work in 7 months?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q36 [4 marks] (medium)
+    
+    1200 soldiers in a fort had enough food for 28 days. After 4 days, some soldiers were transferred to another fort and thus the food lasted now for 32 more days. How many soldiers left the fort?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q37 [3 marks] (easy)
+    
+    If 52 men can do a piece of work in 35 days, in how many days will 28 men do it?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q38 [4 marks] (medium)
+    
+    A car travels a certain distance in 3 hours at a speed of 40 km/hr. At what speed should it travel if it is to cover the same distance in 2 hours?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q39 [3 marks] (easy)
+    
+    If x and y vary directly, and x = 3 when y = 12, find x when y = 20.
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q40 [3 marks] (easy)
+    
+    It is given that the amount of extension in a spring varies directly as the weight hung on it. If a weight of 150 gm produces an extension of 2.9 cm, what weight would produce an extension of 17.4 cm?
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q41 [4 marks] (medium)
+    
+    A machine picks 240 items in 6 minutes. How many items will it pick in 15 minutes?
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q42 [4 marks] (medium)
+    
+    In a hostel, there is enough food for 400 students for 30 days. If 100 more students join them, how long will the food last?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q43 [4 marks] (medium)
+    
+    If 14 kg of pulses cost Rs 441, what is the cost of 22 kg of pulses?
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q44 [4 marks] (medium)
+    
+    A map is drawn to a scale of 1 : 3000000. If two cities are 4 cm apart on the map, find the actual distance between them.
+    
+    Subtopic: Direct variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q45 [4 marks] (medium)
+    
+    6 pipes can fill a tank in 1 hour 24 minutes. How long will it take to fill the tank if 7 pipes of the same type are used?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q46 [4 marks] (medium)
+    
+    If 15 workers can build a wall in 48 hours, how many workers will be required to do the same work in 30 hours?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q47 [4 marks] (medium)
+    
+    The duration of a railway journey varies as the distance and inversely as the velocity; the velocity varies directly as the square root of the quantity of coal used per km and inversely as the number of carriages in the train. In a journey of 50 km in half an hour with 18 carriages, 100 kg of coal is required. How much coal will be consumed in a journey of 42 km in 28 minutes with 16 carriages?
+    
+    Subtopic: Compound variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q48 [4 marks] (medium)
+    
+    Two persons could fit new windows in a house in 3 days. 
+    (i) One of the persons fell ill before the work started. How long would the job take now? 
+    (ii) How many persons would be needed to fit the windows in one day?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q49 [4 marks] (medium)
+    
+    A batch of bottles were packed in 25 boxes with 12 bottles in each box. If the same batch is packed using 20 bottles in each box, how many boxes would be filled?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+Q50 [4 marks] (medium)
+    
+    A school has 8 periods a day each of 45 minutes duration. How long would each period be, if the school has 9 periods a day, assuming the number of school hours to be the same?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 10]
+    
+    ----------------------------------------
+
+
+--------------------------------------------------
+Topic: Time and Work
+Number of Questions: 25
+--------------------------------------------------
+
+Q51 [3 marks] (easy)
+    
+    Rakesh can do a piece of work in 20 days. How much work can he do in 4 days?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q52 [3 marks] (easy)
+    
+    Rohan can paint 1/3 of a painting in 6 days. How many days will he take to complete the painting?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q53 [3 marks] (easy)
+    
+    Anil can do a piece of work in 5 days and Ankur in 4 days. How long will they take to do the same work, if they work together?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q54 [4 marks] (medium)
+    
+    Mohan takes 9 hours to mow a large lawn. He and Sohan together can mow it in 4 hours. How long will Sohan take to mow the lawn if he works alone?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q55 [4 marks] (medium)
+    
+    Sita can finish typing a 100 page document in 9 hours, Mita in 6 hours and Rita in 12 hours. How long will they take to type a 100 page document if they work together?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q56 [4 marks] (medium)
+    
+    A, B and C working together can do a piece of work in 8 hours. A alone can do it in 20 hours and B alone can do it in 24 hours. In how many hours will C alone do the same work?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q57 [4 marks] (medium)
+    
+    A and B can do a piece of work in 18 days; B and C in 24 days and A and C in 36 days. In what time can they do it, all working together?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q58 [4 marks] (medium)
+    
+    A and B can do a piece of work in 12 days; B and C in 15 days; C and A in 20 days. How much time will A alone take to finish the work?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q59 [4 marks] (hard)
+    
+    A, B and C can reap a field in 15 3/4 days; B, C and D in 14 days; C, D and A in 18 days; D, A and B in 21 days. In what time can A, B, C and D together reap it?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q60 [4 marks] (medium)
+    
+    A and B can polish the floors of a building in 10 days. A alone can do 1/4 th of it in 12 days. In how many days can B alone polish the floor?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q61 [4 marks] (medium)
+    
+    A and B can finish a work in 20 days. A alone can do 1/5 th of the work in 12 days. In how many days can B alone do it?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q62 [4 marks] (medium)
+    
+    A and B can do a piece of work in 20 days and B in 15 days. They work together for 2 days and then A goes away. In how many days will B finish the remaining work?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q63 [4 marks] (medium)
+    
+    A can do a piece of work in 40 days and B in 45 days. They work together for 10 days and then B goes away. In how many days will A finish the remaining work?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q64 [4 marks] (medium)
+    
+    Aasheesh can paint his doll in 20 minutes and his sister Chinki can do so in 25 minutes. They paint the doll together for five minutes. At this juncture they have a quarrel and Chinki withdraws from painting. In how many minutes will Aasheesh finish the painting of the remaining doll?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q65 [4 marks] (medium)
+    
+    A and B can do a piece of work in 6 days and 4 days respectively. A started the work; worked at it for 2 days and then was joined by B. Find the total time taken to complete the work.
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q66 [4 marks] (medium)
+    
+    6 men can complete the electric fitting in a building in 7 days. How many days will it take if 21 men do the job?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q67 [4 marks] (medium)
+    
+    8 men can do a piece of work in 9 days. In how many days will 6 men do it?
+    
+    Subtopic: Inverse variation
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q68 [4 marks] (medium)
+    
+    Reema weaves 35 baskets in 25 days. In how many days will she weave 55 baskets?
+    
+    Subtopic: Direct variation
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q69 [4 marks] (medium)
+    
+    Neha types 75 pages in 14 hours. How many pages will she type in 20 hours?
+    
+    Subtopic: Direct variation
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q70 [4 marks] (medium)
+    
+    If 12 boys earn Rs 840 in 7 days, what will 15 boys earn in 6 days?
+    
+    Subtopic: Compound variation
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q71 [4 marks] (medium)
+    
+    If 25 men earn Rs 1000 in 10 days, how much will 15 men earn in 15 days?
+    
+    Subtopic: Compound variation
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q72 [4 marks] (hard)
+    
+    Suneeta can embroider a saree in 15 days. Her sister-in-law Abha can do the job in 10 days. They start embroidering the saree together, but two days later Abha gives up the work and goes to her parents. In how many days will Suneeta finish the remaining work of embroidering the saree?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q73 [4 marks] (hard)
+    
+    5 men can complete a job in 8 days. How many days will it take if 12 men do the job?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q74 [4 marks] (hard)
+    
+    A, B and C can do a piece of work in 10, 12 and 15 days respectively. They began to work together but B leaves after 2 days. Then C leaves 3 days before the completion of the work. In how many days was the work completed?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+Q75 [4 marks] (hard)
+    
+    A and B can do a piece of work in 30 days. They work together for 20 days and then B leaves. After another 20 days, A finishes the remaining work. In how many days can A alone finish the work?
+    
+    Subtopic: Relationship between time and work
+    [Source: Chapter 11]
+    
+    ----------------------------------------
+
+======================================================================
+SUMMARY
+======================================================================
+  Direct and Inverse Variations: 25 questions
+  Linear Equation in One Variable: 25 questions
+  Time and Work: 25 questions
+  Total questions: 75
+======================================================================

@@ -73,14 +73,70 @@
             "Factorization using identities",
             "Factorization of quadratic trinomials"
           ]
+        },
+        "Linear_Equations": {
+          "enabled": true,
+          "full_name": "Linear Equation in One Variable",
+          "keywords": [
+            "linear equation",
+            "one variable",
+            "solve",
+            "solution",
+            "root",
+            "equation",
+            "variable"
+          ],
+          "subtopics": [
+            "Solution of linear equations",
+            "Word problems on linear equations"
+          ]
         }
       }
     },
-    "2_Number_System": {
-      "extraction_settings": {
-        "include_marks": true,
-        "include_question_number": true,
-        "include_sub_parts": true,
-        "output_format": "txt"
+    "2_Arithmetic": {
+      "enabled": true,
+      "unit_name": "Arithmetic",
+      "description": "Direct and Inverse Variations, Time and Work.",
+      "topics": {
+        "Variations": {
+          "enabled": true,
+          "full_name": "Direct and Inverse Variations",
+          "keywords": [
+            "direct variation",
+            "inverse variation",
+            "directly proportional",
+            "inversely proportional",
+            "proportionality constant"
+          ],
+          "subtopics": [
+            "Direct variation",
+            "Inverse variation",
+            "Word problems on variations"
+          ]
+        },
+        "Time_and_Work": {
+          "enabled": true,
+          "full_name": "Time and Work",
+          "keywords": [
+            "time and work",
+            "man days",
+            "efficiency",
+            "complete work",
+            "pipes and cisterns"
+          ],
+          "subtopics": [
+            "Relationship between time and work",
+            "Unitary method in time and work",
+            "Pipes and cisterns"
+          ]
+        }
       }
     }
+  },
+  "extraction_settings": {
+    "include_marks": true,
+    "include_question_number": true,
+    "include_sub_parts": true,
+    "output_format": "txt"
+  }
+}

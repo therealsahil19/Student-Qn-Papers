@@ -319,52 +319,60 @@ class PDFPaperGenerator:
         self.styles.add(ParagraphStyle(
             name='PaperTitle',
             parent=self.styles['Heading1'],
-            fontSize=18,
+            fontName='Times-Bold',
+            fontSize=16,
             alignment=TA_CENTER,
-            spaceAfter=6
+            spaceAfter=4
         ))
         
         self.styles.add(ParagraphStyle(
             name='PaperSubtitle',
             parent=self.styles['Normal'],
-            fontSize=14,
+            fontName='Times-Roman',
+            fontSize=12,
             alignment=TA_CENTER,
-            spaceAfter=12
+            spaceAfter=8
         ))
         
         self.styles.add(ParagraphStyle(
             name='SectionHeader',
             parent=self.styles['Heading2'],
-            fontSize=14,
-            spaceBefore=18,
-            spaceAfter=6,
-            textColor=colors.darkblue
+            fontName='Times-Bold',
+            fontSize=13,
+            spaceBefore=10,
+            spaceAfter=4,
+            textColor=colors.black,
+            borderPadding=2,
+            borderWidth=0.5,
+            borderColor=colors.grey
         ))
         
         self.styles.add(ParagraphStyle(
             name='QuestionNumber',
             parent=self.styles['Normal'],
             fontSize=11,
-            fontName='Helvetica-Bold',
-            spaceBefore=12,
-            spaceAfter=4
+            fontName='Times-Bold',
+            spaceBefore=6,
+            spaceAfter=2
         ))
         
         self.styles.add(ParagraphStyle(
             name='QuestionText',
             parent=self.styles['Normal'],
+            fontName='Times-Roman',
             fontSize=11,
             alignment=TA_JUSTIFY,
-            spaceAfter=6,
-            leftIndent=20
+            spaceAfter=4,
+            leftIndent=0
         ))
         
         self.styles.add(ParagraphStyle(
             name='Instructions',
             parent=self.styles['Normal'],
+            fontName='Times-Roman',
             fontSize=10,
-            leftIndent=20,
-            spaceAfter=3
+            leftIndent=15,
+            spaceAfter=2
         ))
     
     def generate(self, paper: ExamPaper, output_path: str):
