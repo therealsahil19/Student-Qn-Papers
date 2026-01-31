@@ -26,7 +26,7 @@
       "description": "Applies arithmetic to real-world finance, taxation, and investments, bridging pure math with economics/commerce.",
       "topics": {
         "GST": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Goods and Services Tax",
           "keywords": [
             "GST",
@@ -53,7 +53,7 @@
             "CGST and SGST for intra-state (same state)",
             "IGST for inter-state (different states)",
             "Final Price = Selling Price + GST",
-            "GST Amount = SP × Rate/100"
+            "GST Amount = SP \u00d7 Rate/100"
           ],
           "common_question_types": [
             "Calculate final price after GST with discount",
@@ -63,12 +63,12 @@
           ],
           "edge_cases": [
             "Multi-item invoices with different rates",
-            "Inverse problems (consumer pays ₹X including GST, find original price)",
+            "Inverse problems (consumer pays \u20b9X including GST, find original price)",
             "GST on discounted items"
           ]
         },
         "Banking": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Banking - Recurring Deposits",
           "keywords": [
             "recurring deposit",
@@ -89,13 +89,13 @@
             "Finding rate or time period"
           ],
           "key_concepts": [
-            "Maturity Value = P × n + Interest",
-            "Interest = P × (n(n+1)/2) × (r/100) × (1/12)",
+            "Maturity Value = P \u00d7 n + Interest",
+            "Interest = P \u00d7 (n(n+1)/2) \u00d7 (r/100) \u00d7 (1/12)",
             "P = monthly deposit, n = number of months, r = annual rate"
           ],
           "formulas": [
-            "Maturity Value = P × n + P × (n(n+1)/2) × (r/100) × (1/12)",
-            "Interest = P × (n(n+1)/24) × r/100"
+            "Maturity Value = P \u00d7 n + P \u00d7 (n(n+1)/2) \u00d7 (r/100) \u00d7 (1/12)",
+            "Interest = P \u00d7 (n(n+1)/24) \u00d7 r/100"
           ],
           "common_question_types": [
             "Find maturity value given P, n, r",
@@ -109,7 +109,7 @@
           ]
         },
         "Shares_and_Dividends": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Shares and Dividends",
           "keywords": [
             "shares",
@@ -140,8 +140,8 @@
             "Return is calculated on Investment (Market Value)"
           ],
           "formulas": [
-            "Income = No. of shares × Dividend Rate × Face Value / 100",
-            "Return % = (Annual Income / Investment) × 100",
+            "Income = No. of shares \u00d7 Dividend Rate \u00d7 Face Value / 100",
+            "Return % = (Annual Income / Investment) \u00d7 100",
             "No. of shares = Total Investment / Market Value per share"
           ],
           "common_question_types": [
@@ -164,7 +164,7 @@
       "description": "The heaviest unit, emphasizing manipulation, equations, and coordinate applications. High-scoring with practice.",
       "topics": {
         "Linear_Inequations": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Linear Inequations",
           "keywords": [
             "inequation",
@@ -186,7 +186,7 @@
           "key_concepts": [
             "Inequality sign reverses when multiplying/dividing by negative",
             "Solution sets differ based on domain (N, W, Z, R)",
-            "Graphical representation: open circle for strict inequality, closed for ≤ or ≥"
+            "Graphical representation: open circle for strict inequality, closed for \u2264 or \u2265"
           ],
           "common_question_types": [
             "Solve and represent on number line",
@@ -195,7 +195,7 @@
           ]
         },
         "Quadratic_Equations": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Quadratic Equations",
           "keywords": [
             "quadratic",
@@ -206,19 +206,19 @@
             "nature of roots",
             "sum of roots",
             "product of roots",
-            "ax² + bx + c"
+            "ax\u00b2 + bx + c"
           ],
           "subtopics": [
             "Solving by factorization",
             "Solving using quadratic formula",
-            "Nature of roots using discriminant (b² - 4ac)",
+            "Nature of roots using discriminant (b\u00b2 - 4ac)",
             "Sum and product of roots",
             "Forming equations from roots",
             "Word problems leading to quadratic equations"
           ],
           "key_concepts": [
-            "Standard form: ax² + bx + c = 0",
-            "Discriminant D = b² - 4ac",
+            "Standard form: ax\u00b2 + bx + c = 0",
+            "Discriminant D = b\u00b2 - 4ac",
             "D > 0: Real and distinct roots",
             "D = 0: Real and equal roots",
             "D < 0: No real roots",
@@ -226,9 +226,9 @@
             "Product of roots = c/a"
           ],
           "formulas": [
-            "x = (-b ± √(b² - 4ac)) / 2a",
-            "Sum of roots α + β = -b/a",
-            "Product of roots αβ = c/a"
+            "x = (-b \u00b1 \u221a(b\u00b2 - 4ac)) / 2a",
+            "Sum of roots \u03b1 + \u03b2 = -b/a",
+            "Product of roots \u03b1\u03b2 = c/a"
           ],
           "common_question_types": [
             "Solve by factorization",
@@ -243,7 +243,7 @@
           ]
         },
         "Ratio_and_Proportion": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Ratio and Proportion",
           "keywords": [
             "ratio",
@@ -268,14 +268,14 @@
           ],
           "key_concepts": [
             "a:b = c:d means ad = bc",
-            "Continued proportion: a:b = b:c, so b² = ac",
-            "Mean proportional of a and c is √(ac)",
+            "Continued proportion: a:b = b:c, so b\u00b2 = ac",
+            "Mean proportional of a and c is \u221a(ac)",
             "Componendo: (a+b)/b = (c+d)/d",
             "Dividendo: (a-b)/b = (c-d)/d"
           ],
           "formulas": [
-            "Mean Proportional = √(a × c)",
-            "Third Proportional to a, b = b²/a",
+            "Mean Proportional = \u221a(a \u00d7 c)",
+            "Third Proportional to a, b = b\u00b2/a",
             "K-method: If a/b = c/d = k, then a = bk, c = dk"
           ],
           "common_question_types": [
@@ -286,7 +286,7 @@
           ]
         },
         "Factorization": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Factorisation of Polynomials",
           "keywords": [
             "factor",
@@ -320,7 +320,7 @@
           ]
         },
         "Matrices": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Matrices",
           "keywords": [
             "matrix",
@@ -346,14 +346,14 @@
             "Solving matrix equations"
           ],
           "key_concepts": [
-            "Order = rows × columns",
+            "Order = rows \u00d7 columns",
             "Addition/subtraction: same order required",
             "Multiplication: columns of first = rows of second",
-            "AB ≠ BA in general",
+            "AB \u2260 BA in general",
             "Transpose: rows become columns"
           ],
           "formulas": [
-            "For 2x2 matrix multiplication: (AB)ij = sum of (row i of A) × (column j of B)"
+            "For 2x2 matrix multiplication: (AB)ij = sum of (row i of A) \u00d7 (column j of B)"
           ],
           "common_question_types": [
             "Find unknown elements given matrix equation",
@@ -367,7 +367,7 @@
           ]
         },
         "AP": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Arithmetic Progression",
           "keywords": [
             "arithmetic progression",
@@ -389,7 +389,7 @@
             "Word problems on AP"
           ],
           "key_concepts": [
-            "Common difference d = a₂ - a₁ = a₃ - a₂ = ...",
+            "Common difference d = a\u2082 - a\u2081 = a\u2083 - a\u2082 = ...",
             "AP is linear sequence",
             "Middle term in odd-numbered AP"
           ],
@@ -407,7 +407,7 @@
           ]
         },
         "GP": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Geometric Progression",
           "keywords": [
             "geometric progression",
@@ -427,14 +427,14 @@
             "Simple applications"
           ],
           "key_concepts": [
-            "Common ratio r = a₂/a₁ = a₃/a₂ = ...",
-            "Geometric mean of a and b is √(ab)",
+            "Common ratio r = a\u2082/a\u2081 = a\u2083/a\u2082 = ...",
+            "Geometric mean of a and b is \u221a(ab)",
             "GP is exponential sequence"
           ],
           "formulas": [
-            "nth term: an = a × r^(n-1)",
-            "Sum of n terms (r ≠ 1): Sn = a(r^n - 1)/(r-1) or a(1 - r^n)/(1-r)",
-            "Geometric Mean = √(a × b)"
+            "nth term: an = a \u00d7 r^(n-1)",
+            "Sum of n terms (r \u2260 1): Sn = a(r^n - 1)/(r-1) or a(1 - r^n)/(1-r)",
+            "Geometric Mean = \u221a(a \u00d7 b)"
           ],
           "common_question_types": [
             "Find nth term",
@@ -444,7 +444,7 @@
           ]
         },
         "Coordinate_Geometry": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Coordinate Geometry",
           "keywords": [
             "coordinate",
@@ -475,20 +475,20 @@
             "x-intercept and y-intercept"
           ],
           "key_concepts": [
-            "Reflection in x-axis: (x, y) → (x, -y)",
-            "Reflection in y-axis: (x, y) → (-x, y)",
-            "Reflection in origin: (x, y) → (-x, -y)",
-            "Slope m = (y₂-y₁)/(x₂-x₁)",
-            "Parallel lines: m₁ = m₂",
-            "Perpendicular lines: m₁ × m₂ = -1"
+            "Reflection in x-axis: (x, y) \u2192 (x, -y)",
+            "Reflection in y-axis: (x, y) \u2192 (-x, y)",
+            "Reflection in origin: (x, y) \u2192 (-x, -y)",
+            "Slope m = (y\u2082-y\u2081)/(x\u2082-x\u2081)",
+            "Parallel lines: m\u2081 = m\u2082",
+            "Perpendicular lines: m\u2081 \u00d7 m\u2082 = -1"
           ],
           "formulas": [
-            "Distance = √[(x₂-x₁)² + (y₂-y₁)²]",
-            "Section formula: ((mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n))",
-            "Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)",
-            "Centroid: ((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3)",
+            "Distance = \u221a[(x\u2082-x\u2081)\u00b2 + (y\u2082-y\u2081)\u00b2]",
+            "Section formula: ((mx\u2082+nx\u2081)/(m+n), (my\u2082+ny\u2081)/(m+n))",
+            "Midpoint: ((x\u2081+x\u2082)/2, (y\u2081+y\u2082)/2)",
+            "Centroid: ((x\u2081+x\u2082+x\u2083)/3, (y\u2081+y\u2082+y\u2083)/3)",
             "Slope-intercept form: y = mx + c",
-            "Two-point form: (y-y₁)/(y₂-y₁) = (x-x₁)/(x₂-x₁)"
+            "Two-point form: (y-y\u2081)/(y\u2082-y\u2081) = (x-x\u2081)/(x\u2082-x\u2081)"
           ],
           "common_question_types": [
             "Find reflection of point",
@@ -536,11 +536,11 @@
           "key_concepts": [
             "Similar triangles have equal angles and proportional sides",
             "BPT: Line parallel to one side divides other two proportionally",
-            "Area ratio = (side ratio)²"
+            "Area ratio = (side ratio)\u00b2"
           ],
           "formulas": [
-            "If △ABC ~ △DEF, then AB/DE = BC/EF = CA/FD",
-            "Area(△ABC)/Area(△DEF) = (AB/DE)² = (BC/EF)² = (CA/FD)²"
+            "If \u25b3ABC ~ \u25b3DEF, then AB/DE = BC/EF = CA/FD",
+            "Area(\u25b3ABC)/Area(\u25b3DEF) = (AB/DE)\u00b2 = (BC/EF)\u00b2 = (CA/FD)\u00b2"
           ],
           "common_question_types": [
             "Prove triangles are similar",
@@ -580,8 +580,8 @@
           ],
           "key_concepts": [
             "Locus = path of all points satisfying a condition",
-            "Equidistant from 2 points → perpendicular bisector",
-            "Equidistant from 2 lines → angle bisectors",
+            "Equidistant from 2 points \u2192 perpendicular bisector",
+            "Equidistant from 2 lines \u2192 angle bisectors",
             "Proofs not required, understanding essential"
           ],
           "common_question_types": [
@@ -595,7 +595,7 @@
           ]
         },
         "Circles": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Circles",
           "keywords": [
             "circle",
@@ -611,31 +611,31 @@
             "diameter"
           ],
           "subtopics": [
-            "Angle properties: Central angle = 2 × Inscribed angle",
+            "Angle properties: Central angle = 2 \u00d7 Inscribed angle",
             "Angles in same segment are equal",
-            "Angle in semicircle = 90°",
+            "Angle in semicircle = 90\u00b0",
             "Cyclic quadrilateral properties",
             "Opposite angles of cyclic quadrilateral are supplementary",
             "Exterior angle = opposite interior angle",
-            "Tangent properties: Tangent ⊥ radius at point of contact",
+            "Tangent properties: Tangent \u22a5 radius at point of contact",
             "Equal tangents from external point",
             "Alternate Segment Theorem",
             "Intersecting chords theorem",
             "Tangent-secant theorem"
           ],
           "key_concepts": [
-            "Central angle = 2 × angle at circumference (same arc)",
+            "Central angle = 2 \u00d7 angle at circumference (same arc)",
             "Angles in same segment are equal",
-            "Angle in semicircle = 90°",
-            "Cyclic quad: opposite angles add to 180°",
+            "Angle in semicircle = 90\u00b0",
+            "Cyclic quad: opposite angles add to 180\u00b0",
             "Tangent is perpendicular to radius",
             "Tangents from external point are equal",
             "Alternate Segment: angle between tangent and chord = angle in alternate segment"
           ],
           "formulas": [
-            "Central angle = 2 × Inscribed angle",
-            "Intersecting chords: PA × PB = PC × PD",
-            "Tangent-secant: PT² = PA × PB"
+            "Central angle = 2 \u00d7 Inscribed angle",
+            "Intersecting chords: PA \u00d7 PB = PC \u00d7 PD",
+            "Tangent-secant: PT\u00b2 = PA \u00d7 PB"
           ],
           "common_question_types": [
             "Find angles using circle theorems",
@@ -654,7 +654,7 @@
           ]
         },
         "Constructions": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Geometric Constructions",
           "keywords": [
             "construction",
@@ -698,7 +698,7 @@
       "description": "Calculation-intensive with real-life cost applications. Often involves combined solids.",
       "topics": {
         "Mensuration": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Mensuration (3D Solids)",
           "keywords": [
             "cylinder",
@@ -727,14 +727,14 @@
           "key_concepts": [
             "CSA = Curved Surface Area (without bases)",
             "TSA = Total Surface Area (including bases)",
-            "Slant height of cone: l = √(r² + h²)",
+            "Slant height of cone: l = \u221a(r\u00b2 + h\u00b2)",
             "Volume remains constant in melting/recasting"
           ],
           "formulas": [
-            "Cylinder: CSA = 2πrh, TSA = 2πr(r+h), V = πr²h",
-            "Cone: CSA = πrl, TSA = πr(r+l), V = (1/3)πr²h, l = √(r²+h²)",
-            "Sphere: SA = 4πr², V = (4/3)πr³",
-            "Hemisphere: CSA = 2πr², TSA = 3πr², V = (2/3)πr³"
+            "Cylinder: CSA = 2\u03c0rh, TSA = 2\u03c0r(r+h), V = \u03c0r\u00b2h",
+            "Cone: CSA = \u03c0rl, TSA = \u03c0r(r+l), V = (1/3)\u03c0r\u00b2h, l = \u221a(r\u00b2+h\u00b2)",
+            "Sphere: SA = 4\u03c0r\u00b2, V = (4/3)\u03c0r\u00b3",
+            "Hemisphere: CSA = 2\u03c0r\u00b2, TSA = 3\u03c0r\u00b2, V = (2/3)\u03c0r\u00b3"
           ],
           "common_question_types": [
             "Find CSA/TSA/Volume of single solid",
@@ -746,7 +746,7 @@
           ],
           "edge_cases": [
             "Frustum NOT included in ICSE",
-            "Unit conversions (cm³ to litres, etc.)"
+            "Unit conversions (cm\u00b3 to litres, etc.)"
           ]
         }
       }
@@ -775,7 +775,7 @@
             "complementary angles"
           ],
           "subtopics": [
-            "Trigonometric ratios of standard angles (0°, 30°, 45°, 60°, 90°)",
+            "Trigonometric ratios of standard angles (0\u00b0, 30\u00b0, 45\u00b0, 60\u00b0, 90\u00b0)",
             "Trigonometric identities",
             "Proving identities",
             "Complementary angle relations",
@@ -784,43 +784,43 @@
             "Angle of depression"
           ],
           "key_concepts": [
-            "sin²θ + cos²θ = 1",
-            "1 + tan²θ = sec²θ",
-            "1 + cot²θ = cosec²θ",
-            "sin(90°-θ) = cosθ, cos(90°-θ) = sinθ",
-            "tan(90°-θ) = cotθ",
+            "sin\u00b2\u03b8 + cos\u00b2\u03b8 = 1",
+            "1 + tan\u00b2\u03b8 = sec\u00b2\u03b8",
+            "1 + cot\u00b2\u03b8 = cosec\u00b2\u03b8",
+            "sin(90\u00b0-\u03b8) = cos\u03b8, cos(90\u00b0-\u03b8) = sin\u03b8",
+            "tan(90\u00b0-\u03b8) = cot\u03b8",
             "Angle of elevation: looking UP from horizontal",
             "Angle of depression: looking DOWN from horizontal"
           ],
           "formulas": [
-            "sin²θ + cos²θ = 1",
-            "sec²θ - tan²θ = 1",
-            "cosec²θ - cot²θ = 1",
-            "tanθ = sinθ/cosθ",
-            "cotθ = cosθ/sinθ"
+            "sin\u00b2\u03b8 + cos\u00b2\u03b8 = 1",
+            "sec\u00b2\u03b8 - tan\u00b2\u03b8 = 1",
+            "cosec\u00b2\u03b8 - cot\u00b2\u03b8 = 1",
+            "tan\u03b8 = sin\u03b8/cos\u03b8",
+            "cot\u03b8 = cos\u03b8/sin\u03b8"
           ],
           "standard_values": {
-            "0°": {
+            "0\u00b0": {
               "sin": 0,
               "cos": 1,
               "tan": 0
             },
-            "30°": {
+            "30\u00b0": {
               "sin": "1/2",
-              "cos": "√3/2",
-              "tan": "1/√3"
+              "cos": "\u221a3/2",
+              "tan": "1/\u221a3"
             },
-            "45°": {
-              "sin": "1/√2",
-              "cos": "1/√2",
+            "45\u00b0": {
+              "sin": "1/\u221a2",
+              "cos": "1/\u221a2",
               "tan": 1
             },
-            "60°": {
-              "sin": "√3/2",
+            "60\u00b0": {
+              "sin": "\u221a3/2",
               "cos": "1/2",
-              "tan": "√3"
+              "tan": "\u221a3"
             },
-            "90°": {
+            "90\u00b0": {
               "sin": 1,
               "cos": 0,
               "tan": "undefined"
@@ -848,7 +848,7 @@
       "description": "Graphical and interpretive focus. Often paired with Probability.",
       "topics": {
         "Statistics": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Statistics",
           "keywords": [
             "mean",
@@ -884,10 +884,10 @@
             "Median from Ogive: N/2 on y-axis, read x-value"
           ],
           "formulas": [
-            "Direct Method: Mean = Σfx / Σf",
-            "Assumed Mean: Mean = A + Σfd / Σf (d = x - A)",
-            "Step Deviation: Mean = A + (Σfu / Σf) × h (u = (x-A)/h)",
-            "Median = L + ((n/2 - cf) / f) × h"
+            "Direct Method: Mean = \u03a3fx / \u03a3f",
+            "Assumed Mean: Mean = A + \u03a3fd / \u03a3f (d = x - A)",
+            "Step Deviation: Mean = A + (\u03a3fu / \u03a3f) \u00d7 h (u = (x-A)/h)",
+            "Median = L + ((n/2 - cf) / f) \u00d7 h"
           ],
           "common_question_types": [
             "Calculate mean using any method",
@@ -910,7 +910,7 @@
       "description": "Introductory and conceptual. Basic single-event probability only.",
       "topics": {
         "Probability": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Probability",
           "keywords": [
             "probability",
@@ -936,7 +936,7 @@
           ],
           "key_concepts": [
             "P(E) = Number of favorable outcomes / Total number of outcomes",
-            "0 ≤ P(E) ≤ 1",
+            "0 \u2264 P(E) \u2264 1",
             "P(certain event) = 1",
             "P(impossible event) = 0",
             "P(A) + P(not A) = 1"
@@ -974,6 +974,6 @@
     "include_sub_parts": true,
     "include_difficulty": true,
     "include_diagrams_note": true,
-    "output_format": "txt"
+    "output_format": "json"
   }
 }
