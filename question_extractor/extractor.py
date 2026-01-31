@@ -427,7 +427,8 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
         self,
         images_dir: str,
         topics: List[str] = None,
-        source_paper: str = ""
+        source_paper: str = "",
+        recursive: bool = False
     ) -> Dict:
         """
         Generate a manifest for batch extraction of ALL pages.
@@ -439,11 +440,28 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
             images_dir: Directory containing page images
             topics: Topics to extract (None = use enabled)
             source_paper: Name of the source paper
+            recursive: If True, search subdirectories for images
             
         Returns:
             Manifest dictionary with extraction plan
         """
-        image_paths = self.get_all_image_paths(images_dir)
+        if recursive:
+            image_paths = []
+            images_dir_path = Path(images_dir)
+            if images_dir_path.exists():
+                for root, dirs, files in os.walk(images_dir_path):
+                    # Find PNGs in this directory
+                    pngs = [Path(root) / f for f in files if f.lower().endswith('.png')]
+                    # Sort by page number if possible
+                    def get_page_num(path):
+                        try:
+                            return int(path.name.rpartition('_')[2][:-4])
+                        except:
+                            return 0
+                    pngs.sort(key=get_page_num)
+                    image_paths.extend([str(p.absolute()) for p in pngs])
+        else:
+            image_paths = self.get_all_image_paths(images_dir)
         
         if topics is None:
             topics = list(self.topic_manager.get_enabled_topics().keys())
@@ -465,9 +483,17 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
         }
         
         for idx, img_path in enumerate(image_paths, 1):
+            # Determine source paper for this specific page
+            page_source = source_paper
+            if recursive:
+                # Use the parent directory name as source paper
+                # e.g. .../PaperName/page_1.png -> PaperName
+                page_source = Path(img_path).parent.name
+
             page_info = {
                 "page_number": idx,
                 "image_path": img_path,
+                "source_paper": page_source,
                 "status": "pending",
                 "questions_extracted": 0
             }
@@ -521,7 +547,7 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
                 has_diagram=q.get("has_diagram", False),
                 difficulty=q.get("difficulty"),
                 page_number=page_number if page_number else q.get("page_number", 0),
-                source_paper=source_paper
+                source_paper=q.get("source_paper", source_paper)
             )
             self.add_question(question)
         
@@ -779,6 +805,11 @@ Examples:
         help="Source paper name for batch extraction"
     )
     parser.add_argument(
+        "--recursive",
+        action="store_true",
+        help="Recursively search for images in subdirectories"
+    )
+    parser.add_argument(
         "--profile",
         type=str,
         default="class_10",
@@ -937,7 +968,8 @@ Examples:
         manifest = extractor.generate_batch_extraction_manifest(
             args.batch_manifest,
             topics=topics,
-            source_paper=args.source
+            source_paper=args.source,
+            recursive=args.recursive
         )
 
         if not args.quiet:

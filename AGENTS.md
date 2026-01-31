@@ -1,65 +1,72 @@
 # Agent Protocol: Automated Question Extraction
 
-This document outlines the strict protocol for Antigravity (the Agent) to autonomously extract questions from PDF exam papers.
+This document outlines the strict protocol for Antigravity (the Agent) to autonomously extract questions from exam papers.
 
 ## 🚀 Workflow Overview
 
-1.  **Preparation**: Agent uses `extractor.py` to convert PDF to images and generate a "manifest".
-2.  **Execution Loop**: Agent iterates through the manifest, using its internal Vision capabilities to extract questions from each image.
-3.  **Completion**: Agent saves the extracted questions to a text file using the provided CLI tool.
+1.  **Preparation**: Agent uses `extractor.py` to generate a "Master Manifest" covering ALL images in a root directory (recursive).
+2.  **Execution Loop**: Agent iterates through the master manifest, using its internal Vision capabilities to extract questions.
+3.  **Completion**: Agent saves the extracted questions to a single text file autonomously.
 
 ---
 
 ## 🛠️ Step-by-Step Protocol
 
-### Step 1: Initialize Extraction Job
+### Step 1: Initialize Extraction Job (Recursive Mode)
 
-Run the extractor with the `--quiet` flag to prepare images and get the job manifest.
+Point the tool at the **root** image directory (e.g., `images_class_10`) and use the `--recursive` flag. This will find all images in all subfolders and create one giant job list.
 
 ```bash
 # Syntax
-python question_extractor/extractor.py --pdf "<PATH_TO_PDF>" --prepare-images "<OUTPUT_DIR>" --quiet
-python question_extractor/extractor.py --batch-manifest "<OUTPUT_DIR>" --source "<PAPER_NAME>" --quiet
+python question_extractor/extractor.py --batch-manifest "<ROOT_IMAGE_DIR>" --recursive --quiet
 ```
 
 **Example:**
 ```bash
-python question_extractor/extractor.py --pdf "Class 10pdfs/2024.pdf" --prepare-images "./images/2024_job" --quiet
-python question_extractor/extractor.py --batch-manifest "./images/2024_job" --source "ICSE 2024" --quiet
+python question_extractor/extractor.py --batch-manifest "images_class_10" --recursive --quiet
 ```
 *Output will be the path to the generated `extraction_manifest.json`.*
 
 ### Step 2: Load the Manifest
 
 Read the JSON file generated in Step 1.
-It contains two critical pieces of information:
-1.  `extraction_prompt`: The EXACT instruction you must follow when looking at images.
-2.  `pages`: A list of image paths to process.
+It contains:
+1.  `extraction_prompt`: The instruction to follow.
+2.  `pages`: A list of ALL pages from ALL papers found in the subdirectories.
+
+**Note:** Each page entry in `pages` has a `source_paper` field (derived from its folder name). You will need this for Step 3.
 
 ### Step 3: The Extraction Loop (Batch Processing)
 
 **Batch Size Recommendation:** Process **20-50 pages** in memory before saving.
-*Do not save after every single page. Do not save after small chunks (e.g. 5 pages) unless the document is very short.*
 
 For each page in the current batch:
-1.  **View the Image**: Use `view_image` (or equivalent tool) to look at `page['image_path']`.
+1.  **View the Image**: Look at `page['image_path']`.
 2.  **Analyze**: Apply the `manifest['extraction_prompt']` to the image.
-    *   *Constraint*: You MUST extract strictly in the JSON format requested by the prompt.
-3.  **Record**: Append the extracted JSON for that page to a local results list (in memory).
+3.  **Context Injection (CRITICAL)**:
+    *   Read the `source_paper` field from the current page object in the manifest.
+    *   **YOU MUST** include this value in your extracted JSON for every question.
+    *   *Example JSON Output*:
+        ```json
+        {
+          "question_number": "1(i)",
+          "question_text": "...",
+          "source_paper": "ICSE 2024",  <-- INSERT VALUE FROM MANIFEST HERE
+          ...
+        }
+        ```
+4.  **Record**: Append the results to your local list.
 
 ### Step 4: Save Batch Results (AUTONOMOUSLY)
 
-**CRITICAL**: When your batch (20-50 pages) is complete, save your progress immediately **WITHOUT ASKING FOR PERMISSION**.
+**CRITICAL**: When your batch is complete, save immediately. **DO NOT ASK FOR PERMISSION. DO NOT SHOW COMMANDS.**
 
 1.  **Dump Results**: Write your accumulated JSON results to a temporary file (e.g., `temp_results.json`).
-    ```json
-    { "page_questions": [ ... your extracted questions ... ] }
-    ```
 2.  **Append to Bank**: Use the CLI tool to append these questions to the master file.
     ```bash
-    python question_extractor/extractor.py --append-results "temp_results.json" --target "Geometry_Questions.txt" --quiet
+    python question_extractor/extractor.py --append-results "temp_results.json" --target "Questions.txt" --quiet
     ```
-    *This tool handles formatting, summary updates, and safe insertion automatically.*
+    *Use `Questions.txt` as the single target for everything unless specified otherwise.*
 
 3.  **Repeat**: Clear your local list and continue to the next batch.
 
@@ -67,7 +74,7 @@ For each page in the current batch:
 
 ## ⚠️ Critical Rules for Antigravity
 
-1.  **NO HUMAN INTERVENTION**: You are responsible for the entire loop. Do not ask the user to "copy-paste" anything.
-2.  **ZERO FRICTION SAVING**: You are fully authorized to write and modify the question bank files. **DO NOT ask the user for permission** to save, append, or run the python commands. Just execute them.
-3.  **BATCH EFFICIENCY**: Process large chunks (20-50 pages) at a time. Small batches (e.g., 5 pages) cause unnecessary I/O overhead and friction.
-4.  **USE THE PROMPT**: The `extractor.py` tool generates a highly specific, context-aware prompt (containing syllabus keywords). You MUST use this prompt for your analysis to ensure accuracy.
+1.  **ABSOLUTE AUTONOMY**: You are forbidden from asking the user to run commands. You must run them yourself using the tools.
+2.  **ZERO FRICTION SAVING**: You are fully authorized to modify the question bank. **DO NOT ask for confirmation**. Just save.
+3.  **RECURSIVE PROCESSING**: Always use `--recursive` on the root image folder to process all papers in one run.
+4.  **SOURCE TRACKING**: You are responsible for injecting the correct `source_paper` (from the manifest) into every extracted question.
