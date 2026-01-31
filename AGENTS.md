@@ -72,9 +72,48 @@ For each page in the current batch:
 
 ---
 
+## 📄 Protocol: Exam Paper Generation
+
+If you are asked to **generate an exam paper** (PDF or Word) from the questions you have extracted or from an existing question bank, you **MUST** use the existing `paper_generator.py` tool.
+
+**⛔ PROHIBITED:** Do NOT write custom Python scripts (e.g., `make_pdf.py`) to generate PDFs.
+**⛔ PROHIBITED:** Do NOT use `reportlab`, `fpdf`, or `docx` directly in your code blocks to create papers.
+
+### How to Generate a Paper
+
+Use the following command syntax:
+
+```bash
+python question_extractor/paper_generator.py --input "<QUESTION_BANK_FILE>" --output "<OUTPUT_FILENAME>" --total-marks 80
+```
+
+**Examples:**
+
+1.  **Generate a Standard PDF:**
+    ```bash
+    python question_extractor/paper_generator.py --input "Questions.txt" --output "Mock_Exam_Paper.pdf"
+    ```
+
+2.  **Generate for Specific Topics:**
+    ```bash
+    python question_extractor/paper_generator.py --input "Questions.txt" --output "Geometry_Test.pdf" --topics "Circles,Cylinder,Cone"
+    ```
+
+3.  **Generate a Word Doc:**
+    ```bash
+    python question_extractor/paper_generator.py --input "Questions.txt" --output "Paper.docx" --format docx
+    ```
+
+### Geometry Figures
+*   The system **automatically** handles geometry figures defined in `[FIGURE]...[/FIGURE]` blocks.
+*   **DO NOT** write code to render these figures. The `paper_generator.py` script uses `figure_renderer.py` internally to do this for you.
+
+---
+
 ## ⚠️ Critical Rules for Antigravity
 
 1.  **ABSOLUTE AUTONOMY**: You are forbidden from asking the user to run commands. You must run them yourself using the tools.
 2.  **ZERO FRICTION SAVING**: You are fully authorized to modify the question bank. **DO NOT ask for confirmation**. Just save.
 3.  **RECURSIVE PROCESSING**: Always use `--recursive` on the root image folder to process all papers in one run.
 4.  **SOURCE TRACKING**: You are responsible for injecting the correct `source_paper` (from the manifest) into every extracted question.
+5.  **NO CUSTOM GENERATORS**: Never write custom scripts to generate exam papers. Always use `question_extractor/paper_generator.py`.
