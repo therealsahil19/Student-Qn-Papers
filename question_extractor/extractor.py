@@ -19,13 +19,16 @@ from typing import List, Dict, Optional, Any
 from dataclasses import dataclass, asdict, field
 from datetime import datetime
 import glob
+import sys
 
 # Import local modules
 try:
     from pdf_processor import PDFProcessor, PDFPage
+    import update_summary
 except ImportError:
     PDFProcessor = None
     PDFPage = None
+    update_summary = None
 
 
 # Compiled regex pattern for extracting JSON from Markdown code blocks
@@ -573,6 +576,53 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
                 summary[q.topic]["total_marks"] += q.marks
         return summary
     
+    def format_questions_to_text(self) -> str:
+        """Format current extracted questions as text for the question bank."""
+        lines = []
+
+        # Group by unit, then by topic
+        by_unit = {}
+        for q in self.extracted_questions:
+            unit = q.unit or "Other"
+            if unit not in by_unit:
+                by_unit[unit] = {}
+            if q.topic not in by_unit[unit]:
+                by_unit[unit][q.topic] = []
+            by_unit[unit][q.topic].append(q)
+
+        for unit, topics in sorted(by_unit.items()):
+            lines.append("")
+            lines.append("=" * 70)
+            lines.append(f"UNIT: {unit.upper()}")
+            lines.append("=" * 70)
+
+            for topic, questions in sorted(topics.items()):
+                lines.append("")
+                lines.append("-" * 50)
+                lines.append(f"Topic: {topic.replace('_', ' ')}")
+                lines.append(f"Number of Questions: {len(questions)}")
+                lines.append("-" * 50)
+                lines.append("")
+
+                for i, q in enumerate(questions, 1):
+                    marks_str = f"[{q.marks} marks]" if q.marks else ""
+                    difficulty_str = f"({q.difficulty})" if q.difficulty else ""
+                    source_str = f"[Source: {q.source_paper}]" if q.source_paper else ""
+                    diagram_str = "[Has Diagram]" if q.has_diagram else ""
+
+                    lines.append(f"Q{q.question_number} {marks_str} {difficulty_str} {diagram_str}")
+                    lines.append("")
+                    lines.append(f"    {q.question_text}")
+                    if q.subtopic:
+                        lines.append(f"    Subtopic: {q.subtopic}")
+                    if source_str:
+                        lines.append(f"    {source_str}")
+                    lines.append("")
+                    lines.append("    " + "-" * 40)
+                    lines.append("")
+
+        return "\n".join(lines)
+
     def save_results(self, output_path: str, format: str = "txt"):
         """
         Save extracted questions to file.
@@ -608,46 +658,7 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
                 ""
             ]
             
-            # Group by unit, then by topic
-            by_unit = {}
-            for q in self.extracted_questions:
-                unit = q.unit or "Other"
-                if unit not in by_unit:
-                    by_unit[unit] = {}
-                if q.topic not in by_unit[unit]:
-                    by_unit[unit][q.topic] = []
-                by_unit[unit][q.topic].append(q)
-            
-            for unit, topics in sorted(by_unit.items()):
-                lines.append("")
-                lines.append("=" * 70)
-                lines.append(f"UNIT: {unit.upper()}")
-                lines.append("=" * 70)
-                
-                for topic, questions in sorted(topics.items()):
-                    lines.append("")
-                    lines.append("-" * 50)
-                    lines.append(f"Topic: {topic.replace('_', ' ')}")
-                    lines.append(f"Number of Questions: {len(questions)}")
-                    lines.append("-" * 50)
-                    lines.append("")
-                    
-                    for i, q in enumerate(questions, 1):
-                        marks_str = f"[{q.marks} marks]" if q.marks else ""
-                        difficulty_str = f"({q.difficulty})" if q.difficulty else ""
-                        source_str = f"[Source: {q.source_paper}]" if q.source_paper else ""
-                        diagram_str = "[Has Diagram]" if q.has_diagram else ""
-                        
-                        lines.append(f"Q{q.question_number} {marks_str} {difficulty_str} {diagram_str}")
-                        lines.append("")
-                        lines.append(f"    {q.question_text}")
-                        if q.subtopic:
-                            lines.append(f"    Subtopic: {q.subtopic}")
-                        if source_str:
-                            lines.append(f"    {source_str}")
-                        lines.append("")
-                        lines.append("    " + "-" * 40)
-                        lines.append("")
+            lines.append(self.format_questions_to_text())
             
             # Summary at the end
             lines.append("")
@@ -787,6 +798,18 @@ Examples:
         "--syllabus-info",
         action="store_true",
         help="Show syllabus information"
+    )
+
+    parser.add_argument(
+        "--append-results",
+        type=str,
+        help="File containing new questions (JSON or text) to append"
+    )
+
+    parser.add_argument(
+        "--target",
+        type=str,
+        help="Target question bank file to append to"
     )
 
     parser.add_argument(
@@ -961,6 +984,79 @@ Examples:
             return 1
         return 0
     
+    if args.append_results and args.target:
+        if not os.path.exists(args.append_results):
+            print(f"Error: Source file {args.append_results} not found.")
+            return 1
+
+        # Read source data
+        with open(args.append_results, 'r', encoding='utf-8') as f:
+            source_content = f.read()
+
+        # Try to parse as JSON first (from agent output)
+        try:
+            count = extractor.add_questions_from_json(source_content)
+            # Format questions using the same style as save_results
+            text_to_append = extractor.format_questions_to_text()
+        except ValueError:
+            # Assume it's already formatted text
+            text_to_append = source_content
+
+        target_path = Path(args.target)
+
+        if not target_path.exists():
+            # If target doesn't exist, just save normally
+            if extractor.extracted_questions:
+                extractor.save_results(args.target)
+            else:
+                # Write text content directly
+                with open(target_path, 'w', encoding='utf-8') as f:
+                    f.write(text_to_append)
+        else:
+            # Append before summary
+            with open(target_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Find insertion point (before SUMMARY)
+            summary_markers = ["SUMMARY", "CUMULATIVE SUMMARY"]
+            insertion_point = -1
+
+            for marker in summary_markers:
+                # Look for marker at start of line
+                m = re.search(rf'^{marker}\s*$', content, re.MULTILINE)
+                if m:
+                    # Look back for the "=======" line above it if it exists
+                    # The standard format has "=======" before SUMMARY
+                    pos = m.start()
+                    # Check the previous few lines for separator
+                    prev_lines = content[:pos].splitlines()
+                    if prev_lines and set(prev_lines[-1].strip()) == {'='}:
+                        # Insert before the separator line
+                        insertion_point = content.rfind('\n', 0, content.rfind('\n', 0, pos))
+                    else:
+                        insertion_point = pos
+                    break
+
+            if insertion_point != -1:
+                new_content = content[:insertion_point] + "\n" + text_to_append + "\n" + content[insertion_point:]
+            else:
+                # Just append if no summary found
+                new_content = content + "\n" + text_to_append
+
+            with open(target_path, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+
+        # Update summary counts
+        if update_summary:
+            if not args.quiet:
+                print("Updating summary counts...")
+            update_summary.update_file_summary(str(target_path))
+
+        if not args.quiet:
+            print(f"✓ Appended results to {args.target}")
+
+        return 0
+
     # Default: show help
     parser.print_help()
     return 0

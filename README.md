@@ -117,6 +117,8 @@ The main CLI tool for PDF processing and prompt generation.
 | `--generate-prompt` | Generate a prompt for LLM extraction based on enabled topics. |
 | `--topics "T1,T2"` | Override config to extract specific topics (comma-separated). |
 | `--profile <name>` | Switch syllabus profile (`class_10` or `class_8`). |
+| `--append-results <file>` | Append questions from JSON/Text file to a target bank. |
+| `--target <file>` | Target file for appending results (used with `--append-results`). |
 
 ### `question_extractor/paper_generator.py`
 Generates exam papers from text-based question banks.
