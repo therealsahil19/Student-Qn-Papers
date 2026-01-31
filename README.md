@@ -44,19 +44,33 @@ A robust, modular framework for managing mathematics question banks, extracting 
 
 ## 📚 Core Workflows
 
-### 1. ICSE Class 10 (Standard Workflow)
-This workflow is designed for building topic-wise question banks from past papers and generating new exams.
+### 1. Automated Agent Workflow (Recommended)
+This workflow is designed for AI Agents (Antigravity) to autonomously process PDF papers and extract questions without human intervention.
+
+**See [AGENTS.md](AGENTS.md) for the detailed protocol.**
+
+**Summary:**
+1.  **Job Creation:** Agent runs `extractor.py` to prepare images and a "Job Manifest".
+    ```bash
+    python question_extractor/extractor.py --pdf "paper.pdf" --prepare-images "./img_job" --quiet
+    python question_extractor/extractor.py --batch-manifest "./img_job" --source "2024" --quiet
+    ```
+2.  **Self-Execution:** Agent reads `extraction_manifest.json`, which contains both the list of images and the precise instruction prompt.
+3.  **Extraction:** Agent loops through the images, applying the prompt using its vision capabilities, and saves the results.
+
+### 2. Manual Workflow (Legacy)
+For users manually extracting questions using external tools.
 
 **Step A: Extract Questions**
-1.  **Prepare Images:** Convert a PDF exam paper into images for AI processing.
+1.  **Prepare Images:** Convert a PDF exam paper into images.
     ```bash
     python question_extractor/extractor.py --pdf "Class 10pdfs/icse/2024.pdf" --prepare-images "./images/2024_paper"
     ```
-2.  **Generate Prompt:** Create a context-aware prompt to copy-paste into an LLM (like Claude or Gemini) along with the images.
+2.  **Generate Prompt:** Create a context-aware prompt to copy-paste into an LLM.
     ```bash
     python question_extractor/extractor.py --generate-prompt --topics "GST,Banking"
     ```
-3.  **Save Output:** Paste the AI's JSON/Text output into your question bank file (e.g., `Commercial_Math_Questions.txt`).
+3.  **Save Output:** Paste the AI's JSON/Text output into your question bank file.
 
 **Step B: Maintain Bank**
 Update the summary counts in your question bank file.

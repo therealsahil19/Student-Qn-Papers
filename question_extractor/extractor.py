@@ -445,11 +445,19 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
         if topics is None:
             topics = list(self.topic_manager.get_enabled_topics().keys())
         
+        # Generate the instruction prompt once for the whole batch
+        extraction_prompt = self.generate_extraction_prompt(
+            topics=topics,
+            is_batch_mode=True,
+            include_examples=True
+        )
+
         manifest = {
             "source_paper": source_paper,
             "images_directory": str(images_dir),
             "total_pages": len(image_paths),
             "target_topics": topics,
+            "extraction_prompt": extraction_prompt,
             "pages": []
         }
         
@@ -780,6 +788,12 @@ Examples:
         action="store_true",
         help="Show syllabus information"
     )
+
+    parser.add_argument(
+        "--quiet",
+        action="store_true",
+        help="Suppress verbose output (useful for agent execution)"
+    )
     
     args = parser.parse_args()
     
@@ -787,7 +801,8 @@ Examples:
     try:
         extractor = QuestionExtractor(profile=args.profile)
     except FileNotFoundError as e:
-        print(f"Error: {e}")
+        if not args.quiet:
+            print(f"Error: {e}")
         return 1
     
     # Handle commands
@@ -901,33 +916,48 @@ Examples:
             topics=topics,
             source_paper=args.source
         )
-        print("\n📋 Batch Extraction Manifest")
-        print("=" * 60)
-        print(f"Source: {manifest['source_paper']}")
-        print(f"Images Directory: {manifest['images_directory']}")
-        print(f"Total Pages: {manifest['total_pages']}")
-        print(f"Target Topics: {', '.join(manifest['target_topics'])}")
-        print("\nPages to process:")
-        for page in manifest['pages']:
-            print(f"  Page {page['page_number']}: {page['image_path']}")
-        print("=" * 60 + "\n")
+
+        if not args.quiet:
+            print("\n📋 Batch Extraction Manifest")
+            print("=" * 60)
+            print(f"Source: {manifest['source_paper']}")
+            print(f"Images Directory: {manifest['images_directory']}")
+            print(f"Total Pages: {manifest['total_pages']}")
+            print(f"Target Topics: {', '.join(manifest['target_topics'])}")
+            print("\nPages to process:")
+            for page in manifest['pages']:
+                print(f"  Page {page['page_number']}: {page['image_path']}")
+            print("=" * 60 + "\n")
         
         # Save manifest
         manifest_path = Path(args.batch_manifest) / "extraction_manifest.json"
         with open(manifest_path, 'w', encoding='utf-8') as f:
             json.dump(manifest, f, indent=2)
-        print(f"✓ Manifest saved to {manifest_path}")
+
+        if not args.quiet:
+            print(f"✓ Manifest saved to {manifest_path}")
+        else:
+            # Minimal output for agent
+            print(str(manifest_path))
         return 0
     
     if args.pdf and args.prepare_images:
-        print(f"\n📄 Processing: {args.pdf}")
+        if not args.quiet:
+            print(f"📄 Processing: {args.pdf}")
         try:
             pages = extractor.prepare_pdf(args.pdf, args.prepare_images)
-            print(f"✓ Converted {len(pages)} pages to images in {args.prepare_images}")
-            for page in pages:
-                print(f"  - Page {page.page_number}: {page.image_path}")
+            if not args.quiet:
+                print(f"✓ Converted {len(pages)} pages to images in {args.prepare_images}")
+                for page in pages:
+                    print(f"  - Page {page.page_number}: {page.image_path}")
+            else:
+                # Minimal output for agent
+                print(str(args.prepare_images))
         except Exception as e:
-            print(f"✗ Error: {e}")
+            if not args.quiet:
+                print(f"✗ Error: {e}")
+            else:
+                print(f"Error: {e}")
             return 1
         return 0
     
