@@ -51,6 +51,7 @@ try:
     DOCX_AVAILABLE = True
 except ImportError:
     DOCX_AVAILABLE = False
+    Document = Any
 
 try:
     from geometry_schema import FigureParser, GeometryFigure
