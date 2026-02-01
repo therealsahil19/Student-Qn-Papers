@@ -508,7 +508,7 @@
       "description": "Proof-heavy unit focusing on theorems and constructions. Neat diagrams are vital.",
       "topics": {
         "Similarity": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Similarity of Triangles",
           "keywords": [
             "similar",
@@ -556,7 +556,7 @@
           ]
         },
         "Loci": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Loci and Constructions",
           "keywords": [
             "locus",
@@ -654,7 +654,7 @@
           ]
         },
         "Constructions": {
-          "enabled": false,
+          "enabled": true,
           "full_name": "Geometric Constructions",
           "keywords": [
             "construction",
@@ -698,7 +698,7 @@
       "description": "Calculation-intensive with real-life cost applications. Often involves combined solids.",
       "topics": {
         "Mensuration": {
-          "enabled": false,
+          "enabled": true,
           "full_name": "Mensuration (3D Solids)",
           "keywords": [
             "cylinder",
@@ -758,7 +758,7 @@
       "description": "High-scoring with identities and applications. Essential for physics and surveying.",
       "topics": {
         "Trigonometry": {
-          "enabled": true,
+          "enabled": false,
           "full_name": "Trigonometry",
           "keywords": [
             "trigonometric",
@@ -848,7 +848,7 @@
       "description": "Graphical and interpretive focus. Often paired with Probability.",
       "topics": {
         "Statistics": {
-          "enabled": false,
+          "enabled": true,
           "full_name": "Statistics",
           "keywords": [
             "mean",

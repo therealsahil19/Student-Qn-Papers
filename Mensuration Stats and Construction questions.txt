@@ -1,0 +1,1793 @@
+======================================================================
+REORGANIZED QUESTION BANK - MENSURATION, STATISTICS, CONSTRUCTION
+======================================================================
+Total questions: 172
+======================================================================
+
+
+======================================================================
+DIFFICULTY: EASY
+======================================================================
+
+[ 1 MARK QUESTIONS ]
+
+Q1(x) [1 marks] (easy) 
+
+    The circumcentre of a triangle is the point which is:
+(a) at equal distance from the three sides of the triangle.
+(b) at equal distance from the three vertices of the triangle.
+(c) the point of intersection of the three medians.
+(d) the point of intersection of the three altitudes of the triangle.
+    Subtopic: General Property - Circumcentre
+    [Source: 2024]
+----------------------------------------
+
+Q1(v) [1 marks] (easy) 
+
+    The median of the following observations arranged in ascending order is 64. Find the value of x: 27, 31, 46, 52, x, x + 4, 71, 79, 85, 90
+    Subtopic: Median for raw data
+    [Source: 2024]
+----------------------------------------
+
+Q1(ix) [1 marks] (easy) 
+
+    Statement 1: The point which is equidistant from three non-collinear points D, E and F is the circumcentre of the △DEF.
+Statement 2: The incentre of a triangle is the point where the bisector of the angles intersects.
+(a) Both the statements are true.
+(b) Both the statements are false.
+(c) Statement 1 is true, and Statement 2 is false.
+(d) Statement 1 is false, and Statement 2 is true.
+    Subtopic: General Property - Circumcentre and Incentre
+    [Source: 2025]
+----------------------------------------
+
+Q1(xii) [1 marks] (easy) 
+
+    If the volume of two spheres is in the ratio 27 : 64, then the ratio of their radii is:
+(a) 3 : 4
+(b) 4 : 3
+(c) 9 : 16
+(d) 16 : 9
+    Subtopic: Sphere - Volume Ratio
+    [Source: 2025]
+----------------------------------------
+
+Q1(xv) [1 marks] (easy) 
+
+    Assertion(A): The mean of first 9 natural numbers is 4.5.
+Reason(R): Mean = Sum of all the observations / Total number of observations
+(a) (A) is true, (R) is false.
+(b) (A) is false, (R) is true.
+(c) Both (A) and (R) are true, and (R) is the correct reason for (A).
+(d) Both (A) and (R) are true, and (R) is the incorrect reason for (A).
+    Subtopic: Mean - Standard Formula
+    [Source: 2025]
+----------------------------------------
+
+Q1(ii) [1 marks] (easy) 
+
+    In a cylinder, if radius is halved and height is doubled then the volume will be:
+(a) same
+(b) doubled
+(c) halved
+(d) four times
+    Subtopic: Cylinder - Volume Change
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+Q1(iii) [1 marks] (easy) 
+
+    If a cylinder is covered by two hemispheres shaped lid of equal shape, then the total curved surface area of the new object will be _________.
+(a) 4πrh + 2πr²
+(b) 2πrh + 4πr²
+(c) 4πrh - 2πr²
+(d) 2πrh + 4πr
+    Subtopic: Combination of Solids - Surface Area
+    [Source: AVMB_PPR_Nov24]
+----------------------------------------
+
+Q1(viii) [1 marks] (easy) 
+
+    For the given 25 variables, x₁, x₂, x₃, ...... x₂₅.
+Assertion(A): To find the median of the given data, the variable needs to be arranged in ascending or descending order.
+Reason(R): The median is the central most term of the arranged data.
+(a) Both A and R are correct, and R is the correct explanation for A.
+(b) Both A and R are correct, and R is not the correct explanation for A.
+(c) A is true, but R is false.
+(d) Both A and R are true
+    Subtopic: Median Definition
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+Q1(iii) [1 marks] (easy) 
+
+    If a cylinder is covered by two hemispheres shaped lid of equal shape then the total curved surface area of the new object will be _________.
+(a) 4πrh + 2πr²
+(b) 2πrh + 4πr²
+(c) 4πrh - 2πr²
+(d) 2πrh + 4πr
+    Subtopic: Combination of Solids - Surface Area
+    [Source: AVMB_PPR_Nov24_v2]
+----------------------------------------
+
+Q1(iv) [1 marks] (easy) 
+
+    The marks obtained by 30 students in a class assessment of 5 marks is given below.
+[Table with Marks 0-5 and No. of students]
+The mode and median of the data are:
+(a) Mode = 10, Median = 3
+(b) Mode = 3, Median = 10
+(c) Mode = 3, Median = 3
+(d) Mode = 10, Median = 10
+    Subtopic: Mode and Median
+    [Source: BSS_PE_Jan25]
+----------------------------------------
+
+Q1(ii) [1 marks] (easy) [Has Diagram]
+
+    The locus of the door knob, as the door opens is
+(a) a line
+(b) an arc
+(c) an oval
+(d) parallel lines
+    Subtopic: Locus Concept
+    [Source: CAGS_PE_Dec24]
+----------------------------------------
+
+Q1(xiii) [1 marks] (easy) 
+
+    Locus of a moving point is ___________ if it moves such that it keeps a fixed distance from a fixed point.
+(a) Circle
+(b) Line
+(c) Angle
+(d) Line segment
+    Subtopic: Locus Concept
+    [Source: CNMS_STE_2425]
+----------------------------------------
+
+Q1(xi) [1 marks] (easy) 
+
+    Median of 9, 7, 2, 4, 8, 10, 6, 12, 13 is __________.
+a) 7.8
+b) 7.9
+c) 8
+d) 9
+    Subtopic: Median - Raw Data
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q1(iv) [1 marks] (easy) [Has Diagram]
+
+    In the given graph, the modal class is the class with frequency:
+[Histogram shown with peak at 72]
+(a) 72
+(b) 21
+(c) 48
+(d) 36
+    Subtopic: Histogram - Modal Class identification
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q1(iii) [1 marks] (easy) 
+
+    If the curved surface area of a cylinder of height 14 cm is 88 sq. cm, then the diameter of the cylinder is :
+(a.) 2 cm (b.) 4 cm (c.) 1 cm (d.) 3 cm
+    Subtopic: Cylinder - Curved Surface Area
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q1(viii) [1 marks] (easy) 
+
+    Volume of a cylinder is 330 cm³. The volume of the cone having same radius and height as that of the given cylinder is:
+(a) 330 cm³ (b) 165 cm³ (c) 110 cm³ (d) 220 cm³
+    Subtopic: Cylinder and Cone Volume relation
+    [Source: SQP2022]
+----------------------------------------
+
+Q1(viii) [1 marks] (easy) 
+
+    Class mark for a particular class is 9.5 and the class size is 6, then the class interval is:
+(a.) 6 – 12 (b.) 3.5 – 9.5 (c.) 6.5 – 12.5 (d.) 12.5 – 18.5
+    Subtopic: Class Interval and Class Mark
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q1(vi) [1 marks] (easy) 
+
+    The median class for the given distribution is:
+[Table with Class Interval 1-20 and Cumulative Frequency]
+(a) 1-5 (b) 6-10 (c) 11-15 (d) 11-20
+    Subtopic: Median Class identification
+    [Source: SQP2022]
+----------------------------------------
+
+Q1(ix) [1 marks] (easy) [Has Diagram]
+
+    In the given graph, the modal class is the class with frequency:
+[Histogram showing peak at 72]
+(a) 72 (b) 21 (c) 48 (d) 36
+    Subtopic: Histogram - Modal Class identification
+    [Source: SQP2022]
+----------------------------------------
+
+Q1(viii) [1 marks] (easy) 
+
+    The volume of a right circular cone with same base radius and height as that of a right circular cylinder, is 120 cm³. The volume of the cylinder is:
+(a) 240 cm³ (b) 60 cm³ (c) 360 cm³ (d) 480 cm³
+    Subtopic: Cone and Cylinder Volume relation
+    [Source: SQP2023]
+----------------------------------------
+
+Q1(xv) [1 marks] (easy) 
+
+    The median of a grouped frequency distribution is found graphically by drawing:
+(a) a linear graph (b) a histogram (c) a frequency polygon (d) a cumulative frequency curve
+    Subtopic: Grouped Median Graphically - MCQ
+    [Source: SQP2023]
+----------------------------------------
+
+Q1(xv) [1 marks] (easy) 
+
+    Assertion (A): To find median of the given data, the variate needs to be arranged in ascending or descending order.
+Reason (R): The median is the central most term of the arranged data.
+(a) A is true, R is false
+(b) A is false, R is true
+(c) both A and R are true
+(d) both A and R are false
+    Subtopic: Median Definition - Assertion Reason
+    [Source: SQP2024]
+----------------------------------------
+
+Q1(vi) [1 marks] (easy) 
+
+    A solid sphere is cut into two identical hemispheres.
+Statement 1: The total volume of two hemispheres is equal to the volume of the original sphere.
+Statement 2: The total surface area of two hemispheres together is equal to the surface area of the original sphere.
+Which of the following is valid?
+(a) Both the statements are true.
+(b) Both the statements are false.
+(c) Statement 1 is true, and Statement 2 is false.
+(d) Statement 1 is false, and Statement 2 is true.
+    Subtopic: Sphere and Hemispheres properties
+    [Source: SQP2025]
+----------------------------------------
+
+Q1(vii) [1 marks] (easy) 
+
+    Given that the sum of the squares of the first seven natural numbers is 140, then their mean is:
+(a) 20 (b) 70 (c) 280 (d) 980
+    Subtopic: Mean Calculation
+    [Source: SQP2025]
+----------------------------------------
+
+Q1(vi) [1 marks] (easy) 
+
+    A solid sphere is cut into two identical hemispheres.
+Assertion (A): The total volume of two hemispheres is equal to the volume of the original sphere.
+Reason (R): The total surface area of two hemispheres together is equal to the surface area of the original sphere.
+(a) (A) is true, (R) is false. (b) (A) is false, (R) is true. (c) Both (A) and (R) are true and (R) is the correct explanation of (A). (d) Both (A) and (R) are true, but (R) is not the correct explanation of (A).
+    Subtopic: Sphere and Hemispheres properties
+    [Source: SQP2026]
+----------------------------------------
+
+Q1(vii) [1 marks] (easy) 
+
+    Given that the sum of the squares of the first seven natural numbers is 140, then their mean is:
+(a) 20 (b) 70 (c) 280 (d) 980
+    Subtopic: Mean Calculation
+    [Source: SQP2026]
+----------------------------------------
+
+
+[ 2 MARK QUESTIONS ]
+
+Q3(ii) [2 marks] (easy) 
+
+    How many solid right circular cylinders of radius 2 cm and height 3 cm can be made by melting a solid right circular cylinder of diameter 12 cm and height 15 cm?
+    Subtopic: Cylinder - Volume Recasting
+    [Source: SQP2022]
+----------------------------------------
+
+Q4(ii) [2 marks] (easy) 
+
+    Find the mean for the following distribution:
+[Table with Class Interval 20-100 and Frequency]
+    Subtopic: Mean of Distribution
+    [Source: SQP2022]
+----------------------------------------
+
+
+[ 3 MARK QUESTIONS ]
+
+Q1(c) [3 marks] (easy) 
+
+    The mean of following numbers is 68. Find the value of 'x'. 45, 52, 60, x, 69, 70, 26, 81 and 94. Hence estimate the median.
+    Subtopic: Mean and Median for raw data
+    [Source: 2016]
+----------------------------------------
+
+Q2(a) [3 marks] (easy) 
+
+    The circumference of the base of a cylindrical vessel is 132 cm and its height is 25 cm. Find the
+(i) radius of the cylinder
+(ii) volume of cylinder (use π = 22/7)
+    Subtopic: Cylinder - Volume
+    [Source: 2018]
+----------------------------------------
+
+Q4(a) [3 marks] (easy) 
+
+    A solid spherical ball of radius 6 cm is melted and recast into 64 identical spherical marbles. Find the radius of each marble.
+    Subtopic: Melting and Recasting - Volume Conservation
+    [Source: 2020]
+----------------------------------------
+
+Q5(b) [3 marks] (easy) 
+
+    The mean of the following data is 16 Calculate the value of f
+
+Marks: 5, 10, 15, 20, 25
+No. of Students: 3, 7, f, 9, 6
+    Subtopic: Mean - Finding Unknown Frequency
+    [Source: 2020]
+----------------------------------------
+
+Q8(ii) [3 marks] (easy) 
+
+    For the given frequency distribution, find the:
+(a) mean, to the nearest whole number
+(b) median
+
+x: 10, 11, 12, 13, 14, 15, 16
+f: 3, 2, 2, 6, 3, 5, 3
+    Subtopic: Mean and Median for discrete data
+    [Source: 2025]
+----------------------------------------
+
+Q5(ii) [3 marks] (easy) 
+
+    Draw an equilateral triangle of 4 cm and draw a circumcircle to it.
+    Subtopic: Circumcircle Construction
+    [Source: AVM_TR_Aug24]
+----------------------------------------
+
+Q4(ii) [3 marks] (easy) 
+
+    A right circular cylinder just encloses a sphere of radius r. Determine:
+(a) Surface area of the sphere.
+(b) Curved surface area of the cylinder.
+(c) Ratio of the Surface Area of the sphere to the Curved Surface Area of the cylinder.
+    Subtopic: Combination of Solids - Sphere in Cylinder
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+
+[ 4 MARK QUESTIONS ]
+
+Q3(c) [4 marks] (easy) 
+
+    The marks of 10 students of a class in an examination arranged in ascending order is as follows:
+13, 35, 43, x, x + 4, 55, 61, 71, 80
+If the median marks is 48, find the value of x. Hence find the mode of the given data.
+    Subtopic: Median for raw data
+    [Source: 2017]
+----------------------------------------
+
+
+
+======================================================================
+DIFFICULTY: MEDIUM
+======================================================================
+
+[ 1 MARK QUESTIONS ]
+
+Q1(xiv) [1 marks] (medium) [Has Diagram]
+
+    A rectangular sheet of paper of size 11 cm x 7 cm is first rotated about the side 11 cm and then about the side 7 cm to form a cylinder, as shown in the diagram. The ratio of their curved surface areas is:
+    Subtopic: Cylinder - Curved Surface Area
+    [Source: 2024]
+----------------------------------------
+
+Q1(xiv) [1 marks] (medium) 
+
+    For points A and B, angle APB forms a right angle, then the locus of point P is:
+(a) A square with points A and B
+(b) The circle with diameter AB
+(c) A rectangle with side A and B
+(d) A semicircle with diameter AB
+    Subtopic: Locus Definition - Circle Property
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+Q1(ix) [1 marks] (medium) [Has Diagram]
+
+    A solid sphere with a radius of 4cm is cut into 4 identical pieces by two mutually perpendicular planes passing through its centre. Find the total surface area of one quarter piece.
+(a) 24π
+(b) 32π
+(c) 48π
+(d) 64π
+    Subtopic: Sphere and Parts - Surface Area
+    [Source: CNMS_STE_2425]
+----------------------------------------
+
+Q1(vi) [1 marks] (medium) [Has Diagram]
+
+    The capacity of a cylindrical vessel with a hemispherical portion raised upward at the bottom as shown in the figure is:
+(a) 1/3 πr²(2h - 3r)
+(b) 2/3 πr²(3h - 2r)
+(c) 1/3 πr²(3h - 2r)
+(d) πr²(2h - 3r)
+[Diagram shows cylinder of radius r and height h with hemisphere of radius r at the bottom]
+    Subtopic: Combination of Solids - Volume subtraction - Algebraic
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q1(vii) [1 marks] (medium) 
+
+    For the following distribution, the modal class is:
+Marks: Less than 10, Less than 20, Less than 30, Less than 40, Less than 50, Less than 60
+No. of students: 3, 12, 27, 57, 75, 80
+(a) 20 - 30
+(b) 10 - 20
+(c) 30 - 40
+(d) 60 - 70
+    Subtopic: Modal Class from Cumulative Frequency
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q1(vii) [1 marks] (medium) [Has Diagram]
+
+    If 1 can of paint can cover 0.4 m². How many such cans of paint is required to paint 4 cylindrical pillars which are 2 m tall with radius 0.35 m.
+a) 5
+b) 22
+c) 40
+d) 44
+    Subtopic: Cylinder - Surface Area - MCQ
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q1(ii) [1 marks] (medium) 
+
+    If a rectangular sheet having dimensions 22 cm x 11 cm is rolled along its shorter side to form a cylinder. Then the curved surface area of the cylinder so formed is:
+(a) 968 cm² (b) 424 cm² (c) 121 cm² (d) 242 cm²
+    Subtopic: Cylinder from Sheet rolling - CSA
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q1(x) [1 marks] (medium) 
+
+    For the following distribution, the upper quartile is
+[Table with Number 20-50 and Frequency]
+a) 35 b) 30 c) 45 d) 40
+    Subtopic: Upper Quartile - Discrete Data
+    [Source: KVIS_FTE_Aug24]
+----------------------------------------
+
+Q1(vi) [1 marks] (medium) [Has Diagram]
+
+    If the sector of a circle is folded to make two radii coincide, the surface so formed is:
+a) Only 1 (Hollow right circular cone)
+b) Only 2 (Hollow right circular cylinder)
+c) Both 1 and 2
+d) Neither 1 nor 2
+    Subtopic: Cone - Surface Area logic
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+Q1(x) [1 marks] (medium) 
+
+    If a rectangular sheet having dimensions 22 cm x 11 cm is rolled along its shorter side to form a cylinder, then the curved surface area of the cylinder so formed is:
+(a.) 424 cm² (b.) 121 cm² (c.) 242 cm² (d.) 968 cm²
+    Subtopic: Cylinder from Sheet rolling - CSA
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q1(iii) [1 marks] (medium) 
+
+    If a rectangular sheet having dimensions 22 cm x 11 cm is rolled along its shorter side to form a cylinder. Then the curved surface area of the cylinder so formed is:
+(a) 968 cm² (b) 424 cm² (c) 121 cm² (d) 242 cm²
+    Subtopic: Cylinder from Sheet rolling - CSA
+    [Source: SQP2022]
+----------------------------------------
+
+Q1(viii) [1 marks] (medium) [Has Diagram]
+
+    A right angle triangle shaped piece of hard board is rotated completely about its hypotenuse, as shown in the diagram. The solid so formed is always:
+1. a single cone
+2. a double cone
+Which of the statement is valid?
+(a) only 1. (b) only 2. (c) both 1. and 2. (d) neither 1. nor 2.
+    Subtopic: Rotation of Triangle - Double Cone
+    [Source: SQP2024]
+----------------------------------------
+
+
+[ 3 MARK QUESTIONS ]
+
+Q6(a) [3 marks] (medium) 
+
+    Construct a regular hexagon of side 5 cm. Hence construct all its lines of symmetry and name them.
+    Subtopic: Regular Hexagon Construction
+    [Source: 2016]
+----------------------------------------
+
+Q2(c) [3 marks] (medium) 
+
+    A certain number of metallic cones, each of radius 2 cm and height 3 cm are melted and recast into a solid sphere of radius 6 cm. Find the number of cones.
+    Subtopic: Melting and Recasting - Volume Conservation
+    [Source: 2016]
+----------------------------------------
+
+Q9(c) [3 marks] (medium) 
+
+    A model of a ship is made to a scale 1 : 300
+(i) The length of the model of ship is 2 m. Calculate the lengths of the ship.
+(ii) The area of the deck ship is 180,000 m². Calculate the area of the deck of the model.
+(iii) The volume of the model in 6.5 m³. Calculate the volume of the ship.
+    Subtopic: Scale Models - Area and Volume Ratios
+    [Source: 2016]
+----------------------------------------
+
+Q4(b) [3 marks] (medium) [Has Diagram]
+
+    In the given figure ABCD is a rectangle. It consists of a circle and two semi-circles each of which are of radius 5 cm. Find the area of the shaded region. Give your answer correct to three significant figures.
+    Subtopic: Area of Plane Figures - Combination
+    [Source: 2017]
+----------------------------------------
+
+Q6(a) [3 marks] (medium) 
+
+    Using a ruler and a compass construct a triangle ABC in which AB = 7 cm, ∠CAB = 60⁰ and AC = 5 cm. Construct the locus of
+(i) points equidistant from AB and AC
+(ii) points equidistant from BA and BC
+Hence construct a circle touching the three sides of the triangle internally.
+    Subtopic: Incircle and Locus-based Construction
+    [Source: 2017]
+----------------------------------------
+
+Q6(b) [3 marks] (medium) 
+
+    A conical tent is to accommodate 77 persons. Each person must have 16 m³ of air to breathe. Given the radius of the tent as 7 m, find the height of the tent and also its curved surface area.
+    Subtopic: Cone - Volume and Surface Area
+    [Source: 2017]
+----------------------------------------
+
+Q7(b) [3 marks] (medium) 
+
+    On a map drawn to a scale of 1 : 50,000, a rectangular plot of land ABCD has the following dimensions. AB = 6 cm; BC = 8 cm and all angles are right angles. Find:
+(i) the actual length of the diagonal distance AC of the plot in km.
+(ii) the actual area of the plot in sq. km.
+    Subtopic: Scale Models - Area
+    [Source: 2018]
+----------------------------------------
+
+Q8(a) [3 marks] (medium) 
+
+    Calculate the mean of the following distribution using step deviation method.
+
+Marks: 0-10, 10-20, 20-30, 30-40, 40-50, 50-60
+Number of students: 10, 9, 25, 30, 16, 10
+    Subtopic: Mean - Step Deviation Method
+    [Source: 2017]
+----------------------------------------
+
+Q8(b) [3 marks] (medium) 
+
+    If the mean of the following distribution is 24, find the value of 'a'.
+
+Marks: 0-10, 10-20, 20-30, 30-40, 40-50
+Number of students: 7, a, 8, 10, 5
+    Subtopic: Mean - Finding Unknown Frequency
+    [Source: 2018]
+----------------------------------------
+
+Q11(a) [3 marks] (medium) 
+
+    A model of a high rise building is made to a scale of 1 : 50.
+(i) If the height of the model is 0.8 m, find the height of the actual building.
+(ii) If the floor area of a flat in the building is 20 m², find the floor area of that in the model.
+    Subtopic: Scale Models - Area
+    [Source: 2020]
+----------------------------------------
+
+Q11(b) [3 marks] (medium) [Has Diagram]
+
+    From a solid wooden cylinder of height 28 cm and diameter 6 cm, two conical cavities are hollowed out. The diameters of the cones are also of 6 cm and height 10.5 cm. Taking π = 22/7 find the volume of the remaining solid.
+    Subtopic: Combination of Solids - Volume
+    [Source: 2020]
+----------------------------------------
+
+Q4(ii) [3 marks] (medium) 
+
+    The following table gives the duration of movies in minutes.
+
+Duration (in minutes): 100-110, 110-120, 120-130, 130-140, 140-150, 150-160
+No. of movies: 5, 10, 17, 8, 6, 4
+
+Using step - deviation method, find the mean duration of the movies.
+    Subtopic: Mean - Step Deviation Method
+    [Source: 2024]
+----------------------------------------
+
+Q9(i) [3 marks] (medium) [Has Diagram]
+
+    A hollow sphere of external diameter 10 cm and internal diameter 6 cm is melted and made into a solid right circular cone of height 8 cm. Find the radius of the cone so formed. [Use π = 22/7]
+    Subtopic: Melting and Recasting - Volume
+    [Source: 2025]
+----------------------------------------
+
+Q7(i) [3 marks] (medium) 
+
+    Use a graph paper for this question. (Take 2 cm = 10 Marks along one axis and 2 cm = 10 students along another axis). Draw a Histogram for the following distribution which gives the marks obtained by 164 students in a particular class and hence find the Mode.
+
+Marks: 30-40, 40-50, 50-60, 60-70, 70-80
+Number of Students: 10, 26, 40, 54, 34
+    Subtopic: Histogram - Mode
+    [Source: 2025]
+----------------------------------------
+
+Q6(ii) [3 marks] (medium) 
+
+    A model of ship is made to a scale of 1 : 160. Find
+(a) the length of the ship, if the length of its model is 1.2 m.
+(b) the area of the deck of the ship, if the area of the deck of its model is 1.2 m².
+(c) the volume of the ship, if the volume of the model is 1.2 m³.
+    Subtopic: Scale Models - Length, Area, Volume
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+Q7(i) [3 marks] (medium) 
+
+    If the mean of the following frequency distribution is 7.5, find the value of 'p'.
+x: 3, 5, 7, 9, 11, 13
+f: 6, 8, 15, p, 8, 4
+    Subtopic: Mean - Finding Unknown Frequency
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+Q6(ii) [3 marks] (medium) 
+
+    Use ruler and compass only for answering this question. Draw a circle of radius 4 cm. Mark the centre as O. Mark a point P outside the circle at a distance of 7 cm from the centre. Construct two tangents to the circle from the external point P. Measure and write down the length of any one tangent.
+    Subtopic: Tangents to a Circle Construction
+    [Source: AVMB_PPR_Nov24]
+----------------------------------------
+
+Q6(ii) [3 marks] (medium) 
+
+    Use ruler and compass only for answering this question. Draw a circle of radius 4 cm. Mark the centre as O. Mark a point P outside the circle at a distance of 7 cm from the centre. Construct two tangents to the circle from the external point P. Measure and write down the length of any one tangent.
+    Subtopic: Tangents to a Circle Construction
+    [Source: AVMB_PPR_Nov24_v2]
+----------------------------------------
+
+Q4(b) [3 marks] (medium) 
+
+    Construct a regular hexagon of side 5cm and construct a circle circumscribing the hexagon. Measure and write the length of the circum-radius.
+    Subtopic: Regular Hexagon and Circumcircle
+    [Source: BSSM_PA_Jan23]
+----------------------------------------
+
+Q6(b) [3 marks] (medium) 
+
+    Two solid spheres of radii 2cm and 4cm are melted and recast into a solid cylinder of height 6cm. Find the radius of the cylinder formed.
+    Subtopic: Melting and Recasting
+    [Source: BSSM_PA_Jan23]
+----------------------------------------
+
+Q9(ii) [3 marks] (medium) 
+
+    A cylindrical drum without a lid is made from a sheet of metal. If the height of the drum is 1.5 m and its diameter is 1m, find:
+(a) the area of metal required to make the drum
+(b) the volume of water that can be stored in the drum
+(take π = 3.14 and find your answers in 2 significant figures)
+    Subtopic: Cylinder - Surface Area and Volume
+    [Source: BSS_PE_Jan25]
+----------------------------------------
+
+Q6(i) [3 marks] (medium) 
+
+    A famous sweet shop "Madanlal Sweets" sells tinned rasgullas. The tin container is cylindrical in shape with diameter 14cm, height 16cm, and it can hold 20 spherical rasgullas of diameter 6cm and sweetened liquid such that the can is filled and then sealed. Find out how much sweetened liquid the can contains. Take π = 3.14
+    Subtopic: Cylinder and Spheres - Volume subtraction
+    [Source: CNMS_STE_2425]
+----------------------------------------
+
+Q7(ii) [3 marks] (medium) 
+
+    The following table gives the literacy rate (in %) in different cities. Find the mean literacy rate using short cut method.
+[Table with Literacy rate 45-95 and No. of cities]
+    Subtopic: Mean - Shortcut Method
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q8(i) [3 marks] (medium) 
+
+    Draw a histogram for the following distribution using a graph paper.
+Take 2cm = 10 marks on x- axis, 2cm = 2 students on y – axis. Use the histogram and determine the mode.
+[Table with Marks 50-100 and No. of Students]
+    Subtopic: Histogram and Mode
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q8(i) [3 marks] (medium) [Has Diagram]
+
+    The given graph with a histogram represents the number of students with different heights in a class.
+[Histogram showing heights 120-170 and No. of students]
+Study the graph carefully and answer the following questions:
+(a) How many students have height more than or equal to 130 cm but less than 160 cm?
+(b) State the Modal class?
+(c) Estimate and note down the modal height of the students from graph.
+    Subtopic: Histogram - Graphical Interpretation
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q4(ii) [3 marks] (medium) 
+
+    The median of the following observations
+11, 12, 14, 18, (x + 4), 30, 32, 35, 41 arranged in ascending order is 24. Find x and find the Mean.
+    Subtopic: Median and Mean - Algebra crossover
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q8(iii) [3 marks] (medium) 
+
+    The mean of the following distribution is 52 and the frequency of class interval 30-40 is 'f'. Find 'f'.
+[Table with Class Interval 10-80 and Frequency]
+    Subtopic: Missing Frequency from Mean
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q7(ii) [3 marks] (medium) 
+
+    A glass cylinder with diameter 20 cm has water upto the height 9 cm. A metal cube of edge 8 cm is immersed in it completely. Calculate the height (2 decimal places) by which the water level will rise. (π = 3.14)
+    Subtopic: Cylinder and Cube - Volume displacement
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+Q5(ii) [3 marks] (medium) 
+
+    The mean of the given distribution is 50. Find the missing frequency.
+[Table with Class interval 0-100 and Frequency]
+    Subtopic: Missing Frequency from Mean
+    [Source: KVIS_FTE_Aug24]
+----------------------------------------
+
+Q9(i) [3 marks] (medium) 
+
+    Using short cut method, find the mean of the following data on the number of patients in a hospital in a month.
+[Table with No. of patients 10-70 and No. of days]
+    Subtopic: Mean - Shortcut Method
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+Q9(ii) [3 marks] (medium) 
+
+    Draw the histogram for the following distribution and hence, estimate the mode.
+[Table with Class Interval 0-30 and Frequency]
+    Subtopic: Histogram and Mode
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q4(iii) [3 marks] (medium) [Has Diagram]
+
+    A solid piece of wooden cone is of radius OP = 7 cm and height OQ = 12 cm. A cylinder whose radius and height equal to half of that of the cone is drilled out from this piece of wooden cone. Find the volume of the remaining piece of wood.
+    Subtopic: Cone and Cylinder - Volume subtraction
+    [Source: SQP2022]
+----------------------------------------
+
+Q3(iv) [3 marks] (medium) 
+
+    The following table shows the distribution of marks in a 50 marks test in Mathematics:
+[Table with Marks 0-50 and No. of Students]
+Draw the ogive for the above distribution and hence estimate the median marks.
+    Subtopic: Ogive and Median
+    [Source: SQP2022]
+----------------------------------------
+
+Q5(iv) [3 marks] (medium) 
+
+    Estimate the mode of the given distribution by plotting a histogram.
+[Table with Daily wages 30-80 and No. of Workers]
+    Subtopic: Histogram and Mode
+    [Source: SQP2022]
+----------------------------------------
+
+Q6(iv) [3 marks] (medium) 
+
+    Given that the mean of the following frequency distribution is 30, find the missing frequency 'f'.
+[Table with Class Interval 0-60 and Frequency]
+    Subtopic: Missing Frequency from Mean
+    [Source: SQP2022]
+----------------------------------------
+
+Q10(ii) [3 marks] (medium) 
+
+    Using ruler and compasses, construct a regular hexagon of side 4.5 cm. Hence construct a circle circumscribing the hexagon. Measure and write down the length of the circum-radius.
+    Subtopic: Hexagon Construction
+    [Source: SQP2023]
+----------------------------------------
+
+Q7(ii) [3 marks] (medium) 
+
+    A cone and a sphere having the same radius are melted and recast into a cylinder. The radius and height of the cone are 3 cm and 12 cm respectively. If the radius of the cylinder so formed is 2 cm, find the height of the cylinder.
+    Subtopic: Combination of Solids - Recasting
+    [Source: SQP2023]
+----------------------------------------
+
+Q8(ii) [3 marks] (medium) 
+
+    The following table gives the petrol prices per litre for a period of 50 days.
+[Table with Price 85-110 and No. of days]
+Find the mean price of petrol per litre to the nearest rupee using step – deviation method.
+    Subtopic: Mean - Step Deviation Method
+    [Source: SQP2023]
+----------------------------------------
+
+Q5(i) [3 marks] (medium) 
+
+    Shown below is a table illustrating the monthly income distribution of a company with 100 employees.
+[Table with Monthly Income 0-24 and Number of employees]
+Using step- deviation method, find the mean monthly income of an employee.
+    Subtopic: Mean - Step Deviation
+    [Source: SQP2024]
+----------------------------------------
+
+Q6(ii) [3 marks] (medium) 
+
+    The table given below shows the ages of members of a society.
+[Table with Age 25-85 and Number of Members]
+Use graph sheet for this question. Take 2cm = 10 years along one axis and 2cm=10 members along the other axis.
+(a) Draw a histogram representing the above distribution.
+(b) Hence find the modal age of the members.
+    Subtopic: Histogram and Mode
+    [Source: SQP2024]
+----------------------------------------
+
+Q9(i) [3 marks] (medium) 
+
+    The table given below shows the runs scored by a cricket team during the overs of a match.
+[Table with Overs 20-80 and Runs scored]
+Use graph sheet for this question. Take 2 cm = 10 overs along one axis and 2 cm = 10 runs along the other axis.
+(a) Draw a histogram representing the above distribution.
+(b) Estimate the modal runs scored.
+    Subtopic: Histogram and Mode
+    [Source: SQP2025]
+----------------------------------------
+
+Q9(i) [3 marks] (medium) [Has Diagram]
+
+    Study the graph given below and answer the following:
+[Histogram graph provided for Number of runs vs Number of batsmen]
+(a) Number of batsmen who scored 500 to 700 runs
+(b) Modal class interval
+(c) The value of mode
+    Subtopic: Histogram Graph Study
+    [Source: SQP2026]
+----------------------------------------
+
+
+[ 4 MARK QUESTIONS ]
+
+Q9(b) [4 marks] (medium) [Has Diagram]
+
+    The given figure represents a kite with a circular and a semicircular motifs stuck on it. The radius of a circle is 2.5 cm and the semicircle is 2 cm. If diagonals AC and BD are of lengths 12 cm and 8 cm respectively, find the area of the:
+(i) Shaded part. Give your answer correct to the nearest whole number.
+(ii) Unshaded part.
+    Subtopic: Combination of Plane Figures and Solids
+    [Source: 2016]
+----------------------------------------
+
+Q10(b) [4 marks] (medium) [Has Diagram]
+
+    The histogram below represents the scores obtained by 25 students in a mathematics mental test. Use the data to :
+(i) Frame a frequency distribution table
+(ii) To calculate mean
+(iii) To determine the Modal class
+    Subtopic: Histogram - Mean and Modal Class
+    [Source: 2016]
+----------------------------------------
+
+Q9(c) [4 marks] (medium) [Has Diagram]
+
+    The following figure represents a solid consisting of a right circular cylinder with a hemisphere at one end and a cone at the other. Their common radius is 7 cm. The height of the cylinder and cone are each of 4 cm. Find the volume of the solid.
+    Subtopic: Combination of Solids - Volume
+    [Source: 2018]
+----------------------------------------
+
+Q3(c) [4 marks] (medium) 
+
+    Using a graph paper draw a histogram for the given distribution showing the number of runs scored by 50 batsmen. Estimate the mode of the data:
+
+Runs scored: 3000-4000, 4000-5000, 5000-6000, 6000-7000, 7000-8000, 8000-9000, 9000-10000
+No. of batsmen: 4, 18, 9, 6, 7, 2, 4
+    Subtopic: Histogram - Mode
+    [Source: 2018]
+----------------------------------------
+
+Q1(c) [4 marks] (medium) 
+
+    Using ruler and compass construct a triangle ABC where AB = 3 cm, BC = 4 cm and ∠ABC = 90⁰. Hence construct a circle circumscribing the triangle ABC. Measure and write down the radius of the circle.
+    Subtopic: Circumcircle Construction
+    [Source: 2020]
+----------------------------------------
+
+Q2(c) [4 marks] (medium) 
+
+    Draw a Histogram for the give data, using a graph paper:
+
+Weekly Wages (in ₹): 3000-4000, 4000-5000, 5000-6000, 6000-7000, 7000-8000, 8000-9000, 9000-10000
+No. of People: 4, 9, 18, 6, 7, 2, 4
+
+Estimate the mode from the graph
+    Subtopic: Histogram - Mode
+    [Source: 2020]
+----------------------------------------
+
+Q2(ii) [4 marks] (medium) [Has Diagram]
+
+    A solid metallic cylinder is cut into two identical halves along its height (as shown in the diagram). The diameter of the cylinder is 7 cm and the height is 10 cm. Find:
+(a) The total surface area (both the halves).
+(b) The total cost of painting the two halves at the rate of ₹ 30 per cm² (Use π = 22/7)
+    Subtopic: Cylinder - Surface Area
+    [Source: 2024]
+----------------------------------------
+
+Q8(iii) [4 marks] (medium) [Has Diagram]
+
+    Oil is stored in a spherical vessel occupying 3/4 of its full capacity. Radius of this spherical vessel is 28 cm. This oil is then poured into a cylindrical vessel with a radius of 21 cm. Find the height of the oil in the cylindrical vessel (correct to the nearest cm). Take π = 22/7
+    Subtopic: Combination of Solids - Volume
+    [Source: 2024]
+----------------------------------------
+
+Q3(i) [4 marks] (medium) 
+
+    Use ruler and compass for the following construction. Construct a △ABC, where AB = 6 cm, AC = 4.5 cm and ∠BAC = 120⁰. Construct a circle circumscribing the △ABC. Measure and write down the length of the radius of the circle.
+    Subtopic: Circumcircle Construction
+    [Source: 2025]
+----------------------------------------
+
+Q9(iii) [4 marks] (medium) 
+
+    A life insurance agent found the following data for distribution of ages of 100 policy holders:
+
+Age in years: 20 – 25, 25 – 30, 30 – 35, 35 – 40, 40 – 45, 45 – 50, 50 – 55, 55 – 60
+Policy Holders (frequency): 2, 4, 12, 20, 28, 22, 8, 4
+Cumulative frequency: 2, 6, 18, 38, 66, 88, 96, 100
+
+On a graph sheet draw an ogive using the given data. Take 2 cm = 5 years along one axis and 2 cm = 10 policy holders along the other axis. Use your graph to find:
+(a) The median age.
+(b) Number of policy holders whose age is above 52 years.
+    Subtopic: Ogive - Median and Frequency
+    [Source: 2024]
+----------------------------------------
+
+Q3(i) [4 marks] (medium) 
+
+    Use ruler and compass for the following construction. Construct a △ABC, where AB = 6 cm, AC = 4.5 cm and ∠BAC = 120⁰. Construct a circle circumscribing the △ABC. Measure and write down the length of the radius of the circle.
+    Subtopic: Circumcircle Construction
+    [Source: 2025]
+----------------------------------------
+
+Q5(iii) [4 marks] (medium) [Has Diagram]
+
+    A solid wooden capsule is shown in Figure 1. The capsule is formed of a cylindrical block and two hemispheres. Find the sum of total surface area of the three parts as shown in Figure 2. Given, the radius of the capsule is 3.5 cm and the length of the cylindrical block is 14 cm. (Use π = 22/7)
+    Subtopic: Combination of Solids - Surface Area
+    [Source: 2025]
+----------------------------------------
+
+Q10(iii) [4 marks] (medium) [Has Diagram]
+
+    The given graph represents the monthly salaries (in ₹) of workers of a factory.
+Using graph answer the following:
+(a) the total number of workers.
+(b) the median class.
+(c) the lower-quartile class.
+(d) number of workers having monthly salary more than or equal to ₹ 6,000 but less than ₹ 10,000.
+    Subtopic: Ogive - Median and Quartiles
+    [Source: 2025]
+----------------------------------------
+
+Q3(ii) [4 marks] (medium) [Has Diagram]
+
+    The given figure represents a hemisphere surmounted by a conical block of wood. The diameter of their bases is 6 cm each and the slant height of the cone is 5 cm. Calculate: (i) the height of the cone. (ii) the volume of the solid.
+    Subtopic: Combination of Solids - Volume
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+Q6(iii) [4 marks] (medium) [Has Diagram]
+
+    Sujay is building a greenhouse in his farm as shown below. The base of the greenhouse is circular, having a diameter of 12 m and it has a hemispherical dome on top. How much will it cost him to cover the walls and top of the greenhouse with transparent plastic, if the plastic sheet costs Rs. 77 sq. m?
+    Subtopic: Combination of Solids - Surface Area and Costing
+    [Source: AVMB_PPR_Nov24]
+----------------------------------------
+
+Q4(iii) [4 marks] (medium) 
+
+    Find the mean of the following frequency distribution by short cut method:
+Class interval: 0-10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70
+Frequency: 4, 4, 7, 20, 12, 8, 5
+    Subtopic: Mean - Short cut method
+    [Source: AVMB_PPR_Nov24]
+----------------------------------------
+
+Q6(iii) [4 marks] (medium) [Has Diagram]
+
+    Sujay is building a greenhouse in his farm as shown below. The base of the greenhouse is circular, having a diameter of 12 m and it has a hemispherical dome on top. How much will it cost him to cover the walls and top of the greenhouse with transparent plastic, if the plastic sheet costs Rs. 77 sq. m?
+    Subtopic: Combination of Solids - Surface Area and Costing
+    [Source: AVMB_PPR_Nov24_v2]
+----------------------------------------
+
+Q4(iii) [4 marks] (medium) 
+
+    Find the mean of the following frequency distribution by short cut method:
+Class interval: 0-10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70
+Frequency: 4, 4, 7, 20, 12, 8, 5
+    Subtopic: Mean - Short cut method
+    [Source: AVMB_PPR_Nov24_v2]
+----------------------------------------
+
+Q10(iii) [4 marks] (medium) 
+
+    A straight line AB is 8 cm long. Draw the locus of a point which is
+i. Always 4 cm from the line AB
+ii. Equidistant from A and B
+Mark any two points X and Y which are 4 cm from AB and equidistant from A and B. Describe the figure AXBY.
+    Subtopic: Locus Definition and Construction
+    [Source: AVM_TR_Aug24]
+----------------------------------------
+
+Q3(a) [4 marks] (medium) 
+
+    A toy is in the form of a cone mounted on a hemisphere of same radius 3.5cm. The total height of the toy is 15.5cm. Find:
+i) the slant height of the cone.
+ii) the total surface area of the toy. Give your answer correct to the nearest whole number. (Take π = 22/7)
+    Subtopic: Combination of Solids - Surface Area
+    [Source: BSSM_PA_Jan23]
+----------------------------------------
+
+Q3(ii) [4 marks] (medium) 
+
+    The surface area of a solid metallic sphere is 2464 cm². It is melted and recast into solid right circular cones of radius 3.5 cm and height 7 cm. Calculate:
+(a) the radius of the sphere
+(b) the number of cones recast.
+    Subtopic: Melting and Recasting
+    [Source: BSS_PE_Jan25]
+----------------------------------------
+
+Q5(iii) [4 marks] (medium) 
+
+    The following table shows the weight (in kg) of 70 children in a village.
+Weight in kg: 0-10, 10-20, 20-30, 30-40, 40-50, 50-60
+No. of children: 8, 5, 12, 15, 14, 16
+Find the mean of the data by Step Deviation method.
+    Subtopic: Mean - Step Deviation Method
+    [Source: BSS_PE_Jan25]
+----------------------------------------
+
+Q9(iii) [4 marks] (medium) 
+
+    Draw a circle of radius 3.4 cm. Draw two tangents to the circle from a point P, 8 cm from the centre. Record the length of the tangent segments.
+    Subtopic: Tangents to a Circle Construction
+    [Source: BSS_PE_Jan25]
+----------------------------------------
+
+Q2(i) [4 marks] (medium) 
+
+    Tania runs a bakery shop. The amount of mixture required to make one biscuit is 22 cu cm. Before it is cooked, the mixture is rolled into a sphere. After the biscuit is cooked, the biscuit becomes a cylinder of radius 2 cm and height 2.1 cm. The increase in volume is due to air being trapped in the biscuit.
+(a) What is the volume of a biscuit after it is cooked?
+(b) What is the volume of air trapped, while cooking the biscuit?
+(c) Calculate the maximum number of biscuits that can be packed in a box of dimension 16 cm × 12 cm × 10.5 cm.
+    Subtopic: Sphere to Cylinder - Volume Change
+    [Source: CAGS_PE_Dec24]
+----------------------------------------
+
+Q3(i) [4 marks] (medium) [Has Diagram]
+
+    A pen stand made of wood is in the shape of a cuboid with four conical depressions to hold pens. The dimensions of the cuboid are 15 cm by 10 cm by 3.5 cm. The radius of each depression is 0.5 cm and the depth is 1.4 cm. Find the volume of the entire stand.
+    Subtopic: Combination of Solids - Volume subtraction
+    [Source: CNMS_STE_2425]
+----------------------------------------
+
+Q10(iii) [4 marks] (medium) 
+
+    Calculate the mean of the following frequency table by step deviation method:
+[Table with Class interval 5-50 and Frequency]
+    Subtopic: Mean - Step Deviation Method
+    [Source: CAGS_PE_Dec24]
+----------------------------------------
+
+Q10(iii) [4 marks] (medium) 
+
+    Construct a triangle ABC in which BC = 6 cm, AB = 5.5 cm and ∠ABC = 120⁰.
+(a) Construct a circle circumscribing the triangle ABC.
+(b) Draw a cyclic quadrilateral ABCD so that D is equidistant from B and C.
+    Subtopic: Circumcircle and Locus-based Construction
+    [Source: CNMS_STE_2425]
+----------------------------------------
+
+Q3(i) [4 marks] (medium) [Has Diagram]
+
+    A spherical ball has a radius 3.5 cm. Six such spherical balls can fit exactly into a closed cylindrical container, as shown in the above diagram. Find:
+a) the volume of 'a' ball correct to 3 significant figures.
+b) the volume of the cylindrical container.
+c) volume of the cylindrical container not occupied by the balls.
+d) the surface area of the cylindrical container. (take π = 22/7)
+    Subtopic: Combination of Solids - Cylinder and Spheres
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q7(iii) [4 marks] (medium) 
+
+    The surface area of a solid metallic sphere is 1808.64 cm². It is melted and recast into solid right circular cones of radius of 2.4cm and height 12cm. Calculate the:
+a) radius of the solid sphere.
+b) number of cones recast. (Use π = 3.14)
+    Subtopic: Sphere and Cones - Recasting
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q5(iii) [4 marks] (medium) 
+
+    Using short-cut method, find mean for the following frequency distribution:
+[Table with Class interval 85-110 and Frequency]
+    Subtopic: Mean - Shortcut Method
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q9(i) [4 marks] (medium) 
+
+    The volume of a conical tent is 2156 m³ and the area of the floor is 616 m². Calculate the (a) radius of the base (b) height of the tent (c) length of canvas required to cover the tent if the width is 2 m.( Give your answer to the nearest m)
+    Subtopic: Cone - Volume and Surface Area
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q11(i) [4 marks] (medium) [Has Diagram]
+
+    The given block is made of two solids: a cone and a hemisphere. If the height and the base-radius of the cone are 24 cm and 10 cm respectively and the diameter of the hemisphere is 10 cm; find the total surface area of the block. (Take π = 3.14)
+    Subtopic: Combination of Solids - Surface Area
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q3(ii) [4 marks] (medium) 
+
+    A right circular cylinder having a diameter 12 cm and height 15 cm is full with ice cream. The ice-cream is to be filled in the cones of height 12 cm and diameter 6 cm having a hemispherical shape on top. Find the number of such cones which can be filled with ice cream?
+    Subtopic: Combination of Solids - Volume Replacement
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+Q6.3 [4 marks] (medium) 
+
+    Find the mean correct to two decimal places by short - cut method.
+[Table with Marks 10-70 and Number of students]
+    Subtopic: Mean - Shortcut Method
+    [Source: KVIS_FTE_Aug24]
+----------------------------------------
+
+Q5(iii) [4 marks] (medium) 
+
+    Estimate the Mode for the following data by drawing a Histogram in the graph paper:
+[Table with Weekly wages 3000-10,000 and Number of people]
+    Subtopic: Histogram and Mode
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+Q2(i) [4 marks] (medium) 
+
+    The total surface area of a right circular cone of slant height 13 cm is 90 π cm². Calculate: (a.) its radius in cm (b.) its volume in cm³, in terms of π.
+    Subtopic: Cone - Total Surface Area and Volume
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q6(iii) [4 marks] (medium) 
+
+    The numbers 6, 8, 10, 12, 13 and x are arranged in an ascending order. If the mean of the observations is equal to the median, find the value of x.
+    Subtopic: Mean and Median - Algebra crossover
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q3(i) [4 marks] (medium) [Has Diagram]
+
+    The inner circumference of the rim of a circular metal tub is 44 cm. Find:
+(a) The inner radius of the tub
+(b) The volume of the material of the tub if it's outer radius is 8 cm.
+Use π = 22/7
+    Subtopic: Circular Tub - Volume of material
+    [Source: SQP2023]
+----------------------------------------
+
+Q4(iii) [4 marks] (medium) 
+
+    Draw a histogram for the daily earnings of 54 medical stores in the following table and hence estimate the mode for the following distribution.
+[Table with Daily earnings 4500-7000 and No. of medical stores]
+    Subtopic: Histogram and Mode
+    [Source: SQP2023]
+----------------------------------------
+
+Q9(iii) [4 marks] (medium) 
+
+    Using ruler and compass only construct ∠ABC = 60⁰, AB = 6 cm and BC = 5 cm.
+(a) construct the locus of points equidistant from AB and BC.
+(b) construct the locus of points equidistant from A and B.
+(c) Mark the point which satisfies both the conditions (a) and (b) as P. Hence, construct a circle with centre P and passing through A and B.
+    Subtopic: Triangle Construction and Locus
+    [Source: SQP2024]
+----------------------------------------
+
+Q6(iii) [4 marks] (medium) 
+
+    A tent is in the shape of a cylinder surmounted by a conical top. If the height and radius of the cylindrical part are 7 m each and the total height of the tent is 14 m. Find the:
+(a) quantity of air contained inside the tent.
+(b) radius of a sphere whose volume is equal to the quantity of air inside the tent.
+Use π = 22/7
+    Subtopic: Combination of Solids - Volume
+    [Source: SQP2024]
+----------------------------------------
+
+Q8(iii) [4 marks] (medium) 
+
+    A manufacturing company prepares spherical ball bearings, each of radius 7 mm and mass 4 gm. These ball bearings are packed into boxes. Each box can have maximum of 2156 cm³ of ball bearings. Find the:
+(a) maximum number of ball bearings that each box can have.
+(b) mass of each box of ball bearings in kg.
+(use π = 22/7)
+    Subtopic: Spheres - Packing and Volume
+    [Source: SQP2025]
+----------------------------------------
+
+Q5(ii) [4 marks] (medium) 
+
+    Using step-deviation method, find mean for the following frequency distribution:
+[Table with Class 0-90 and Frequency]
+    Subtopic: Mean - Step Deviation
+    [Source: SQP2025]
+----------------------------------------
+
+Q8(iii) [4 marks] (medium) 
+
+    A manufacturing company prepares spherical ball bearings, each of radius 7 mm and mass 4 gm. These ball bearings are packed into boxes. Each box can have a maximum of 2156 cm³ of ball bearings. Find the:
+(a) maximum number of ball bearings that each box can have.
+(b) mass of each box of ball bearings in kg.
+(Use π = 22/7)
+    Subtopic: Spheres - Packing and Volume
+    [Source: SQP2026]
+----------------------------------------
+
+Q5(iii) [4 marks] (medium) 
+
+    Using step-deviation method, find mean for the following frequency distribution:
+[Table with Class 0-90 and Frequency]
+    Subtopic: Mean - Step Deviation
+    [Source: SQP2026]
+----------------------------------------
+
+
+[ 5 MARK QUESTIONS ]
+
+Q5(i) [5 marks] (medium) [Has Diagram]
+
+    The given graph with a histogram represents the number of plants of different heights grown in a school campus. Study the graph carefully and answer the following questions:
+(a) Make a frequency table with respect to the class boundaries and their corresponding frequencies.
+(b) State the modal class.
+(c) Identify and note down the mode of the distribution.
+(d) Find the number of plants whose height range is between 80 cm to 90 cm.
+    Subtopic: Histogram - Mode
+    [Source: 2024]
+----------------------------------------
+
+Q3(iii) [5 marks] (medium) 
+
+    The following table gives the frequency distribution of the seating capacity of 200 cinemas in a certain city. Use a graph paper for this question. Take 2 cm = 50 and 2 cm = 20 along x-axis and y-axis respectively to draw an ogive and hence determine:
+a) the median seating capacity.
+b) the upper quartile of the distribution.
+c) the number of cinemas with seating capacity of 330 or more.
+[Table with Seating capacity 50-500 and No. of cinemas]
+    Subtopic: Ogive and Quartiles
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q7(i) [5 marks] (medium) 
+
+    Draw a histogram from the following frequency distribution and find the mode from the graph:
+[Table with Class 0-30 and Frequency]
+    Subtopic: Histogram and Mode
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q3.3 [5 marks] (medium) 
+
+    Draw a histogram from the following frequency distribution and find the mode from the graph :
+[Table with Class 0-30 and Frequency]
+    Subtopic: Histogram and Mode
+    [Source: KVIS_FTE_Aug24]
+----------------------------------------
+
+Q3(iii) [5 marks] (medium) 
+
+    40 students enter for a game of shot put competition. The distance thrown (in meters) is recorded below:
+[Table with Distance 12-19 and Number of students]
+Draw an ogive for the above distribution. Use scale 2 cm = 1 m on one axis and 2 cm = 5 students on the other. Hence, find:
+(a.) the median (b.) upper quartile (c.) number of students who covered a distance more than 16 1/2 m.
+    Subtopic: Ogive and Percentiles
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q3(iii) [5 marks] (medium) [Has Diagram]
+
+    Study the graph and answer each of the following:
+(a) Name the curve plotted
+(b) Total number of students
+(c) The median marks
+(d) Number of students scoring between 50 and 80 marks
+[Graph provided with points (40,3), (50,12), (60,24), (70,33), (80,37), (90,39), (100,40)]
+    Subtopic: Ogive Study
+    [Source: SQP2024]
+----------------------------------------
+
+Q7(ii) [5 marks] (medium) 
+
+    The marks of 200 students in a test were recorded as follows:
+[Table with Marks % 0-100 and No. of students]
+Using graph sheet draw ogive for the given data and use it to find the,
+(a) median,
+(b) number of students who obtained more than 65% marks
+(c) number of students who did not pass, if the pass percentage was 35.
+    Subtopic: Ogive and Percentiles
+    [Source: SQP2025]
+----------------------------------------
+
+Q7(ii) [5 marks] (medium) 
+
+    The marks of 200 students in a test were recorded as follows:
+[Table with Marks % 0-100 and No. of students]
+Using graph sheet draw ogive for the given data and use it to find the:
+(a) median.
+(b) number of students who obtained more than 65% marks.
+(c) number of students who did not pass, if the pass percentage was 35.
+    Subtopic: Ogive and Percentiles
+    [Source: SQP2026]
+----------------------------------------
+
+
+[ 6 MARK QUESTIONS ]
+
+Q7.2 [6 marks] (medium) 
+
+    Draw an ogive for the following frequency distribution and estimate the following
+(i) Median (ii) Inter quartile range
+[Table with Weight in Kg 30-80 and No. of students]
+    Subtopic: Ogive and Quartiles
+    [Source: KVIS_FTE_Aug24]
+----------------------------------------
+
+
+
+======================================================================
+DIFFICULTY: HARD
+======================================================================
+
+[ 3 MARK QUESTIONS ]
+
+Q10(c) [3 marks] (hard) 
+
+    Use ruler and compass for this question. Construct a circle of radius 4.5 cm. Draw a chord. AB = 6cm.
+(i) Find the locus of points equidistant from A and B. Mark the point where it meets the circle as D.
+(ii) Join AD and find the locus of points which are equidistant from AD and AB. Murk the point where it meets the circle as C.
+(iii) Join and CD. Measure and write down the length of side CD of the quadrilateral ABCD.
+    Subtopic: Locus-based Construction - Cyclic Quadrilateral
+    [Source: 2020]
+----------------------------------------
+
+Q7(ii) [3 marks] (hard) 
+
+    Using a ruler and compasses only:
+(a) Construct a triangle ABC with the following data: AB = 3.5 cm, BC = 6 cm and ∠ABC = 120⁰.
+(b) In the same diagram, draw a circle with BC as diameter. Find a point P on the circumference of the circle which is equidistant from AB and BC.
+(c) Measure ∠BCP.
+    Subtopic: Locus-based Construction
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+
+[ 4 MARK QUESTIONS ]
+
+Q8(b) [4 marks] (hard) 
+
+    Draw a line AB = 5 cm. Mark a point C on AB such that AC = 3 cm. Using a ruler and a compass only, construct :
+(i) A circle of radius 2.5 cm, passing through A and C.
+(ii) Construct two tangents to the circle from the external point B. Measure and record the length of the tangents.
+    Subtopic: Circle and Tangents Construction
+    [Source: 2016]
+----------------------------------------
+
+Q11(b) [4 marks] (hard) 
+
+    Use ruler and compasses only for the following questions. All constructions lines and arcs must be clearly shown.
+(i) Construct a △ ABC in which BC = 6.5 cm, ∠ ABC = 60⁰, AB = 5 cm.
+(ii) Construct the locus of points at a distance of 3.5 cm from A.
+(iii) Construct the locus of points equidistant from AC and BC.
+(iv) Mark 2 points X and Y which are a distance of 3.5 cm from A and also equidistant from AC and BC. Measure XY.
+    Subtopic: Locus-based Constructions
+    [Source: 2016]
+----------------------------------------
+
+Q8(c) [4 marks] (hard) 
+
+    Using ruler and compass only, construct a △ABC such that BC = 5 cm and AB = 6.5 cm and ∠ABC = 120⁰
+(i) Construct a circum-circle of △ABC
+(ii) Construct a cyclic quadrilateral ABCD, such that D is equidistant from AB and BC.
+    Subtopic: Circumcircle and Cyclic Quadrilateral Construction
+    [Source: 2018]
+----------------------------------------
+
+Q10(iii) [4 marks] (hard) 
+
+    Use ruler and compass to answer this question. Construct ∠ABC = 90⁰, where AB = 6 cm, BC = 8 cm.
+(a) Construct the locus of points equidistant from B and C.
+(b) Construct the locus of points equidistant from A and B.
+(c) Mark the point which satisfies both the conditions (a) and (b) as O. Construct the locus of points keeping a fixed distance OA from the fixed point O.
+(d) Construct the locus of points which are equidistant from BA and BC.
+    Subtopic: Locus-based Construction - Circumcircle
+    [Source: 2024]
+----------------------------------------
+
+Q2(iii) [4 marks] (hard) 
+
+    Construct a triangle ABC with AB = 5.5 cm, AC = 6 cm and ∠BAC = 105⁰. Hence
+(i) Construct the locus of points equidistant from BA and BC.
+(ii) Construct the locus of points equidistant from B and C.
+(iii) Mark the point which satisfies the above two loci as P. Measure and write the length of PC.
+    Subtopic: Locus-based Construction
+    [Source: AVMB_PPR_Nov24]
+----------------------------------------
+
+Q2(iii) [4 marks] (hard) 
+
+    Construct a triangle ABC with AB = 5.5 cm, AC = 6 cm and ∠BAC = 105⁰. Hence
+(i) Construct the locus of points equidistant from BA and BC.
+(ii) Construct the locus of points equidistant from B and C.
+(iii) Mark the point which satisfies the above two loci as P. Measure and write the length of PC.
+    Subtopic: Locus-based Construction
+    [Source: AVMB_PPR_Nov24_v2]
+----------------------------------------
+
+Q7(iii) [4 marks] (hard) 
+
+    Construct a triangle ABC with AB = 5.5 cm, AC = 6 cm and ∠BAC = 105⁰. Hence
+a. Construct the locus of points equidistant from BA and BC.
+b. Construct the locus of points equidistant from B and C.
+c. Mark the point which satisfies the above two loci as P. Measure and write the length of PC.
+    Subtopic: Locus-based Construction
+    [Source: AVM_TR_Aug24]
+----------------------------------------
+
+Q8(iii) [4 marks] (hard) 
+
+    Using ruler and compasses only construct ∆ABC such that BC = 6.5 cm, ∠ABC = 60⁰, AB = 5 cm.
+(a) Construct the locus of points at a distance of 3.5 cm from point A.
+(b) Construct the locus of points equidistant from AC and BC.
+(c) Mark two points X and Y which are at a distance of 3.5 cm from A and also equidistant from AC and BC.
+(d) Measure and record the length of chord XY.
+    Subtopic: Locus-based Construction
+    [Source: BSS_PE_Jan25]
+----------------------------------------
+
+Q6(iii) [4 marks] (hard) 
+
+    A circular track has three checkpoints: A, B, and C, located on the circumference such that:
+- The shortest distance between A and B is 5 km.
+- The shortest distance between B and C is 6 km.
+- The shortest distance between A and C is 7 km.
+A drone is to be positioned on the circular track such that it is equidistant from B and C. Using ruler and compass, locate the possible positions of the drone and determine its distance from B. (Take scale 1 km = 1 cm)
+    Subtopic: Locus-based Construction - Practical Application
+    [Source: CAGS_PE_Dec24]
+----------------------------------------
+
+Q9(iii) [4 marks] (hard) [Has Diagram]
+
+    The Government is planning to procure tents for the pilgrims during Kumbh Mela, such that the diameter of the circular base is 42 m, height of the cylindrical part is 5m whereas the total height of the tent is 25 m. Lower cylindrical part is made up of white colored thick fabric which costs Rs. 60 per square meter. Top conical part is made up of PVC coated blue fabric which costs Rs. 70 per square meter.
+(a) Calculate the total cost of the fabric required for 1 tent.
+(b) If the ground space requirement of one pilgrim is 6 sq. meter, how many pilgrims can be accommodated in a tent?
+    Subtopic: Combination of Solids - Cylinder and Cone - Costing
+    [Source: CAGS_PE_Dec24]
+----------------------------------------
+
+Q9(iii) [4 marks] (hard) 
+
+    a) Draw a Δ ABC, such that (BC) = 7cm, ∠ ABC = 135⁰, (AB) = 4cm.
+b) Draw a circle with AB as diameter.
+c) Locate a point 'S' on the circle with diameter AB and equidistant from AB and AC.
+d) Construct two tangents from point C to the circle with diameter AB.
+    Subtopic: Triangle and Circle Construction - Tangents and Locus
+    [Source: DAIS_PE_Jan25]
+----------------------------------------
+
+Q10(iii) [4 marks] (hard) 
+
+    Use ruler and compass for the following question.
+(a) Construct a hexagon with side 5 cm and construct its circumcircle.
+(b) Construct tangents to the above circumcircle from a point P, 8 cm away from the centre of the circumcircle.
+(c) Mark a point Q on the circumcircle which is equidistant from two tangents drawn.
+    Subtopic: Hexagon and Tangents Construction
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q2(iii) [4 marks] (hard) [Has Diagram]
+
+    A solid is in the form of a right circular cone mounted on a hemisphere. The diameter of the hemisphere is 7 cm and the height of the solid is also 7 cm. The solid is placed in a cylindrical vessel with height 10.5 and radius 5cm. Water is poured in the vessel to completely fill it, such that the solid is submerged in water. Find the height of water in the vessel correct to one decimal place when solid is removed from it.
+    Subtopic: Combination of Solids - Volume Replacement
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q8(iii) [4 marks] (hard) [Has Diagram]
+
+    (a) A toy is in the shape of a cone mounted on a cylinder as in figure I. If the cylinder is replaced by a hemisphere as shown in figure II, will there be increase or decrease in the total surface area of the toy?
+(b) Calculate the change in total surface area, if the radius of cone is 3.5cm and height of the cylinder is 7 cm.
+    Subtopic: Combination of Solids - Surface Area Comparison
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q10(i) [4 marks] (hard) 
+
+    A cylindrical can with a base radius of 3.5 cm contains sufficient water so that when a sphere is placed in the can, the water just covers the sphere. Given that the sphere just fits into the can, calculate (a) the total surface area of the can, in contact with water when the sphere is put in it. (b) the depth of water in the can before the sphere was put into the can. (Take π=22/7)
+    Subtopic: Cylinder and Sphere - Volume and Surface Area
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q10(iii) [4 marks] (hard) 
+
+    Use ruler and compasses for the following question by taking the scale of 10 m = 1 cm.
+A building is bounded by straight walls AB, BC, CD and CA.
+Given that AB = 60 m, BC = 72 m and ∠ ABC = 135⁰.
+D is a point which is equidistant from the corners A and B and is 90 m from the corner C.
+Also construct the area, outside the boundary of the building, 50 m away from AB, where the parking area can be made and name it as MN.
+    Subtopic: Locus-based Construction - Practical Application
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+Q10(iii) [4 marks] (hard) 
+
+    Using ruler and compass only, construct ΔABC = 60⁰, AB = 5 cm and BC = 8 cm.
+(a.) Construct the locus of points inside the triangle equidistant from AB and BC.
+(b.) Construct the locus of points inside the triangle equidistant from A and B.
+(c.) Mark the point which satisfies both the conditions (a) and (b) as P
+(d.) Measure and record the length of PB
+    Subtopic: Triangle Construction - Locus
+    [Source: SBIS_PE_Jan25]
+----------------------------------------
+
+Q2(i) [4 marks] (hard) [Has Diagram]
+
+    Shown below is a horizontal water tank composed of a cylinder and two hemispheres. The tank is filled up to a height of 7 m. Find the surface area of the tank in contact with water. Use π = 22/7.
+    Subtopic: Combination of Solids - Surface Area in contact
+    [Source: SQP2024]
+----------------------------------------
+
+Q10(iii) [4 marks] (hard) 
+
+    Use ruler and compasses for the following question taking a scale of 10 m=1 cm.
+A park in a city is bounded by straight fences AB, BC, CD and DA. 
+Given that AB = 50 m, BC = 63 m, ∠ABC = 75⁰. D is a point equidistant from the fences AB and BC. If ∠BAD = 90⁰, construct the outline of the park ABCD. 
+Also locate a point P on the line BD for the flag post which is equidistant from the corners of the park A and B.
+    Subtopic: Quadrilateral Construction and Locus
+    [Source: SQP2025]
+----------------------------------------
+
+Q3(ii) [4 marks] (hard) [Has Diagram]
+
+    In the adjoining diagram, a tilted right circular cylindrical vessel with base diameter 7 cm contains a liquid. When placed vertically, the height of the liquid in the vessel is the mean of two heights shown in the diagram. Find the area of wet surface, when the cylinder is placed vertically on a horizontal surface. (Use π=22/7).
+    Subtopic: Cylindrical Vessel - Surface Area
+    [Source: SQP2025]
+----------------------------------------
+
+Q3(ii) [4 marks] (hard) [Has Diagram]
+
+    In the diagram given below, a tilted right circular cylindrical vessel with base diameter 7 cm contains a liquid. When placed vertically, the height of the liquid in the vessel is the mean of two heights shown in the diagram. Find the area of wet surface, when the cylinder is placed vertically on a horizontal surface. (Use π=22/7).
+    Subtopic: Cylindrical Vessel - Surface Area
+    [Source: SQP2026]
+----------------------------------------
+
+
+[ 5 MARK QUESTIONS ]
+
+Q8(i) [5 marks] (hard) 
+
+    The monthly income of a group of 320 employees in a company is given below:
+Monthly income (in ₹): 6000-7000, 7000-8000, 8000-9000, 9000-10000, 10000-11000, 11000-12000, 12000-13000
+Number of employees: 20, 45, 65, 95, 60, 30, 5
+
+Draw an ogive for the given distribution on a graph paper taking 2 cm = ₹ 1,000 on one axis and 2 cm = 50 employees on the other axis. From the graph, determine:
+(a) The median wage.
+(b) The number of employees whose income is below ₹ 8,500.
+(c) If the salary of a senior employee is above ₹ 11,500, find the number of senior employees in the company.
+(d) The upper Quartile.
+    Subtopic: Ogive - Median and Quartiles
+    [Source: AMNSP_FPE2425]
+----------------------------------------
+
+Q7(ii) [5 marks] (hard) [Has Diagram]
+
+    Study the histogram given below and use the given information for the following:
+(a) To construct a frequency table.
+(b) Use the above frequency table to construct an ogive and calculate the median and the upper quartile.
+    Subtopic: Histogram to Ogive
+    [Source: AVMB_PPR_Nov24]
+----------------------------------------
+
+Q7(ii) [5 marks] (hard) [Has Diagram]
+
+    Study the histogram given below and use the given information for the following:
+(a) To construct a frequency table.
+(b) Use the above frequency table to construct an ogive and calculate the median and the upper quartile.
+    Subtopic: Histogram to Ogive
+    [Source: AVMB_PPR_Nov24_v2]
+----------------------------------------
+
+Q7(ii) [5 marks] (hard) 
+
+    The weight of 52 workers is given below:
+Weight (in kg): 50-60, 60-70, 70-80, 80-90, 90-100, 100-110, 110-120
+Number of workers: 4, 7, 11, 14, 7, 6, 3
+Draw an ogive for the data. Take 2 cm = 10 kg on one axis and 2 cm = 5 workers along the other axis. Using the graph, estimate the following:
+(a) The median weight
+(b) The interquartile range
+(c) If weighing 100 kg and above is considered overweight, find the number of workers who are overweight.
+    Subtopic: Ogive and Interquartile Range
+    [Source: BSS_PE_Jan25]
+----------------------------------------
+
+Q8(ii) [5 marks] (hard) [Has Diagram]
+
+    The daily wages of 80 workers in a project are given below:
+[Table with Wages 400-750 and No. of workers]
+Use a graph paper to draw an ogive for the above distribution (a scale of 2 cm = 50 on x-axis and 2 cm = 10 workers on y-axis).
+Use the ogive to estimate:
+(a) the median wage of the workers.
+(b) the lower quartile wage of the workers.
+(c) the number of workers who earn more than Rs. 625 daily.
+    Subtopic: Ogive and Quartiles
+    [Source: CNMS_STE_2425]
+----------------------------------------
+
+Q7(ii) [5 marks] (hard) 
+
+    Use graph paper for this question. [Take scale: 2 cm = 50mg on one axis and 2 cm = 10 food types on the other axis]. The frequency distribution table given below shows the salt content of 60 types of food.
+[Table with Salt content 100-400 and No. of type of food]
+Draw an ogive to estimate the following:
+a) Median salt content in these food samples.
+b) Approximately how many types of food in these sample have salt content below 175mg?
+c) Find the percentage of types of food in this sample whose salt content is more than 275mg.
+    Subtopic: Ogive and Percentages
+    [Source: GHSJC_PE_Jan25]
+----------------------------------------
+
+Q3(iii) [5 marks] (hard) 
+
+    Use a ruler and compass to answer this question.
+(a) Construct a circle of radius 4.5cm and draw a chord AB of length 6.5 cm.
+(b) At A, construct ∠CAB=75⁰, where C lies on the circumference of the circle.
+(c) Construct the locus of all points equidistant from A and B.
+(d) Construct the locus of all points equidistant from CA and BA.
+(e) Mark the point of intersection of the two loci as P. Measure and write down the length of CP.
+    Subtopic: Circle Construction and Locus
+    [Source: SQP2026]
+----------------------------------------
+
+
+[ 6 MARK QUESTIONS ]
+
+Q7(b) [6 marks] (hard) [Has Diagram]
+
+    The table shows the distribution of the scores obtained by 160 shooters in a shooting competition. Use a graph sheet and draw an ogive for the distribution. (Take 2 cm = 10 scores on the X-axis and 2 cm = 20 shooters on the Y-axis).
+
+Scores: 0-10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70, 70-80, 80-90, 90-100
+No. of shooters: 9, 13, 20, 26, 30, 22, 15, 10, 8, 7
+
+Use your graph to estimate the following:
+(i) The median.
+(ii) The interquartile range.
+(iii) The number of shooters who obtained a score of more than 85%.
+    Subtopic: Ogive - Median and Quartiles
+    [Source: 2016]
+----------------------------------------
+
+Q10(b) [6 marks] (hard) 
+
+    The daily wages of 80 workers in a project are given below.
+
+Wages (in Rs.): 400-450, 450-500, 500-550, 550-600, 600-650, 650-700, 700-750
+No. of Workers: 2, 6, 12, 18, 24, 13, 5
+
+Use a graph paper to draw an ogive for the above distribution. (Use a scale of 2 cm = Rs. 50 on x-axis and 2 cm = 10 workers on y-axis). Use your ogive to estimate:
+(i) the median wage of the workers
+(ii) the lower quartile wage of workers
+(iii) the numbers of workers who earn more than Rs. 625 daily
+    Subtopic: Ogive - Median and Quartiles
+    [Source: 2017]
+----------------------------------------
+
+Q11(b) [6 marks] (hard) 
+
+    Use Graph paper for this question. A survey regarding height (in cm) of 60 boys belonging to Class 10 of a school was conducted. The following data was recorded:
+
+Height in cm: 135-140, 140-145, 145-150, 150-155, 155-160, 160-165, 165-170
+No. of boys: 4, 8, 20, 14, 7, 6, 1
+
+Taking 2 cm = height of 10 cm along one axis and 2 cm = 10 boys along the other axis draw an ogive of the above distribution. Use the graph to estimate the following:
+(i) the median
+(ii) lower Quartile
+(iii) if above 158 cm is considered as the tall boys of the class. Find the number of boys in the class who are tall.
+    Subtopic: Ogive - Median and Quartiles
+    [Source: 2018]
+----------------------------------------
+
+Q9(a) [6 marks] (hard) 
+
+    40 student enter for a game of shot-put competition. The distance thrown (in meters) is recorded below:
+
+Distance In m: 12-13, 13-14, 14-15, 15-16, 16-17, 17-18, 18-19
+Number Of Students: 3, 9, 12, 9, 4, 2, 1
+
+Use a graph paper to draw an ogive for the above distribution. Use a scale of 2 cm = 1 m on one axis and 2 cm = 5 students on the other axis. Hence using your graph find:
+(i) the median
+(ii) Upper Quartile
+(iii) number of student who cover a distance which is above 16 1/2 m.
+    Subtopic: Ogive - Median and Quartiles
+    [Source: 2020]
+----------------------------------------
+
+Q7(b) [6 marks] (hard) [Has Diagram]
+
+    The following distribution represents the height of 160 students of a school.
+[Table provided with Height (in cm) and No. of students]
+Draw an ogive for the given distribution taking 2cm = 5cm of height on one axis and 2cm = 20 students on the other axis. Use the graph to determine:
+i) The median height.
+ii) The upper quartile.
+iii) The number of students whose height is above 172cm.
+    Subtopic: Ogive and Quartiles
+    [Source: BSSM_PA_Jan23]
+----------------------------------------
+
+Q5(ii) [6 marks] (hard) [Has Diagram]
+
+    Daily wages of 160 workers in a building project are given below:
+[Table with Wages 0-800 and No. of workers]
+Draw an ogive for the above data and estimate the following:
+(a) Median.
+(b) Inter quartile range.
+(c) percentage of workers who earn more than Rs. 450 a day.
+    Subtopic: Ogive and Percentages
+    [Source: CAGS_PE_Dec24]
+----------------------------------------
+
+Q10(ii) [6 marks] (hard) 
+
+    Using a graph paper, draw an ogive for the following distribution which shows a record of weights in kg of 200 students.
+[Table with Weights 40b-80 and No. of students]
+Use your ogive to estimate:
+(a) the median weight.
+(b) the weight above which the heaviest 30% of the students fall.
+(c) the number of students who are overweight, if 55.7kg is considered as standard weight.
+    Subtopic: Ogive and Percentiles
+    [Source: JNS_QB_2425]
+----------------------------------------
+
+Q6(ii) [6 marks] (hard) 
+
+    The weight (in kg) of 200 students was recorded as follows:
+[Table with Weight 40-80 and No. of students]
+Use graph sheet to draw Ogive for the given data to find:
+(a) The median weight.
+(b) The percentage of students weighing 55kg or more.
+(c) The weight above which the heaviest 30% of the students fall.
+(d) The number of students who are under-weight, if 55.70 kg weight is considered the standard weight.
+    Subtopic: Ogive and Percentages
+    [Source: MCET_PPE_2425]
+----------------------------------------
+
+Q9(ii) [6 marks] (hard) 
+
+    The daily wages of 120 workers working at a site are given below:
+[Table with Wages 250-600 and No. of workers]
+Use 2cm = ₹ 50 and 2 cm = 20 workers along x – axis and y – axis respectively to draw an ogive and hence estimate:
+(a) the median wages
+(b) the inter – quartile range of wages
+(c) percentage of workers whose daily wage is above ₹ 475.
+    Subtopic: Ogive and Percentiles
+    [Source: SQP2023]
+----------------------------------------
