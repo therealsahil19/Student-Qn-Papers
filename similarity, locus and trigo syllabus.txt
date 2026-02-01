@@ -1,0 +1,93 @@
+### ICSE Class 10 Mathematics Syllabus: Similarity, Locus, and Trigonometry
+
+The ICSE (Indian Certificate of Secondary Education) Class 10 Mathematics syllabus, as prescribed by the Council for the Indian School Certificate Examinations (CISCE) for the 2025-26 academic year (applicable for examinations in 2026), organizes these topics primarily under the **Geometry** and **Trigonometry** units. These areas build foundational skills in geometric reasoning, visualization, proof-based understanding, and practical applications.
+
+The Geometry unit (which includes Similarity and Locus) carries significant weight in the board exam, often around 15-20 marks combined with related topics like Circles. Trigonometry is a standalone unit, typically allocated 10-15 marks. The syllabus emphasizes conceptual understanding, theorem application, constructions (using compass and ruler), and problem-solving in real-life contexts (e.g., maps, models, heights of objects).
+
+Below is a detailed expansion of the relevant topics and subtopics, drawn from the official syllabus structure. I've included context, key concepts, theorems, proofs/notes on requirements, examples, nuances, implications, and edge cases for completeness.
+
+#### 1. Similarity (Under Geometry Unit)
+Similarity explores how triangles (or other figures) can be scaled versions of each other while preserving shape (angles) but not necessarily size. This topic bridges congruence (exact matching) with proportionality, introducing size transformation concepts. It has wide applications in scaling models, maps, architecture, and engineering.
+
+**Key Subtopics and Expansion:**
+- **Definition and Concept of Similarity**:
+  - Two triangles (or polygons) are similar if their corresponding angles are equal and corresponding sides are proportional (denoted by ~).
+  - Comparison with congruence: Congruence requires exact size match (SSS, SAS, ASA, RHS, AAS); similarity focuses on proportionality (ratios of sides equal).
+  - Keyword: Proportionality of corresponding sides.
+
+- **Conditions for Similarity of Triangles**:
+  - **AAA (Angle-Angle-Angle)**: If all three angles of one triangle equal those of another, the triangles are similar (implies side proportionality).
+  - **SSS (Side-Side-Side)**: If corresponding sides are in proportion (ratios equal).
+  - **SAS (Side-Angle-Side)**: If two sides are proportional and the included angle is equal.
+  - Nuance: Proofs of these criteria are not required in exams; focus is on application. AA is the most commonly used (two angles equal imply the third).
+  - Edge case: Not all criteria from congruence directly translate (e.g., ASA alone doesn't guarantee similarity without proportionality).
+
+- **Basic Proportionality Theorem (Thales' Theorem)**:
+  - If a line parallel to one side of a triangle intersects the other two sides, it divides them proportionally (e.g., DE || BC in △ABC, then AD/DB = AE/EC).
+  - Converse: If a line divides two sides proportionally, it is parallel to the third.
+  - Applications: Proving parallelism, finding unknown lengths in divided triangles.
+  - Implication: Forms the basis for many proofs involving intercepts.
+
+- **Areas and Related Properties**:
+  - Areas of similar triangles are proportional to the square of the ratio of corresponding sides (Area₁/Area₂ = (side₁/side₂)²).
+  - Pythagoras Theorem application: In similar right-angled triangles, hypotenuse correspondence.
+  - Direct applications: Scaling maps/models (e.g., if a model is 1:100 scale, areas scale by 1:10,000), shadow problems, or indirect measurements.
+
+- **Examples and Nuances**:
+  - Real-life: Comparing photographs of the same object at different distances (similar triangles formed with light rays).
+  - Edge cases: Degenerate triangles (collinear points) are not similar; overlapping or reflected triangles (orientation matters in some proofs).
+  - Exam focus: Problems involving finding ratios, proving similarity, or calculating areas/volumes in scaled figures.
+
+#### 2. Locus (Under Geometry Unit, Often Linked with Constructions)
+Locus (plural: loci) is the set of all points satisfying a given condition—essentially the path traced by a point under constraints. This topic develops geometric intuition, precision in constructions, and links to coordinate geometry later. It is often tested with diagram-based constructions and proofs.
+
+**Key Subtopics and Expansion:**
+- **Definition and Meaning**:
+  - A locus is the set of points fulfilling specific geometric conditions (e.g., fixed distance from a point/line).
+  - Emphasis on visualization: Loci are curves (circles, lines, etc.) in plane geometry.
+
+- **Key Theorems and Standard Loci** (Proofs Not Required):
+  - **Locus of a point at a fixed distance from a fixed point**: A circle with the fixed point as center and the distance as radius.
+    - Example: Points 5 cm from point O form a circle of radius 5 cm.
+  - **Locus of a point equidistant from two fixed points**: The perpendicular bisector of the line joining the two points.
+    - Example: Points equidistant from A and B lie on the perpendicular bisector of AB (used in finding midpoints).
+  - **Locus of a point equidistant from two intersecting lines**: The angle bisectors (bisectors of the angles formed by the lines).
+    - Nuance: There are two bisectors (acute and obtuse angles); both are valid loci.
+    - Edge case: If lines are perpendicular, bisectors are at 45°.
+
+- **Constructions Based on Loci**:
+  - Practical drawing: Using compass/ruler to construct loci (e.g., perpendicular bisector by intersecting arcs).
+  - Related constructions: Often integrated with circles (e.g., tangents from external point use locus principles).
+  - Implication: Builds skills for accurate geometric drawings; tested in "construct and prove" questions.
+
+- **Examples and Nuances**:
+  - Real-life: Path of a planet (ellipse as locus equidistant in certain ratios—though advanced); GPS triangulation (intersection of loci).
+  - Edge cases: Infinite points (straight line locus); no points (impossible conditions, e.g., equidistant from three non-concurrent lines).
+  - Exam focus: Describe locus verbally, construct it, or find points satisfying multiple loci (intersection points).
+
+#### 3. Trigonometry
+Trigonometry deals with relationships between angles and sides in right-angled triangles, extending to identities and real-world measurements. It introduces trigonometric ratios, proofs via identities, and applications in surveying/optics.
+
+**Key Subtopics and Expansion:**
+- **Trigonometric Identities**:
+  - Fundamental identities to prove/simplify algebraic expressions:
+    - sin²θ + cos²θ = 1
+    - 1 + tan²θ = sec²θ
+    - 1 + cot²θ = cosec²θ (for 0° ≤ θ ≤ 90°)
+  - Application: Prove expressions like (sinθ + cosθ)² = 1 + 2sinθcosθ or simplify ratios.
+  - Nuance: Identities derived from Pythagoras; complementary angles (sin(90°-θ) = cosθ, etc.) often used.
+  - Edge case: Undefined values (e.g., tan 90°); restricted to acute/obtuse in heights problems.
+
+- **Heights and Distances**:
+  - Solving 2D problems involving angles of elevation (upward from horizontal) and depression (downward).
+  - Use trigonometric ratios (sin, cos, tan) with tables (provided in exams).
+  - Limitation: Only simple cases (one or two right triangles; no complex multi-triangle setups).
+  - Examples: Finding height of a tower from ground distance and elevation angle; width of a river using depression from a cliff.
+  - Implication: Practical surveying (e.g., measuring inaccessible heights like trees, buildings, or mountains).
+
+- **Examples and Nuances**:
+  - Real-life: Navigation, architecture (roof angles), physics (projectiles).
+  - Edge cases: Angle 0° or 90° (tan 0°=0, sin 90°=1); multiple observations for accuracy.
+  - Exam focus: Diagram interpretation, choosing correct ratio (opposite/hypotenuse for sin), unit consistency (degrees).
+
+These topics interconnect: Similarity often aids in heights/distances (similar triangles formed by shadows), while locus principles appear in trigonometric constructions. Mastery involves practice with diagrams, theorems without memorization (understanding-based), and applications. For board exams, expect a mix of short proofs, constructions, and word problems. Refer to CISCE-released specimen papers for question patterns. If preparing, focus on Selina Concise or ML Aggarwal textbooks, as they align closely with the syllabus.

@@ -1,7 +1,7 @@
 {
   "source_paper": "",
   "images_directory": "question_extractor/images_class_10",
-  "total_pages": 437,
+  "total_pages": 234,
   "target_topics": [
     "Similarity",
     "Loci",
@@ -11,3060 +11,1639 @@
   "pages": [
     {
       "page_number": 1,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_001.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2016\\page_001.png",
+      "source_paper": "2016",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 2,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_002.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2016\\page_002.png",
+      "source_paper": "2016",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 3,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_003.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2016\\page_003.png",
+      "source_paper": "2016",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 4,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_004.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2016\\page_004.png",
+      "source_paper": "2016",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 5,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_005.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2016\\page_005.png",
+      "source_paper": "2016",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 6,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_006.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2016\\page_006.png",
+      "source_paper": "2016",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 7,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_007.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2016\\page_007.png",
+      "source_paper": "2016",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 8,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_008.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2017\\page_001.png",
+      "source_paper": "2017",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 9,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_009.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2017\\page_002.png",
+      "source_paper": "2017",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 10,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_010.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2017\\page_003.png",
+      "source_paper": "2017",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 11,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_011.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2017\\page_004.png",
+      "source_paper": "2017",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 12,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_012.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2017\\page_005.png",
+      "source_paper": "2017",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 13,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_013.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2017\\page_006.png",
+      "source_paper": "2017",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 14,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_014.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2018\\page_001.png",
+      "source_paper": "2018",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 15,
-      "image_path": "/app/question_extractor/images_class_10/2021/page_015.png",
-      "source_paper": "2021",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2018\\page_002.png",
+      "source_paper": "2018",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 16,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_001.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2018\\page_003.png",
+      "source_paper": "2018",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 17,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_002.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2018\\page_004.png",
+      "source_paper": "2018",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 18,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_003.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2018\\page_005.png",
+      "source_paper": "2018",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 19,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_004.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2018\\page_006.png",
+      "source_paper": "2018",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 20,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_005.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_001.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 21,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_006.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_002.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 22,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_007.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_003.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 23,
-      "image_path": "/app/question_extractor/images_class_10/AMNSP_FPE2425/page_008.png",
-      "source_paper": "AMNSP_FPE2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_004.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 24,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_001.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_005.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 25,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_002.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_006.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 26,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_003.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_007.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 27,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_004.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_008.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 28,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_005.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_009.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 29,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_006.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2020\\page_010.png",
+      "source_paper": "2020",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 30,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_007.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_001.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 31,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_008.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_002.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 32,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_009.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_003.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 33,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_010.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_004.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 34,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_011.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_005.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 35,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_012.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_006.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 36,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_013.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_007.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 37,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_014.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_008.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 38,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_015.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_009.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 39,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_016.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_010.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 40,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_017.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_011.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 41,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_018.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2024\\page_012.png",
+      "source_paper": "2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 42,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_019.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_001.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 43,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_020.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_002.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 44,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_021.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_003.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 45,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_022.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_004.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 46,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_023.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_005.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 47,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_024.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_006.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 48,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_025.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_007.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 49,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_026.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_008.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 50,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_027.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_009.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 51,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_028.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_010.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 52,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_029.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_011.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 53,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_030.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_012.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 54,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_031.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_013.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 55,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_032.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_014.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 56,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_033.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_015.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 57,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_034.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\2025\\page_016.png",
+      "source_paper": "2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 58,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_035.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_001.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 59,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_036.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_002.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 60,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_037.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_003.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 61,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_038.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_004.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 62,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_039.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_005.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 63,
-      "image_path": "/app/question_extractor/images_class_10/2023/page_040.png",
-      "source_paper": "2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_006.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 64,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_001.png",
-      "source_paper": "AVMB_PPR_Nov24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_007.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 65,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_002.png",
-      "source_paper": "AVMB_PPR_Nov24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AMNSP_FPE2425\\page_008.png",
+      "source_paper": "AMNSP_FPE2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 66,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_003.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_001.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 67,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_004.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_002.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 68,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_005.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_003.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 69,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_006.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_004.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 70,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_007.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_005.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 71,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_008.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_006.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 72,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_009.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_007.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 73,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_010.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_008.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 74,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_011.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_009.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 75,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24/page_012.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_010.png",
       "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 76,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_001.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_011.png",
+      "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 77,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_002.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24\\page_012.png",
+      "source_paper": "AVMB_PPR_Nov24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 78,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_003.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_001.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 79,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_004.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_002.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 80,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_005.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_003.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 81,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_006.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_004.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 82,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_007.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_005.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 83,
-      "image_path": "/app/question_extractor/images_class_10/BSSM_PA_Jan23/page_008.png",
-      "source_paper": "BSSM_PA_Jan23",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_006.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 84,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_001.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_007.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 85,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_002.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_008.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 86,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_003.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_009.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 87,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_004.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_010.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 88,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_005.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_011.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 89,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_006.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVMB_PPR_Nov24_v2\\page_012.png",
+      "source_paper": "AVMB_PPR_Nov24_v2",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 90,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_007.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_001.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 91,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_008.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_002.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 92,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_009.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_003.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 93,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_010.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_004.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 94,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_011.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_005.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 95,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_012.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_006.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 96,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_013.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_007.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 97,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_014.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\AVM_TR_Aug24\\page_008.png",
+      "source_paper": "AVM_TR_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 98,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_015.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_001.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 99,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_016.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_002.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 100,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_017.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_003.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 101,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_018.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_004.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 102,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_019.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_005.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 103,
-      "image_path": "/app/question_extractor/images_class_10/SQP2025/page_020.png",
-      "source_paper": "SQP2025",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_006.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 104,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_001.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_007.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 105,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_002.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSSM_PA_Jan23\\page_008.png",
+      "source_paper": "BSSM_PA_Jan23",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 106,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_003.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSS_PE_Jan25\\page_001.png",
+      "source_paper": "BSS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 107,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_004.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSS_PE_Jan25\\page_002.png",
+      "source_paper": "BSS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 108,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_005.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSS_PE_Jan25\\page_003.png",
+      "source_paper": "BSS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 109,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_006.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSS_PE_Jan25\\page_004.png",
+      "source_paper": "BSS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 110,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_007.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSS_PE_Jan25\\page_005.png",
+      "source_paper": "BSS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 111,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_008.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSS_STS2_2425\\page_001.png",
+      "source_paper": "BSS_STS2_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 112,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_009.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\BSS_STS2_2425\\page_002.png",
+      "source_paper": "BSS_STS2_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 113,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_010.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_001.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 114,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_011.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_002.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 115,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_012.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_003.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 116,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_013.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_004.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 117,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_014.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_005.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 118,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_015.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_006.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 119,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_016.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_007.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 120,
-      "image_path": "/app/question_extractor/images_class_10/SQP2022/page_017.png",
-      "source_paper": "SQP2022",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CAGS_PE_Dec24\\page_008.png",
+      "source_paper": "CAGS_PE_Dec24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 121,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_001.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_001.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 122,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_002.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_002.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 123,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_003.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_003.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 124,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_004.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_004.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 125,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_005.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_005.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 126,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_006.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_006.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 127,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_007.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_007.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 128,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_008.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\CNMS_STE_2425\\page_008.png",
+      "source_paper": "CNMS_STE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 129,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_009.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_001.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 130,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_010.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_002.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 131,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_011.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_003.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 132,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_012.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_004.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 133,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_013.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_005.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 134,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_014.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_006.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 135,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_015.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_007.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 136,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_016.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_008.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 137,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_017.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_009.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 138,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_018.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_010.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 139,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_019.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\DAIS_PE_Jan25\\page_011.png",
+      "source_paper": "DAIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 140,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_020.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_001.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 141,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_021.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_002.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 142,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_022.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_003.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 143,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_023.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_004.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 144,
-      "image_path": "/app/question_extractor/images_class_10/SQP2026/page_024.png",
-      "source_paper": "SQP2026",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_005.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 145,
-      "image_path": "/app/question_extractor/images_class_10/KVIS_FTE_Aug24/page_001.png",
-      "source_paper": "KVIS_FTE_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_006.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 146,
-      "image_path": "/app/question_extractor/images_class_10/KVIS_FTE_Aug24/page_002.png",
-      "source_paper": "KVIS_FTE_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_007.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 147,
-      "image_path": "/app/question_extractor/images_class_10/KVIS_FTE_Aug24/page_003.png",
-      "source_paper": "KVIS_FTE_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_008.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 148,
-      "image_path": "/app/question_extractor/images_class_10/KVIS_FTE_Aug24/page_004.png",
-      "source_paper": "KVIS_FTE_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_009.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 149,
-      "image_path": "/app/question_extractor/images_class_10/KVIS_FTE_Aug24/page_005.png",
-      "source_paper": "KVIS_FTE_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_010.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 150,
-      "image_path": "/app/question_extractor/images_class_10/KVIS_FTE_Aug24/page_006.png",
-      "source_paper": "KVIS_FTE_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\GHSJC_PE_Jan25\\page_011.png",
+      "source_paper": "GHSJC_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 151,
-      "image_path": "/app/question_extractor/images_class_10/KVIS_FTE_Aug24/page_007.png",
-      "source_paper": "KVIS_FTE_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\JNS_QB_2425\\page_001.png",
+      "source_paper": "JNS_QB_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 152,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_001.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\JNS_QB_2425\\page_002.png",
+      "source_paper": "JNS_QB_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 153,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_002.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\JNS_QB_2425\\page_003.png",
+      "source_paper": "JNS_QB_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 154,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_003.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\JNS_QB_2425\\page_004.png",
+      "source_paper": "JNS_QB_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 155,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_004.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\JNS_QB_2425\\page_005.png",
+      "source_paper": "JNS_QB_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 156,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_005.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\JNS_QB_2425\\page_006.png",
+      "source_paper": "JNS_QB_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 157,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_006.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\JNS_QB_2425\\page_007.png",
+      "source_paper": "JNS_QB_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 158,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_007.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\KVIS_FTE_Aug24\\page_001.png",
+      "source_paper": "KVIS_FTE_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 159,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_008.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\KVIS_FTE_Aug24\\page_002.png",
+      "source_paper": "KVIS_FTE_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 160,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_009.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\KVIS_FTE_Aug24\\page_003.png",
+      "source_paper": "KVIS_FTE_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 161,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_010.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\KVIS_FTE_Aug24\\page_004.png",
+      "source_paper": "KVIS_FTE_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 162,
-      "image_path": "/app/question_extractor/images_class_10/DAIS_PE_Jan25/page_011.png",
-      "source_paper": "DAIS_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\KVIS_FTE_Aug24\\page_005.png",
+      "source_paper": "KVIS_FTE_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 163,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_001.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\KVIS_FTE_Aug24\\page_006.png",
+      "source_paper": "KVIS_FTE_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 164,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_002.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\KVIS_FTE_Aug24\\page_007.png",
+      "source_paper": "KVIS_FTE_Aug24",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 165,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_003.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_001.png",
+      "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 166,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_004.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_002.png",
+      "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 167,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_005.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_003.png",
+      "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 168,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_006.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_004.png",
+      "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 169,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_007.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_005.png",
+      "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 170,
-      "image_path": "/app/question_extractor/images_class_10/AVM_TR_Aug24/page_008.png",
-      "source_paper": "AVM_TR_Aug24",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_006.png",
+      "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 171,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_001.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_007.png",
       "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 172,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_002.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\MCET_PPE_2425\\page_008.png",
       "source_paper": "MCET_PPE_2425",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 173,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_003.png",
-      "source_paper": "MCET_PPE_2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SBIS_PE_Jan25\\page_001.png",
+      "source_paper": "SBIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 174,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_004.png",
-      "source_paper": "MCET_PPE_2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SBIS_PE_Jan25\\page_002.png",
+      "source_paper": "SBIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 175,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_005.png",
-      "source_paper": "MCET_PPE_2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SBIS_PE_Jan25\\page_003.png",
+      "source_paper": "SBIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 176,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_006.png",
-      "source_paper": "MCET_PPE_2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SBIS_PE_Jan25\\page_004.png",
+      "source_paper": "SBIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 177,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_007.png",
-      "source_paper": "MCET_PPE_2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SBIS_PE_Jan25\\page_005.png",
+      "source_paper": "SBIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 178,
-      "image_path": "/app/question_extractor/images_class_10/MCET_PPE_2425/page_008.png",
-      "source_paper": "MCET_PPE_2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SBIS_PE_Jan25\\page_006.png",
+      "source_paper": "SBIS_PE_Jan25",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 179,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_001.png",
-      "source_paper": "SQP2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2022\\page_001.png",
+      "source_paper": "SQP2022",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 180,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_002.png",
-      "source_paper": "SQP2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2022\\page_002.png",
+      "source_paper": "SQP2022",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 181,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_003.png",
-      "source_paper": "SQP2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2022\\page_003.png",
+      "source_paper": "SQP2022",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 182,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_004.png",
-      "source_paper": "SQP2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2022\\page_004.png",
+      "source_paper": "SQP2022",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 183,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_005.png",
-      "source_paper": "SQP2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2022\\page_005.png",
+      "source_paper": "SQP2022",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 184,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_006.png",
-      "source_paper": "SQP2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2022\\page_006.png",
+      "source_paper": "SQP2022",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 185,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_007.png",
-      "source_paper": "SQP2023",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2022\\page_007.png",
+      "source_paper": "SQP2022",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 186,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_008.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_001.png",
       "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 187,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_009.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_002.png",
       "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 188,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_010.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_003.png",
       "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 189,
-      "image_path": "/app/question_extractor/images_class_10/SQP2023/page_011.png",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_004.png",
       "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 190,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_001.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_005.png",
+      "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 191,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_002.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_006.png",
+      "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 192,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_003.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_007.png",
+      "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 193,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_004.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_008.png",
+      "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 194,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_005.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_009.png",
+      "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 195,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_006.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_010.png",
+      "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 196,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_007.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2023\\page_011.png",
+      "source_paper": "SQP2023",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 197,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_008.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_001.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 198,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_009.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_002.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 199,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_010.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_003.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 200,
-      "image_path": "/app/question_extractor/images_class_10/GHSJC_PE_Jan25/page_011.png",
-      "source_paper": "GHSJC_PE_Jan25",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_004.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 201,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_001.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_005.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 202,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_002.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_006.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 203,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_003.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_007.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 204,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_004.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_008.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 205,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_005.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_009.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 206,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_006.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_010.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 207,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_007.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_011.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 208,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_008.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2024\\page_012.png",
+      "source_paper": "SQP2024",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 209,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_009.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_001.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 210,
-      "image_path": "/app/question_extractor/images_class_10/2020/page_010.png",
-      "source_paper": "2020",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_002.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 211,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_001.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_003.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 212,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_002.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_004.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 213,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_003.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_005.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 214,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_004.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_006.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 215,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_005.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_007.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 216,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_006.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_008.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 217,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_007.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_009.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 218,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_008.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_010.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 219,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_009.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_011.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 220,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_010.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2025\\page_012.png",
+      "source_paper": "SQP2025",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 221,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_011.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_001.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 222,
-      "image_path": "/app/question_extractor/images_class_10/AVMB_PPR_Nov24_v2/page_012.png",
-      "source_paper": "AVMB_PPR_Nov24_v2",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_002.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 223,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_001.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_003.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 224,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_002.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_004.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 225,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_003.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_005.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 226,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_004.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_006.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 227,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_005.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_007.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 228,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_006.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_008.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 229,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_007.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_009.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 230,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_008.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_010.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 231,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_009.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_011.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 232,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_010.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_012.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 233,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_011.png",
-      "source_paper": "2016",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_013.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     },
     {
       "page_number": 234,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_012.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 235,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_013.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 236,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_014.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 237,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_015.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 238,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_016.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 239,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_017.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 240,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_018.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 241,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_019.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 242,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_020.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 243,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_021.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 244,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_022.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 245,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_023.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 246,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_024.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 247,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_025.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 248,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_026.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 249,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_027.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 250,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_028.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 251,
-      "image_path": "/app/question_extractor/images_class_10/2016/page_029.png",
-      "source_paper": "2016",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 252,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_001.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 253,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_002.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 254,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_003.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 255,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_004.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 256,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_005.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 257,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_006.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 258,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_007.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 259,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_008.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 260,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_009.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 261,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_010.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 262,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_011.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 263,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_012.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 264,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_013.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 265,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_014.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 266,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_015.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 267,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_016.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 268,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_017.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 269,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_018.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 270,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_019.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 271,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_020.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 272,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_021.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 273,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_022.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 274,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_023.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 275,
-      "image_path": "/app/question_extractor/images_class_10/2017/page_024.png",
-      "source_paper": "2017",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 276,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_001.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 277,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_002.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 278,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_003.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 279,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_004.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 280,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_005.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 281,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_006.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 282,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_007.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 283,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_008.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 284,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_009.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 285,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_010.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 286,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_011.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 287,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_012.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 288,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_013.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 289,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_014.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 290,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_015.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 291,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_016.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 292,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_017.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 293,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_018.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 294,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_019.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 295,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_020.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 296,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_021.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 297,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_022.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 298,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_023.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 299,
-      "image_path": "/app/question_extractor/images_class_10/2022/page_024.png",
-      "source_paper": "2022",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 300,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_001.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 301,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_002.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 302,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_003.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 303,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_004.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 304,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_005.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 305,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_006.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 306,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_007.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 307,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_008.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 308,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_009.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 309,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_010.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 310,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_011.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 311,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_012.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 312,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_013.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 313,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_014.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 314,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_015.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 315,
-      "image_path": "/app/question_extractor/images_class_10/2025/page_016.png",
-      "source_paper": "2025",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 316,
-      "image_path": "/app/question_extractor/images_class_10/BSS_PE_Jan25/page_001.png",
-      "source_paper": "BSS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 317,
-      "image_path": "/app/question_extractor/images_class_10/BSS_PE_Jan25/page_002.png",
-      "source_paper": "BSS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 318,
-      "image_path": "/app/question_extractor/images_class_10/BSS_PE_Jan25/page_003.png",
-      "source_paper": "BSS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 319,
-      "image_path": "/app/question_extractor/images_class_10/BSS_PE_Jan25/page_004.png",
-      "source_paper": "BSS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 320,
-      "image_path": "/app/question_extractor/images_class_10/BSS_PE_Jan25/page_005.png",
-      "source_paper": "BSS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 321,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_001.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 322,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_002.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 323,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_003.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 324,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_004.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 325,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_005.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 326,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_006.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 327,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_007.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 328,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_008.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 329,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_009.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 330,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_010.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 331,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_011.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 332,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_012.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 333,
-      "image_path": "/app/question_extractor/images_class_10/2024/page_013.png",
-      "source_paper": "2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 334,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_001.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 335,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_002.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 336,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_003.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 337,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_004.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 338,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_005.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 339,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_006.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 340,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_007.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 341,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_008.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 342,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_009.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 343,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_010.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 344,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_011.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 345,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_012.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 346,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_013.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 347,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_014.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 348,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_015.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 349,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_016.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 350,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_017.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 351,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_018.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 352,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_019.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 353,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_020.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 354,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_021.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 355,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_022.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 356,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_023.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 357,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_024.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 358,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_025.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 359,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_026.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 360,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_027.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 361,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_028.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 362,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_029.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 363,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_030.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 364,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_031.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 365,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_032.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 366,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_033.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 367,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_034.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 368,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_035.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 369,
-      "image_path": "/app/question_extractor/images_class_10/2019/page_036.png",
-      "source_paper": "2019",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 370,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_001.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 371,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_002.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 372,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_003.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 373,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_004.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 374,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_005.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 375,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_006.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 376,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_007.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 377,
-      "image_path": "/app/question_extractor/images_class_10/CNMS_STE_2425/page_008.png",
-      "source_paper": "CNMS_STE_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 378,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_001.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 379,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_002.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 380,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_003.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 381,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_004.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 382,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_005.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 383,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_006.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 384,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_007.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 385,
-      "image_path": "/app/question_extractor/images_class_10/CAGS_PE_Dec24/page_008.png",
-      "source_paper": "CAGS_PE_Dec24",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 386,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_001.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 387,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_002.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 388,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_003.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 389,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_004.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 390,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_005.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 391,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_006.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 392,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_007.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 393,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_008.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 394,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_009.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 395,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_010.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 396,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_011.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 397,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_012.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 398,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_013.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 399,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_014.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 400,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_015.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 401,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_016.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 402,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_017.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 403,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_018.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 404,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_019.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 405,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_020.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 406,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_021.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 407,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_022.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 408,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_023.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 409,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_024.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 410,
-      "image_path": "/app/question_extractor/images_class_10/2018/page_025.png",
-      "source_paper": "2018",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 411,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_001.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 412,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_002.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 413,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_003.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 414,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_004.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 415,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_005.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 416,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_006.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 417,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_007.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 418,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_008.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 419,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_009.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 420,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_010.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 421,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_011.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 422,
-      "image_path": "/app/question_extractor/images_class_10/SQP2024/page_012.png",
-      "source_paper": "SQP2024",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 423,
-      "image_path": "/app/question_extractor/images_class_10/BSS_STS2_2425/page_001.png",
-      "source_paper": "BSS_STS2_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 424,
-      "image_path": "/app/question_extractor/images_class_10/BSS_STS2_2425/page_002.png",
-      "source_paper": "BSS_STS2_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 425,
-      "image_path": "/app/question_extractor/images_class_10/SBIS_PE_Jan25/page_001.png",
-      "source_paper": "SBIS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 426,
-      "image_path": "/app/question_extractor/images_class_10/SBIS_PE_Jan25/page_002.png",
-      "source_paper": "SBIS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 427,
-      "image_path": "/app/question_extractor/images_class_10/SBIS_PE_Jan25/page_003.png",
-      "source_paper": "SBIS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 428,
-      "image_path": "/app/question_extractor/images_class_10/SBIS_PE_Jan25/page_004.png",
-      "source_paper": "SBIS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 429,
-      "image_path": "/app/question_extractor/images_class_10/SBIS_PE_Jan25/page_005.png",
-      "source_paper": "SBIS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 430,
-      "image_path": "/app/question_extractor/images_class_10/SBIS_PE_Jan25/page_006.png",
-      "source_paper": "SBIS_PE_Jan25",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 431,
-      "image_path": "/app/question_extractor/images_class_10/JNS_QB_2425/page_001.png",
-      "source_paper": "JNS_QB_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 432,
-      "image_path": "/app/question_extractor/images_class_10/JNS_QB_2425/page_002.png",
-      "source_paper": "JNS_QB_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 433,
-      "image_path": "/app/question_extractor/images_class_10/JNS_QB_2425/page_003.png",
-      "source_paper": "JNS_QB_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 434,
-      "image_path": "/app/question_extractor/images_class_10/JNS_QB_2425/page_004.png",
-      "source_paper": "JNS_QB_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 435,
-      "image_path": "/app/question_extractor/images_class_10/JNS_QB_2425/page_005.png",
-      "source_paper": "JNS_QB_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 436,
-      "image_path": "/app/question_extractor/images_class_10/JNS_QB_2425/page_006.png",
-      "source_paper": "JNS_QB_2425",
-      "status": "pending",
-      "questions_extracted": 0
-    },
-    {
-      "page_number": 437,
-      "image_path": "/app/question_extractor/images_class_10/JNS_QB_2425/page_007.png",
-      "source_paper": "JNS_QB_2425",
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_10\\SQP2026\\page_014.png",
+      "source_paper": "SQP2026",
       "status": "pending",
       "questions_extracted": 0
     }

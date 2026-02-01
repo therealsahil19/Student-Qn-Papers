@@ -1027,10 +1027,31 @@ Examples:
 
         # Try to parse as JSON first (from agent output)
         try:
-            count = extractor.add_questions_from_json(source_content)
+            data = json.loads(source_content)
+            # Handle if the input is a list of questions directly
+            if isinstance(data, list):
+                questions_list = data
+            else:
+                questions_list = data.get("page_questions", data.get("questions", []))
+            
+            for q in questions_list:
+                question = ExtractedQuestion(
+                    question_number=q.get("question_number", ""),
+                    question_text=q.get("question_text", ""),
+                    topic=q.get("topic", "Unknown"),
+                    unit=q.get("unit", ""),
+                    subtopic=q.get("subtopic"),
+                    marks=q.get("marks"),
+                    has_diagram=q.get("has_diagram", False),
+                    difficulty=q.get("difficulty"),
+                    page_number=q.get("page_number", 0),
+                    source_paper=q.get("source_paper", "")
+                )
+                extractor.add_question(question)
+            
             # Format questions using the same style as save_results
             text_to_append = extractor.format_questions_to_text()
-        except ValueError:
+        except (ValueError, json.JSONDecodeError):
             # Assume it's already formatted text
             text_to_append = source_content
 
