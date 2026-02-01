@@ -1,0 +1,218 @@
+# CISCE (ICSE) Class 8 Mathematics - Geometry Question Bank
+**Total Questions:** 62  
+**Topics:** Constructions, Understanding Shapes (Polygons, Quadrilaterals, Special Quadrilaterals)
+
+---
+
+## Constructions (17 Questions)
+
+**1.** Construct quadrilateral ABCD in which AB = 4.4 cm, BC = 4 cm, CD = 6.4 cm, DA = 3.8 cm and BD = 6.6 cm.  
+*[6 marks, Medium - Four sides and one diagonal]*
+
+**2.** Construct quadrilateral ABCD such that AB = BC = 5.5 cm, CD = 4 cm, DA = 6.3 cm and AC = 9.4 cm. Measure BD.  
+*[6 marks, Medium - Four sides and one diagonal]*
+
+**3.** Construct quadrilateral XYZW in which XY = 5 cm, YZ = 6 cm, ZW = 7 cm, WX = 3 cm and XZ = 9 cm.  
+*[6 marks, Medium - Four sides and one diagonal]*
+
+**4.** Construct parallelogram PQRS such that PQ = 5.2 cm, PR = 6.8 cm and QS = 8.2 cm.  
+*[6 marks, Hard - Two diagonals and one side]*
+
+**5.** Construct a rhombus with side 6 cm and one diagonal 8 cm. Measure the other diagonal.  
+*[6 marks, Medium - Side and one diagonal]*
+
+**6.** Construct kite ABCD in which AB = 4 cm, BC = 4.9 cm and AC = 7.2 cm.  
+*[6 marks, Medium]*
+
+**7.** Construct, if possible, quadrilateral ABCD given AB = 6 cm, BC = 3.7 cm, CD = 5.7 cm, AD = 5.5 cm and BD = 6.1 cm. Give reasons if impossible.  
+*[6 marks, Hard - Validity Check]*
+
+**8.** Construct quadrilateral ABCD in which AB = 3.8 cm, BC = 3.0 cm, AD = 2.3 cm, AC = 4.5 cm and BD = 3.8 cm.  
+*[6 marks, Medium - Three sides and two diagonals]*
+
+**9.** Construct quadrilateral ABCD in which BC = 7.5 cm, AC = AD = 6 cm, CD = 5 cm and BD = 10 cm.  
+*[6 marks, Medium - Three sides and two diagonals]*
+
+**10.** Construct quadrilateral ABCD in which AB = 3.8 cm, BC = 3.4 cm, CD = 4.5 cm, AD = 5 cm and ∠B = 80°.  
+*[6 marks, Medium - Four sides and one angle]*
+
+**11.** Construct quadrilateral ABCD in which AB = 6 cm, BC = 4 cm, CD = 4 cm, ∠B = 95° and ∠C = 90°.  
+*[6 marks, Medium - Three sides and two included angles]*
+
+**12.** Construct quadrilateral ABCD given AB = 4 cm, BC = 3 cm, ∠A = 75°, ∠B = 80° and ∠C = 120°.  
+*[6 marks, Medium - Three angles and two included sides]*
+
+**13.** Construct, if possible, quadrilateral ABCD in which AB = 6 cm, BC = 7 cm, CD = 3 cm, AD = 5.5 cm and AC = 11 cm. Give reasons if impossible.  
+*[6 marks, Medium - Validity Check]*
+
+**14.** Construct quadrilateral ABCD given AB = 8 cm, BC = 8 cm, CD = 10 cm, AD = 10 cm and ∠A = 45°.  
+*[6 marks, Medium]*
+
+**15.** Construct quadrilateral ABCD in which AB = 7.7 cm, BC = 6.8 cm, CD = 5.1 cm, AD = 3.6 cm and ∠C = 120°.  
+*[6 marks, Medium]*
+
+**16.** Construct quadrilateral ABCD in which AD = 3.5 cm, AB = 4.4 cm, BC = 4.7 cm, ∠A = 125° and ∠B = 120°.  
+*[6 marks, Medium]*
+
+**17.** Construct quadrilateral PQRS in which ∠Q = 45°, ∠R = 90°, QR = 5 cm, PQ = 9 cm and RS = 7 cm.  
+*[6 marks, Hard]*
+
+---
+
+## Understanding Shapes 1: Polygons (10 Questions)
+
+**18.** Classify the following curve as open or closed: An open curve resembling a downward-opening 'U' shape.  
+*[1 mark, Easy]*
+
+**19.** Classify the following curve as open or closed: A closed star-shaped polygon with six points (hexagram).  
+*[1 mark, Easy]*
+
+**20.** Classify the following curve as open or closed: A closed curve that intersects itself, looking like a fish or loop-the-loop.  
+*[1 mark, Easy]*
+
+**21.** Classify the following curve as open or closed: A closed figure consisting of two overlapping triangles forming a bowtie shape.  
+*[1 mark, Easy]*
+
+**22.** Classify the figure on the basis of: (i) Simple curve, (ii) Simple closed curve, (iii) Polygon, (iv) Convex polygon, (v) Concave polygon.  
+*Diagram: Concave quadrilateral with one vertex pushed inward (arrowhead/heart shape).*  
+*[3 marks, Medium]*
+
+**23.** Classify the same basis as Q22.  
+*Diagram: Convex quadrilateral (kite or rhombus shape).*  
+*[3 marks, Easy]*
+
+**24.** Classify the same basis as Q22.  
+*Diagram: Shape consisting of a half-circle attached to a straight edge with a corner cut out.*  
+*[3 marks, Medium]*
+
+**25.** How many diagonals does a convex quadrilateral have?  
+*[2 marks, Easy]*
+
+**26.** How many diagonals does a regular hexagon have?  
+*[2 marks, Easy]*
+
+**27.** What is a regular polygon? State the name of a regular polygon of: (i) 3 sides, (ii) 4 sides, (iii) 6 sides.  
+*[4 marks, Easy]*
+
+---
+
+## Understanding Shapes 2: Quadrilaterals (16 Questions)
+
+**28.** Find the value of x in the quadrilateral with interior angles 130°, 120°, x, and 50°.  
+*[3 marks, Easy - Angle Sum Property]*
+
+**29.** Find the value of x in the quadrilateral with a right angle at A, 60° at B, 70° at C, and x at D.  
+*[4 marks, Medium - Angle Sum Property]*
+
+**30.** The angles of a quadrilateral are in the ratio 3 : 5 : 9 : 13. Find all the angles.  
+*[4 marks, Medium]*
+
+**31.** A quadrilateral has three acute angles each measuring 75°. Find the fourth angle.  
+*[3 marks, Easy]*
+
+**32.** The angles of a quadrilateral are 110°, 72°, 55° and x°. Find x.  
+*[3 marks, Easy]*
+
+**33.** The four angles of a quadrilateral are in the ratio 3 : 5 : 7 : 9. Find the angles.  
+*[5 marks, Medium]*
+
+**34.** In Fig 16.20, find the measure of ∠MPN.  
+*Diagram: 45° angle at O with arms OB and OA; PN ⊥ OB and PM ⊥ OA. Quadrilateral ONPM formed.*  
+*[5 marks, Hard]*
+
+**35.** The bisectors of ∠A and ∠B meet at point P. If ∠C = 100° and ∠D = 50°, find ∠APB.  
+*[6 marks, Hard - Angle Bisectors]*
+
+**36.** In quadrilateral ABCD, angles A, B, C, D are in the ratio 1 : 2 : 4 : 5. Find each angle.  
+*[5 marks, Medium]*
+
+**37.** In quadrilateral ABCD, CO and DO are the bisectors of ∠C and ∠D respectively. Prove that ∠COD = ½(∠A + ∠B).  
+*Diagram: Quadrilateral with angle bisectors of C and D meeting at O.*  
+*[6 marks, Hard]*
+
+**38.** Find the number of sides of a regular polygon when each angle measures 160°.  
+*[3 marks, Medium]*
+
+**39.** The measure of angles of a hexagon are x°, (x-5)°, (x-5)°, (2x-5)°, (2x-5)°, (2x+20)°. Find x.  
+*[5 marks, Medium - Polygon Angle Sum]*
+
+**40.** The sum of interior angles of a polygon is three times the sum of its exterior angles. Determine the number of sides.  
+*[5 marks, Hard]*
+
+**41.** Determine the number of sides of a polygon whose exterior and interior angles are in the ratio 1 : 5.  
+*[4 marks, Medium]*
+
+**42.** In a five-pointed star, determine the sum of angles ∠P + ∠Q + ∠R + ∠S + ∠T.  
+*Diagram: Five-pointed star with vertices P, Q, R, S, T forming interior pentagon ABCDE.*  
+*[6 marks, Hard - Star Polygon]*
+
+**43.** ABCDE is a regular pentagon. The bisector of ∠A meets side CD in M. Show that ∠AMC = 90°.  
+*[5 marks, Hard - Regular Polygon Properties]*
+
+---
+
+## Understanding Shapes 3: Special Quadrilaterals (19 Questions)
+
+**44.** In parallelogram ABCD, ∠B = 100°. Find values of x, y, z at angles A, C, D respectively.  
+*[4 marks, Easy - Parallelogram Properties]*
+
+**45.** In parallelogram PQRS, exterior angle at P is 50°. Find interior angles x, y, z at P, R, S respectively.  
+*[4 marks, Medium]*
+
+**46.** Find values of x, y, z in the rhombus figure.  
+*Diagram: Rhombus with diagonals intersecting at 90°. Segments marked 3, x and 4, y. Top-left angle part 30°. z is top vertex angle.*  
+*[5 marks, Hard - Rhombus Properties]*
+
+**47.** In parallelogram GUNS, find x and y: GS = 3x, SN = 26, NU = 18, GU = 3y - 1.  
+*Note: Opposite sides GS=UN and SN=GU.*  
+*[4 marks, Medium]*
+
+**48.** RISK and CLUE are parallelograms. If ∠K = 120° and ∠L = 70°, find measure of x (angle at intersection).  
+*Diagram: Two overlapping parallelograms forming a triangle at top with angle x.*  
+*[6 marks, Hard]*
+
+**49.** ABCD is a parallelogram with ∠A = 70°. Compute ∠B, ∠C and ∠D.  
+*[3 marks, Easy]*
+
+**50.** Find the angles marked with ? in parallelogram ABCD.  
+*Diagram: Altitudes drawn from C to AD (at F) and AB (at E). ∠B and ∠D marked ?. One part of ∠C is 40°.*  
+*[6 marks, Hard - Altitudes]*
+
+**51.** ABCD and AEFG are parallelograms. If ∠C = 55°, what is ∠F?  
+*Diagram: Two parallelograms sharing vertex A.*  
+*[4 marks, Medium]*
+
+**52.** The diagonals of a parallelogram are not perpendicular. Is it a rhombus? Why?  
+*[2 marks, Medium]*
+
+**53.** The diagonals of a rhombus are 6 cm and 8 cm. Find the side length.  
+*[4 marks, Medium]*
+
+**54.** ABCD is a rhombus. If ∠ACB = 40°, find ∠ADB.  
+*Diagram: Rhombus with diagonals AC and BD intersecting at O.*  
+*[4 marks, Medium]*
+
+**55.** If the diagonals of a rhombus are 12 cm and 16 cm, find each side.  
+*[4 marks, Medium]*
+
+**56.** ABCD is a rhombus with diagonals intersecting at O. If AB = 10 cm, BD = 16 cm, find AC.  
+*[5 marks, Hard]*
+
+**57.** A window frame has one diagonal longer than the other. Is it a rectangle? Why?  
+*[2 marks, Medium - Rectangle Properties]*
+
+**58.** The sides of a rectangle are in the ratio 2 : 3, and its perimeter is 20 cm. Draw the rectangle.  
+*[5 marks, Medium]*
+
+**59.** Find the diagonal of a rectangle with sides 12 cm and 5 cm.  
+*[3 marks, Easy]*
+
+**60.** Identify all quadrilaterals that have: (i) Four sides of equal length, (ii) Four right angles.  
+*[3 marks, Easy]*
+
+**61.** ABC is a right-angled triangle and O is the mid-point of the hypotenuse. Explain why O is equidistant from A, B and C.  
+*Diagram: Right-angled triangle ABC (∠B=90°), O is midpoint of AC.*  
+*[6 marks, Hard]*
+
+**62.** A mason has made a concrete slab. He needs it to be rectangular. In what different ways can he verify this?  
+*[4 marks, Medium - Application]*

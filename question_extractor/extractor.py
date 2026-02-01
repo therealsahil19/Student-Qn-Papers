@@ -49,6 +49,7 @@ class ExtractedQuestion:
     source_paper: str = ""
     difficulty: Optional[str] = None  # easy, medium, hard
     has_diagram: bool = False
+    diagram_description: Optional[str] = None
 
 
 class TopicManager:
@@ -639,6 +640,8 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
                     lines.append(f"Q{q.question_number} {marks_str} {difficulty_str} {diagram_str}")
                     lines.append("")
                     lines.append(f"    {q.question_text}")
+                    if q.has_diagram and q.diagram_description:
+                        lines.append(f"    Diagram Description: {q.diagram_description}")
                     if q.subtopic:
                         lines.append(f"    Subtopic: {q.subtopic}")
                     if source_str:
@@ -1043,6 +1046,7 @@ Examples:
                     subtopic=q.get("subtopic"),
                     marks=q.get("marks"),
                     has_diagram=q.get("has_diagram", False),
+                    diagram_description=q.get("diagram_description"),
                     difficulty=q.get("difficulty"),
                     page_number=q.get("page_number", 0),
                     source_paper=q.get("source_paper", "")

@@ -1,210 +1,123 @@
-
 import sys
 import os
-import math
 from pathlib import Path
 
-# Add question_extractor to path
-current_dir = Path(__file__).parent.absolute()
-sys.path.append(str(current_dir / "question_extractor"))
+# Add the current directory to sys.path
+sys.path.append(os.getcwd())
 
-from geometry_schema import GeometryFigure, FigureType, Point, Line, Circle, Arc, Tangent
-from figure_renderer import FigureRenderer, RenderConfig
+from question_extractor.geometry_schema import FigureParser
+from question_extractor.figure_renderer import FigureRenderer
 
-OUTPUT_DIR = current_dir / "images"
-OUTPUT_DIR.mkdir(exist_ok=True)
-
-def create_iron_pole():
-    """
-    Q24(a): Solid iron pole.
-    Perspective: Use filled ellipses to show solid surfaces.
-    """
-    print("Generating 3D Solid Iron Pole diagram...")
+def create_diagram(name, yaml_content):
+    print(f"Creating/Redrawing diagram: {name}")
+    parser = FigureParser()
+    figure = parser.parse(yaml_content)
     
-    r1 = 1.2
-    h1 = 22.0
-    r2 = 0.8
-    h2 = 6.0
-    
-    # 3D Cylinder Bases (as ellipses)
-    # Drawing order matters for overlap: Bottom to Top
-    
-    points = [
-        Point("B1", 0, 0),
-        Point("B2", 0, h1),
-        Point("B3", 0, h1 + h2),
-        Point("L1", -r1, 0), Point("R1", r1, 0),
-        Point("L2", -r1, h1), Point("R2", r1, h1),
-        Point("L3", -r2, h1), Point("R3", r2, h1),
-        Point("L4", -r2, h1+h2), Point("R4", r2, h1+h2)
-    ]
-    
-    lines = [
-        Line("L1", "L2"), Line("R1", "R2"), # Side walls 1
-        Line("L3", "L4"), Line("R3", "R4")  # Side walls 2
-    ]
-    
-    # Ellipses with z-order and fill
-    ellipses = [
-        # Bottom base
-        {"center": "B1", "width": 2*r1, "height": 0.4*r1, "zorder": 1}, 
-        # Junction surface (Top of bottom cylinder) - FILLED to look solid
-        {"center": "B2", "width": 2*r1, "height": 0.4*r1, "fill": True, "zorder": 2}, 
-        # Top base - FILLED
-        {"center": "B3", "width": 2*r2, "height": 0.4*r2, "fill": True, "zorder": 4}
-    ]
-    
-    figure = GeometryFigure(
-        figure_type=FigureType.MENSURATION_COMBINED,
-        description="Solid 3D Iron Pole",
-        points=points,
-        lines=lines,
-        raw_yaml={"ellipses": ellipses}
-    )
-    
-    config = RenderConfig(figsize=(6, 12), line_width=2.5, line_color="black", show_points=False, show_labels=False)
-    renderer = FigureRenderer(config)
+    renderer = FigureRenderer()
     renderer.render(figure)
-    renderer.save_png(str(OUTPUT_DIR / "iron_pole.png"))
+    
+    output_path = f"images/{name}.svg"
+    renderer.save_svg(output_path)
     renderer.close()
+    return output_path
 
-def create_sphere_in_cylinder():
-    """
-    Q25(b): Sphere in cylinder.
-    """
-    print("Generating 3D Sphere in Cylinder diagram...")
-    r = 3.0
-    h = 2*r
-    
-    ellipses = [
-        {"center": "B", "width": 2*r, "height": 0.6*r}, # Base
-        {"center": "T", "width": 2*r, "height": 0.6*r, "style": "dashed"}  # Top water level
-    ]
-    
-    points = [
-        Point("B", 0, 0),
-        Point("T", 0, h),
-        Point("C", 0, r), 
-        Point("L1", -r, 0), Point("R1", r, 0),
-        Point("L2", -r, h), Point("R2", r, h)
-    ]
-    
-    lines = [
-        Line("L1", "L2"), Line("R1", "R2")
-    ]
-    
-    # Sphere filled with light shade or just white to obscure back lines
-    circles = [Circle("C", radius=r)]
-    # Injected fill for circle
-    circles[0].fill = True
-    
-    figure = GeometryFigure(
-        figure_type=FigureType.MENSURATION_COMBINED,
-        description="3D Sphere in Cylinder",
-        points=points,
-        lines=lines,
-        circles=circles,
-        raw_yaml={"ellipses": ellipses}
-    )
-    
-    config = RenderConfig(figsize=(8, 8), line_width=2.5, show_points=False, show_labels=False)
-    renderer = FigureRenderer(config)
-    renderer.render(figure)
-    renderer.save_png(str(OUTPUT_DIR / "cone_hemisphere.png")) 
-    renderer.close()
+# Q17: Parallelogram GUNS. GS || UN, GU || SN.
+# GS=3x, UN=18 (so x=6)
+# SN=26, GU=3y-1 (so y=9)
+q17_yaml = """
+type: generic
+description: Parallelogram GUNS
+elements:
+  - point: {label: G, x: 0, y: 0}
+  - point: {label: U, x: 18, y: 0}
+  - point: {label: N, x: 23, y: 10}
+  - point: {label: S, x: 5, y: 10}
+  - quadrilateral: {vertices: [G, U, N, S]}
+  - line: {points: [G, S], label: "3x"}
+  - line: {points: [U, N], label: "18"}
+  - line: {points: [G, U], label: "3y-1"}
+  - line: {points: [S, N], label: "26"}
+"""
 
-def create_six_spheres():
-    """
-    Q25(a): 6 Spheres in Cylinder.
-    """
-    print("Generating 3D 6 Spheres diagram...")
-    r = 1.0
-    
-    ellipses = [
-        {"center": "B", "width": 2*r, "height": 0.5*r},
-        {"center": "T", "width": 2*r, "height": 0.5*r}
-    ]
-    
-    points = [
-        Point("B", 0, 0), Point("T", 0, 12*r),
-        Point("L1", -r, 0), Point("R1", r, 0),
-        Point("L2", -r, 12*r), Point("R2", r, 12*r)
-    ]
-    
-    lines = [Line("L1", "L2"), Line("R1", "R2")]
-    
-    circles = []
-    points_c = []
-    for i in range(6):
-        label = f"S{i}"
-        points_c.append(Point(label, 0, r + 2*r*i))
-        c = Circle(label, radius=r)
-        c.fill = True
-        circles.append(c)
-        
-    figure = GeometryFigure(
-        figure_type=FigureType.MENSURATION_COMBINED,
-        description="3D 6 Spheres in Cylinder",
-        points=points + points_c,
-        lines=lines,
-        circles=circles,
-        raw_yaml={"ellipses": ellipses}
-    )
-    
-    config = RenderConfig(figsize=(4, 12), line_width=2.0, show_points=False, show_labels=False)
-    renderer = FigureRenderer(config)
-    renderer.render(figure)
-    renderer.save_png(str(OUTPUT_DIR / "spheres_in_cylinder.png"))
-    renderer.close()
+# Q19: Rhombus ABCD, ∠BAD = 70°. BD produced to E, BD = DE.
+# B(5,0), D(1.71, 4.7) => Vector BD = (-3.29, 4.7)
+# E = D + Vector BD = (1.71 - 3.29, 4.7 + 4.7) = (-1.58, 9.4)
+q19_yaml = """
+type: generic
+description: Rhombus ABCD with diagonal BD produced to E
+elements:
+  - point: {label: A, x: 0, y: 0}
+  - point: {label: B, x: 5, y: 0}
+  - point: {label: C, x: 6.71, y: 4.7}
+  - point: {label: D, x: 1.71, y: 4.7}
+  - point: {label: E, x: -1.58, y: 9.4}
+  - quadrilateral: {vertices: [A, B, C, D]}
+  - line: {points: [B, E], style: dashed}
+  - line: {points: [C, E]}
+  - angle: {vertex: A, rays: [B, D], value: "70°", marked: true}
+"""
 
-def create_raised_hemisphere():
-    """
-    Q6: Raised hemisphere in cylinder.
-    """
-    print("Generating 3D Raised Hemisphere diagram...")
-    r = 3.0
-    h = 6.0
-    
-    ellipses = [
-        {"center": "T", "width": 2*r, "height": 0.6*r, "fill": True, "zorder": 4} # Top cap
-    ]
-    
-    points = [
-        Point("T", 0, h),
-        Point("B_L", -r, 0), Point("B_R", r, 0),
-        Point("T_L", -r, h), Point("T_R", r, h),
-        Point("C", 0, 0)
-    ]
-    
-    lines = [
-        Line("B_L", "T_L"), Line("B_R", "T_R")
-    ]
-    
-    arcs = [
-        Arc(circle_center="C", start_point="B_R", end_point="B_L")
-    ]
-    
-    # Base ellipse half-visible
-    ellipses.append({"center": "C", "width": 2*r, "height": 0.6*r, "zorder": 1})
-    
-    figure = GeometryFigure(
-        figure_type=FigureType.MENSURATION_COMBINED,
-        description="3D Raised Hemisphere",
-        points=points,
-        lines=lines,
-        arcs=arcs,
-        raw_yaml={"ellipses": ellipses}
-    )
-    
-    config = RenderConfig(figsize=(8, 8), line_width=2.5, show_points=False, show_labels=False)
-    renderer = FigureRenderer(config)
-    renderer.render(figure)
-    renderer.save_png(str(OUTPUT_DIR / "raised_hemisphere.png"))
-    renderer.close()
+# Q21: Quadrilateral ABCD, bisectors of A and B meet at P.
+q21_yaml = """
+type: generic
+description: Quadrilateral ABCD with angle bisectors of A and B meeting at P
+elements:
+  - point: {label: A, x: 0, y: 0}
+  - point: {label: B, x: 8, y: 0}
+  - point: {label: C, x: 7, y: 6}
+  - point: {label: D, x: 1, y: 5}
+  - quadrilateral: {vertices: [A, B, C, D]}
+  - point: {label: P, x: 4, y: 2}
+  - line: {points: [A, P], style: dashed}
+  - line: {points: [B, P], style: dashed}
+  - angle: {vertex: C, value: "100°", marked: false}
+  - angle: {vertex: D, value: "50°", marked: false}
+"""
 
-if __name__ == "__main__":
-    create_iron_pole()
-    create_sphere_in_cylinder()
-    create_six_spheres()
-    create_raised_hemisphere()
-    print("Success: Generated solid 3D diagrams.")
+# Q24a: Parallelograms ABCD (top) and ABEF (bottom) on base AB.
+# D(6,4), C(11,4), B(5,0), A(0,0).
+# E(2,-4), F(-3,-4).
+# Line DE intersects AB at P and BC at Q.
+q24a_yaml = """
+type: generic
+description: Parallelograms ABCD and ABEF on opposite sides of base AB
+elements:
+  - point: {label: A, x: 0, y: 0}
+  - point: {label: B, x: 5, y: 0}
+  - point: {label: C, x: 11, y: 4}
+  - point: {label: D, x: 6, y: 4}
+  - point: {label: E, x: 2, y: -4}
+  - point: {label: F, x: -3, y: -4}
+  - quadrilateral: {vertices: [A, B, C, D]}
+  - quadrilateral: {vertices: [A, B, E, F]}
+  - line: {points: [D, E], style: solid}
+  - point: {label: P, description: "intersection of AB and DE"}
+  - point: {label: Q, description: "intersection of BC and DE"}
+"""
+
+# Q26b: Overlapping parallelograms RISK and CLUE.
+q26b_yaml = """
+type: generic
+description: Overlapping parallelograms RISK and CLUE
+elements:
+  - point: {label: R, x: 0, y: 0}
+  - point: {label: I, x: 6, y: 0}
+  - point: {label: S, x: 8, y: 3}
+  - point: {label: K, x: 2, y: 3}
+  - point: {label: C, x: 3, y: 0}
+  - point: {label: L, x: 9, y: 0}
+  - point: {label: U, x: 11, y: 3}
+  - point: {label: E, x: 5, y: 3}
+  - quadrilateral: {vertices: [R, I, S, K]}
+  - quadrilateral: {vertices: [C, L, U, E]}
+  - point: {label: X, description: "intersection of SK and CE"}
+  - angle: {vertex: K, rays: [R, S], value: "120°", marked: true}
+  - angle: {vertex: L, rays: [C, U], value: "70°", marked: true}
+"""
+
+os.makedirs("images", exist_ok=True)
+create_diagram("q17", q17_yaml)
+create_diagram("q19", q19_yaml)
+create_diagram("q21", q21_yaml)
+create_diagram("q24a", q24a_yaml)
+create_diagram("q26b", q26b_yaml)

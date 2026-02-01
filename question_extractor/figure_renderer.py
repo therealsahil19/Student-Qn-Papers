@@ -16,6 +16,7 @@ Usage:
     renderer.save_png("output.png")
 """
 
+from __future__ import annotations
 import math
 import re
 from dataclasses import dataclass
@@ -34,13 +35,19 @@ except ImportError:
 
 # Import our schema
 try:
-    from geometry_schema import (
+    from question_extractor.geometry_schema import (
         GeometryFigure, FigureType, Point, Line, Circle, 
         Angle, Triangle, Quadrilateral, Tangent, Arc as GeoArc
     )
 except ImportError:
-    # For standalone testing
-    pass
+    try:
+        from geometry_schema import (
+            GeometryFigure, FigureType, Point, Line, Circle, 
+            Angle, Triangle, Quadrilateral, Tangent, Arc as GeoArc
+        )
+    except ImportError:
+        # For standalone testing
+        pass
 
 
 @dataclass
@@ -68,12 +75,12 @@ class RenderConfig:
     construction_line_width: float = 1.0
     
     # Font settings
-    font_size: int = 12
+    font_size: int = 14
     font_family: str = 'serif'
-    label_offset: float = 0.3
+    label_offset: float = 0.3 # Base offset, will be scaled
     
     # Angle arc settings
-    angle_arc_radius: float = 0.5
+    angle_arc_radius: float = 0.5 # Base radius, will be scaled
     
     # Margins
     margin: float = 1.5
@@ -92,6 +99,8 @@ class PointLayoutEngine:
     
     _ON_SEGMENT_PATTERN = re.compile(r'on\s+(?:side\s+|segment\s+)?([A-Z])([A-Z])', re.IGNORECASE)
     _MIDPOINT_PATTERN = re.compile(r'midpoint\s+of\s+([A-Z])([A-Z])', re.IGNORECASE)
+    _INTERSECTION_PATTERN = re.compile(r'intersection\s+of\s+([A-Z])([A-Z])\s+and\s+([A-Z])([A-Z])', re.IGNORECASE)
+    _PROJECTION_PATTERN = re.compile(r'(?:projection\s+of\s+|altitude\s+from\s+)([A-Z])\s+(?:on|to)\s+([A-Z])([A-Z])', re.IGNORECASE)
 
     def __init__(self, config: RenderConfig):
         self.config = config
@@ -107,27 +116,36 @@ class PointLayoutEngine:
             if point.x is not None and point.y is not None:
                 self.positions[point.label] = (point.x, point.y)
         
-        # Position circle centers
-        for i, circle in enumerate(figure.circles):
-            if circle.center not in self.positions:
-                # Default center at origin or offset for multiple circles
-                self.positions[circle.center] = (i * 5, 0)
-        
-        # Position points on circles
-        for circle in figure.circles:
-            self._position_points_on_circle(circle, figure)
-        
-        # Position triangle vertices
-        for triangle in figure.triangles:
-            self._position_triangle_vertices(triangle, figure)
-        
-        # Position quadrilateral vertices
-        for quad in figure.quadrilaterals:
-            self._position_quad_vertices(quad, figure)
-        
-        # Position tangent points
-        for tangent in figure.tangents:
-            self._position_tangent_points(tangent, figure)
+        # Iteratively solve for dependencies (max 3 passes)
+        for _ in range(3):
+            # Position circle centers
+            for i, circle in enumerate(figure.circles):
+                if circle.center not in self.positions:
+                    # Default center at origin or offset for multiple circles
+                    self.positions[circle.center] = (i * 5, 0)
+            
+            # Position points on circles
+            for circle in figure.circles:
+                self._position_points_on_circle(circle, figure)
+            
+            # Position triangle vertices
+            for triangle in figure.triangles:
+                self._position_triangle_vertices(triangle, figure)
+            
+            # Position quadrilateral vertices
+            for quad in figure.quadrilaterals:
+                self._position_quad_vertices(quad, figure)
+            
+            # Position tangent points
+            for tangent in figure.tangents:
+                self._position_tangent_points(tangent, figure)
+            
+            # Position points based on descriptions
+            for point in figure.points:
+                if point.label not in self.positions and point.description:
+                    new_pos = self._parse_point_description(point.description, point.label)
+                    if new_pos:
+                        self.positions[point.label] = new_pos
         
         # Position remaining points
         self._position_remaining_points(figure)
@@ -261,18 +279,58 @@ class PointLayoutEngine:
             col = i % 3
             self.positions[label] = (-4 + col * 2, 4 - row * 2)
     
+    def _get_intersection(self, p1, p2, p3, p4):
+        """Calculate intersection of line (p1,p2) and line (p3,p4)."""
+        x1, y1 = p1
+        x2, y2 = p2
+        x3, y3 = p3
+        x4, y4 = p4
+        
+        denom = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
+        if abs(denom) < 1e-9:
+            return None
+            
+        px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / denom
+        py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / denom
+        return (px, py)
+
+    def _get_projection(self, p, a, b):
+        """Project point p onto line segment ab."""
+        px, py = p
+        ax, ay = a
+        bx, by = b
+        
+        dx, dy = bx - ax, by - ay
+        mag2 = dx*dx + dy*dy
+        if mag2 < 1e-9:
+            return a
+            
+        u = ((px - ax) * dx + (py - ay) * dy) / mag2
+        return (ax + u * dx, ay + u * dy)
+    
     def _parse_point_description(self, description: str, label: str) -> Optional[Tuple[float, float]]:
         """
         Parse point description to determine position.
-        
-        Understands patterns like:
-        - "on AB" - position on line segment AB
-        - "on side AB" - position on line segment AB  
-        - "midpoint of AB" - middle of segment AB
         """
-        
         desc_lower = description.lower().strip()
         
+        # Pattern: "intersection of AB and CD"
+        intersection_match = self._INTERSECTION_PATTERN.search(description)
+        if intersection_match:
+            p1, p2, p3, p4 = intersection_match.groups()
+            if all(p in self.positions for p in [p1, p2, p3, p4]):
+                return self._get_intersection(self.positions[p1], self.positions[p2], 
+                                              self.positions[p3], self.positions[p4])
+
+        # Pattern: "projection of P on AB" or "altitude from P to AB"
+        projection_match = self._PROJECTION_PATTERN.search(description)
+        if projection_match:
+            p_label, a_label, b_label = projection_match.groups()
+            if all(p in self.positions for p in [p_label, a_label, b_label]):
+                return self._get_projection(self.positions[p_label], 
+                                            self.positions[a_label], 
+                                            self.positions[b_label])
+
         # Pattern: "on AB", "on side AB", "on segment AB"
         on_segment_match = self._ON_SEGMENT_PATTERN.search(description)
         if on_segment_match:
@@ -283,9 +341,12 @@ class PointLayoutEngine:
                 p1 = self.positions[p1_label]
                 p2 = self.positions[p2_label]
                 
-                # Position at 1/3 or 2/3 along the segment (not midpoint to look distinct)
-                # Use alphabetical order to determine ratio
-                ratio = 0.35 if label < p2_label else 0.65
+                # Default ratio or look for ratio in description
+                ratio = 0.4 # Default
+                if "ratio 3:4" in desc_lower: ratio = 3/7
+                elif "ratio 2:3" in desc_lower: ratio = 2/5
+                elif "midpoint" in desc_lower: ratio = 0.5
+                
                 x = p1[0] + ratio * (p2[0] - p1[0])
                 y = p1[1] + ratio * (p2[1] - p1[1])
                 return (x, y)
@@ -330,6 +391,18 @@ class FigureRenderer:
         # Calculate point positions
         self.positions = self.layout_engine.calculate_positions(figure)
         
+        # Calculate figure scale for dynamic sizing
+        if self.positions:
+            xs = [p[0] for p in self.positions.values()]
+            ys = [p[1] for p in self.positions.values()]
+            self.scale = math.sqrt((max(xs)-min(xs))**2 + (max(ys)-min(ys))**2)
+            if self.scale < 1: self.scale = 10 # Default fallback
+        else:
+            self.scale = 10
+
+        self.dynamic_arc_radius = self.scale * 0.08
+        self.dynamic_label_offset = self.scale * 0.04
+
         # Create figure and axes
         self.fig, self.ax = plt.subplots(1, 1, figsize=self.config.figsize)
         self.ax.set_aspect('equal')
@@ -527,13 +600,13 @@ class FigureRenderer:
                 if angle.marked:
                     arc = Arc(
                         vertex,
-                        self.config.angle_arc_radius * 2,
-                        self.config.angle_arc_radius * 2,
+                        self.dynamic_arc_radius * 2,
+                        self.dynamic_arc_radius * 2,
                         angle=0,
                         theta1=theta1,
                         theta2=theta2,
                         color=self.config.angle_arc_color,
-                        linewidth=1.2,
+                        linewidth=1.5,
                         zorder=4
                     )
                     self.ax.add_patch(arc)
@@ -541,16 +614,17 @@ class FigureRenderer:
                 # Add angle value label
                 if angle.value:
                     mid_angle = (theta1 + theta2) / 2
-                    label_radius = self.config.angle_arc_radius * 1.8
+                    label_radius = self.dynamic_arc_radius * 1.5
                     label_x = vertex[0] + label_radius * math.cos(math.radians(mid_angle))
                     label_y = vertex[1] + label_radius * math.sin(math.radians(mid_angle))
                     
                     self.ax.annotate(
                         angle.value,
                         (label_x, label_y),
-                        fontsize=self.config.font_size - 2,
+                        fontsize=self.config.font_size,
                         ha='center', va='center',
                         color=self.config.angle_arc_color,
+                        fontweight='bold',
                         zorder=5
                     )
     
@@ -656,17 +730,24 @@ class FigureRenderer:
             length = math.sqrt(dx**2 + dy**2)
             
             if length > 0:
-                offset_x = (dx / length) * self.config.label_offset
-                offset_y = (dy / length) * self.config.label_offset
+                offset_x = (dx / length) * self.dynamic_label_offset
+                offset_y = (dy / length) * self.dynamic_label_offset
             else:
-                offset_x, offset_y = self.config.label_offset, self.config.label_offset
+                # If at center, move label slightly northeast
+                offset_x, offset_y = self.dynamic_label_offset, self.dynamic_label_offset
             
+            # Special case for points that might overlap
+            if label == 'P': # Often an intersection, move it a bit more
+                offset_y += self.dynamic_label_offset * 0.5
+
             self.ax.annotate(
                 label,
                 (pos[0] + offset_x, pos[1] + offset_y),
                 fontsize=self.config.font_size,
                 fontfamily=self.config.font_family,
+                fontweight='bold',
                 ha='center', va='center',
+                bbox=dict(facecolor='white', alpha=0.7, edgecolor='none', pad=1),
                 zorder=11
             )
     
