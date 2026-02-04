@@ -116,9 +116,9 @@ class PointLayoutEngine:
             if point.x is not None and point.y is not None:
                 self.positions[point.label] = (point.x, point.y)
         
-        # Iteratively solve for dependencies (max 3 passes)
-        for _ in range(3):
-            previous_count = len(self.positions)
+        # Iteratively solve for dependencies (max 10 passes)
+        for _ in range(10):
+            previous_positions = self.positions.copy()
 
             # Position circle centers
             for i, circle in enumerate(figure.circles):
@@ -149,8 +149,8 @@ class PointLayoutEngine:
                     if new_pos:
                         self.positions[point.label] = new_pos
 
-            # Exit early if no new points were positioned
-            if len(self.positions) == previous_count:
+            # Exit early if no points changed
+            if self.positions == previous_positions:
                 break
         
         # Position remaining points
