@@ -8,7 +8,7 @@ A robust, modular framework for managing mathematics question banks, extracting 
 *   **Question Bank Management**: Maintain topic-wise text files with automatic summary updating.
 *   **Professional Paper Generation**: Create PDF or Word (DOCX) exam papers with proper formatting, headers, and instructions.
 *   **Geometry Engine**: Render complex 2D and 3D geometric figures directly from text descriptions using a custom YAML schema.
-*   **Batch Processing**: Tools for handling large sets of chapter PDFs (specifically for Class 8).
+*   **Batch Processing**: Tools for handling large sets of papers, including checkpointing and prioritization.
 
 ---
 
@@ -84,21 +84,45 @@ Create a formatted PDF paper from your question bank.
 python question_extractor/paper_generator.py --input "Commercial_Math_Questions.txt" --output "Mock_Test.pdf" --total-marks 80
 ```
 
-### 2. Class 8 (Specialized Workflow)
-A batch-processing workflow for textbook chapters.
+### 3. Class 8 Workflow
+For extracting questions from Class 8 materials.
 
-**Step A: Batch Image Extraction**
-Extract images from all Class 8 chapter PDFs defined in the script.
+**Configuration**:
+The system uses `question_extractor/configs/class_8.json` to define the syllabus (Algebra, Arithmetic, Mensuration, Statistics).
+
+**Execution**:
+Use the `--profile class_8` flag with the standard extractor tools.
 ```bash
-python question_extractor/extract_class8_images.py
+python question_extractor/extractor.py --profile class_8 --generate-prompt
 ```
 
-**Step B: Term Paper Generation**
-Generate a specific format term paper (uses `create_class8_pdf.py`).
-*Note: This script may require modification of input/output paths before running.*
-```bash
-python question_extractor/create_class8_pdf.py
-```
+---
+
+## 📦 Batch Processing & Checkpoints
+
+For processing large volumes of papers (e.g., hundreds of pages), the system provides a checkpointing workflow to manage state and prioritize content.
+
+### Workflow
+1.  **Generate Master Manifest**:
+    Run the extractor recursively on your image root.
+    ```bash
+    python question_extractor/extractor.py --batch-manifest "images_root" --recursive --quiet
+    ```
+    This creates `images_root/extraction_manifest.json`.
+
+2.  **Create Checkpoint**:
+    Sort and prioritize pages (Yearly Papers > SQP > Others) into a queue.
+    ```bash
+    python create_checkpoint.py
+    ```
+    This reads `extraction_manifest.json` and creates `checkpoint_manifest.json`.
+
+3.  **Pop Batch**:
+    Retrieve the next N pages to process and remove them from the queue.
+    ```bash
+    python pop_batch.py 20
+    ```
+    This outputs a JSON array of 20 pages and updates `checkpoint_manifest.json`.
 
 ---
 
@@ -138,8 +162,18 @@ Updates the "Number of Questions" headers and the summary table in a question ba
 python question_extractor/update_summary.py <path_to_file>
 ```
 
-### `question_extractor/extract_class8_images.py`
-**Specialized Tool**: Batch processes specific Class 8 chapter PDFs defined in the `CHAPTER_NAMES` dictionary within the script. useful for bulk conversion.
+### `question_extractor/clean_question_bank.py`
+**Utility**: Cleans up and reformats an existing question bank file. It regroups questions by unit and topic, re-numbers them, and regenerates the summary.
+```bash
+python question_extractor/clean_question_bank.py
+```
+*Note: This script may require manual editing to point to the specific file you want to clean.*
+
+### `question_extractor/generate_diagrams.py`
+**Geometry Engine**: A script demonstrating how to programmatically generate SVG diagrams using the `FigureParser` and `FigureRenderer`. Useful for creating figure assets for papers.
+
+### `question_extractor/test_append_feature.py`
+**Testing**: Verifies the functionality of the `--append-results` feature in `extractor.py`, ensuring questions are correctly added and summaries updated.
 
 ### `generate_exam_diagrams.py`
 **Standalone Tool**: Generates high-quality 3D mensuration diagrams (e.g., spheres in cylinders) that are too complex for the standard schema.
@@ -207,6 +241,5 @@ Syllabus definitions are stored in `question_extractor/configs/`.
     *   Ensure you run scripts from the **root directory** (e.g., `python question_extractor/extractor.py`, NOT `cd question_extractor && python extractor.py`).
     *   The scripts rely on relative imports based on the project root.
 
-3.  **"File not found" in `create_class8_pdf.py`**:
-    *   This script contains hardcoded paths. Open the file and update the `output_path` and `text_file` variables to match your system.
-
+3.  **Hardcoded Paths**:
+    *   Some utility scripts (like `clean_question_bank.py`, `identify_chapters.py`) may contain hardcoded paths. Always check the script source before running.
