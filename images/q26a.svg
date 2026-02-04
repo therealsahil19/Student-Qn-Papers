@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 550" width="750" height="550">
+  <rect width="100%" height="100%" fill="white"/>
+  <defs>
+    <style>
+      .main-line { stroke: black; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .circle { stroke: black; stroke-width: 2.5; fill: none; }
+      .label { font-family: "Times New Roman", Times, serif; font-size: 24px; font-weight: bold; fill: black; }
+    </style>
+  </defs>
+  
+  <!-- Circle passing through P, Q, R, S -->
+  <!-- Calculated Center approx (305, 315) with Radius approx 213 -->
+  <circle cx="305" cy="315" r="213" class="circle" />
+  
+  <!-- Triangle TPS (Outer boundaries) -->
+  <!-- T(650, 400) -->
+  <!-- P(110, 400) -->
+  <!-- S(312.5, 103) -->
+  <!-- The path outlines the large triangle T-P-S which contains the quad -->
+  <path d="M 650 400 L 110 400 L 312.5 103 Z" class="main-line" />
+  
+  <!-- Quadrilateral Side RQ and SP -->
+  <!-- SP is already drawn as part of the triangle TPS (from 110,400 to 312.5,103) -->
+  <!-- We just need to draw the chord RQ -->
+  <!-- R(515, 281), Q(500, 400) -->
+  <line x1="500" y1="400" x2="515" y2="281" class="main-line" />
+  
+  <!-- Vertices Labels -->
+  <text x="665" y="405" class="label">T</text>
+  <text x="90" y="430" class="label">P</text>
+  <text x="490" y="435" class="label">Q</text>
+  <text x="525" y="275" class="label">R</text>
+  <text x="305" y="85" class="label">S</text>
+  
+</svg>

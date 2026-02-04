@@ -1,0 +1,249 @@
+{
+  "source_paper": "Mensuration 2",
+  "images_directory": "question_extractor/images_class_8/Mensuration 2",
+  "total_pages": 33,
+  "target_topics": [
+    "Algebraic_Identities",
+    "Division_of_Algebraic_Expressions",
+    "Factorization",
+    "Linear_Equations",
+    "Variations",
+    "Time_and_Work",
+    "Area_and_Perimeter",
+    "Volume_and_Surface_Area"
+  ],
+  "extraction_prompt": "\n# CISCE (ICSE) Class 8 Mathematics Question Extraction\n\n## YOUR TASK\nYou MUST extract **EVERY SINGLE QUESTION** from this page that belongs to ANY of the following topics. \nDo NOT skip any question. Even if a question only partially relates to a topic, include it.\n\n## TARGET TOPICS (Extract ALL questions matching these):\n\n### Algebraic_Identities (Algebraic Identities)\n- **Unit**: Algebra\n- **Keywords**: algebraic identity, (a+b)^2, (a-b)^2, a^2-b^2, expand, evaluate\n- **Subtopics**: Standard Identities, Expansion using identities, Simplification of expressions\n\n### Division_of_Algebraic_Expressions (Division of Algebraic Expressions)\n- **Unit**: Algebra\n- **Keywords**: division, divide, polynomial, monomial, quotient, remainder\n- **Subtopics**: Division of monomial by monomial, Division of polynomial by monomial, Division of polynomial by polynomial\n\n### Factorization (Factorization)\n- **Unit**: Algebra\n- **Keywords**: factorize, common factors, regrouping, splitting middle term, difference of two squares\n- **Subtopics**: Common factors method, Regrouping terms, Factorization using identities, Factorization of quadratic trinomials\n\n### Linear_Equations (Linear Equation in One Variable)\n- **Unit**: Algebra\n- **Keywords**: linear equation, one variable, solve, solution, root, equation, variable\n- **Subtopics**: Solution of linear equations, Word problems on linear equations\n\n### Variations (Direct and Inverse Variations)\n- **Unit**: Arithmetic\n- **Keywords**: direct variation, inverse variation, directly proportional, inversely proportional, proportionality constant\n- **Subtopics**: Direct variation, Inverse variation, Word problems on variations\n\n### Time_and_Work (Time and Work)\n- **Unit**: Arithmetic\n- **Keywords**: time and work, man days, efficiency, complete work, pipes and cisterns\n- **Subtopics**: Relationship between time and work, Unitary method in time and work, Pipes and cisterns\n\n### Area_and_Perimeter (Area and Perimeter of Plane Figures)\n- **Unit**: Mensuration\n- **Keywords**: area, perimeter, circumference, parallelogram, rhombus, trapezium, quadrilateral, polygon, diagonal, height, base\n- **Subtopics**: Area of trapezium, Area of general quadrilateral, Area of rhombus, Area of polygon\n- **Look for**: combined figures, shaded region\n\n### Volume_and_Surface_Area (Volume and Surface Area)\n- **Unit**: Mensuration\n- **Keywords**: volume, surface area, lateral surface area, curved surface area, total surface area, cube, cuboid, cylinder, radius, diameter, height, capacity\n- **Subtopics**: Surface area of cube and cuboid, Surface area of cylinder, Volume of cube and cuboid, Volume of cylinder\n- **Look for**: hollow cylinder, conversion of units\n\n## EXTRACTION RULES - FOLLOW EXACTLY:\n\n1. **SCAN THE ENTIRE PAGE** - Look at every question, sub-question, and part.\n\n2. **QUESTION IDENTIFICATION**:\n   - Section A questions (MCQs): Usually numbered 1(i), 1(ii), 1(iii), etc.\n   - Section B questions (Descriptive): Usually numbered as Question 2, Question 3, etc. with parts (i), (ii), (iii) or (a), (b), (c)\n   \n3. **FOR EACH MATCHING QUESTION, EXTRACT**:\n   - Question number (exactly as shown, e.g., \"1(i)\", \"4(ii)(a)\", \"Q5(b)\")\n   - COMPLETE question text (include ALL given information, conditions, values)\n   - Topic classification (from the list above)\n   - Unit name\n   - Subtopic (be specific)\n   - Marks (look for [3], [4 marks], etc.)\n   - Has diagram (true/false)\n   - Difficulty (easy/medium/hard)\n\n4. **COMPLETENESS CHECKLIST**:\n   \u2713 Did you check EVERY question on this page?\n   \u2713 Did you include ALL MCQs that match the topics?\n   \u2713 Did you include ALL descriptive questions that match?\n   \u2713 Did you extract sub-parts separately if they have different topics?\n\n5. **TOPIC MATCHING GUIDE**:\n   - GST: Any question mentioning tax, CGST, SGST, IGST, invoice, marked price with tax\n   - Banking: Recurring deposit, interest, maturity, savings account, fixed deposit\n   - Shares/Dividends: Shares, dividends, nominal value, market value, premium, discount, investment\n\n\n## OUTPUT FORMAT (JSON) - One entry per question/sub-question:\n```json\n{\n  \"page_questions\": [\n    {\n      \"question_number\": \"1(i)\",\n      \"question_text\": \"For an Intra-state sale, the CGST paid by a dealer to the Central government is \u20b9120. If the marked price of the article is \u20b92000, the rate of GST is: (a) 6% (b) 10% (c) 12% (d) 16.67%\",\n      \"topic\": \"GST\",\n      \"unit\": \"Commercial Mathematics\",\n      \"subtopic\": \"GST Rate Calculation\",\n      \"marks\": 1,\n      \"has_diagram\": false,\n      \"difficulty\": \"easy\"\n    },\n    {\n      \"question_number\": \"4(i)\",\n      \"question_text\": \"Suresh has a recurring deposit account in a bank. He deposits \u20b92000 per month and the bank pays interest at the rate of 8% per annum. If he gets \u20b91040 as interest at the time of maturity, find in years total time for which the account was held.\",\n      \"topic\": \"Banking\",\n      \"unit\": \"Commercial Mathematics\", \n      \"subtopic\": \"Recurring Deposit - Time Calculation\",\n      \"marks\": 3,\n      \"has_diagram\": false,\n      \"difficulty\": \"medium\"\n    }\n  ],\n  \"extraction_notes\": \"Extracted 2 questions from this page matching GST and Banking topics.\"\n}\n```\n\n## IMPORTANT REMINDERS:\n- If NO questions match the topics on this page, return: {\"page_questions\": [], \"extraction_notes\": \"No matching questions found on this page.\"}\n- Extract COMPLETE question text - do not summarize or shorten\n- Include ALL options for MCQs\n- Include ALL parts (a, b, c) for descriptive questions\n",
+  "pages": [
+    {
+      "page_number": 1,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_001.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 2,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_002.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 3,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_003.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 4,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_004.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 5,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_005.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 6,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_006.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 7,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_007.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 8,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_008.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 9,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_009.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 10,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_010.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 11,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_011.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 12,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_012.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 13,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_013.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 14,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_014.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 15,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_015.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 16,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_016.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 17,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_017.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 18,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_018.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 19,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_019.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 20,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_020.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 21,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_021.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 22,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_022.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 23,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_023.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 24,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_024.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 25,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_025.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 26,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_026.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 27,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_027.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 28,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_028.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 29,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_029.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 30,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_030.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 31,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_031.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 32,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_032.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    },
+    {
+      "page_number": 33,
+      "image_path": "C:\\Users\\mehna\\OneDrive\\Desktop\\Student Qn papers\\question_extractor\\images_class_8\\Mensuration 2\\page_033.png",
+      "source_paper": "Mensuration 2",
+      "status": "pending",
+      "questions_extracted": 0
+    }
+  ]
+}

@@ -131,6 +131,136 @@
           ]
         }
       }
+    },
+    "3_Mensuration": {
+      "enabled": true,
+      "unit_name": "Mensuration",
+      "description": "Area and Perimeter of Plane Figures, Surface Area and Volume of solids.",
+      "topics": {
+        "Area_and_Perimeter": {
+          "enabled": true,
+          "full_name": "Area and Perimeter of Plane Figures",
+          "keywords": [
+            "area",
+            "perimeter",
+            "circumference",
+            "parallelogram",
+            "rhombus",
+            "trapezium",
+            "quadrilateral",
+            "polygon",
+            "diagonal",
+            "height",
+            "base"
+          ],
+          "subtopics": [
+            "Area of trapezium",
+            "Area of general quadrilateral",
+            "Area of rhombus",
+            "Area of polygon"
+          ],
+          "edge_cases": [
+            "combined figures",
+            "shaded region"
+          ]
+        },
+        "Volume_and_Surface_Area": {
+          "enabled": true,
+          "full_name": "Volume and Surface Area",
+          "keywords": [
+            "volume",
+            "surface area",
+            "lateral surface area",
+            "curved surface area",
+            "total surface area",
+            "cube",
+            "cuboid",
+            "cylinder",
+            "radius",
+            "diameter",
+            "height",
+            "capacity"
+          ],
+          "subtopics": [
+            "Surface area of cube and cuboid",
+            "Surface area of cylinder",
+            "Volume of cube and cuboid",
+            "Volume of cylinder"
+          ],
+          "edge_cases": [
+            "hollow cylinder",
+            "conversion of units"
+          ]
+        }
+      }
+    },
+    "4_Statistics": {
+      "enabled": true,
+      "unit_name": "Statistics and Probability",
+      "description": "Data Handling, Sets, and Probability.",
+      "topics": {
+        "Data_Handling": {
+          "enabled": true,
+          "full_name": "Data Handling",
+          "keywords": [
+            "data handling",
+            "frequency",
+            "tally marks",
+            "bar graph",
+            "histogram",
+            "pie chart",
+            "mean",
+            "median",
+            "mode",
+            "grouped data"
+          ],
+          "subtopics": [
+            "Raw Data and Grouped Data",
+            "Frequency Distribution Table",
+            "Bar Graphs and Histograms",
+            "Pie Charts",
+            "Measures of Central Tendency"
+          ]
+        },
+        "Sets": {
+          "enabled": true,
+          "full_name": "Sets",
+          "keywords": [
+            "set",
+            "subset",
+            "universal set",
+            "union",
+            "intersection",
+            "complement",
+            "venn diagram",
+            "cardinality"
+          ],
+          "subtopics": [
+            "Representation of Sets",
+            "Types of Sets",
+            "Subsets and Power Sets",
+            "Venn Diagrams",
+            "Operations on Sets"
+          ]
+        },
+        "Probability": {
+          "enabled": true,
+          "full_name": "Probability",
+          "keywords": [
+            "probability",
+            "random experiment",
+            "outcome",
+            "sample space",
+            "event",
+            "favorable outcome"
+          ],
+          "subtopics": [
+            "Basic Terms in Probability",
+            "Experimental and Theoretical Probability",
+            "Simple Problems on Probability"
+          ]
+        }
+      }
     }
   },
   "extraction_settings": {

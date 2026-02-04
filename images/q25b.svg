@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" style="background-color: white;">
+  <!-- Circle -->
+  <circle cx="250" cy="180" r="100" stroke="black" stroke-width="2" fill="none"/>
+  
+  <!-- Diameter ST -->
+  <line x1="150" y1="180" x2="350" y2="180" stroke="black" stroke-width="2"/>
+  
+  <!-- Radius OR -->
+  <line x1="250" y1="180" x2="300" y2="93.4" stroke="black" stroke-width="2"/>
+  
+  <!-- Chord SR -->
+  <line x1="150" y1="180" x2="300" y2="93.4" stroke="black" stroke-width="2"/>
+  
+  <!-- Chord RT -->
+  <line x1="300" y1="93.4" x2="350" y2="180" stroke="black" stroke-width="2"/>
+  
+  <!-- Tangent PQ (passes through R, perpendicular to OR) -->
+  <line x1="230.7" y1="53.4" x2="369.3" y2="133.4" stroke="black" stroke-width="2"/>
+  
+  <!-- Points -->
+  <circle cx="250" cy="180" r="3" fill="black"/> <!-- O -->
+  <circle cx="150" cy="180" r="3" fill="black"/> <!-- S -->
+  <circle cx="350" cy="180" r="3" fill="black"/> <!-- T -->
+  <circle cx="300" cy="93.4" r="3" fill="black"/> <!-- R -->
+  
+  <!-- Labels -->
+  <text x="250" y="205" font-family="serif" font-size="20" fill="black" text-anchor="middle">O</text>
+  <text x="135" y="185" font-family="serif" font-size="20" fill="black" text-anchor="middle">S</text>
+  <text x="365" y="185" font-family="serif" font-size="20" fill="black" text-anchor="middle">T</text>
+  <text x="300" y="78" font-family="serif" font-size="20" fill="black" text-anchor="middle">R</text>
+  <text x="215" y="58" font-family="serif" font-size="20" fill="black" text-anchor="middle">P</text>
+  <text x="385" y="138" font-family="serif" font-size="20" fill="black" text-anchor="middle">Q</text>
+  
+  <!-- Angle Arc for TRQ (30 degrees) -->
+  <!-- Arc starts on tangent, ends on chord RT -->
+  <path d="M 326 108.4 A 30 30 0 0 1 315 119.4" stroke="black" fill="none" stroke-width="1.5"/>
+  <text x="335" y="129" font-family="serif" font-size="16" fill="black" text-anchor="middle">30°</text>
+</svg>
