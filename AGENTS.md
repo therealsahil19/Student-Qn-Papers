@@ -14,7 +14,7 @@ This document outlines the strict protocol for Antigravity (the Agent) to autono
 
 ### Step 1: Initialize Extraction Job (Recursive Mode)
 
-Point the tool at the **root** image directory (e.g., `images_class_10`) and use the `--recursive` flag. This will find all images in all subfolders and create one giant job list.
+Point the tool at the **root** image directory (e.g., `images_class_10` or `images_class_8`) and use the `--recursive` flag. This will find all images in all subfolders and create one giant job list.
 
 ```bash
 # Syntax
@@ -72,6 +72,28 @@ For each page in the current batch:
 
 ---
 
+## 🏗️ Advanced: Large Scale Extraction Strategy
+
+For very large extraction jobs (100+ pages), use the Checkpoint Workflow to prioritize work and ensure nothing is lost.
+
+**1. Create Master Manifest**
+First, run the standard recursive manifest generation (Step 1 above).
+
+**2. Create Checkpoint Queue**
+Run `create_checkpoint.py` to sort and prioritize pages from `extraction_manifest.json` into a new `checkpoint_manifest.json`.
+```bash
+python create_checkpoint.py
+```
+
+**3. Process from Queue**
+Instead of manually slicing the JSON, use `pop_batch.py` to get the next chunk of work.
+```bash
+python pop_batch.py 20 > batch.json
+```
+This command removes the top 20 pages from `checkpoint_manifest.json` and outputs them. You can then process this `batch.json`.
+
+---
+
 ## 📄 Protocol: Exam Paper Generation
 
 If you are asked to **generate an exam paper** (PDF or Word) from the questions you have extracted or from an existing question bank, you **MUST** use the existing `paper_generator.py` tool.
@@ -117,3 +139,4 @@ python question_extractor/paper_generator.py --input "<QUESTION_BANK_FILE>" --ou
 3.  **RECURSIVE PROCESSING**: Always use `--recursive` on the root image folder to process all papers in one run.
 4.  **SOURCE TRACKING**: You are responsible for injecting the correct `source_paper` (from the manifest) into every extracted question.
 5.  **NO CUSTOM GENERATORS**: Never write custom scripts to generate exam papers. Always use `question_extractor/paper_generator.py`.
+6.  **PROFILE SWITCHING**: If working on Class 8 material, remember to use `--profile class_8` when generating prompts with `extractor.py`.
