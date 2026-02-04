@@ -69,6 +69,7 @@ class TopicManager:
         self.config_path = Path(config_path)
         self.config = self._load_config()
         self._all_topics_cache = None
+        self._enabled_topics_cache = None
     
     def _load_config(self) -> dict:
         """Load configuration from JSON file."""
@@ -97,6 +98,9 @@ class TopicManager:
     
     def get_enabled_topics(self) -> Dict[str, dict]:
         """Get all topics that are enabled across all units."""
+        if self._enabled_topics_cache is not None:
+            return self._enabled_topics_cache
+
         enabled = {}
         units = self.config.get("units", {})
         
@@ -113,6 +117,7 @@ class TopicManager:
                     topic_with_unit["unit_key"] = unit_key
                     enabled[topic_key] = topic_with_unit
         
+        self._enabled_topics_cache = enabled
         return enabled
     
     def get_all_topics(self) -> Dict[str, dict]:
@@ -160,6 +165,7 @@ class TopicManager:
             if topic_name in topics:
                 topics[topic_name]["enabled"] = True
                 self._all_topics_cache = None
+                self._enabled_topics_cache = None
                 return True
         return False
     
@@ -171,6 +177,7 @@ class TopicManager:
             if topic_name in topics:
                 topics[topic_name]["enabled"] = False
                 self._all_topics_cache = None
+                self._enabled_topics_cache = None
                 return True
         return False
     
