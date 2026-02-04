@@ -48,9 +48,10 @@ def append_batch(json_file, target_file):
         # but the main file seems to use local batch numbers or just Q markers.
         # Let's see how they are formatted in the file.
         
-        formatted_qs = ""
+        formatted_qs_list = []
         for i, q in enumerate(qs, 1):
-            formatted_qs += f"\nQ{i} (Marks {q['marks']}) ({q['paper']})\n{q['question']}\n"
+            formatted_qs_list.append(f"\nQ{i} (Marks {q['marks']}) ({q['paper']})\n{q['question']}\n")
+        formatted_qs = "".join(formatted_qs_list)
             
         new_content = new_content[:insert_pos].strip() + "\n" + formatted_qs + "\n\n" + new_content[insert_pos:]
         
