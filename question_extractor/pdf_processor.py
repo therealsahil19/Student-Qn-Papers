@@ -12,6 +12,7 @@ import concurrent.futures
 
 # Global variable to hold the open document in worker processes
 _worker_doc = None
+_worker_pdf_path = None
 
 @dataclass
 class PDFPage:
@@ -28,13 +29,15 @@ def _init_worker(pdf_path: str):
     Initializer for worker processes.
     Opens the PDF file once per worker to avoid repeated open/close overhead.
     """
-    global _worker_doc
+    global _worker_doc, _worker_pdf_path
     import fitz
     try:
         _worker_doc = fitz.open(str(pdf_path))
+        _worker_pdf_path = str(pdf_path)
     except Exception as e:
         print(f"Failed to initialize worker with PDF {pdf_path}: {e}")
         _worker_doc = None
+        _worker_pdf_path = None
 
 
 def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optional[PDFPage]:
@@ -42,7 +45,7 @@ def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optio
     Helper function to process a single page in a separate process.
     Must be at module level to be pickleable.
     """
-    global _worker_doc
+    global _worker_doc, _worker_pdf_path
     pdf_path, page_num, dpi, output_format, output_dir = args
     import fitz
 
@@ -50,10 +53,21 @@ def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optio
     doc = _worker_doc
     should_close = False
 
-    # Fallback: Open document if not initialized (e.g., if function called directly)
-    if doc is None:
+    # Check if we have a valid cached document for this PDF
+    # If the document is not initialized, or if it belongs to a different PDF, open it
+    if doc is None or _worker_pdf_path != str(pdf_path):
+        # Close existing if it's a different PDF and open
+        if doc is not None:
+            try:
+                doc.close()
+            except Exception:
+                pass
+
+        # Fallback: Open document and cache it for future calls in this process
         doc = fitz.open(str(pdf_path))
-        should_close = True
+        _worker_doc = doc
+        _worker_pdf_path = str(pdf_path)
+        should_close = False  # Keep it open for reuse
 
     if page_num < 1 or page_num > len(doc):
         if should_close:
