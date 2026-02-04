@@ -78,7 +78,8 @@ class TopicManager:
             old_path = Path(__file__).parent / "topics_config.json"
             if old_path.exists():
                 print(f"Warning: Config not found at {self.config_path}, falling back to topics_config.json")
-                return json.load(open(old_path, 'r', encoding='utf-8'))
+                with open(old_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
                 
             raise FileNotFoundError(
                 f"Topic configuration not found: {self.config_path}\n"
