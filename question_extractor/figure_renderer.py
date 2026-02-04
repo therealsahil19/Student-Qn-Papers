@@ -118,6 +118,8 @@ class PointLayoutEngine:
         
         # Iteratively solve for dependencies (max 3 passes)
         for _ in range(3):
+            previous_count = len(self.positions)
+
             # Position circle centers
             for i, circle in enumerate(figure.circles):
                 if circle.center not in self.positions:
@@ -146,6 +148,10 @@ class PointLayoutEngine:
                     new_pos = self._parse_point_description(point.description, point.label)
                     if new_pos:
                         self.positions[point.label] = new_pos
+
+            # Exit early if no new points were positioned
+            if len(self.positions) == previous_count:
+                break
         
         # Position remaining points
         self._position_remaining_points(figure)
