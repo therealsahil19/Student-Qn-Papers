@@ -74,9 +74,6 @@ def update_file_summary(file_path):
 
     pattern = r'(Topic: (.*?)\nNumber of Questions: )\d+'
     content = re.sub(pattern, replace_count, content)
-    for topic, count in counts.items():
-        pattern = rf'(Topic: {re.escape(topic)}\nNumber of Questions: )\d+'
-        content = re.sub(pattern, rf'\g<1>{count}', content)
 
     # Update Global Headers
     content = re.sub(r'Total questions: \d+', f'Total questions: {total}', content)
@@ -89,6 +86,11 @@ def update_file_summary(file_path):
     for topic in sorted(counts.keys()):
         summary_replacement += f"  {topic}: {counts[topic]} questions\n"
     summary_replacement += f"  Total questions: {total}"
+
+    # Re-find the last summary section as offsets might have changed
+    summary_matches = list(re.finditer(r'(SUMMARY|CUMULATIVE SUMMARY)\s*(=+|-+)\n', content))
+    if summary_matches:
+        last_summary_pos = summary_matches[-1].start()
     
     # Detect the separator used in the summary (= or -)
     sep_match = re.search(r'(SUMMARY|CUMULATIVE SUMMARY)\s*\n(=+|-+)\n', content[last_summary_pos:])
