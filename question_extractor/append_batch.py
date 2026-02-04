@@ -21,19 +21,20 @@ def append_batch(json_file, target_file):
         if cat in categories:
             categories[cat].append(q)
     
-    new_content = content
+    # Identify all insertions first to avoid repeated string concatenation
+    insertions = []
     
     for cat, qs in categories.items():
         if not qs: continue
         
         # Find the start of the section and the end (before next topic or summary)
         section_pattern = f"Topic: {cat}"
-        start_idx = new_content.find(section_pattern)
+        start_idx = content.find(section_pattern)
         if start_idx == -1: continue
         
         # Find where to append - either before the next "Topic:" or before "CUMULATIVE SUMMARY"
-        next_topic = new_content.find("Topic:", start_idx + 1)
-        summary_start = new_content.find("CUMULATIVE SUMMARY", start_idx + 1)
+        next_topic = content.find("Topic:", start_idx + 1)
+        summary_start = content.find("CUMULATIVE SUMMARY", start_idx + 1)
         
         insert_pos = -1
         if next_topic != -1 and (summary_start == -1 or next_topic < summary_start):
@@ -41,7 +42,7 @@ def append_batch(json_file, target_file):
         elif summary_start != -1:
             insert_pos = summary_start
         else:
-            insert_pos = len(new_content)
+            insert_pos = len(content)
             
         # Format questions
         # Note: We don't have global Q numbers across batches here easily, 
@@ -52,8 +53,39 @@ def append_batch(json_file, target_file):
         for i, q in enumerate(qs, 1):
             formatted_qs_list.append(f"\nQ{i} (Marks {q['marks']}) ({q['paper']})\n{q['question']}\n")
         formatted_qs = "".join(formatted_qs_list)
+
+        insertions.append((insert_pos, formatted_qs))
             
-        new_content = new_content[:insert_pos].strip() + "\n" + formatted_qs + "\n\n" + new_content[insert_pos:]
+    # Sort insertions by position
+    insertions.sort(key=lambda x: x[0])
+
+    # Build new content using a list to avoid O(N^2) string concatenation
+    parts = []
+    last_pos = 0
+
+    for pos, qs in insertions:
+        segment = content[last_pos:pos]
+
+        # Emulate the original behavior: new_content[:insert_pos].strip()
+        if last_pos == 0:
+            segment = segment.strip()
+        else:
+            if not segment.strip():
+                # If segment is empty or just whitespace, the previous stripped content
+                # (which ends with \n\n) plus this segment would be stripped back.
+                # So we remove trailing whitespace from the last added part (the \n\n).
+                if parts:
+                    parts[-1] = parts[-1].rstrip()
+                segment = ""
+            else:
+                segment = segment.rstrip()
+
+        parts.append(segment)
+        parts.append("\n" + qs + "\n\n")
+        last_pos = pos
+
+    parts.append(content[last_pos:])
+    new_content = "".join(parts)
         
     with open(target_file, 'w', encoding='utf-8') as f:
         f.write(new_content)
