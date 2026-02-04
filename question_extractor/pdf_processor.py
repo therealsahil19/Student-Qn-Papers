@@ -210,12 +210,19 @@ Option 2: pdf2image (Requires Poppler)
         import fitz
         
         # Get page count first to determine range
-        doc = fitz.open(str(pdf_path))
-        total_pages = len(doc)
-        doc.close()
-        
-        page_numbers = list(pages) if pages else range(1, total_pages + 1)
-        valid_page_numbers = [p for p in page_numbers if 1 <= p <= total_pages]
+        # Optimization: Only open if we need to know the total pages (i.e. pages is None)
+        if pages:
+            page_numbers = list(pages)
+            # Filter out non-positive page numbers
+            # We rely on the worker to handle the upper bound check since we don't have total_pages
+            valid_page_numbers = [p for p in page_numbers if p >= 1]
+        else:
+            doc = fitz.open(str(pdf_path))
+            total_pages = len(doc)
+            doc.close()
+
+            page_numbers = range(1, total_pages + 1)
+            valid_page_numbers = list(page_numbers)
         
         # Prepare arguments for each task
         tasks = []
