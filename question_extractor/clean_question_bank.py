@@ -2,9 +2,6 @@ import re
 import os
 
 def clean_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-
     questions = {
         "Loci": [],
         "Similarity": [],
@@ -20,32 +17,33 @@ def clean_file(file_path):
     
     q_start_pattern = re.compile(r'^Q\d+')
     
-    for line in lines:
-        stripped = line.strip()
-        
-        # Detect category changes in the existing mess
-        if "Topic: Loci" in line:
-            current_cat = "Loci"
-            continue
-        elif "Topic: Similarity" in line:
-            current_cat = "Similarity"
-            continue
-        elif "Topic: Trigonometry" in line:
-            current_cat = "Trigonometry"
-            continue
+    with open(file_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            stripped = line.strip()
             
-        # If we find a question marker
-        if q_start_pattern.match(stripped):
-            if current_q and current_cat:
-                questions[current_cat].append("".join(current_q).strip())
-            current_q = [line]
-        elif stripped == "----------------------------------------" or "====================" in line or "UNIT:" in line or "Topic:" in line or "Number of Questions:" in line:
-            if current_q and current_cat:
-                questions[current_cat].append("".join(current_q).strip())
-                current_q = []
-        else:
-            if current_q:
-                current_q.append(line)
+            # Detect category changes in the existing mess
+            if "Topic: Loci" in line:
+                current_cat = "Loci"
+                continue
+            elif "Topic: Similarity" in line:
+                current_cat = "Similarity"
+                continue
+            elif "Topic: Trigonometry" in line:
+                current_cat = "Trigonometry"
+                continue
+
+            # If we find a question marker
+            if q_start_pattern.match(stripped):
+                if current_q and current_cat:
+                    questions[current_cat].append("".join(current_q).strip())
+                current_q = [line]
+            elif stripped == "----------------------------------------" or "====================" in line or "UNIT:" in line or "Topic:" in line or "Number of Questions:" in line:
+                if current_q and current_cat:
+                    questions[current_cat].append("".join(current_q).strip())
+                    current_q = []
+            else:
+                if current_q:
+                    current_q.append(line)
                 
     # Append the last one
     if current_q and current_cat:
