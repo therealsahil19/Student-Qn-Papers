@@ -136,11 +136,17 @@ The main CLI tool for PDF processing and prompt generation.
 | Flag | Description |
 |------|-------------|
 | `--list-topics` | Show all configured topics and their status. |
+| `--list-units` | List all units in the syllabus. |
+| `--check` | Check dependencies and configuration. |
+| `--syllabus-info` | Show detailed syllabus information. |
 | `--pdf <path>` | Path to the source PDF file. |
 | `--prepare-images <dir>` | Convert PDF pages to images in the specified folder. |
 | `--generate-prompt` | Generate a prompt for LLM extraction based on enabled topics. |
 | `--topics "T1,T2"` | Override config to extract specific topics (comma-separated). |
+| `--enable-topic <topic>` | Enable a specific topic in the configuration. |
+| `--disable-topic <topic>` | Disable a specific topic in the configuration. |
 | `--profile <name>` | Switch syllabus profile (`class_10` or `class_8`). |
+| `--recursive` | Recursively search for images in subdirectories (used with `--batch-manifest`). |
 | `--append-results <file>` | Append questions from JSON/Text file to a target bank. |
 | `--target <file>` | Target file for appending results (used with `--append-results`). |
 
@@ -151,10 +157,15 @@ Generates exam papers from text-based question banks.
 |------|-------------|
 | `--input <files>` | One or more `.txt` question bank files. |
 | `--output <file>` | Output filename (ends in `.pdf` or `.docx`). |
-| `--format [pdf/docx]` | Force specific output format. |
+| `--format [pdf/docx]` | Force specific output format (default: pdf). |
+| `--title <text>` | Set the title of the exam paper. |
+| `--subtitle <text>` | Set the subtitle of the exam paper. |
 | `--topics "T1,T2"` | Filter questions to include only specific topics. |
 | `--total-marks <N>` | Set total marks (default: 80). |
+| `--check-deps` | Check available dependencies and exit. |
 | `--no-figures` | Disable geometry figure rendering. |
+
+*Note: Generating DOCX files requires the `python-docx` library. If missing, the script will default to PDF or exit with an error depending on usage.*
 
 ### `question_extractor/update_summary.py`
 Updates the "Number of Questions" headers and the summary table in a question bank file.
@@ -169,6 +180,20 @@ python question_extractor/clean_question_bank.py
 ```
 *Note: This script may require manual editing to point to the specific file you want to clean.*
 
+### `create_checkpoint.py`
+**Batch Processing**: Reads `extraction_manifest.json`, sorts pages by priority (Yearly Papers > SQP > Others), and creates `checkpoint_manifest.json`.
+```bash
+python create_checkpoint.py
+```
+
+### `pop_batch.py`
+**Batch Processing**: Retrieves the next N pages from `checkpoint_manifest.json`, removes them from the queue, and outputs them as a JSON array.
+```bash
+python pop_batch.py <batch_size>
+# Example:
+python pop_batch.py 20
+```
+
 ### `question_extractor/generate_diagrams.py`
 **Geometry Engine**: A script demonstrating how to programmatically generate SVG diagrams using the `FigureParser` and `FigureRenderer`. Useful for creating figure assets for papers.
 
@@ -180,6 +205,10 @@ python question_extractor/clean_question_bank.py
 ```bash
 python generate_exam_diagrams.py
 ```
+
+### `generate_q21_diagram.py`
+**Standalone Tool**: An example of generating a specific complex geometry diagram (Q21).
+*Note: This script contains hardcoded paths and is intended as a reference or template for custom diagram generation.*
 
 ### `identify_chapters.py`
 **Utility**: Reads the first few lines of PDF files to help identify their content. Useful when files are unnamed.
@@ -213,6 +242,33 @@ Defined in `question_extractor/geometry_schema.py`:
 
 ### Figure Renderer
 The `figure_renderer.py` module uses `matplotlib` to render these schemas into PNG images which are then embedded into the generated PDF/DOCX.
+
+---
+
+## 🧪 Testing
+
+The project includes several test scripts to verify core functionalities.
+
+| Test Script | Description |
+|-------------|-------------|
+| `question_extractor/test_pdf_processor.py` | Verifies PDF-to-image conversion. Requires `reportlab` to generate temporary test PDFs. |
+| `question_extractor/test_append_batch.py` | Tests the functionality of appending questions to text files while maintaining formatting. |
+| `question_extractor/test_update_summary.py` | Verifies the summary update logic, ensuring counts and headers are correctly recalculated. |
+| `question_extractor/test_append_feature.py` | Integration test for the `--append-results` feature in `extractor.py`. |
+| `question_extractor/figure_renderer.py` | Can be run with `--test` to verify the figure rendering engine. |
+
+### Running Tests
+
+You can run individual tests using `python` or `unittest`:
+
+```bash
+# Run specific tests
+python question_extractor/test_append_batch.py
+python question_extractor/test_update_summary.py
+
+# Run figure renderer internal tests
+PYTHONPATH=question_extractor python question_extractor/figure_renderer.py --test
+```
 
 ---
 
