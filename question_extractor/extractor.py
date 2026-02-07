@@ -1078,38 +1078,92 @@ Examples:
                 with open(target_path, 'w', encoding='utf-8') as f:
                     f.write(text_to_append)
         else:
-            # Append before summary
-            with open(target_path, 'r', encoding='utf-8') as f:
-                content = f.read()
+            # Append before summary using streaming to avoid reading full file
+            import tempfile
+            import shutil
 
-            # Find insertion point (before SUMMARY)
             summary_markers = ["SUMMARY", "CUMULATIVE SUMMARY"]
-            insertion_point = -1
+            inserted = False
 
-            for marker in summary_markers:
-                # Look for marker at start of line
-                m = re.search(rf'^{marker}\s*$', content, re.MULTILINE)
-                if m:
-                    # Look back for the "=======" line above it if it exists
-                    # The standard format has "=======" before SUMMARY
-                    pos = m.start()
-                    # Check the previous few lines for separator
-                    prev_lines = content[:pos].splitlines()
-                    if prev_lines and set(prev_lines[-1].strip()) == {'='}:
-                        # Insert before the separator line
-                        insertion_point = content.rfind('\n', 0, content.rfind('\n', 0, pos))
-                    else:
-                        insertion_point = pos
-                    break
+            # Resolve symlinks to ensure we modify the actual file
+            target_path = os.path.realpath(target_path)
 
-            if insertion_point != -1:
-                new_content = content[:insertion_point] + "\n" + text_to_append + "\n" + content[insertion_point:]
-            else:
-                # Just append if no summary found
-                new_content = content + "\n" + text_to_append
+            # Create temp file
+            target_dir = os.path.dirname(target_path)
+            # Use mkstemp to create a unique temp file in the same directory (for atomic move)
+            fd, temp_path = tempfile.mkstemp(dir=target_dir, text=True)
 
-            with open(target_path, 'w', encoding='utf-8') as f:
-                f.write(new_content)
+            # Copy permissions from target file to temp file
+            try:
+                shutil.copymode(target_path, temp_path)
+            except OSError:
+                pass  # Ignore if permissions cannot be copied
+
+            try:
+                with os.fdopen(fd, 'w', encoding='utf-8') as temp_file:
+                    with open(target_path, 'r', encoding='utf-8') as source_file:
+                        buffer_lines = []
+
+                        for line in source_file:
+                            if inserted:
+                                temp_file.write(line)
+                                continue
+
+                            stripped = line.strip()
+                            is_summary = stripped in summary_markers
+
+                            if is_summary:
+                                # Check for separator line in buffer
+                                separator = None
+                                if buffer_lines and set(buffer_lines[-1].strip()) == {'='} and len(buffer_lines[-1].strip()) > 3:
+                                    separator = buffer_lines.pop()
+
+                                # Flush remaining buffer
+                                for buf_line in buffer_lines:
+                                    temp_file.write(buf_line)
+                                buffer_lines = []
+
+                                # Insert new content
+                                # Ensure surrounding newlines for clean formatting
+                                if not text_to_append.startswith('\n'):
+                                    temp_file.write('\n')
+                                temp_file.write(text_to_append)
+                                if not text_to_append.endswith('\n'):
+                                    temp_file.write('\n')
+
+                                # Write separator if it existed
+                                if separator:
+                                    temp_file.write(separator)
+
+                                # Write summary line
+                                temp_file.write(line)
+                                inserted = True
+                            else:
+                                buffer_lines.append(line)
+                                # Keep a small buffer context
+                                if len(buffer_lines) > 2:
+                                    temp_file.write(buffer_lines.pop(0))
+
+                        # Flush remaining buffer at EOF
+                        for buf_line in buffer_lines:
+                            temp_file.write(buf_line)
+
+                        if not inserted:
+                            # Append at end if no summary found
+                            if not text_to_append.startswith('\n'):
+                                temp_file.write('\n')
+                            temp_file.write(text_to_append)
+                            if not text_to_append.endswith('\n'):
+                                temp_file.write('\n')
+
+                # Replace original file atomically
+                shutil.move(temp_path, target_path)
+
+            except Exception as e:
+                # Clean up temp file on error
+                if os.path.exists(temp_path):
+                    os.remove(temp_path)
+                raise e
 
         # Update summary counts
         if update_summary:
