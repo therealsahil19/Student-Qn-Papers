@@ -168,7 +168,8 @@ Option 2: pdf2image (Requires Poppler)
         self, 
         pdf_path: str, 
         output_dir: Optional[str] = None,
-        pages: Optional[List[int]] = None
+        pages: Optional[List[int]] = None,
+        page_count: Optional[int] = None
     ) -> List[PDFPage]:
         """
         Convert PDF pages to images.
@@ -177,6 +178,7 @@ Option 2: pdf2image (Requires Poppler)
             pdf_path: Path to the PDF file
             output_dir: Directory to save images (optional, if None returns base64)
             pages: Specific page numbers to convert (1-indexed), None for all
+            page_count: Total number of pages (optional optimization to avoid opening file)
             
         Returns:
             List of PDFPage objects with image data
@@ -196,7 +198,7 @@ Option 2: pdf2image (Requires Poppler)
             output_dir.mkdir(parents=True, exist_ok=True)
         
         if self._backend == "pymupdf":
-            return self._convert_with_pymupdf(pdf_path, output_dir, pages)
+            return self._convert_with_pymupdf(pdf_path, output_dir, pages, page_count)
         else:
             return self._convert_with_pdf2image(pdf_path, output_dir, pages)
     
@@ -204,7 +206,8 @@ Option 2: pdf2image (Requires Poppler)
         self, 
         pdf_path: Path, 
         output_dir: Optional[Path],
-        pages: Optional[List[int]]
+        pages: Optional[List[int]],
+        page_count: Optional[int] = None
     ) -> List[PDFPage]:
         """Convert using PyMuPDF."""
         import fitz
@@ -216,10 +219,14 @@ Option 2: pdf2image (Requires Poppler)
             # Filter out non-positive page numbers
             # We rely on the worker to handle the upper bound check since we don't have total_pages
             valid_page_numbers = [p for p in page_numbers if p >= 1]
+        elif page_count is not None:
+            # Optimization: Use provided page count to avoid opening the file
+            total_pages = page_count
+            page_numbers = range(1, total_pages + 1)
+            valid_page_numbers = list(page_numbers)
         else:
-            doc = fitz.open(str(pdf_path))
-            total_pages = len(doc)
-            doc.close()
+            with fitz.open(str(pdf_path)) as doc:
+                total_pages = len(doc)
 
             page_numbers = range(1, total_pages + 1)
             valid_page_numbers = list(page_numbers)
