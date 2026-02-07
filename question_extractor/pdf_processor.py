@@ -261,7 +261,7 @@ Option 2: pdf2image (Requires Poppler)
         from pdf2image import convert_from_path, pdfinfo_from_path
         import io
         
-        chunk_size = 10  # Process pages in chunks to reduce memory usage
+        chunk_size = 50  # Process pages in chunks to reduce memory usage
         result = []
         
         # Determine the full range of pages to process
