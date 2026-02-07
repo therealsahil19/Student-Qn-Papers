@@ -20,7 +20,7 @@ from __future__ import annotations
 import math
 import re
 from dataclasses import dataclass
-from typing import Optional, List, Dict, Tuple, Any
+from typing import Optional, List, Dict, Tuple, Any, Callable
 from pathlib import Path
 
 try:
@@ -116,6 +116,14 @@ class PointLayoutEngine:
             if point.x is not None and point.y is not None:
                 self.positions[point.label] = (point.x, point.y)
         
+        # Pre-parse descriptions to avoid repeated regex parsing
+        description_tasks = []
+        for point in figure.points:
+            if point.description:
+                deps, solver = self._create_solver_from_description(point.description)
+                if solver:
+                    description_tasks.append((point.label, deps, solver))
+
         # Iteratively solve for dependencies (max 10 passes)
         for _ in range(10):
             previous_positions = self.positions.copy()
@@ -143,18 +151,19 @@ class PointLayoutEngine:
                 self._position_tangent_points(tangent, figure)
             
             # Position points based on descriptions
-            for point in figure.points:
-                if point.label not in self.positions and point.description:
-                    new_pos = self._parse_point_description(point.description, point.label)
-                    if new_pos:
-                        self.positions[point.label] = new_pos
+            for label, deps, solver in description_tasks:
+                if label not in self.positions:
+                    if all(d in self.positions for d in deps):
+                        new_pos = solver(self.positions)
+                        if new_pos:
+                            self.positions[label] = new_pos
 
             # Exit early if no points changed
             if self.positions == previous_positions:
                 break
         
         # Position remaining points
-        self._position_remaining_points(figure)
+        self._position_remaining_points(figure, description_tasks)
         
         return self.positions
     
@@ -261,16 +270,26 @@ class PointLayoutEngine:
                     tan_point[1] + perp[1]
                 )
     
-    def _position_remaining_points(self, figure: GeometryFigure):
+    def _position_remaining_points(self, figure: GeometryFigure, tasks: Optional[List[Tuple[str, List[str], Callable]]] = None):
         """Position any remaining undefined points based on their descriptions."""
         
+        tasks_map = {t[0]: (t[1], t[2]) for t in tasks} if tasks else {}
+
         # Get all explicit points with descriptions
         for point in figure.points:
             if point.label in self.positions:
                 continue
             
             # Try to position based on description
-            if point.description:
+            if point.label in tasks_map:
+                deps, solver = tasks_map[point.label]
+                if all(d in self.positions for d in deps):
+                    new_pos = solver(self.positions)
+                    if new_pos:
+                        self.positions[point.label] = new_pos
+                        continue
+            elif tasks is None and point.description:
+                # Fallback if tasks not provided
                 new_pos = self._parse_point_description(point.description, point.label)
                 if new_pos:
                     self.positions[point.label] = new_pos
@@ -314,9 +333,11 @@ class PointLayoutEngine:
         u = ((px - ax) * dx + (py - ay) * dy) / mag2
         return (ax + u * dx, ay + u * dy)
     
-    def _parse_point_description(self, description: str, label: str) -> Optional[Tuple[float, float]]:
+    def _create_solver_from_description(self, description: str) -> Tuple[List[str], Optional[Callable[[Dict[str, Tuple[float, float]]], Tuple[float, float]]]]:
         """
-        Parse point description to determine position.
+        Parse point description once and return dependencies and a solver function.
+        Returns: (dependencies_list, solver_function)
+        If parsing fails, returns ([], None)
         """
         desc_lower = description.lower().strip()
         
@@ -324,50 +345,69 @@ class PointLayoutEngine:
         intersection_match = self._INTERSECTION_PATTERN.search(description)
         if intersection_match:
             p1, p2, p3, p4 = intersection_match.groups()
-            if all(p in self.positions for p in [p1, p2, p3, p4]):
-                return self._get_intersection(self.positions[p1], self.positions[p2], 
-                                              self.positions[p3], self.positions[p4])
+            deps = [p1, p2, p3, p4]
+
+            def solver(positions):
+                return self._get_intersection(positions[p1], positions[p2],
+                                              positions[p3], positions[p4])
+            return deps, solver
 
         # Pattern: "projection of P on AB" or "altitude from P to AB"
         projection_match = self._PROJECTION_PATTERN.search(description)
         if projection_match:
             p_label, a_label, b_label = projection_match.groups()
-            if all(p in self.positions for p in [p_label, a_label, b_label]):
-                return self._get_projection(self.positions[p_label], 
-                                            self.positions[a_label], 
-                                            self.positions[b_label])
+            deps = [p_label, a_label, b_label]
+
+            def solver(positions):
+                return self._get_projection(positions[p_label],
+                                            positions[a_label],
+                                            positions[b_label])
+            return deps, solver
 
         # Pattern: "on AB", "on side AB", "on segment AB"
         on_segment_match = self._ON_SEGMENT_PATTERN.search(description)
         if on_segment_match:
             p1_label = on_segment_match.group(1).upper()
             p2_label = on_segment_match.group(2).upper()
+            deps = [p1_label, p2_label]
             
-            if p1_label in self.positions and p2_label in self.positions:
-                p1 = self.positions[p1_label]
-                p2 = self.positions[p2_label]
-                
-                # Default ratio or look for ratio in description
-                ratio = 0.4 # Default
-                if "ratio 3:4" in desc_lower: ratio = 3/7
-                elif "ratio 2:3" in desc_lower: ratio = 2/5
-                elif "midpoint" in desc_lower: ratio = 0.5
-                
+            # Pre-calculate ratio logic
+            ratio = 0.4 # Default
+            if "ratio 3:4" in desc_lower: ratio = 3/7
+            elif "ratio 2:3" in desc_lower: ratio = 2/5
+            elif "midpoint" in desc_lower: ratio = 0.5
+
+            def solver(positions):
+                p1 = positions[p1_label]
+                p2 = positions[p2_label]
                 x = p1[0] + ratio * (p2[0] - p1[0])
                 y = p1[1] + ratio * (p2[1] - p1[1])
                 return (x, y)
+            return deps, solver
         
         # Pattern: "midpoint of AB"
         midpoint_match = self._MIDPOINT_PATTERN.search(description)
         if midpoint_match:
             p1_label = midpoint_match.group(1).upper()
             p2_label = midpoint_match.group(2).upper()
+            deps = [p1_label, p2_label]
             
-            if p1_label in self.positions and p2_label in self.positions:
-                p1 = self.positions[p1_label]
-                p2 = self.positions[p2_label]
+            def solver(positions):
+                p1 = positions[p1_label]
+                p2 = positions[p2_label]
                 return ((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2)
+            return deps, solver
         
+        return [], None
+
+    def _parse_point_description(self, description: str, label: str) -> Optional[Tuple[float, float]]:
+        """
+        Parse point description to determine position.
+        Legacy wrapper around _create_solver_from_description.
+        """
+        deps, solver = self._create_solver_from_description(description)
+        if solver and all(p in self.positions for p in deps):
+            return solver(self.positions)
         return None
 
 
