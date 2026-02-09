@@ -517,16 +517,15 @@ class PDFPaperGenerator:
             renderer = FigureRenderer(RenderConfig(figsize=(5, 5), dpi=150))
             renderer.render(figure)
             
-            # Save to temporary file
-            temp_path = tempfile.mktemp(suffix='.png')
-            renderer.save_png(temp_path)
+            # Render to memory
+            img_buffer = io.BytesIO()
+            renderer.save_png(img_buffer)
             renderer.close()
-            
-            self.temp_images.append(temp_path)
+            img_buffer.seek(0)
             
             # Add image to document
             elements.append(Spacer(1, 6))
-            elements.append(RLImage(temp_path, width=3*inch, height=3*inch))
+            elements.append(RLImage(img_buffer, width=3*inch, height=3*inch))
             elements.append(Spacer(1, 6))
             
         except Exception as e:
@@ -666,18 +665,17 @@ class WordPaperGenerator:
             renderer = FigureRenderer(RenderConfig(figsize=(5, 5), dpi=150))
             renderer.render(figure)
             
-            # Save to temporary file
-            temp_path = tempfile.mktemp(suffix='.png')
-            renderer.save_png(temp_path)
+            # Render to memory
+            img_buffer = io.BytesIO()
+            renderer.save_png(img_buffer)
             renderer.close()
-            
-            self.temp_images.append(temp_path)
+            img_buffer.seek(0)
             
             # Add image to document
             p = doc.add_paragraph()
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             run = p.add_run()
-            run.add_picture(temp_path, width=Inches(3))
+            run.add_picture(img_buffer, width=Inches(3))
             
         except Exception as e:
             print(f"Warning: Could not render figure: {e}")

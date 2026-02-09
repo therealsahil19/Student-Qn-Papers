@@ -456,19 +456,32 @@ Do NOT skip any question. Even if a question only partially relates to a topic, 
         """
         if recursive:
             image_paths = []
-            images_dir_path = Path(images_dir)
-            if images_dir_path.exists():
-                for root, dirs, files in os.walk(images_dir_path):
-                    # Find PNGs in this directory
-                    pngs = [Path(root) / f for f in files if f.lower().endswith('.png')]
-                    # Sort by page number if possible
-                    def get_page_num(path):
-                        try:
-                            return int(path.name.rpartition('_')[2][:-4])
-                        except:
-                            return 0
-                    pngs.sort(key=get_page_num)
-                    image_paths.extend([str(p.absolute()) for p in pngs])
+            # Optimized recursive scan using os.scandir
+            def scan_dir(path):
+                try:
+                    with os.scandir(path) as it:
+                        for entry in it:
+                            if entry.is_dir():
+                                scan_dir(entry.path)
+                            elif entry.is_file() and entry.name.lower().endswith('.png'):
+                                image_paths.append(entry.path)
+                except OSError:
+                    pass # Skip unreadable directories
+
+            scan_dir(str(images_dir))
+
+            # Sort by page number if possible
+            def get_page_num(path_str):
+                try:
+                    # Parse from end of filename: ..._001.png
+                    name = os.path.basename(path_str)
+                    return int(name.rpartition('_')[2][:-4])
+                except:
+                    return 0
+            
+            image_paths.sort(key=get_page_num)
+            # Normalize to absolute paths
+            image_paths = [str(Path(p).absolute()) for p in image_paths]
         else:
             image_paths = self.get_all_image_paths(images_dir)
         

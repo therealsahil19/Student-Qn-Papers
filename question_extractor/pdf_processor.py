@@ -19,9 +19,16 @@ class PDFPage:
     """Represents a single page from a PDF."""
     page_number: int
     image_path: Optional[str] = None
-    image_base64: Optional[str] = None
+    image_bytes: Optional[bytes] = None
     width: int = 0
     height: int = 0
+
+    @property
+    def image_base64(self) -> Optional[str]:
+        """Lazy load base64 string from bytes."""
+        if self.image_bytes:
+            return base64.b64encode(self.image_bytes).decode('utf-8')
+        return None
 
 
 def _init_worker(pdf_path: str):
@@ -93,9 +100,8 @@ def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optio
         pix.save(str(image_path))
         pdf_page.image_path = str(image_path)
     else:
-        # Return as base64
-        img_bytes = pix.tobytes(output_format)
-        pdf_page.image_base64 = base64.b64encode(img_bytes).decode('utf-8')
+        # Return as raw bytes (delay base64 encoding)
+        pdf_page.image_bytes = pix.tobytes(output_format)
 
     if should_close:
         doc.close()
@@ -307,7 +313,7 @@ Option 2: pdf2image (Requires Poppler)
                     else:
                         buffer = io.BytesIO()
                         img.save(buffer, format=self.output_format.upper())
-                        pdf_page.image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+                        pdf_page.image_bytes = buffer.getvalue()
                     result.append(pdf_page)
                 return result
 
@@ -350,10 +356,10 @@ Option 2: pdf2image (Requires Poppler)
                     img.save(str(image_path), self.output_format.upper())
                     pdf_page.image_path = str(image_path)
                 else:
-                    # Return as base64
+                    # Return as raw bytes
                     buffer = io.BytesIO()
                     img.save(buffer, format=self.output_format.upper())
-                    pdf_page.image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+                    pdf_page.image_bytes = buffer.getvalue()
 
                 result.append(pdf_page)
 
@@ -374,13 +380,12 @@ Option 2: pdf2image (Requires Poppler)
         """
         if self._backend == "pymupdf":
             import fitz
-            doc = fitz.open(pdf_path)
-            info = {
-                "page_count": len(doc),
-                "metadata": doc.metadata,
-                "filename": Path(pdf_path).name
-            }
-            doc.close()
+            with fitz.open(pdf_path) as doc:
+                info = {
+                    "page_count": len(doc),
+                    "metadata": doc.metadata,
+                    "filename": Path(pdf_path).name
+                }
             return info
         elif self._backend == "pdf2image":
             from pdf2image import pdfinfo_from_path

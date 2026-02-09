@@ -1,0 +1,103 @@
+Description
+The `generate_batch_extraction_manifest` function uses `os.walk` and creates `Path` objects for every file, which is slower than using `os.scandir` for large directories.
+
+Location
+question_extractor/extractor.py:461
+
+Rationale
+`os.walk` is convenient but can be slow for very large directories. `os.scandir` is more efficient as it retrieves file attribute information from the directory entry, avoiding additional system calls.
+
+Code context
+        if recursive:
+            image_paths = []
+            images_dir_path = Path(images_dir)
+            if images_dir_path.exists():
+                for root, dirs, files in os.walk(images_dir_path):
+                    # Find PNGs in this directory
+                    pngs = [Path(root) / f for f in files if f.lower().endswith('.png')]
+
+Description
+Regex patterns are compiled repeatedly inside loops or function calls in `update_summary.py`.
+
+Location
+question_extractor/update_summary.py:35
+
+Rationale
+While Python caches regex compilations, explicitly compiling regex patterns at the module level is better practice and ensures optimal performance, especially in loops.
+
+Code context
+    # Find the very last summary section to update
+    summary_matches = list(re.finditer(r'(SUMMARY|CUMULATIVE SUMMARY)\s*(=+|-+)\n', content))
+    if not summary_matches:
+         print(f"Error: Could not find SUMMARY section in {file_path}.")
+         return
+
+Description
+The `get_pdf_info` method opens and closes the PDF file just to read metadata.
+
+Location
+question_extractor/pdf_processor.py:377
+
+Rationale
+Opening a file is an expensive I/O operation. If this method is called frequently (e.g., in a loop over many PDFs), it will be a bottleneck. The file object should ideally be passed in or managed by a context manager.
+
+Code context
+        if self._backend == "pymupdf":
+            import fitz
+            doc = fitz.open(pdf_path)
+            info = {
+                "page_count": len(doc),
+                "metadata": doc.metadata,
+
+Description
+Images are encoded to Base64 strings immediately after processing, increasing memory usage by approximately 33% compared to storing raw bytes.
+
+Location
+question_extractor/pdf_processor.py:98
+
+Rationale
+Storing raw bytes and only encoding to Base64 when necessary (e.g., for JSON serialization) would reduce memory footprint, which is critical when processing large PDFs.
+
+Code context
+    if output_dir:
+        image_path = output_dir / f"page_{page_num:03d}.{output_format}"
+        pix.save(str(image_path))
+        pdf_page.image_path = str(image_path)
+    else:
+        # Return as base64
+        img_bytes = pix.tobytes(output_format)
+        pdf_page.image_base64 = base64.b64encode(img_bytes).decode('utf-8')
+
+Description
+The `_render_figure` method writes images to a temporary file on disk during Word document generation, introducing unnecessary I/O.
+
+Location
+question_extractor/paper_generator.py:670
+
+Rationale
+Similar to the PDF generation issue, `python-docx` allows adding pictures from file-like objects (e.g., `io.BytesIO`), which avoids slow disk I/O operations.
+
+Code context
+            # Save to temporary file
+            temp_path = tempfile.mktemp(suffix='.png')
+            renderer.save_png(temp_path)
+            renderer.close()
+            
+            self.temp_images.append(temp_path)
+
+Description
+The `_render_figure` method writes images to a temporary file on disk, which introduces unnecessary I/O overhead during PDF generation.
+
+Location
+question_extractor/paper_generator.py:521
+
+Rationale
+Writing temporary files to disk for each figure is inefficient. Using `io.BytesIO` buffers would avoid disk I/O and speed up generation, especially for papers with many diagrams. ReportLab supports file-like objects for images.
+
+Code context
+            # Save to temporary file
+            temp_path = tempfile.mktemp(suffix='.png')
+            renderer.save_png(temp_path)
+            renderer.close()
+            
+            self.temp_images.append(temp_path)

@@ -4,6 +4,16 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+# Pre-compiled regex patterns
+SUMMARY_SECTION_PATTERN = re.compile(r'(SUMMARY|CUMULATIVE SUMMARY)\s*(=+|-+)\n')
+TOPIC_PATTERN = re.compile(r'Topic: (.*?)\n')
+QUESTION_START_PATTERN = re.compile(r'^Q[\d\w\(\)]+', re.MULTILINE)
+TOPIC_COUNT_REPLACE_PATTERN = re.compile(r'(Topic: (.*?)\nNumber of Questions: )\d+')
+TOTAL_QUESTIONS_PATTERN = re.compile(r'Total questions: \d+')
+EXTRACTED_AT_PATTERN = re.compile(r'Extracted at: \d{4}-\d{2}-\d{2} \d{2}:\d{2}')
+LAST_UPDATED_PATTERN = re.compile(r'Last Updated: .*')
+SUMMARY_SEPARATOR_PATTERN = re.compile(r'(SUMMARY|CUMULATIVE SUMMARY)\s*\n(=+|-+)\n')
+
 def update_file_summary(file_path):
     if not os.path.exists(file_path):
         print(f"Error: {file_path} not found.")
@@ -28,7 +38,7 @@ def update_file_summary(file_path):
     # if the file has Batch summaries.
     
     # Find the very last summary section to update
-    summary_matches = list(re.finditer(r'(SUMMARY|CUMULATIVE SUMMARY)\s*(=+|-+)\n', content))
+    summary_matches = list(SUMMARY_SECTION_PATTERN.finditer(content))
     if not summary_matches:
          print(f"Error: Could not find SUMMARY section in {file_path}.")
          return
@@ -42,7 +52,7 @@ def update_file_summary(file_path):
     
     # Split by topic to get individual counts
     topic_positions = []
-    for m in re.finditer(r'Topic: (.*?)\n', main_content):
+    for m in TOPIC_PATTERN.finditer(main_content):
         topic_positions.append((m.start(), m.group(1)))
 
     if not topic_positions:
@@ -59,7 +69,7 @@ def update_file_summary(file_path):
         section_text = main_content[start_pos:end_pos]
         # Count unique Q markers (to handle cases where a question is repeated in different batches if that happens)
         # In these files, Q numbers are unique per batch.
-        q_matches = re.findall(r'^Q[\d\w\(\)]+', section_text, re.MULTILINE)
+        q_matches = QUESTION_START_PATTERN.findall(section_text)
         counts[topic_name] = counts.get(topic_name, 0) + len(q_matches)
 
     total = sum(counts.values())
@@ -72,14 +82,14 @@ def update_file_summary(file_path):
             return f"{prefix}{counts[topic_name]}"
         return match.group(0)
 
-    pattern = r'(Topic: (.*?)\nNumber of Questions: )\d+'
-    content = re.sub(pattern, replace_count, content)
+    content = TOPIC_COUNT_REPLACE_PATTERN.sub(replace_count, content)
 
     # Update Global Headers
-    content = re.sub(r'Total questions: \d+', f'Total questions: {total}', content)
-    content = re.sub(r'Extracted at: \d{4}-\d{2}-\d{2} \d{2}:\d{2}', 
-                    f'Extracted at: {datetime.now().strftime("%Y-%m-%d %H:%M")}', content)
-    content = re.sub(r'Last Updated: .*', f'Last Updated: {datetime.now().strftime("%Y-%m-%d %H:%M")}', content)
+    content = TOTAL_QUESTIONS_PATTERN.sub(f'Total questions: {total}', content)
+    
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
+    content = EXTRACTED_AT_PATTERN.sub(f'Extracted at: {now_str}', content)
+    content = LAST_UPDATED_PATTERN.sub(f'Last Updated: {now_str}', content)
 
     # Update the last summary section
     summary_replacement = ""
@@ -88,17 +98,21 @@ def update_file_summary(file_path):
     summary_replacement += f"  Total questions: {total}"
 
     # Re-find the last summary section as offsets might have changed
-    summary_matches = list(re.finditer(r'(SUMMARY|CUMULATIVE SUMMARY)\s*(=+|-+)\n', content))
+    summary_matches = list(SUMMARY_SECTION_PATTERN.finditer(content))
     if summary_matches:
         last_summary_pos = summary_matches[-1].start()
     
     # Detect the separator used in the summary (= or -)
-    sep_match = re.search(r'(SUMMARY|CUMULATIVE SUMMARY)\s*\n(=+|-+)\n', content[last_summary_pos:])
+    sep_match = SUMMARY_SEPARATOR_PATTERN.search(content[last_summary_pos:])
     if sep_match:
         sep = sep_match.group(2)
         header_type = sep_match.group(1)
         new_summary_section = f"{header_type}\n{sep}\n{summary_replacement}\n{sep}"
         # Replace the section between two separators
+        # Note: re.escape is needed for the separator in the pattern
+        # We construct a specific pattern for this replacement since it depends on captured separator
+        # This one is tricky to pre-compile generically as 'sep' changes, but likely it's always = or -
+        # Use a dynamic pattern here is fine as it's once per file
         content = re.sub(rf'{header_type}\s*\n{re.escape(sep)}\n.*?\n{re.escape(sep)}', 
                         new_summary_section, content, flags=re.DOTALL)
 
