@@ -10,103 +10,81 @@ import base64
 from dataclasses import dataclass
 import concurrent.futures
 
-# Global variable to hold the open document in worker processes
-_worker_doc = None
-_worker_pdf_path = None
-
-@dataclass
-class PDFPage:
-    """Represents a single page from a PDF."""
-    page_number: int
-    image_path: Optional[str] = None
-    image_bytes: Optional[bytes] = None
-    width: int = 0
-    height: int = 0
-
-    @property
-    def image_base64(self) -> Optional[str]:
-        """Lazy load base64 string from bytes."""
-        if self.image_bytes:
-            return base64.b64encode(self.image_bytes).decode('utf-8')
-        return None
-
-
-def _init_worker(pdf_path: str):
+class ProcessWorker:
     """
-    Initializer for worker processes.
-    Opens the PDF file once per worker to avoid repeated open/close overhead.
+    Worker class for processing PDF pages safely in parallel.
+    Maintains a cached document handle per process.
     """
-    global _worker_doc, _worker_pdf_path
-    import fitz
-    try:
-        _worker_doc = fitz.open(str(pdf_path))
-        _worker_pdf_path = str(pdf_path)
-    except Exception as e:
-        print(f"Failed to initialize worker with PDF {pdf_path}: {e}")
-        _worker_doc = None
-        _worker_pdf_path = None
+    _doc = None
+    _pdf_path = None
+    
+    @classmethod
+    def get_document(cls, pdf_path: str):
+        """Get or open the document, handling caching."""
+        import fitz
+        if cls._doc is None or cls._pdf_path != str(pdf_path):
+            if cls._doc:
+                try:
+                    cls._doc.close()
+                except Exception:
+                    pass
+            
+            cls._doc = fitz.open(str(pdf_path))
+            cls._pdf_path = str(pdf_path)
+            
+        return cls._doc
 
+    @classmethod
+    def close(cls):
+        """Explicitly close the document."""
+        if cls._doc:
+            try:
+                cls._doc.close()
+            except Exception:
+                pass
+            cls._doc = None
+            cls._pdf_path = None
 
 def _process_page_task(args: Tuple[str, int, int, str, Optional[Path]]) -> Optional[PDFPage]:
     """
     Helper function to process a single page in a separate process.
-    Must be at module level to be pickleable.
+    Uses ProcessWorker to manage state.
     """
-    global _worker_doc, _worker_pdf_path
     pdf_path, page_num, dpi, output_format, output_dir = args
     import fitz
 
-    # Use the pre-opened document from initializer if available
-    doc = _worker_doc
-    should_close = False
+    try:
+        doc = ProcessWorker.get_document(pdf_path)
+        
+        if page_num < 1 or page_num > len(doc):
+            return None
 
-    # Check if we have a valid cached document for this PDF
-    # If the document is not initialized, or if it belongs to a different PDF, open it
-    if doc is None or _worker_pdf_path != str(pdf_path):
-        # Close existing if it's a different PDF and open
-        if doc is not None:
-            try:
-                doc.close()
-            except Exception:
-                pass
+        page = doc[page_num - 1]  # 0-indexed
 
-        # Fallback: Open document and cache it for future calls in this process
-        doc = fitz.open(str(pdf_path))
-        _worker_doc = doc
-        _worker_pdf_path = str(pdf_path)
-        should_close = False  # Keep it open for reuse
+        # Calculate zoom for desired DPI (default PDF is 72 DPI)
+        zoom = dpi / 72
+        matrix = fitz.Matrix(zoom, zoom)
 
-    if page_num < 1 or page_num > len(doc):
-        if should_close:
-            doc.close()
+        pix = page.get_pixmap(matrix=matrix)
+
+        pdf_page = PDFPage(
+            page_number=page_num,
+            width=pix.width,
+            height=pix.height
+        )
+
+        if output_dir:
+            image_path = output_dir / f"page_{page_num:03d}.{output_format}"
+            pix.save(str(image_path))
+            pdf_page.image_path = str(image_path)
+        else:
+            # Return as raw bytes (delay base64 encoding)
+            pdf_page.image_bytes = pix.tobytes(output_format)
+
+        return pdf_page
+    except Exception as e:
+        print(f"Error processing page {page_num}: {e}")
         return None
-
-    page = doc[page_num - 1]  # 0-indexed
-
-    # Calculate zoom for desired DPI (default PDF is 72 DPI)
-    zoom = dpi / 72
-    matrix = fitz.Matrix(zoom, zoom)
-
-    pix = page.get_pixmap(matrix=matrix)
-
-    pdf_page = PDFPage(
-        page_number=page_num,
-        width=pix.width,
-        height=pix.height
-    )
-
-    if output_dir:
-        image_path = output_dir / f"page_{page_num:03d}.{output_format}"
-        pix.save(str(image_path))
-        pdf_page.image_path = str(image_path)
-    else:
-        # Return as raw bytes (delay base64 encoding)
-        pdf_page.image_bytes = pix.tobytes(output_format)
-
-    if should_close:
-        doc.close()
-
-    return pdf_page
 
 
 class PDFProcessor:
@@ -251,10 +229,7 @@ Option 2: pdf2image (Requires Poppler)
         result = []
         # Use ProcessPoolExecutor for parallel processing
         # Initialize each worker with the PDF file to avoid repeated opens
-        with concurrent.futures.ProcessPoolExecutor(
-            initializer=_init_worker,
-            initargs=(str(pdf_path),)
-        ) as executor:
+        with concurrent.futures.ProcessPoolExecutor() as executor:
             # Map returns results in order
             results = executor.map(_process_page_task, tasks)
             

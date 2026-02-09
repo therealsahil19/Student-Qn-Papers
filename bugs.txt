@@ -1,103 +1,113 @@
 Description
-The `generate_batch_extraction_manifest` function uses `os.walk` and creates `Path` objects for every file, which is slower than using `os.scandir` for large directories.
+The script uses hardcoded filenames for input and output, limiting its reusability.
 
 Location
-question_extractor/extractor.py:461
+question_extractor/clean_question_bank.py:78
 
 Rationale
-`os.walk` is convenient but can be slow for very large directories. `os.scandir` is more efficient as it retrieves file attribute information from the directory entry, avoiding additional system calls.
+Hardcoded filenames should be replaced with command-line arguments to make the script versatile.
 
 Code context
-        if recursive:
-            image_paths = []
-            images_dir_path = Path(images_dir)
-            if images_dir_path.exists():
-                for root, dirs, files in os.walk(images_dir_path):
-                    # Find PNGs in this directory
-                    pngs = [Path(root) / f for f in files if f.lower().endswith('.png')]
+if __name__ == "__main__":
+    clean_file('Similarity Locus and Trigonometry questions.txt')
 
 Description
-Regex patterns are compiled repeatedly inside loops or function calls in `update_summary.py`.
+The file contains a large `test` function at the end, mixing production code with test code.
 
 Location
-question_extractor/update_summary.py:35
+question_extractor/geometry_schema.py:600
 
 Rationale
-While Python caches regex compilations, explicitly compiling regex patterns at the module level is better practice and ensures optimal performance, especially in loops.
+Tests should be in a separate directory (e.g., `tests/`) to keep production code clean and reduce file size.
 
 Code context
-    # Find the very last summary section to update
-    summary_matches = list(re.finditer(r'(SUMMARY|CUMULATIVE SUMMARY)\s*(=+|-+)\n', content))
-    if not summary_matches:
-         print(f"Error: Could not find SUMMARY section in {file_path}.")
-         return
+# ============================================================================
+# Testing
+# ============================================================================
+
+def test():
+    """Test the figure parsing functionality."""
 
 Description
-The `get_pdf_info` method opens and closes the PDF file just to read metadata.
+The scripts `generate_diagrams.py` and `generate_paper_diagrams.py` contain almost identical logic for setting up the renderer and processing diagrams.
 
 Location
-question_extractor/pdf_processor.py:377
+question_extractor/generate_diagrams.py:1
 
 Rationale
-Opening a file is an expensive I/O operation. If this method is called frequently (e.g., in a loop over many PDFs), it will be a bottleneck. The file object should ideally be passed in or managed by a context manager.
+Code duplication increases maintenance burden. The shared logic should be extracted into a common utility function or script.
 
 Code context
-        if self._backend == "pymupdf":
-            import fitz
-            doc = fitz.open(pdf_path)
-            info = {
-                "page_count": len(doc),
-                "metadata": doc.metadata,
+import os
+import sys
+import math
+from pathlib import Path
+
+# Add the current directory to the path so we can import the modules
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 Description
-Images are encoded to Base64 strings immediately after processing, increasing memory usage by approximately 33% compared to storing raw bytes.
+The script contains a hardcoded absolute path that is specific to a user's machine, which will cause failures on other systems.
 
 Location
-question_extractor/pdf_processor.py:98
+question_extractor/generate_diagrams.py:17
 
 Rationale
-Storing raw bytes and only encoding to Base64 when necessary (e.g., for JSON serialization) would reduce memory footprint, which is critical when processing large PDFs.
+Hardcoded paths break portability. The path should be relative or configurable via environment variables.
 
 Code context
-    if output_dir:
-        image_path = output_dir / f"page_{page_num:03d}.{output_format}"
-        pix.save(str(image_path))
-        pdf_page.image_path = str(image_path)
-    else:
-        # Return as base64
-        img_bytes = pix.tobytes(output_format)
-        pdf_page.image_base64 = base64.b64encode(img_bytes).decode('utf-8')
+    # Ensure images directory exists
+    output_dir = Path("C:/Users/mehna/OneDrive/Desktop/Student Qn papers/images")
+    output_dir.mkdir(parents=True, exist_ok=True)
 
 Description
-The `_render_figure` method writes images to a temporary file on disk during Word document generation, introducing unnecessary I/O.
+The file contains a large `test` function at the end, mixing production code with test code.
 
 Location
-question_extractor/paper_generator.py:670
+question_extractor/figure_renderer.py:924
 
 Rationale
-Similar to the PDF generation issue, `python-docx` allows adding pictures from file-like objects (e.g., `io.BytesIO`), which avoids slow disk I/O operations.
+Tests should be in a separate directory (e.g., `tests/`) to keep production code clean and reduce file size.
 
 Code context
-            # Save to temporary file
-            temp_path = tempfile.mktemp(suffix='.png')
-            renderer.save_png(temp_path)
-            renderer.close()
-            
-            self.temp_images.append(temp_path)
+# ============================================================================
+# Testing
+# ============================================================================
+
+def test(output_dir: str = "./test_figures"):
+    """Test figure rendering with sample figures."""
+
 
 Description
-The `_render_figure` method writes images to a temporary file on disk, which introduces unnecessary I/O overhead during PDF generation.
+The QuestionExtractor class is very large (>500 lines) and handles multiple concerns like PDF processing, prompt generation, and file I/O.
 
 Location
-question_extractor/paper_generator.py:521
+question_extractor/extractor.py:208
 
 Rationale
-Writing temporary files to disk for each figure is inefficient. Using `io.BytesIO` buffers would avoid disk I/O and speed up generation, especially for papers with many diagrams. ReportLab supports file-like objects for images.
+The class violates the Single Responsibility Principle. Extracting logic into separate classes (e.g., PromptGenerator, ResultsSaver) would improve maintainability.
 
 Code context
-            # Save to temporary file
-            temp_path = tempfile.mktemp(suffix='.png')
-            renderer.save_png(temp_path)
-            renderer.close()
-            
-            self.temp_images.append(temp_path)
+class QuestionExtractor:
+    """
+    Main class for extracting questions from ICSE Math papers.
+    
+    This framework prepares PDFs for visual analysis and provides
+    structured prompts for AI-powered question extraction.
+    """
+Description
+The module uses global variables (`_worker_doc`, `_worker_pdf_path`) to share state with worker processes, which is fragile and hard to test.
+
+Location
+question_extractor/pdf_processor.py:17
+
+Rationale
+While common in `multiprocessing` with `fork`, it's better to use explicit initialization or a class-based worker to manage state cleanly.
+
+Code context
+# Global variable to hold the open document in worker processes
+_worker_doc = None
+_worker_pdf_path = None
+
+@dataclass
+class PDFPage:

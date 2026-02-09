@@ -99,4 +99,14 @@ def clean_file(file_path):
     print(f"Total: {total_q} (L: {len(questions['Loci'])}, S: {len(questions['Similarity'])}, T: {len(questions['Trigonometry'])})")
 
 if __name__ == "__main__":
-    clean_file('Similarity Locus and Trigonometry questions.txt')
+    import argparse
+    parser = argparse.ArgumentParser(description="Clean and structure the question bank text file.")
+    parser.add_argument("file_path", nargs='?', default='Similarity Locus and Trigonometry questions.txt', 
+                        help="Path to the question bank file (default: 'Similarity Locus and Trigonometry questions.txt')")
+    
+    args = parser.parse_args()
+    
+    if os.path.exists(args.file_path):
+        clean_file(args.file_path)
+    else:
+        print(f"Error: File '{args.file_path}' not found.")

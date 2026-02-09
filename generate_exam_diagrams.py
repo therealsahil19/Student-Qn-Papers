@@ -7,19 +7,7 @@ sys.path.append(os.getcwd())
 
 from question_extractor.geometry_schema import FigureParser
 from question_extractor.figure_renderer import FigureRenderer
-
-def create_diagram(name, yaml_content):
-    print(f"Creating/Redrawing diagram: {name}")
-    parser = FigureParser()
-    figure = parser.parse(yaml_content)
-    
-    renderer = FigureRenderer()
-    renderer.render(figure)
-    
-    output_path = f"images/{name}.svg"
-    renderer.save_svg(output_path)
-    renderer.close()
-    return output_path
+from question_extractor.diagram_utils import ensure_output_directory, create_diagram
 
 # Q17: Parallelogram GUNS. GS || UN, GU || SN.
 # GS=3x, UN=18 (so x=6)
@@ -115,9 +103,9 @@ elements:
   - angle: {vertex: L, rays: [C, U], value: "70°", marked: true}
 """
 
-os.makedirs("images", exist_ok=True)
-create_diagram("q17", q17_yaml)
-create_diagram("q19", q19_yaml)
-create_diagram("q21", q21_yaml)
-create_diagram("q24a", q24a_yaml)
-create_diagram("q26b", q26b_yaml)
+output_dir = ensure_output_directory("images")
+create_diagram("q17", q17_yaml, output_dir)
+create_diagram("q19", q19_yaml, output_dir)
+create_diagram("q21", q21_yaml, output_dir)
+create_diagram("q24a", q24a_yaml, output_dir)
+create_diagram("q26b", q26b_yaml, output_dir)

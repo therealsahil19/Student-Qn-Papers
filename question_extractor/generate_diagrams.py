@@ -6,16 +6,22 @@ from pathlib import Path
 # Add the current directory to the path so we can import the modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from geometry_schema import FigureParser
-from figure_renderer import FigureRenderer
+from question_extractor.geometry_schema import FigureParser
+from question_extractor.figure_renderer import FigureRenderer
+from question_extractor.diagram_utils import ensure_output_directory, create_diagram
 
 def generate_diagrams():
-    parser = FigureParser()
-    renderer = FigureRenderer()
+    # Use relative path or environment variable, fallback to default
+    output_path_str = os.environ.get("DIAGRAM_OUTPUT_DIR", "images")
+    # If the script is run from the root, 'images' is fine. 
+    # If run from question_extractor, we might want to go up one level.
+    # However, 'images' relative to CWD is usually best for scripts.
+    # The original was absolute: "C:/Users/mehna/OneDrive/Desktop/Student Qn papers/images"
+    # We will use "images" in the current working directory.
     
-    # Ensure images directory exists
-    output_dir = Path("C:/Users/mehna/OneDrive/Desktop/Student Qn papers/images")
-    output_dir.mkdir(parents=True, exist_ok=True)
+    output_dir = ensure_output_directory(output_path_str)
+    
+    renderer = FigureRenderer()
 
     # Helper for heights and distances math
     # Q12: Cliff 80m, Tower h. Angles 60 and 45.
@@ -78,16 +84,11 @@ elements:
 """,
     }
 
-    for name, block in diagrams.items():
-        print(f"Generating {name}...")
-        try:
-            figure = parser.parse(block)
-            renderer.render(figure)
-            output_path = output_dir / f"{name}.svg"
-            renderer.save_svg(str(output_path))
-            renderer.close()
-        except Exception as e:
-            print(f"Error generating {name}: {e}")
+    try:
+        for name, block in diagrams.items():
+            create_diagram(name, block, output_dir, renderer=renderer)
+    finally:
+        renderer.close()
 
 if __name__ == "__main__":
     generate_diagrams()
