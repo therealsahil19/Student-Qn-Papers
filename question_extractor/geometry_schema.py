@@ -475,35 +475,72 @@ class FigureValidator:
     
     def validate(self, figure: GeometryFigure) -> Tuple[bool, List[str]]:
         """
-        Validate a figure.
+        Validate a figure for completeness and consistency.
         
         Returns:
             Tuple of (is_valid, list_of_issues)
         """
         issues = []
         
-        # Check description
+        # 1. Check description
         if not figure.description:
             issues.append("Missing figure description")
         
-        # Check for referenced points
-        all_points = figure.get_all_point_labels()
-        defined_points = {p.label for p in figure.points}
+        # 2. Check for duplicate point definitions
+        defined_labels = set()
+        for p in figure.points:
+            if p.label in defined_labels:
+                issues.append(f"Duplicate definition for point '{p.label}'")
+            else:
+                defined_labels.add(p.label)
         
-        # For circles, check center is defined or referenced
+        # 3. Check for referenced points (structural elements)
+        structural_labels = set(p.label for p in figure.points)
+        for line in figure.lines:
+            structural_labels.add(line.start)
+            structural_labels.add(line.end)
         for circle in figure.circles:
-            if circle.center not in all_points and circle.center not in defined_points:
-                # This is okay - center is implicitly defined
-                pass
+            structural_labels.add(circle.center)
+            structural_labels.update(circle.points_on_circle)
+        for tri in figure.triangles:
+            structural_labels.update(tri.vertices)
+        for quad in figure.quadrilaterals:
+            structural_labels.update(quad.vertices)
+        for tangent in figure.tangents:
+            structural_labels.add(tangent.circle_center)
+            structural_labels.add(tangent.point_of_tangency)
+            if tangent.external_point:
+                structural_labels.add(tangent.external_point)
+
+        # 4. Validate lines
+        for line in figure.lines:
+            if line.start == line.end:
+                issues.append(f"Line has same start and end point '{line.start}'")
+
+        # 5. Validate triangles
+        for tri in figure.triangles:
+            if len(set(tri.vertices)) < 3:
+                issues.append(f"Triangle {tri.vertices} must have 3 distinct vertices")
+
+        # 6. Validate quadrilaterals
+        for quad in figure.quadrilaterals:
+            if len(set(quad.vertices)) < 4:
+                issues.append(f"Quadrilateral {quad.vertices} must have 4 distinct vertices")
         
-        # Check angles have valid vertices
+        # 7. Check angles have valid vertices and rays
         for angle in figure.angles:
-            if angle.vertex not in all_points:
-                issues.append(f"Angle vertex '{angle.vertex}' not found in figure")
+            if angle.vertex not in structural_labels:
+                issues.append(f"Angle vertex '{angle.vertex}' not found in structural elements")
+            if angle.ray1_end not in structural_labels:
+                issues.append(f"Angle ray end '{angle.ray1_end}' not found in structural elements")
+            if angle.ray2_end not in structural_labels:
+                issues.append(f"Angle ray end '{angle.ray2_end}' not found in structural elements")
+            if angle.vertex == angle.ray1_end or angle.vertex == angle.ray2_end:
+                issues.append(f"Angle vertex '{angle.vertex}' cannot be the same as a ray end")
         
-        # Check figure type is not generic if structured
+        # 8. Check figure type is not generic if structured
         if figure.figure_type == FigureType.GENERIC:
-            if figure.circles or figure.triangles or figure.tangents:
+            if figure.circles or figure.triangles or figure.tangents or figure.quadrilaterals:
                 issues.append("Figure has elements but type is 'generic' - consider specifying type")
         
         return len(issues) == 0, issues
