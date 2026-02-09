@@ -619,9 +619,7 @@ def get_template(template_name: str) -> Optional[Dict]:
     return FIGURE_TEMPLATES.get(template_name)
 
 
-def list_templates() -> List[str]:
-    """List all available figure template names."""
-    return list(FIGURE_TEMPLATES.keys())
+
 
 
 # Test code moved to tests/test_geometry_schema.py

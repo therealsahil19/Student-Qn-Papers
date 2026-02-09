@@ -1,113 +1,107 @@
 Description
-The script uses hardcoded filenames for input and output, limiting its reusability.
+Add unit tests for `QuestionExtractor.add_questions_from_json` in `question_extractor/extractor.py` to verify robust parsing of LLM output.
 
 Location
-question_extractor/clean_question_bank.py:78
+question_extractor/extractor.py:429
 
 Rationale
-Hardcoded filenames should be replaced with command-line arguments to make the script versatile.
+Critical path for data ingestion, easy to test with JSON strings.
 
 Code context
-if __name__ == "__main__":
-    clean_file('Similarity Locus and Trigonometry questions.txt')
+    def add_questions_from_json(
+        self, 
+        json_data: str, 
+        source_paper: str = "",
+        page_number: int = 0
+    ):
 
 Description
-The file contains a large `test` function at the end, mixing production code with test code.
+Add edge case tests for `FigureParser._normalize_yaml_block` in `question_extractor/geometry_schema.py` to handle tricky indentation.
 
 Location
-question_extractor/geometry_schema.py:600
+question_extractor/geometry_schema.py:254
 
 Rationale
-Tests should be in a separate directory (e.g., `tests/`) to keep production code clean and reduce file size.
+Pure string manipulation logic, critical for parsing user input correctly.
 
 Code context
-# ============================================================================
-# Testing
-# ============================================================================
+    def _normalize_yaml_block(self, block: str) -> str:
+        """
+        Normalize YAML block indentation for parsing.
+        
+        Handles figure blocks that are indented in question bank files.
 
+Description
+Extract the embedded `test()` function in `question_extractor/geometry_schema.py` into a proper test file `tests/test_geometry_schema.py`.
+
+Location
+question_extractor/geometry_schema.py:487
+
+Rationale
+The tests already exist in the file, they just need to be moved to a standard test framework.
+
+Code context
 def test():
     """Test the figure parsing functionality."""
-
-Description
-The scripts `generate_diagrams.py` and `generate_paper_diagrams.py` contain almost identical logic for setting up the renderer and processing diagrams.
-
-Location
-question_extractor/generate_diagrams.py:1
-
-Rationale
-Code duplication increases maintenance burden. The shared logic should be extracted into a common utility function or script.
-
-Code context
-import os
-import sys
-import math
-from pathlib import Path
-
-# Add the current directory to the path so we can import the modules
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-Description
-The script contains a hardcoded absolute path that is specific to a user's machine, which will cause failures on other systems.
-
-Location
-question_extractor/generate_diagrams.py:17
-
-Rationale
-Hardcoded paths break portability. The path should be relative or configurable via environment variables.
-
-Code context
-    # Ensure images directory exists
-    output_dir = Path("C:/Users/mehna/OneDrive/Desktop/Student Qn papers/images")
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-Description
-The file contains a large `test` function at the end, mixing production code with test code.
-
-Location
-question_extractor/figure_renderer.py:924
-
-Rationale
-Tests should be in a separate directory (e.g., `tests/`) to keep production code clean and reduce file size.
-
-Code context
-# ============================================================================
-# Testing
-# ============================================================================
-
-def test(output_dir: str = "./test_figures"):
-    """Test figure rendering with sample figures."""
-
-
-Description
-The QuestionExtractor class is very large (>500 lines) and handles multiple concerns like PDF processing, prompt generation, and file I/O.
-
-Location
-question_extractor/extractor.py:208
-
-Rationale
-The class violates the Single Responsibility Principle. Extracting logic into separate classes (e.g., PromptGenerator, ResultsSaver) would improve maintainability.
-
-Code context
-class QuestionExtractor:
-    """
-    Main class for extracting questions from ICSE Math papers.
     
-    This framework prepares PDFs for visual analysis and provides
-    structured prompts for AI-powered question extraction.
-    """
+    print("=" * 60)
+    print("Testing Geometry Schema Module")
+    print("=" * 60)
+    
+    # Test 1: Parse YAML format
+
 Description
-The module uses global variables (`_worker_doc`, `_worker_pdf_path`) to share state with worker processes, which is fragile and hard to test.
+Add unit tests for `QuestionBankParser.parse_content` in `question_extractor/paper_generator.py` to ensure correct parsing of question bank text.
 
 Location
-question_extractor/pdf_processor.py:17
+question_extractor/paper_generator.py:143
 
 Rationale
-While common in `multiprocessing` with `fork`, it's better to use explicit initialization or a class-based worker to manage state cleanly.
+Pure function, easy to test with sample input strings.
 
 Code context
-# Global variable to hold the open document in worker processes
-_worker_doc = None
-_worker_pdf_path = None
+    def parse_content(self, content: str) -> List[Question]:
+        """Parse question bank content."""
+        
+        self.questions = []
+        self.topics = {}
+        
+        # Split by topic sections
 
-@dataclass
-class PDFPage:
+Description
+Add tests for `PaperBuilder._auto_select_sections` in `question_extractor/paper_generator.py`.
+
+Location
+question_extractor/paper_generator.py:670
+
+Rationale
+Logic for structuring the paper based on available questions. Requires setting up question lists.
+
+Code context
+    def _auto_select_sections(self, available: List[Question], total_marks: int) -> List[Section]:
+        """Automatically select questions and organize into sections."""
+        
+        sections = []
+        
+        # Section A: MCQs (1 mark each)
+Description
+Use of deprecated and insecure `tempfile.mktemp()` function, which is vulnerable to race conditions (TOCTOU).
+
+Location
+question_extractor/paper_generator.py:670
+
+Rationale
+tempfile.mktemp is marked as insecure in the Python documentation and standard security tools due to race conditions.
+
+Code context
+            # Create a temporary image
+            renderer = FigureRenderer(RenderConfig(figsize=(5, 5), dpi=150))
+            renderer.render(figure)
+            
+            # Save to temporary file
+            temp_path = tempfile.mktemp(suffix='.png')
+            renderer.save_png(temp_path)
+            renderer.close()
+            
+            self.temp_images.append(temp_path)
+

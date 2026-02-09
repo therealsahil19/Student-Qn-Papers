@@ -171,19 +171,23 @@ class QuestionBankParser:
         self.topics = {}
         
         # Split by topic sections
-        topic_splits = re.split(r'-{10,}\s*\nTopic:\s*', content)
+        # Split by topic sections
+        # Use capturing group to keep the delimiter (topic name)
+        # Pattern matches: (optional separator) + "Topic:" + space + (topic name) + newline
+        # We use a lookahead or just split on the whole block
+        # Improved pattern: matches optional dashes, then Topic: <name>
+        parts = re.split(r'(?:^|\n)(?:-{10,}\s*\n)?Topic:\s*(.+?)\s*\n', content)
         
-        current_topic = "General"
-        
-        for section in topic_splits:
-            # Extract topic name if present
-            first_line = section.split('\n')[0].strip()
-            if first_line and not first_line.startswith('Q'):
-                current_topic = first_line.split('\n')[0].strip()
-                section = '\n'.join(section.split('\n')[1:])
+        # The first part is content before the first topic separator (usually header or "General")
+        if parts[0].strip():
+            self._parse_questions_in_section(parts[0], "General")
             
-            # Parse questions in this section
-            self._parse_questions_in_section(section, current_topic)
+        # Subsequent parts are (topic_name, section_content) pairs
+        for i in range(1, len(parts), 2):
+            if i + 1 < len(parts):
+                topic_name = parts[i].strip()
+                section_content = parts[i+1]
+                self._parse_questions_in_section(section_content, topic_name)
         
         return self.questions
     

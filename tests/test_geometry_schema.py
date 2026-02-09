@@ -1,117 +1,102 @@
+
+import unittest
 import sys
 import os
 
 # Add the parent directory to the path so we can import the modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from question_extractor.geometry_schema import FigureParser, FigureValidator, list_templates
+from question_extractor.geometry_schema import FigureParser, FigureValidator, GeometryFigure, FigureType
 
-def test():
-    """Test the figure parsing functionality."""
+class TestFigureParser(unittest.TestCase):
+    def setUp(self):
+        self.parser = FigureParser()
     
-    print("=" * 60)
-    print("Testing Geometry Schema Module")
-    print("=" * 60)
-    
-    # Test 1: Parse YAML format
-    yaml_block = """
-type: circle_theorem
-subtype: tangent
-description: Circle with center O, tangent PT at T, chord TA
+    def test_parse_yaml_valid(self):
+        yaml_block = """
+type: circle_tangent
+description: Test Description
 elements:
-  - circle:
-      center: O
-      radius: 3cm
-      points: [T, A, B]
-  - tangent:
-      circle: O
-      point: T
-      external_point: P
-  - angle:
-      vertex: T
-      rays: [A, P]
-      value: "32°"
-      marked: true
-given_angles:
-  PTA: "32°"
-find_angles: [TAB, TBA]
+  - circle: {center: O, radius: 3}
 """
-    
-    parser = FigureParser()
-    figure = parser.parse(yaml_block)
-    
-    print("\n1. YAML Format Parsing:")
-    print(f"   Type: {figure.figure_type.value}")
-    print(f"   Description: {figure.description}")
-    print(f"   Circles: {len(figure.circles)}")
-    print(f"   Tangents: {len(figure.tangents)}")
-    print(f"   Angles: {len(figure.angles)}")
-    print(f"   Given values: {figure.given_values}")
-    print(f"   Find values: {figure.find_values}")
-    print(f"   All points: {figure.get_all_point_labels()}")
-    
-    # Test 2: Parse simple format
-    simple_block = """
-type: similar_triangles
-description: |
-    Triangle ABC with D on AB, E on AC.
-    DE is parallel to BC.
-    AD = 3cm, DB = 5cm, AE = 4cm
-image_ref: figures/bpt_example.png
+        figure = self.parser.parse(yaml_block)
+        self.assertEqual(figure.figure_type, FigureType.CIRCLE_TANGENT)
+        self.assertEqual(figure.description, "Test Description")
+        self.assertEqual(len(figure.circles), 1)
+
+    def test_normalize_yaml_block_standard(self):
+        block = """
+type: test
+description: desc
 """
-    
-    figure2 = parser.parse(simple_block)
-    
-    print("\n2. Simple Format Parsing:")
-    print(f"   Type: {figure2.figure_type.value}")
-    print(f"   Description: {figure2.description[:50]}...")
-    print(f"   Image ref: {figure2.image_ref}")
-    
-    # Test 3: Extract from full question
-    question_text = """
-Q5 [4 marks] (medium)
+        # Leading newline is common
+        normalized = self.parser._normalize_yaml_block(block)
+        self.assertIn("type: test", normalized)
 
-    In the given figure, O is the center of the circle. PT is a tangent at T.
-    If ∠TAB = 32°, find: (i) ∠TPA (ii) ∠TBA
-    
-    [FIGURE]
-    type: circle_tangent
-    description: Circle with center O, tangent PT at T, chord TA, point B on circle
-    elements:
-      - circle: {center: O, points: [T, A, B]}
-      - tangent: {circle: O, point: T, external_point: P}
-    [/FIGURE]
-    
-    Subtopic: Alternate Segment Theorem
-    [Source: ICSE 2024]
+    def test_normalize_yaml_block_indented(self):
+        # Simulate extraction where first line is stripped but others are indented
+        block = """type: test
+    description: desc
+    elements: []"""
+        
+        normalized = self.parser._normalize_yaml_block(block)
+        # Should dedent subsequent lines
+        expected = "type: test\ndescription: desc\nelements: []"
+        self.assertEqual(normalized, expected)
+
+    def test_normalize_yaml_block_mixed(self):
+        # Indented first line
+        block = """
+    type: test
+    description: desc
+        """
+        normalized = self.parser._normalize_yaml_block(block)
+        self.assertIn("type: test", normalized)
+        self.assertIn("description: desc", normalized)
+
+    def test_parse_simple_format(self):
+        block = """
+type: generic
+description: simple description
+image_ref: path/to/image.png
 """
-    
-    figure3 = parser.parse_from_question(question_text)
-    
-    print("\n3. Extract from Question:")
-    print(f"   Found figure: {figure3 is not None}")
-    if figure3:
-        print(f"   Type: {figure3.figure_type.value}")
-        print(f"   Description: {figure3.description[:50]}...")
-    
-    # Test 4: Validation
-    validator = FigureValidator()
-    is_valid, issues = validator.validate(figure)
-    
-    print("\n4. Validation:")
-    print(f"   Valid: {is_valid}")
-    if issues:
-        print(f"   Issues: {issues}")
-    
-    # Test 5: Templates
-    print("\n5. Available Templates:")
-    for name in list_templates():
-        print(f"   - {name}")
-    
-    print("\n" + "=" * 60)
-    print("All tests completed!")
-    print("=" * 60)
+        figure = self.parser.parse(block)
+        self.assertEqual(figure.figure_type, FigureType.GENERIC)
+        self.assertEqual(figure.description, "simple description")
+        self.assertEqual(figure.image_ref, "path/to/image.png")
 
+    def test_parse_from_question(self):
+        text = """
+Q1. [FIGURE]
+type: generic
+description: inside
+[/FIGURE]
+        """
+        figure = self.parser.parse_from_question(text)
+        self.assertIsNotNone(figure)
+        self.assertEqual(figure.description, "inside")
 
-if __name__ == "__main__":
-    test()
+class TestFigureValidator(unittest.TestCase):
+    def setUp(self):
+        self.validator = FigureValidator()
+    
+    def test_validate_valid_figure(self):
+        figure = GeometryFigure(
+            figure_type=FigureType.GENERIC,
+            description="Valid figure"
+        )
+        is_valid, issues = self.validator.validate(figure)
+        self.assertTrue(is_valid)
+        self.assertEqual(len(issues), 0)
+
+    def test_validate_missing_description(self):
+        figure = GeometryFigure(
+            figure_type=FigureType.GENERIC,
+            description=""
+        )
+        is_valid, issues = self.validator.validate(figure)
+        self.assertFalse(is_valid)
+        self.assertIn("Missing figure description", issues)
+
+if __name__ == '__main__':
+    unittest.main()
