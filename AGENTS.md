@@ -23,7 +23,7 @@ python question_extractor/extractor.py --batch-manifest "<ROOT_IMAGE_DIR>" --rec
 
 **Example:**
 ```bash
-python question_extractor/extractor.py --batch-manifest "images_class_10" --recursive --quiet
+python question_extractor/extractor.py --batch-manifest "question_extractor/images_class_10" --recursive --quiet
 ```
 *Output will be the path to the generated `extraction_manifest.json`.*
 
@@ -80,7 +80,7 @@ For very large extraction jobs (100+ pages), use the Checkpoint Workflow to prio
 First, run the standard recursive manifest generation (Step 1 above).
 
 **2. Create Checkpoint Queue**
-Run `create_checkpoint.py` to sort and prioritize pages from `extraction_manifest.json` into a new `checkpoint_manifest.json`.
+Run `create_checkpoint.py` to sort and prioritize pages from `question_extractor/images_class_10/extraction_manifest.json` into a new `checkpoint_manifest.json`.
 ```bash
 python create_checkpoint.py
 ```

@@ -147,8 +147,11 @@ The main CLI tool for PDF processing and prompt generation.
 | `--disable-topic <topic>` | Disable a specific topic in the configuration. |
 | `--profile <name>` | Switch syllabus profile (`class_10` or `class_8`). |
 | `--recursive` | Recursively search for images in subdirectories (used with `--batch-manifest`). |
+| `--batch-manifest <dir>` | Generate batch extraction manifest for images directory. |
+| `--source <name>` | Source paper name for batch extraction (used with `--batch-manifest`). |
 | `--append-results <file>` | Append questions from JSON/Text file to a target bank. |
 | `--target <file>` | Target file for appending results (used with `--append-results`). |
+| `--quiet` | Suppress verbose output (useful for agent execution). |
 
 ### `question_extractor/paper_generator.py`
 Generates exam papers from text-based question banks.
@@ -157,7 +160,7 @@ Generates exam papers from text-based question banks.
 |------|-------------|
 | `--input <files>` | One or more `.txt` question bank files. |
 | `--output <file>` | Output filename (ends in `.pdf` or `.docx`). |
-| `--format [pdf/docx]` | Force specific output format (default: pdf). |
+| `--format [pdf/docx/word]` | Force specific output format (default: pdf). |
 | `--title <text>` | Set the title of the exam paper. |
 | `--subtitle <text>` | Set the subtitle of the exam paper. |
 | `--topics "T1,T2"` | Filter questions to include only specific topics. |
@@ -176,12 +179,12 @@ python question_extractor/update_summary.py <path_to_file>
 ### `question_extractor/clean_question_bank.py`
 **Utility**: Cleans up and reformats an existing question bank file. It regroups questions by unit and topic, re-numbers them, and regenerates the summary.
 ```bash
-python question_extractor/clean_question_bank.py
+python question_extractor/clean_question_bank.py [file_path]
 ```
-*Note: This script may require manual editing to point to the specific file you want to clean.*
+*Note: Accepts an optional file path argument (defaults to 'Similarity Locus and Trigonometry questions.txt').*
 
 ### `create_checkpoint.py`
-**Batch Processing**: Reads `extraction_manifest.json`, sorts pages by priority (Yearly Papers > SQP > Others), and creates `checkpoint_manifest.json`.
+**Batch Processing**: Reads `question_extractor/images_class_10/extraction_manifest.json`, sorts pages by priority (Yearly Papers > SQP > Others), and creates `checkpoint_manifest.json`.
 ```bash
 python create_checkpoint.py
 ```
