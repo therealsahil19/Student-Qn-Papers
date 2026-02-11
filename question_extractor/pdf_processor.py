@@ -10,6 +10,15 @@ import base64
 from dataclasses import dataclass
 import concurrent.futures
 
+@dataclass
+class PDFPage:
+    """Represents a converted PDF page."""
+    page_number: int
+    width: int
+    height: int
+    image_path: Optional[str] = None
+    image_bytes: Optional[bytes] = None
+
 class ProcessWorker:
     """
     Worker class for processing PDF pages safely in parallel.
