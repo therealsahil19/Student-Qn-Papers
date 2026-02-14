@@ -1,65 +1,385 @@
-Description
-Add unit tests for `QuestionExtractor.add_questions_from_json` in `question_extractor/extractor.py` to verify robust parsing of LLM output.
-
-Location
-question_extractor/extractor.py:429
-
-Rationale
-Critical path for data ingestion, easy to test with JSON strings.
-
-Code context
-    def add_questions_from_json(
-        self, 
-        json_data: str, 
-        source_paper: str = "",
-        page_number: int = 0
-    ):
+EASY
 
 Description
-Add edge case tests for `FigureParser._normalize_yaml_block` in `question_extractor/geometry_schema.py` to handle tricky indentation.
+Dependencies are listed without version constraints, which can lead to installing vulnerable or incompatible package versions.
 
 Location
-question_extractor/geometry_schema.py:254
+requirements.txt:1
 
 Rationale
-Pure string manipulation logic, critical for parsing user input correctly.
+The `requirements.txt` file lists packages like `PyMuPDF`, `pdf2image`, etc., without any version numbers (e.g., `package==1.2.3`).
 
 Code context
-    def _normalize_yaml_block(self, block: str) -> str:
-        """
-        Normalize YAML block indentation for parsing.
+PyMuPDF
+pdf2image
+reportlab
+python-docx
+matplotlib
+PyYAML
+
+Description
+The get_backend_info method in PDFProcessor is untested.
+
+Location
+question_extractor/pdf_processor.py:136
+
+Rationale
+High confidence. Simple getter method returning a dictionary based on instance state.
+
+Code context
+            pass
         
-        Handles figure blocks that are indented in question bank files.
+        try:
+            from pdf2image import convert_from_path
+            return "pdf2image"
+        except ImportError:
+            pass
+        
+        return "none"
+    
+    def get_backend_info(self) -> dict:
+        """Get information about the current backend."""
+        return {
+            "backend": self._backend,
+            "available": self._backend != "none",
+            "install_instructions": self._get_install_instructions()
+        }
+    
+    def _get_install_instructions(self) -> str:
+        """Get installation instructions for PDF processing libraries."""
+        return """
 
 Description
-Extract the embedded `test()` function in `question_extractor/geometry_schema.py` into a proper test file `tests/test_geometry_schema.py`.
+The get_extraction_progress method logic is not tested.
 
 Location
-question_extractor/geometry_schema.py:487
+question_extractor/extractor.py:221
 
 Rationale
-The tests already exist in the file, they just need to be moved to a standard test framework.
+High confidence. Pure logic function that calculates statistics based on internal state. Easy to setup state and verify output.
 
 Code context
-def test():
-    """Test the figure parsing functionality."""
+            self.add_question(question)
+        
+        # Track processed pages
+        if source_paper not in self.processed_pages:
+            self.processed_pages[source_paper] = []
+        if page_number and page_number not in self.processed_pages[source_paper]:
+            self.processed_pages[source_paper].append(page_number)
+        
+        return len(questions)
     
-    print("=" * 60)
-    print("Testing Geometry Schema Module")
-    print("=" * 60)
+    def get_extraction_progress(self, source_paper: str, total_pages: int) -> Dict:
+        """
+        Get extraction progress for a paper.
+        
+        Args:
+            source_paper: Name of the paper
+            total_pages: Total number of pages in the paper
+            
+        Returns:
+            Progress dictionary
+        """
+Description
+The check_dependencies method in QuestionExtractor is not covered by existing tests.
+
+Location
+question_extractor/extractor.py:85
+
+Rationale
+High confidence. The method checks the state of instance attributes. It can be tested by mocking the dependencies.
+
+Code context
+            config_path: Path to topics_config.json
+        """
+        self.profile = profile
+        self.topic_manager = TopicManager(profile, config_path)
+        self.prompt_generator = PromptGenerator(self.topic_manager)
+        self.pdf_processor = PDFProcessor() if PDFProcessor else None
+        self.extracted_questions: List[ExtractedQuestion] = []
+        self._existing_signatures = set()  # Set of (question_number, source_paper) for fast lookup
+        self.processed_pages: Dict[str, List[int]] = {}  # Track processed pages per paper
     
-    # Test 1: Parse YAML format
+    def check_dependencies(self) -> dict:
+        """Check if all dependencies are available."""
+        status = {
+            "pdf_processor": self.pdf_processor is not None,
+            "topics_config": self.topic_manager.config_path.exists(),
+        }
+        
+        if self.pdf_processor:
+            backend_info = self.pdf_processor.get_backend_info()
+            status["pdf_backend"] = backend_info["backend"]
+            status["pdf_backend_available"] = backend_info["available"]
 
 Description
-Add unit tests for `QuestionBankParser.parse_content` in `question_extractor/paper_generator.py` to ensure correct parsing of question bank text.
+Utility functions for diagram creation and directory management are untested.
 
 Location
-question_extractor/paper_generator.py:143
+question_extractor/diagram_utils.py:12
 
 Rationale
-Pure function, easy to test with sample input strings.
+High confidence. The functions are simple utilities with clear inputs and outputs, making them very easy to test.
 
 Code context
+import sys
+from pathlib import Path
+from typing import Optional
+
+# Add the parent directory to the path so we can import the modules
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from geometry_schema import FigureParser
+from figure_renderer import FigureRenderer
+
+def ensure_output_directory(path: str) -> Path:
+    """Ensure the output directory exists and return it as a Path object."""
+    output_dir = Path(path)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    return output_dir
+
+def create_diagram(name: str, yaml_content: str, output_dir: Path, output_format: str = "svg", renderer: Optional[FigureRenderer] = None) -> str:
+    """
+    Create a diagram from YAML content.
+    
+    Args:
+
+Description
+The PromptGenerator class creates prompts for AI extraction but has no corresponding test file.
+
+Location
+question_extractor/prompt_generator.py:6
+
+Rationale
+High confidence. The logic is pure string manipulation based on inputs. It can be easily tested by mocking the TopicManager dependency.
+
+Code context
+import os
+from pathlib import Path
+from typing import List, Dict, Optional
+from question_extractor.topic_manager import TopicManager
+
+class PromptGenerator:
+    """Generates prompts for AI-powered question extraction."""
+
+    def __init__(self, topic_manager: TopicManager):
+        self.topic_manager = topic_manager
+
+    def generate_extraction_prompt(
+        self, 
+        topics: List[str] = None,
+        include_examples: bool = True,
+        page_number: int = None,
+
+Description
+The TopicManager class is a core component for configuration management but lacks a dedicated test file.
+
+Location
+question_extractor/topic_manager.py:6
+
+Rationale
+High confidence as the class logic is self-contained and critical. Testing requires basic mocking of file I/O for configuration loading.
+
+Code context
+import json
+import os
+from pathlib import Path
+from typing import List, Dict, Optional
+
+class TopicManager:
+    """Manages topic configuration and filtering for ICSE syllabus."""
+    
+    def __init__(self, profile: str = "class_10", config_path: str = None):
+        """
+        Initialize with topic configuration.
+        
+        Args:
+            profile: Profile name (e.g., "class_10", "class_8")
+            config_path: Explicit path to config file (overrides profile)
+        """
+Description
+Inefficient manual byte-by-byte iteration to skip whitespace characters in a buffer.
+
+Location
+question_extractor/append_batch.py:160
+
+Rationale
+Replacing the manual loop with bytes.lstrip() or regex will be significantly faster and cleaner, avoiding byte-by-byte Python overhead.
+
+Code context
+
+        if lstrip:
+            while curr < end:
+                limit = min(curr + CHUNK_SIZE, end)
+                chunk = mm[curr:limit]
+
+                match_start = 0
+                while match_start < len(chunk) and chunk[match_start] in ASCII_WS:
+                    match_start += 1
+
+                if match_start < len(chunk):
+
+Description
+The main block calls `append_batch` with hardcoded filenames.
+
+Location
+question_extractor/append_batch.py:185
+
+Rationale
+Should be removed or converted to proper CLI arguments.
+
+Code context
+            f_out.write(mm[curr:limit])
+            curr = limit
+
+        truncate_trailing_whitespace(f_out)
+
+if __name__ == "__main__":
+    append_batch('temp_results_batch_10.json', 'Similarity Locus and Trigonometry questions.txt')
+
+Description
+`pathlib.Path` is imported but not used.
+
+Location
+question_extractor/paper_generator.py:28
+
+Rationale
+Code search confirms zero usage.
+
+Code context
+import io
+import tempfile
+from dataclasses import dataclass, field
+from datetime import datetime
+from pathlib import Path
+from typing import Optional, List, Dict, Tuple, Any
+
+# Optional imports with fallbacks
+
+Description
+The `get_template` function and `FIGURE_TEMPLATES` constant are not used anywhere in the codebase.
+
+Location
+question_extractor/geometry_schema.py:617
+
+Rationale
+Code search confirms zero usage.
+
+Code context
+def get_template(template_name: str) -> Optional[Dict]:
+    """Get a predefined figure template by name."""
+    return FIGURE_TEMPLATES.get(template_name)
+
+
+
+
+
+# Test code moved to tests/test_geometry_schema.py
+
+Description
+The `test` function is empty and contains a comment indicating test code was moved.
+
+Location
+question_extractor/figure_renderer.py:900
+
+Rationale
+Code is explicitly marked as moved and empty.
+
+Code context
+# ============================================================================
+# Testing
+# ============================================================================
+
+def test(output_dir: str = "./test_figures"):
+    """Test figure rendering with sample figures."""
+    
+# Test code moved to tests/test_figure_renderer.py
+
+Description
+The `--target` argument in `extractor.py` is used directly in file operations without validation, allowing an attacker to overwrite arbitrary files on the system.
+
+Location
+question_extractor/extractor.py:728
+
+Rationale
+Reproduction script confirmed that providing a path like `/tmp/traversal_test.txt` or `../file` allows writing outside the intended directory. The code directly uses `args.target` in `open()` and `shutil.move()`.
+
+Code context
+        if not target_path.exists():
+            # If target doesn't exist, just save normally
+            if extractor.extracted_questions:
+                extractor.save_results(args.target)
+            else:
+                # Write text content directly
+                with open(target_path, 'w', encoding='utf-8') as f:
+                    f.write(text_to_append)
+        else:
+            # Append before summary using streaming to avoid reading full file
+
+
+MEDIUM
+
+Description
+Filtering extracted_questions list by iterating through all elements for every progress update or query.
+
+Location
+question_extractor/extractor.py:233
+
+Rationale
+For large datasets, this becomes O(N^2) if called frequently. Maintaining a dictionary index by paper/topic would be O(1), though implementation requires adding an auxiliary data structure.
+
+Code context
+    def get_extraction_progress(self, source_paper: str, total_pages: int) -> Dict:
+        """
+        Get extraction progress for a paper.
+        
+        Args:
+            source_paper: Name of the paper
+            total_pages: Total number of pages in the paper
+            
+        Returns:
+            Progress dictionary
+        """
+        processed = self.processed_pages.get(source_paper, [])
+        questions = [q for q in self.extracted_questions if q.source_paper == source_paper]
+
+Description
+The `main` function is over 200 lines long and handles too many responsibilities (CLI parsing, logic dispatch, printing).
+
+Location
+question_extractor/extractor.py:406
+
+Rationale
+Standard refactoring to extract handlers for each CLI command.
+
+Code context
+        self.extracted_questions = []
+        self._existing_signatures = set()
+        self.processed_pages = {}
+
+
+def main():
+    """Command line interface for the question extractor."""
+    parser = argparse.ArgumentParser(
+        description="ICSE Class 10 Math Question Extractor Framework",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+
+Description
+The method uses complex regex matching and state management to parse question banks.
+
+Location
+question_extractor/paper_generator.py:167
+
+Rationale
+Can be split into smaller helper methods or a dedicated tokenizer.
+
+Code context
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        return self.parse_content(content)
+    
     def parse_content(self, content: str) -> List[Question]:
         """Parse question bank content."""
         
@@ -69,39 +389,135 @@ Code context
         # Split by topic sections
 
 Description
-Add tests for `PaperBuilder._auto_select_sections` in `question_extractor/paper_generator.py`.
+`save_results` and `format_questions_to_text` contain overlapping logic for formatting questions.
 
 Location
-question_extractor/paper_generator.py:670
+question_extractor/extractor.py:313
 
 Rationale
-Logic for structuring the paper based on available questions. Requires setting up question lists.
+Logic is similar enough to be shared.
 
 Code context
-    def _auto_select_sections(self, available: List[Question], total_marks: int) -> List[Section]:
-        """Automatically select questions and organize into sections."""
-        
-        sections = []
-        
-        # Section A: MCQs (1 mark each)
+        return "\n".join(lines)
+
+    def save_results(self, output_path: str, format: str = "txt"):
+        """
+        Save extracted questions to file.
+
 Description
-Use of deprecated and insecure `tempfile.mktemp()` function, which is vulnerable to race conditions (TOCTOU).
+`PDFPaperGenerator` and `WordPaperGenerator` share significant logic and structure.
 
 Location
-question_extractor/paper_generator.py:670
+question_extractor/paper_generator.py:308
 
 Rationale
-tempfile.mktemp is marked as insecure in the Python documentation and standard security tools due to race conditions.
+Both classes follow the same interface and structural steps; a base class would reduce duplication.
 
 Code context
-            # Create a temporary image
-            renderer = FigureRenderer(RenderConfig(figsize=(5, 5), dpi=150))
-            renderer.render(figure)
-            
-            # Save to temporary file
-            temp_path = tempfile.mktemp(suffix='.png')
-            renderer.save_png(temp_path)
-            renderer.close()
-            
-            self.temp_images.append(temp_path)
+# ============================================================================
+# PDF Generator (using ReportLab)
+# ============================================================================
 
+class PDFPaperGenerator:
+    """Generates PDF exam papers using ReportLab."""
+    
+    def __init__(self, render_figures: bool = True):
+
+Description
+The _detect_backend method fallback mechanism (when no backend is available) is not explicitly tested.
+
+Location
+question_extractor/pdf_processor.py:120
+
+Rationale
+Medium confidence. Testing this requires mocking sys.modules to simulate missing dependencies (fitz, pdf2image), which is slightly more involved than basic unit tests.
+
+Code context
+        Initialize the PDF processor.
+        
+        Args:
+            dpi: Resolution for image conversion (default 200)
+            output_format: Output image format (png, jpg)
+        """
+        self.dpi = dpi
+        self.output_format = output_format
+        self._backend = self._detect_backend()
+    
+    def _detect_backend(self) -> str:
+        """Detect available PDF processing backend."""
+        try:
+            import fitz  # PyMuPDF
+            return "pymupdf"
+        except ImportError:
+            pass
+        
+        try:
+            from pdf2image import convert_from_path
+            return "pdf2image"
+
+
+HARD
+Description
+The function uses `mmap` and manual byte processing to insert text, which is fragile.
+
+Location
+question_extractor/append_batch.py:10
+
+Rationale
+Should be rewritten to parse, modify, and rewrite the structure rather than byte patching.
+
+Code context
+# Set of ASCII whitespace bytes (integers)
+# Space (32), Tab (9), LF (10), VT (11), FF (12), CR (13)
+ASCII_WS = set(b' \t\n\r\x0b\x0c')
+
+def append_batch(json_file, target_file):
+    with open(json_file, 'r', encoding='utf-8') as f:
+        questions = json.load(f)
+    
+    # Separate by categories
+    categories = {
+
+Description
+The indentation handling logic is complex and hard to read.
+
+Location
+question_extractor/geometry_schema.py:214
+
+Rationale
+Indentation logic is tricky; refactoring risks breaking edge cases without comprehensive tests.
+
+Code context
+    def extract_figure_blocks(self, text: str) -> List[str]:
+        """Extract all [FIGURE] blocks from text."""
+        matches = self.FIGURE_BLOCK_PATTERN.findall(text)
+        return [m.strip() for m in matches]
+    
+    def _normalize_yaml_block(self, block: str) -> str:
+        """
+        Normalize YAML block indentation for parsing.
+        
+        Handles figure blocks that are indented in question bank files.
+
+
+Description
+The class uses a fixed 10-iteration loop to solve geometric dependencies, which is brittle.
+
+Location
+question_extractor/figure_renderer.py:95
+
+Rationale
+Requires deep understanding of the geometric solver logic to refactor properly.
+
+Code context
+    # Display settings
+    show_points: bool = True
+    show_labels: bool = True
+
+
+class PointLayoutEngine:
+    """
+    Calculates appropriate positions for points based on figure structure.
+    
+    Uses geometric rules to position points when coordinates are not specified.
+    """
