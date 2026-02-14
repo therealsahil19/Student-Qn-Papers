@@ -80,7 +80,8 @@ For very large extraction jobs (100+ pages), use the Checkpoint Workflow to prio
 First, run the standard recursive manifest generation (Step 1 above).
 
 **2. Create Checkpoint Queue**
-Run `create_checkpoint.py` to sort and prioritize pages from `question_extractor/images_class_10/extraction_manifest.json` into a new `checkpoint_manifest.json`.
+Run `create_checkpoint.py` to sort and prioritize pages.
+**Note:** This script is hardcoded to read from `question_extractor/images_class_10/extraction_manifest.json`. Ensure your manifest is generated there.
 ```bash
 python create_checkpoint.py
 ```

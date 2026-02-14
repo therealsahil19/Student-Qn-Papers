@@ -20,6 +20,7 @@ A robust, modular framework for managing mathematics question banks, extracting 
     ```bash
     pip install PyMuPDF
     ```
+*   **Word Generation**: `python-docx` (Included in `requirements.txt`).
 *   **Alternative**: [Poppler](https://github.com/oschwartz10612/poppler-windows/releases) (Required only if using `pdf2image` backend).
 
 ### Setup
@@ -119,7 +120,7 @@ For processing large volumes of papers (e.g., hundreds of pages), the system pro
     ```bash
     python create_checkpoint.py
     ```
-    This reads `extraction_manifest.json` and creates `checkpoint_manifest.json`.
+    This reads `question_extractor/images_class_10/extraction_manifest.json` and creates `checkpoint_manifest.json`.
 
 3.  **Pop Batch**:
     Retrieve the next N pages to process and remove them from the queue.
@@ -190,7 +191,7 @@ python question_extractor/clean_question_bank.py [file_path]
 *Note: Accepts an optional file path argument (defaults to 'Similarity Locus and Trigonometry questions.txt').*
 
 ### `create_checkpoint.py`
-**Batch Processing**: Reads `question_extractor/images_class_10/extraction_manifest.json`, sorts pages by priority (Yearly Papers > SQP > Others), and creates `checkpoint_manifest.json`.
+**Batch Processing**: Reads `question_extractor/images_class_10/extraction_manifest.json` (hardcoded path), sorts pages by priority (Yearly Papers > SQP > Others), and creates `checkpoint_manifest.json` in the current directory.
 ```bash
 python create_checkpoint.py
 ```
@@ -205,6 +206,10 @@ python pop_batch.py 20
 
 ### `question_extractor/generate_diagrams.py`
 **Geometry Engine**: A script demonstrating how to programmatically generate SVG diagrams using the `FigureParser` and `FigureRenderer`. Useful for creating figure assets for papers.
+
+### `question_extractor/generate_paper_diagrams.py`
+**Geometry Engine**: A standalone utility for generating diagrams with specific user-defined paths.
+*Note: This script contains hardcoded paths and may need modification before use.*
 
 ### `question_extractor/test_append_feature.py`
 **Testing**: Verifies the functionality of the `--append-results` feature in `extractor.py`, ensuring questions are correctly added and summaries updated.
@@ -222,6 +227,9 @@ python generate_exam_diagrams.py
 ### `identify_chapters.py`
 **Utility**: Reads the first few lines of PDF files to help identify their content. Useful when files are unnamed.
 *Note: Requires editing the file list inside the script.*
+
+### `debug_tests.py`
+**Utility**: A helper script to run specific tests or suites, particularly for debugging purposes.
 
 ---
 
@@ -262,6 +270,7 @@ The project includes several test scripts to verify core functionalities.
 
 | Test Script | Description |
 |-------------|-------------|
+| `debug_tests.py` | Helper script to run test suites or specific test cases. |
 | `question_extractor/test_pdf_processor.py` | Verifies PDF-to-image conversion. Requires `reportlab` to generate temporary test PDFs. |
 | `question_extractor/test_pdf_processor_optimization.py` | Tests performance optimizations in PDF processing (e.g., avoiding redundant file opens). |
 | `question_extractor/test_append_batch.py` | Tests the functionality of appending questions to text files while maintaining formatting. |
@@ -269,6 +278,10 @@ The project includes several test scripts to verify core functionalities.
 | `question_extractor/test_append_feature.py` | Integration test for the `--append-results` feature in `extractor.py`. |
 | `question_extractor/test_geometry_schema.py` | Unit tests for `GeometryFigure` schema validation. |
 | `question_extractor/figure_renderer.py` | Can be run with `--test` to verify the figure rendering engine. |
+| `question_extractor/test_paper_generator.py` | Unit tests for `QuestionBankParser` and paper generation logic. |
+| `question_extractor/test_prompt_generator.py` | Unit tests for prompt generation based on topics and syllabus. |
+| `question_extractor/test_topic_manager.py` | Unit tests for managing topic configurations and syllabus data. |
+| `question_extractor/test_diagram_utils.py` | Unit tests for diagram generation utilities. |
 
 ### Running Tests
 
@@ -281,6 +294,9 @@ python question_extractor/test_update_summary.py
 
 # Run figure renderer internal tests
 PYTHONPATH=question_extractor python question_extractor/figure_renderer.py --test
+
+# Run using debug helper
+python debug_tests.py
 ```
 
 ---
