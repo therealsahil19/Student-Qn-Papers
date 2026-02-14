@@ -16,7 +16,11 @@ A robust, modular framework for managing mathematics question banks, extracting 
 
 ### Prerequisites
 *   Python 3.8 or higher
-*   [Poppler](https://github.com/oschwartz10612/poppler-windows/releases) (Required only if using `pdf2image` backend; `PyMuPDF` is the default and doesn't require this).
+*   **Recommended**: `PyMuPDF` (Pure Python PDF processing)
+    ```bash
+    pip install PyMuPDF
+    ```
+*   **Alternative**: [Poppler](https://github.com/oschwartz10612/poppler-windows/releases) (Required only if using `pdf2image` backend).
 
 ### Setup
 
@@ -52,8 +56,8 @@ This workflow is designed for AI Agents (Antigravity) to autonomously process PD
 **Summary:**
 1.  **Job Creation:** Agent runs `extractor.py` to prepare images and a "Job Manifest".
     ```bash
-    python question_extractor/extractor.py --pdf "paper.pdf" --prepare-images "./img_job" --quiet
-    python question_extractor/extractor.py --batch-manifest "./img_job" --source "2024" --quiet
+    python -m question_extractor.extractor --pdf "paper.pdf" --prepare-images "./img_job" --quiet
+    python -m question_extractor.extractor --batch-manifest "./img_job" --source "2024" --quiet
     ```
 2.  **Self-Execution:** Agent reads `extraction_manifest.json`, which contains both the list of images and the precise instruction prompt.
 3.  **Extraction:** Agent loops through the images, applying the prompt using its vision capabilities, and saves the results.
@@ -64,11 +68,11 @@ For users manually extracting questions using external tools.
 **Step A: Extract Questions**
 1.  **Prepare Images:** Convert a PDF exam paper into images.
     ```bash
-    python question_extractor/extractor.py --pdf "Class 10pdfs/icse/2024.pdf" --prepare-images "./images/2024_paper"
+    python -m question_extractor.extractor --pdf "Class 10pdfs/icse/2024.pdf" --prepare-images "./images/2024_paper"
     ```
 2.  **Generate Prompt:** Create a context-aware prompt to copy-paste into an LLM.
     ```bash
-    python question_extractor/extractor.py --generate-prompt --topics "GST,Banking"
+    python -m question_extractor.extractor --generate-prompt --topics "GST,Banking"
     ```
 3.  **Save Output:** Paste the AI's JSON/Text output into your question bank file.
 
@@ -93,7 +97,7 @@ The system uses `question_extractor/configs/class_8.json` to define the syllabus
 **Execution**:
 Use the `--profile class_8` flag with the standard extractor tools.
 ```bash
-python question_extractor/extractor.py --profile class_8 --generate-prompt
+python -m question_extractor.extractor --profile class_8 --generate-prompt
 ```
 
 ---
@@ -106,7 +110,7 @@ For processing large volumes of papers (e.g., hundreds of pages), the system pro
 1.  **Generate Master Manifest**:
     Run the extractor recursively on your image root.
     ```bash
-    python question_extractor/extractor.py --batch-manifest "images_root" --recursive --quiet
+    python -m question_extractor.extractor --batch-manifest "images_root" --recursive --quiet
     ```
     This creates `images_root/extraction_manifest.json`.
 
@@ -133,6 +137,8 @@ All scripts should be run from the root directory of the project.
 ### `question_extractor/extractor.py`
 The main CLI tool for PDF processing and prompt generation.
 
+> **Note:** Run this script as a module: `python -m question_extractor.extractor`
+
 | Flag | Description |
 |------|-------------|
 | `--list-topics` | Show all configured topics and their status. |
@@ -149,7 +155,7 @@ The main CLI tool for PDF processing and prompt generation.
 | `--recursive` | Recursively search for images in subdirectories (used with `--batch-manifest`). |
 | `--batch-manifest <dir>` | Generate batch extraction manifest for images directory. |
 | `--source <name>` | Source paper name for batch extraction (used with `--batch-manifest`). |
-| `--append-results <file>` | Append questions from JSON/Text file to a target bank. |
+| `--append-results <file>` | Append questions from JSON/Text file to a target bank. Supports atomic updates. |
 | `--target <file>` | Target file for appending results (used with `--append-results`). |
 | `--quiet` | Suppress verbose output (useful for agent execution). |
 
@@ -166,7 +172,7 @@ Generates exam papers from text-based question banks.
 | `--topics "T1,T2"` | Filter questions to include only specific topics. |
 | `--total-marks <N>` | Set total marks (default: 80). |
 | `--check-deps` | Check available dependencies and exit. |
-| `--no-figures` | Disable geometry figure rendering. |
+| `--no-figures` | Disable geometry figure rendering (shows placeholder text). |
 
 *Note: Generating DOCX files requires the `python-docx` library. If missing, the script will default to PDF or exit with an error depending on usage.*
 
@@ -238,10 +244,12 @@ elements:
 
 ### Supported Types
 Defined in `question_extractor/geometry_schema.py`:
-*   **Circles**: `circle_inscribed_angle`, `circle_tangent`, `cyclic_quadrilateral`, `alternate_segment`.
-*   **Triangles**: `similar_triangles`, `bpt_triangle`.
-*   **Constructions**: `construction_circumcircle`, `construction_incircle`.
-*   **Mensuration**: `mensuration_cylinder`, `mensuration_cone`.
+*   **Circles**: `circle_inscribed_angle`, `circle_tangent`, `circle_chord`, `circle_secant`, `cyclic_quadrilateral`, `alternate_segment`.
+*   **Triangles**: `similar_triangles`, `congruent_triangles`, `triangle_properties`, `bpt_triangle`.
+*   **Constructions**: `construction_tangent`, `construction_circumcircle`, `construction_incircle`, `construction_locus`.
+*   **Coordinate Geometry**: `coordinate_points`, `coordinate_line`, `coordinate_reflection`.
+*   **Mensuration**: `mensuration_cylinder`, `mensuration_cone`, `mensuration_sphere`, `mensuration_combined`.
+*   **Generic**: `generic`.
 
 ### Figure Renderer
 The `figure_renderer.py` module uses `matplotlib` to render these schemas into PNG images which are then embedded into the generated PDF/DOCX.
@@ -255,9 +263,11 @@ The project includes several test scripts to verify core functionalities.
 | Test Script | Description |
 |-------------|-------------|
 | `question_extractor/test_pdf_processor.py` | Verifies PDF-to-image conversion. Requires `reportlab` to generate temporary test PDFs. |
+| `question_extractor/test_pdf_processor_optimization.py` | Tests performance optimizations in PDF processing (e.g., avoiding redundant file opens). |
 | `question_extractor/test_append_batch.py` | Tests the functionality of appending questions to text files while maintaining formatting. |
 | `question_extractor/test_update_summary.py` | Verifies the summary update logic, ensuring counts and headers are correctly recalculated. |
 | `question_extractor/test_append_feature.py` | Integration test for the `--append-results` feature in `extractor.py`. |
+| `question_extractor/test_geometry_schema.py` | Unit tests for `GeometryFigure` schema validation. |
 | `question_extractor/figure_renderer.py` | Can be run with `--test` to verify the figure rendering engine. |
 
 ### Running Tests
@@ -297,7 +307,8 @@ Syllabus definitions are stored in `question_extractor/configs/`.
     *   If using `pdf2image`, you must have [Poppler](https://github.com/oschwartz10612/poppler-windows/releases) installed and added to your system PATH.
 
 2.  **Import Errors**:
-    *   Ensure you run scripts from the **root directory** (e.g., `python question_extractor/extractor.py`, NOT `cd question_extractor && python extractor.py`).
+    *   Ensure you run scripts from the **root directory**.
+    *   For `extractor.py`, use the module syntax: `python -m question_extractor.extractor`.
     *   The scripts rely on relative imports based on the project root.
 
 3.  **Hardcoded Paths**:
