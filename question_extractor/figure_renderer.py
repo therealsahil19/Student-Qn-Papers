@@ -127,6 +127,9 @@ class PointLayoutEngine:
                     description_tasks.append((point.label, deps, solver))
 
         # Iteratively solve for dependencies (max 10 passes)
+        # Use a list of active tasks to avoid re-checking solved ones
+        active_tasks = list(description_tasks)
+
         for _ in range(10):
             previous_positions = self.positions.copy()
 
@@ -153,12 +156,25 @@ class PointLayoutEngine:
                 self._position_tangent_points(tangent, figure)
             
             # Position points based on descriptions
-            for label, deps, solver in description_tasks:
-                if label not in self.positions:
-                    if all(d in self.positions for d in deps):
-                        new_pos = solver(self.positions)
-                        if new_pos:
-                            self.positions[label] = new_pos
+            next_tasks = []
+            for label, deps, solver in active_tasks:
+                if label in self.positions:
+                    continue
+                
+                if all(d in self.positions for d in deps):
+                    new_pos = solver(self.positions)
+                    if new_pos:
+                        self.positions[label] = new_pos
+                    else:
+                        # Calculation failed even with deps met (e.g. no intersection)
+                        # Keep it to report or retry? 
+                        # If deps met and failed, it likely won't succeed later unless deps change (which they shouldn't).
+                        # But purely for robustness, let's keep it.
+                        next_tasks.append((label, deps, solver))
+                else:
+                    next_tasks.append((label, deps, solver))
+            
+            active_tasks = next_tasks
 
             # Exit early if no points changed
             if self.positions == previous_positions:
@@ -897,7 +913,4 @@ def render_figure_from_text(figure_block: str, output_path: str) -> str:
 # Testing
 # ============================================================================
 
-def test(output_dir: str = "./test_figures"):
-    """Test figure rendering with sample figures."""
-    
-# Test code moved to tests/test_figure_renderer.py
+

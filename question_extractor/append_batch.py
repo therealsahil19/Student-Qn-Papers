@@ -7,180 +7,150 @@ import shutil
 # Space (32), Tab (9), LF (10), VT (11), FF (12), CR (13)
 ASCII_WS = set(b' \t\n\r\x0b\x0c')
 
+
 def append_batch(json_file, target_file):
     with open(json_file, 'r', encoding='utf-8') as f:
         questions = json.load(f)
     
     # Separate by categories
-    categories = {
-        "Loci": [],
-        "Similarity": [],
-        "Trigonometry": []
-    }
-    
+    categories = {}
     for q in questions:
         cat = q['category']
-        if cat in categories:
-            categories[cat].append(q)
+        if cat not in categories:
+            categories[cat] = []
+        categories[cat].append(q)
     
     # Check target file size
     if not os.path.exists(target_file):
         with open(target_file, 'w', encoding='utf-8') as f:
             f.write("")
 
-    file_size = os.path.getsize(target_file)
+    with open(target_file, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-    # Identify insertions
-    insertions = []
+    # Split content into sections
+    # Using regex to robustly find sections
+    # Pattern: (Topic: Name\n...content...)
+    # But we need to preserve everything to reconstruct it perfectly.
     
-    with open(target_file, 'rb') as f:
-        if file_size == 0:
-            mm = b""
-        else:
-            mm = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
-
-        try:
-            for cat, qs in categories.items():
-                if not qs: continue
-
-                cat_bytes = cat.encode('utf-8')
-                section_pattern = b"Topic: " + cat_bytes
-
-                if isinstance(mm, bytes):
-                    start_idx = -1
-                else:
-                    start_idx = mm.find(section_pattern)
-
-                if start_idx == -1: continue
-
-                next_topic = mm.find(b"Topic:", start_idx + 1)
-                summary_start = mm.find(b"CUMULATIVE SUMMARY", start_idx + 1)
-
-                insert_pos = -1
-                if next_topic != -1 and (summary_start == -1 or next_topic < summary_start):
-                    insert_pos = next_topic
-                elif summary_start != -1:
-                    insert_pos = summary_start
-                else:
-                    insert_pos = len(mm)
-
-                formatted_qs_list = []
-                for i, q in enumerate(qs, 1):
-                    formatted_qs_list.append(f"\nQ{i} (Marks {q['marks']}) ({q['paper']})\n{q['question']}\n")
-                formatted_qs = "".join(formatted_qs_list)
-
-                insertions.append((insert_pos, formatted_qs))
+    # Strategy: Find all "Topic: <Name>" occurrences
+    import re
+    topic_pattern = re.compile(r'(Topic:\s*(.+?))\s*\n')
+    
+    matches = list(topic_pattern.finditer(content))
+    
+    # We will build the new content
+    new_content_parts = []
+    last_idx = 0
+    
+    # Map from topic name (normalized) to insertion data
+    # Insertion data needs to be added *before* the next section starts
+    
+    # To do this safely:
+    # 1. Identify all section starts.
+    # 2. Identify the "Cumulative Summary" or end of file.
+    # 3. For each section, find its end (start of next section or summary).
+    # 4. Insert new questions at the end of the section.
+    
+    # Let's create a list of spans: (start, end, topic_name)
+    sections = []
+    for i, match in enumerate(matches):
+        start = match.start()
+        topic_name = match.group(2).strip()
+        
+        # End is start of next match or CUMULATIVE SUMMARY or EOF
+        end = len(content)
+        
+        # Check for next topic
+        if i + 1 < len(matches):
+            end = matches[i+1].start()
             
-            insertions.sort(key=lambda x: x[0])
+        # Check for summary
+        summary_match = re.search(r'CUMULATIVE SUMMARY', content[start:])
+        if summary_match:
+            summary_abs_start = start + summary_match.start()
+            if summary_abs_start < end:
+                end = summary_abs_start
+        
+        sections.append({
+            'start': start,
+            'end': end,
+            'name': topic_name,
+            'header_end': match.end()
+        })
+        
+    # Sort insertions by topic
+    # We iterate through existing sections and append relevant questions
+    
+    current_pos = 0
+    final_output = []
+    
+    for section in sections:
+        # Add content up to the end of this section
+        # actually, simply appending the original content chunk is easiest
+        
+        # We need to insert *inside* this section, specifically at the end.
+        # content[section['start']:section['end']] contains the whole section body.
+        
+        section_content = content[section['start']:section['end']]
+        
+        # Check if we have questions for this topic
+        topic_questions = categories.get(section['name'])
+        
+        if topic_questions:
+            # Prepare questions text
+            qs_text_list = []
+            for i, q in enumerate(topic_questions, 1):
+                # Format: 
+                # Q{i} (Marks {m}) ({paper})
+                # {question}
+                #
+                qs_text = f"\nQ{i} (Marks {q['marks']}) ({q['paper']})\n{q['question']}\n"
+                qs_text_list.append(qs_text)
+            
+            new_qs_block = "".join(qs_text_list)
+            
+            # Append before the next section starts.
+            # We must be careful about whitespace.
+            # section_content usually ends with newlines.
+            
+            combined = section_content.rstrip() + "\n" + new_qs_block + "\n"
+            
+            # We append content from current_pos to section['start'] (should be empty if we iterate strictly)
+            # wait, current_pos concept is better.
+            
+            # Add pre-section content (e.g. file header)
+            final_output.append(content[current_pos:section['start']])
+            
+            final_output.append(combined)
+            current_pos = section['end']
+            
+            # Remove from categories to mark as done (optional, if we want to report unused)
+            pass
+            
+        else:
+            # No new questions, just copy the section as is
+            final_output.append(content[current_pos:section['end']])
+            current_pos = section['end']
 
-            temp_file = target_file + ".tmp"
-            with open(temp_file, 'w+b') as f_out:
-                last_pos = 0
+    # Append remaining content (e.g. Cumulative Summary)
+    final_output.append(content[current_pos:])
+    
+    new_full_content = "".join(final_output)
+    
+    with open(target_file, 'w', encoding='utf-8') as f:
+        f.write(new_full_content)
 
-                for pos, qs in insertions:
-                    is_first_segment = (last_pos == 0)
-                    is_ws = is_segment_whitespace(mm, last_pos, pos)
-
-                    if is_first_segment:
-                        copy_segment(mm, last_pos, pos, f_out, lstrip=True, rstrip=True)
-                    else:
-                        if is_ws:
-                            truncate_trailing_whitespace(f_out)
-                        else:
-                            copy_segment(mm, last_pos, pos, f_out, lstrip=False, rstrip=True)
-
-                    qs_bytes = ("\n" + qs + "\n\n").encode('utf-8')
-                    f_out.write(qs_bytes)
-
-                    last_pos = pos
-
-                if isinstance(mm, bytes):
-                     pass
-                else:
-                    copy_segment(mm, last_pos, len(mm), f_out, lstrip=False, rstrip=False)
-
-        finally:
-            if hasattr(mm, 'close'):
-                mm.close()
-
-    shutil.move(temp_file, target_file)
     print(f"Appended {len(questions)} questions from {json_file} to {target_file}")
 
-def is_segment_whitespace(mm, start, end):
-    if start >= end: return True
-    if isinstance(mm, bytes):
-        return mm[start:end].isspace()
+# Remove unused helper functions
 
-    CHUNK_SIZE = 1024*1024
-    curr = start
-    while curr < end:
-        limit = min(curr + CHUNK_SIZE, end)
-        chunk = mm[curr:limit]
-        if not chunk.isspace():
-            return False
-        curr = limit
-    return True
-
-def truncate_trailing_whitespace(f):
-    f.seek(0, 2)
-    pos = f.tell()
-    if pos == 0: return
-
-    CHUNK_SIZE = 1024
-    while pos > 0:
-        read_len = min(pos, CHUNK_SIZE)
-        f.seek(pos - read_len)
-        chunk = f.read(read_len)
-
-        found = False
-        for i in range(len(chunk)-1, -1, -1):
-            if chunk[i] not in ASCII_WS:
-                new_len = (pos - read_len) + i + 1
-                f.truncate(new_len)
-                f.seek(0, 2)
-                return
-        
-        pos -= read_len
-    
-    f.truncate(0)
-    f.seek(0, 2)
-
-def copy_segment(mm, start, end, f_out, lstrip=False, rstrip=False):
-    if start >= end: return
-
-    CHUNK_SIZE = 1024*1024
-    curr = start
-
-    if lstrip:
-        while curr < end:
-            limit = min(curr + CHUNK_SIZE, end)
-            chunk = mm[curr:limit]
-
-            match_start = 0
-            while match_start < len(chunk) and chunk[match_start] in ASCII_WS:
-                match_start += 1
-
-            if match_start < len(chunk):
-                curr += match_start
-                lstrip = False
-                break
-            else:
-                curr += len(chunk)
-
-    if curr >= end: return
-
-    if not rstrip:
-        while curr < end:
-            limit = min(curr + CHUNK_SIZE, end)
-            f_out.write(mm[curr:limit])
-            curr = limit
-    else:
-        while curr < end:
-            limit = min(curr + CHUNK_SIZE, end)
-            f_out.write(mm[curr:limit])
-            curr = limit
-
-        truncate_trailing_whitespace(f_out)
 
 if __name__ == "__main__":
-    append_batch('temp_results_batch_10.json', 'Similarity Locus and Trigonometry questions.txt')
+    import argparse
+    parser = argparse.ArgumentParser(description="Append batch results to question bank")
+    parser.add_argument("source", help="Source JSON file")
+    parser.add_argument("target", help="Target text file")
+    args = parser.parse_args()
+    
+    append_batch(args.source, args.target)

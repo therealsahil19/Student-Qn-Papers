@@ -25,7 +25,7 @@ import io
 import tempfile
 from dataclasses import dataclass, field
 from datetime import datetime
-from pathlib import Path
+
 from typing import Optional, List, Dict, Tuple, Any
 
 # Optional imports with fallbacks
@@ -142,6 +142,10 @@ class QuestionBankParser:
         r'\[FIGURE\](.*?)\[/FIGURE\]',
         re.DOTALL | re.IGNORECASE
     )
+
+    def _split_sections(self, content: str) -> List[str]:
+        """Split content into sections based on Topic headers."""
+        return re.split(r'(?:^|\n)(?:-{10,}\s*\n)?Topic:\s*(.+?)\s*\n', content)
     
     # Pattern to match source
     SOURCE_PATTERN = re.compile(r'\[Source:\s*(.+?)\]', re.IGNORECASE)
@@ -171,12 +175,7 @@ class QuestionBankParser:
         self.topics = {}
         
         # Split by topic sections
-        # Split by topic sections
-        # Use capturing group to keep the delimiter (topic name)
-        # Pattern matches: (optional separator) + "Topic:" + space + (topic name) + newline
-        # We use a lookahead or just split on the whole block
-        # Improved pattern: matches optional dashes, then Topic: <name>
-        parts = re.split(r'(?:^|\n)(?:-{10,}\s*\n)?Topic:\s*(.+?)\s*\n', content)
+        parts = self._split_sections(content)
         
         # The first part is content before the first topic separator (usually header or "General")
         if parts[0].strip():
@@ -305,18 +304,62 @@ class QuestionBankParser:
 # PDF Generator (using ReportLab)
 # ============================================================================
 
-class PDFPaperGenerator:
+
+# ============================================================================
+# Base Generator
+# ============================================================================
+
+class BasePaperGenerator:
+    """Base class for paper generators."""
+    
+    def __init__(self, render_figures: bool = True):
+        self.render_figures = render_figures
+        self.figure_parser = FigureParser() if GEOMETRY_AVAILABLE else None
+        self.temp_images: List[str] = []
+
+    def _cleanup_temp_images(self):
+        """Clean up temporary image files."""
+        for path in self.temp_images:
+            try:
+                os.unlink(path)
+            except:
+                pass
+        self.temp_images = []
+
+    def _render_figure_to_buffer(self, figure_block: str) -> Optional[io.BytesIO]:
+        """Render a figure block to a memory buffer."""
+        if not self.figure_parser:
+            return None
+            
+        try:
+            figure = self.figure_parser.parse(figure_block)
+            
+            # Create a temporary image
+            renderer = FigureRenderer(RenderConfig(figsize=(5, 5), dpi=150))
+            renderer.render(figure)
+            
+            # Render to memory
+            img_buffer = io.BytesIO()
+            renderer.save_png(img_buffer)
+            renderer.close()
+            img_buffer.seek(0)
+            return img_buffer
+            
+        except Exception as e:
+            print(f"Warning: Could not render figure: {e}")
+            return None
+
+
+class PDFPaperGenerator(BasePaperGenerator):
     """Generates PDF exam papers using ReportLab."""
     
     def __init__(self, render_figures: bool = True):
+        super().__init__(render_figures)
         if not REPORTLAB_AVAILABLE:
             raise ImportError("ReportLab is required for PDF generation. Install with: pip install reportlab")
         
-        self.render_figures = render_figures
         self.styles = getSampleStyleSheet()
         self._setup_custom_styles()
-        self.figure_parser = FigureParser() if GEOMETRY_AVAILABLE else None
-        self.temp_images: List[str] = []
     
     def _setup_custom_styles(self):
         """Set up custom paragraph styles."""
@@ -514,53 +557,27 @@ class PDFPaperGenerator:
         
         elements = []
         
-        try:
-            figure = self.figure_parser.parse(figure_block)
-            
-            # Create a temporary image
-            renderer = FigureRenderer(RenderConfig(figsize=(5, 5), dpi=150))
-            renderer.render(figure)
-            
-            # Render to memory
-            img_buffer = io.BytesIO()
-            renderer.save_png(img_buffer)
-            renderer.close()
-            img_buffer.seek(0)
-            
-            # Add image to document
-            elements.append(Spacer(1, 6))
-            elements.append(RLImage(img_buffer, width=3*inch, height=3*inch))
-            elements.append(Spacer(1, 6))
-            
-        except Exception as e:
-            print(f"Warning: Could not render figure: {e}")
+        if self.render_figures and GEOMETRY_AVAILABLE:
+            img_buffer = self._render_figure_to_buffer(figure_block)
+            if img_buffer:
+                elements.append(Spacer(1, 6))
+                elements.append(RLImage(img_buffer, width=3*inch, height=3*inch))
+                elements.append(Spacer(1, 6))
         
         return elements
-    
-    def _cleanup_temp_images(self):
-        """Clean up temporary image files."""
-        for path in self.temp_images:
-            try:
-                os.unlink(path)
-            except:
-                pass
-        self.temp_images = []
 
 
 # ============================================================================
 # Word Generator (using python-docx)
 # ============================================================================
 
-class WordPaperGenerator:
+class WordPaperGenerator(BasePaperGenerator):
     """Generates Word document exam papers using python-docx."""
     
     def __init__(self, render_figures: bool = True):
+        super().__init__(render_figures)
         if not DOCX_AVAILABLE:
             raise ImportError("python-docx is required for Word generation. Install with: pip install python-docx")
-        
-        self.render_figures = render_figures
-        self.figure_parser = FigureParser() if GEOMETRY_AVAILABLE else None
-        self.temp_images: List[str] = []
     
     def generate(self, paper: ExamPaper, output_path: str):
         """Generate a Word document exam paper."""
@@ -662,36 +679,13 @@ class WordPaperGenerator:
     def _render_figure(self, doc: Document, figure_block: str):
         """Render a geometry figure and add to document."""
         
-        try:
-            figure = self.figure_parser.parse(figure_block)
-            
-            # Create a temporary image
-            renderer = FigureRenderer(RenderConfig(figsize=(5, 5), dpi=150))
-            renderer.render(figure)
-            
-            # Render to memory
-            img_buffer = io.BytesIO()
-            renderer.save_png(img_buffer)
-            renderer.close()
-            img_buffer.seek(0)
-            
-            # Add image to document
-            p = doc.add_paragraph()
-            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            run = p.add_run()
-            run.add_picture(img_buffer, width=Inches(3))
-            
-        except Exception as e:
-            print(f"Warning: Could not render figure: {e}")
-    
-    def _cleanup_temp_images(self):
-        """Clean up temporary image files."""
-        for path in self.temp_images:
-            try:
-                os.unlink(path)
-            except:
-                pass
-        self.temp_images = []
+        if self.render_figures and GEOMETRY_AVAILABLE:
+            img_buffer = self._render_figure_to_buffer(figure_block)
+            if img_buffer:
+                p = doc.add_paragraph()
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                run = p.add_run()
+                run.add_picture(img_buffer, width=Inches(3))
 
 
 # ============================================================================

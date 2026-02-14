@@ -1,7 +1,8 @@
 import unittest
+import textwrap
 from question_extractor.geometry_schema import (
     GeometryFigure, FigureType, Point, Line, Circle,
-    Angle, Triangle, Quadrilateral, FigureValidator
+    Angle, Triangle, Quadrilateral, FigureValidator, FigureParser
 )
 
 class TestGeometrySchema(unittest.TestCase):
@@ -112,6 +113,43 @@ class TestGeometrySchema(unittest.TestCase):
         is_valid, issues = self.validator.validate(figure)
         self.assertFalse(is_valid)
         self.assertIn("Angle ray end 'C' not found in structural elements", issues)
+
+class TestGeometrySchemaRefactor(unittest.TestCase):
+    def setUp(self):
+        self.parser = FigureParser()
+
+    def test_normalize_standard(self):
+        # Standard block with common indentation
+        block = """
+        type: circle
+        description: A circle
+        """
+        expected = "type: circle\ndescription: A circle"
+        self.assertEqual(self.parser._normalize_yaml_block(block).strip(), expected)
+
+    def test_normalize_first_line_no_indent(self):
+        # First line has no indent (because of how it was extracted), others do
+        block = "type: circle\n        description: A circle\n        radius: 5"
+        # The parser should align subsequent lines to the first line
+        expected = "type: circle\ndescription: A circle\nradius: 5"
+        self.assertEqual(self.parser._normalize_yaml_block(block).strip(), expected)
+
+    def test_normalize_first_line_inline_tag(self):
+        # Similar to above but ensuring we handle it correctly
+        block = "   type: circle\n      description: A circle"
+        expected = "type: circle\n   description: A circle" 
+        # Dedent should remove 3 spaces from all.
+        self.assertEqual(self.parser._normalize_yaml_block(block).strip(), expected)
+
+    def test_normalize_nested(self):
+        block = """
+        type: triangle
+        elements:
+          - triangle:
+              vertices: [A, B, C]
+        """
+        expected = "type: triangle\nelements:\n  - triangle:\n      vertices: [A, B, C]"
+        self.assertEqual(self.parser._normalize_yaml_block(block).strip(), expected)
 
 if __name__ == "__main__":
     unittest.main()

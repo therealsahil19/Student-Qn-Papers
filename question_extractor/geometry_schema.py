@@ -220,64 +220,40 @@ class FigureParser:
         while keeping subsequent lines indented, creating invalid YAML.
         """
         lines = block.split('\n')
-        if len(lines) <= 1:
-            return block
         
-        # Check if first line has no indent but subsequent lines do
-        # This happens when .strip() is called on the extracted block
-        first_non_empty_idx = -1
+        # Find first non-empty line
+        first_idx = -1
         for i, line in enumerate(lines):
             if line.strip():
-                first_non_empty_idx = i
+                first_idx = i
                 break
         
-        if first_non_empty_idx < 0:
-            return block
-        
-        first_line = lines[first_non_empty_idx]
+        if first_idx == -1:
+            return block.strip()
+            
+        first_line = lines[first_idx]
         first_indent = len(first_line) - len(first_line.lstrip())
         
-        # Find the minimum indent of lines AFTER the first non-empty line
-        min_subsequent_indent = float('inf')
-        for i, line in enumerate(lines):
-            if i <= first_non_empty_idx:
-                continue
-            stripped = line.lstrip()
-            if stripped:  # Non-empty line
-                indent = len(line) - len(stripped)
-                if indent < min_subsequent_indent:
-                    min_subsequent_indent = indent
+        # Find minimum indent of subsequent non-empty lines
+        min_subsequent = float('inf')
+        has_subsequent = False
         
-        # If first line has no indent but subsequent lines do, 
-        # strip the common indent from subsequent lines to align with first
-        if first_indent == 0 and min_subsequent_indent > 0 and min_subsequent_indent != float('inf'):
-            normalized_lines = []
-            for i, line in enumerate(lines):
-                if i <= first_non_empty_idx:
-                    normalized_lines.append(line)
-                elif line.strip():  # Non-empty subsequent line
-                    if len(line) >= min_subsequent_indent:
-                        normalized_lines.append(line[min_subsequent_indent:])
-                    else:
-                        normalized_lines.append(line.lstrip())
-                else:
-                    normalized_lines.append('')
-            return '\n'.join(normalized_lines)
+        for i in range(first_idx + 1, len(lines)):
+            line = lines[i]
+            if line.strip():
+                indent = len(line) - len(line.lstrip())
+                if indent < min_subsequent:
+                    min_subsequent = indent
+                has_subsequent = True
         
-        # Otherwise, use standard dedent approach
-        if first_indent > 0:
-            normalized_lines = []
-            for line in lines:
-                if line.strip():
-                    if len(line) >= first_indent:
-                        normalized_lines.append(line[first_indent:])
-                    else:
-                        normalized_lines.append(line.lstrip())
-                else:
-                    normalized_lines.append('')
-            return '\n'.join(normalized_lines)
-        
-        return block
+        # If first line has lost its indent (0) but subsequent lines preserve it (>0),
+        # we treat subsequent indentation as the baseline.
+        if has_subsequent and first_indent == 0 and min_subsequent > 0:
+            # Reconstruct first line with matching indentation
+            lines[first_idx] = (" " * min_subsequent) + first_line
+            
+        # Use standard dedent to remove common leading whitespace
+        return textwrap.dedent("\n".join(lines))
     
     def parse(self, figure_block: str) -> GeometryFigure:
         """
@@ -550,73 +526,7 @@ class FigureValidator:
 # Figure Templates for Common ICSE Geometry Questions
 # ============================================================================
 
-FIGURE_TEMPLATES = {
-    "circle_inscribed_triangle": {
-        "type": "circle_inscribed_angle",
-        "description": "Circle with center O and inscribed triangle ABC",
-        "elements": [
-            {"circle": {"center": "O", "points": ["A", "B", "C"]}},
-            {"triangle": {"vertices": ["A", "B", "C"], "inscribed_in": "O"}}
-        ]
-    },
-    
-    "tangent_from_external_point": {
-        "type": "circle_tangent",
-        "description": "Circle with center O, tangent PT from external point P",
-        "elements": [
-            {"circle": {"center": "O"}},
-            {"tangent": {"circle": "O", "point": "T", "external_point": "P"}},
-            {"line": {"points": ["P", "T"], "label": "PT"}}
-        ]
-    },
-    
-    "two_tangents_external": {
-        "type": "circle_tangent",
-        "description": "Two tangents PA and PB from external point P to circle with center O",
-        "elements": [
-            {"circle": {"center": "O"}},
-            {"tangent": {"circle": "O", "point": "A", "external_point": "P"}},
-            {"tangent": {"circle": "O", "point": "B", "external_point": "P"}},
-            {"line": {"points": ["P", "A"]}},
-            {"line": {"points": ["P", "B"]}}
-        ]
-    },
-    
-    "cyclic_quadrilateral": {
-        "type": "cyclic_quadrilateral",
-        "description": "Cyclic quadrilateral ABCD inscribed in circle with center O",
-        "elements": [
-            {"circle": {"center": "O", "points": ["A", "B", "C", "D"]}},
-            {"quadrilateral": {"vertices": ["A", "B", "C", "D"], "cyclic": True, "inscribed_in": "O"}}
-        ]
-    },
-    
-    "similar_triangles_bpt": {
-        "type": "bpt_triangle",
-        "description": "Triangle ABC with DE parallel to BC, where D is on AB and E is on AC",
-        "elements": [
-            {"triangle": {"vertices": ["A", "B", "C"]}},
-            {"point": {"label": "D", "description": "on AB"}},
-            {"point": {"label": "E", "description": "on AC"}},
-            {"line": {"points": ["D", "E"], "style": "solid"}}
-        ]
-    },
-    
-    "alternate_segment": {
-        "type": "alternate_segment",
-        "description": "Circle with tangent at point T and chord through T",
-        "elements": [
-            {"circle": {"center": "O", "points": ["T", "A", "B"]}},
-            {"tangent": {"circle": "O", "point": "T", "external_point": "P"}},
-            {"line": {"points": ["T", "A"], "label": "chord TA"}}
-        ]
-    }
-}
 
-
-def get_template(template_name: str) -> Optional[Dict]:
-    """Get a predefined figure template by name."""
-    return FIGURE_TEMPLATES.get(template_name)
 
 
 

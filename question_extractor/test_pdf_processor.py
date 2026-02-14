@@ -41,7 +41,7 @@ class TestPDFProcessor(unittest.TestCase):
         pages = processor.convert_pdf_to_images(self.pdf_path, pages=[1])
         self.assertEqual(len(pages), 1)
         self.assertEqual(pages[0].page_number, 1)
-        self.assertIsNotNone(pages[0].image_base64)
+        self.assertIsNotNone(pages[0].image_bytes)
 
         # Test out of bounds (should be handled gracefully)
         # Note: Worker returns None, processor filters None.
@@ -55,6 +55,40 @@ class TestPDFProcessor(unittest.TestCase):
         self.assertEqual(len(pages), 10)
         self.assertEqual(pages[0].page_number, 1)
         self.assertEqual(pages[9].page_number, 10)
+
+    def test_get_backend_info(self):
+        """Test retrieving backend information."""
+        processor = PDFProcessor()
+        info = processor.get_backend_info()
+        self.assertIn("backend", info)
+        self.assertIn("available", info)
+        self.assertIn("install_instructions", info)
+        # Should be available since we depend on fitz/pdf2image
+        self.assertTrue(info["available"])
+
+    def test_detect_backend(self):
+        """Test backend detection logic."""
+        processor = PDFProcessor()
+        backend = processor._detect_backend()
+        self.assertIn(backend, ["pymupdf", "pdf2image", "none"])
+
+
+    def test_detect_backend_fallback(self):
+        """Test fallback mechanism for backend detection."""
+        # Use patch.dict to simulate missing modules
+        
+        # Case 1: Force missing fitz (PyMuPDF)
+        # We need to ensure the module is not in sys.modules or mock it to raise ImportError
+        with unittest.mock.patch.dict(sys.modules, {'fitz': None}):
+            # Re-instantiate to trigger detection
+            processor = PDFProcessor()
+            # It should fallback to pdf2image or none
+            self.assertIn(processor._backend, ['pdf2image', 'none'])
+
+        # Case 2: Force missing both
+        with unittest.mock.patch.dict(sys.modules, {'fitz': None, 'pdf2image': None}):
+            processor = PDFProcessor()
+            self.assertEqual(processor._backend, 'none')
 
 if __name__ == '__main__':
     unittest.main()
