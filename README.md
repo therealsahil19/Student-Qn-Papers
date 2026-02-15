@@ -155,7 +155,7 @@ The main CLI tool for PDF processing and prompt generation.
 | `--recursive` | Recursively search for images in subdirectories (used with `--batch-manifest`). |
 | `--batch-manifest <dir>` | Generate batch extraction manifest for images directory. |
 | `--source <name>` | Source paper name for batch extraction (used with `--batch-manifest`). |
-| `--append-results <file>` | Append questions from JSON/Text file to a target bank. Supports atomic updates. |
+| `--append-results <file>` | Append questions from JSON or Text file to a target bank. Appends before the SUMMARY section. |
 | `--target <file>` | Target file for appending results (used with `--append-results`). |
 | `--quiet` | Suppress verbose output (useful for agent execution). |
 
@@ -201,6 +201,12 @@ python create_checkpoint.py
 python pop_batch.py <batch_size>
 # Example:
 python pop_batch.py 20
+```
+
+### `question_extractor/append_batch.py`
+**Utility**: Smartly merges batch results into a question bank. Unlike the simple append in `extractor.py`, this tool parses the target file and inserts new questions into their corresponding topic sections.
+```bash
+python question_extractor/append_batch.py <source_json> <target_txt>
 ```
 
 ### `question_extractor/generate_diagrams.py`
@@ -254,6 +260,10 @@ Defined in `question_extractor/geometry_schema.py`:
 ### Figure Renderer
 The `figure_renderer.py` module uses `matplotlib` to render these schemas into PNG images which are then embedded into the generated PDF/DOCX.
 
+**Point Layout Engine**: The renderer includes an advanced `PointLayoutEngine` that can resolve point positions from natural language descriptions.
+*   **Examples**: `midpoint of AB`, `intersection of AB and CD`, `projection of P on AB`, `on AB ratio 2:3`.
+*   This allows defining figures without explicit coordinates, relying on geometric relationships.
+
 ---
 
 ## 🧪 Testing
@@ -262,7 +272,7 @@ The project includes several test scripts to verify core functionalities.
 
 | Test Script | Description |
 |-------------|-------------|
-| `question_extractor/test_pdf_processor.py` | Verifies PDF-to-image conversion. Requires `reportlab` to generate temporary test PDFs. |
+| `question_extractor/test_pdf_processor.py` | Verifies PDF-to-image conversion. **Requires `reportlab`** to generate temporary test PDFs. |
 | `question_extractor/test_pdf_processor_optimization.py` | Tests performance optimizations in PDF processing (e.g., avoiding redundant file opens). |
 | `question_extractor/test_append_batch.py` | Tests the functionality of appending questions to text files while maintaining formatting. |
 | `question_extractor/test_update_summary.py` | Verifies the summary update logic, ensuring counts and headers are correctly recalculated. |
