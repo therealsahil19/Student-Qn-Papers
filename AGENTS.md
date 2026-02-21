@@ -81,6 +81,9 @@ First, run the standard recursive manifest generation (Step 1 above).
 
 **2. Create Checkpoint Queue**
 Run `create_checkpoint.py` to sort and prioritize pages from `question_extractor/images_class_10/extraction_manifest.json` into a new `checkpoint_manifest.json`.
+
+**WARNING**: `create_checkpoint.py` has a **HARDCODED** input path (`question_extractor/images_class_10/extraction_manifest.json`). If you are working on a different dataset (e.g., Class 8), this script will NOT work as expected without modification.
+
 ```bash
 python create_checkpoint.py
 ```
