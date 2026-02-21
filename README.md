@@ -174,33 +174,41 @@ Generates exam papers from text-based question banks.
 | `--check-deps` | Check available dependencies and exit. |
 | `--no-figures` | Disable geometry figure rendering (shows placeholder text). |
 
-*Note: Generating DOCX files requires the `python-docx` library. If missing, the script will default to PDF or exit with an error depending on usage.*
+*Note: The script uses a default auto-selection logic that attempts to create a standard ICSE paper structure (10 MCQs, 5 Short Answers, 4 Long Answers). For custom structures, filter by topic manually or modify the selection logic.*
 
 ### `question_extractor/update_summary.py`
 Updates the "Number of Questions" headers and the summary table in a question bank file.
+*Note: This is automatically invoked when using `extractor.py --append-results`.*
 ```bash
 python question_extractor/update_summary.py <path_to_file>
 ```
 
 ### `question_extractor/clean_question_bank.py`
-**Utility**: Cleans up and reformats an existing question bank file. It regroups questions by unit and topic, re-numbers them, and regenerates the summary.
+**Utility**: Cleans up and reformats an existing question bank file.
+*Warning: This script is currently hardcoded for specific geometry topics (Loci, Similarity, Trigonometry). Use with caution on other files.*
 ```bash
 python question_extractor/clean_question_bank.py [file_path]
 ```
-*Note: Accepts an optional file path argument (defaults to 'Similarity Locus and Trigonometry questions.txt').*
 
 ### `create_checkpoint.py`
-**Batch Processing**: Reads `question_extractor/images_class_10/extraction_manifest.json`, sorts pages by priority (Yearly Papers > SQP > Others), and creates `checkpoint_manifest.json`.
+**Batch Processing**: Reads `question_extractor/images_class_10/extraction_manifest.json` (HARDCODED PATH), sorts pages by priority (Yearly Papers > SQP > Others), and creates `checkpoint_manifest.json`.
+*Note: This script is specifically configured for the Class 10 workflow.*
 ```bash
 python create_checkpoint.py
 ```
 
 ### `pop_batch.py`
-**Batch Processing**: Retrieves the next N pages from `checkpoint_manifest.json`, removes them from the queue, and outputs them as a JSON array.
+**Batch Processing**: Retrieves the next N pages from `checkpoint_manifest.json` (in the current directory), removes them from the queue, and outputs them as a JSON array.
 ```bash
 python pop_batch.py <batch_size>
 # Example:
 python pop_batch.py 20
+```
+
+### `question_extractor/append_batch.py`
+**Utility**: Performs a "smart merge" of JSON batch results into a target question bank file. Unlike `extractor.py --append-results`, this script parses the file structure and inserts questions into their specific `Topic:` sections.
+```bash
+python question_extractor/append_batch.py <source_json> <target_txt>
 ```
 
 ### `question_extractor/generate_diagrams.py`
@@ -272,12 +280,12 @@ The project includes several test scripts to verify core functionalities.
 
 ### Running Tests
 
-You can run individual tests using `python` or `unittest`:
+You can run individual tests using `python` or `unittest`. Ensure `PYTHONPATH` is set to the project root.
 
 ```bash
 # Run specific tests
-python question_extractor/test_append_batch.py
-python question_extractor/test_update_summary.py
+PYTHONPATH=. python question_extractor/test_append_batch.py
+PYTHONPATH=. python question_extractor/test_update_summary.py
 
 # Run figure renderer internal tests
 PYTHONPATH=question_extractor python question_extractor/figure_renderer.py --test
